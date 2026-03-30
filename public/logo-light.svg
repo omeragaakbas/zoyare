@@ -1,15 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 44" fill="none">
   <!--
-    Zoyare — Full Logo (dark variant)
-    Isometric cube mark: e=17, center (18,22)
-    Points:
-      Top        18,5
-      TopRight   33,14
-      TopLeft     3,14
-      Center     18,22
-      BottomRight 33,31
-      BottomLeft   3,31
-      Bottom     18,39
+    Zoyare — Full Logo (light variant / zwarte tekst)
   -->
 
   <!-- Top face — brightest -->
@@ -25,7 +16,7 @@
     font-family="'Space Grotesk', 'Arial Black', Arial, sans-serif"
     font-size="28"
     font-weight="800"
-    fill="#F5F5F5"
+    fill="#111111"
     letter-spacing="-0.5">ZOYARE</text>
 
   <!-- Tagline -->
@@ -33,6 +24,6 @@
     x="43" y="41"
     font-family="'Space Mono', 'Courier New', monospace"
     font-size="8"
-    fill="#666666"
+    fill="#888888"
     letter-spacing="1.5">software built to scale</text>
 </svg>

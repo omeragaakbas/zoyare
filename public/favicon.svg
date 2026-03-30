@@ -1,9 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
-  <!-- Z Mark — Zoyare -->
-  <!-- Top bar -->
-  <rect x="2" y="2" width="32" height="6" fill="#F5F5F5"/>
-  <!-- Diagonal accent -->
-  <line x1="33" y1="8" x2="3" y2="28" stroke="#FF4500" stroke-width="4.5" stroke-linecap="butt"/>
-  <!-- Bottom bar -->
-  <rect x="2" y="28" width="32" height="6" fill="#F5F5F5"/>
+  <!--
+    Zoyare — Mark only (favicon)
+    Isometric cube: e=13, center (18,18)
+    Points:
+      Top        18,5
+      TopRight   29,12
+      TopLeft     7,12
+      Center     18,18
+      BottomRight 29,25
+      BottomLeft   7,25
+      Bottom     18,31
+  -->
+
+  <!-- Top face — brightest -->
+  <polygon points="18,5 29,12 18,18 7,12" fill="#FF6228"/>
+  <!-- Right face — medium -->
+  <polygon points="29,12 29,25 18,31 18,18" fill="#CC4010"/>
+  <!-- Left face — darkest -->
+  <polygon points="7,12 18,18 18,31 7,25" fill="#8C2808"/>
 </svg>
