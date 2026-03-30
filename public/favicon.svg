@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- Z Mark — Zoyare -->
+  <!-- Top bar -->
+  <rect x="2" y="2" width="32" height="6" fill="#F5F5F5"/>
+  <!-- Diagonal accent -->
+  <line x1="33" y1="8" x2="3" y2="28" stroke="#FF4500" stroke-width="4.5" stroke-linecap="butt"/>
+  <!-- Bottom bar -->
+  <rect x="2" y="28" width="32" height="6" fill="#F5F5F5"/>
+</svg>
