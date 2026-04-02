@@ -15,10 +15,10 @@ export default function About() {
       {/* Header */}
       <FadeIn className="mb-20">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Over</p>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-tight">
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
           {about.name}
         </h1>
-        <p className="text-secondary text-lg mt-4">{about.role}</p>
+        <p className="text-secondary text-base font-light mt-4 tracking-wide">{about.role}</p>
       </FadeIn>
 
       {/* Content grid */}
@@ -31,10 +31,10 @@ export default function About() {
 
         <FadeIn className="lg:col-span-4 lg:col-start-9" delay={0.2}>
           <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Focus</p>
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-5">
             {about.focus.map((item, i) => (
               <li key={i} className="flex items-start gap-4">
-                <span className="font-mono text-xs text-accent mt-1">—</span>
+                <span className="font-mono text-xs text-accent mt-0.5">—</span>
                 <span className="text-sm text-secondary leading-relaxed">{item}</span>
               </li>
             ))}
@@ -44,7 +44,7 @@ export default function About() {
 
       {/* Approach */}
       <div className="mt-24 border-t border-border pt-16">
-        <FadeIn className="mb-10">
+        <FadeIn className="mb-12">
           <p className="font-mono text-xs text-muted tracking-widest uppercase">Werkwijze</p>
         </FadeIn>
 
@@ -67,9 +67,9 @@ export default function About() {
             },
           ].map((item) => (
             <StaggerItem key={item.num}>
-              <div className="bg-background p-8 h-full">
-                <span className="font-mono text-xs text-muted block mb-6">{item.num}</span>
-                <h3 className="text-base font-medium text-primary mb-3">{item.title}</h3>
+              <div className="bg-background p-10 h-full group hover:bg-surface transition-colors duration-300">
+                <span className="font-mono text-xs text-accent block mb-8">{item.num}</span>
+                <h3 className="text-base font-medium text-primary mb-4">{item.title}</h3>
                 <p className="text-sm text-secondary leading-relaxed">{item.text}</p>
               </div>
             </StaggerItem>
@@ -79,12 +79,13 @@ export default function About() {
 
       {/* CTA */}
       <FadeIn className="mt-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Samenwerken</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Samenwerken</p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-3 text-3xl md:text-5xl font-bold tracking-tighter text-primary hover:text-accent transition-colors duration-200"
+          className="group inline-flex items-center gap-3 text-3xl md:text-5xl font-bold tracking-tighter text-primary hover:text-accent transition-colors duration-200"
         >
-          Laten we praten. <span className="text-accent">→</span>
+          Laten we praten.
+          <span className="text-accent transition-transform duration-300 group-hover:translate-x-2">→</span>
         </Link>
       </FadeIn>
     </div>
