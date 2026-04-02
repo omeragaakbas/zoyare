@@ -5,8 +5,16 @@ import FadeIn from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
 
 export const metadata: Metadata = {
-  title: "Over — Zoyare",
-  description: "Ömer Akbas — Software Engineer en founder van Zoyare.",
+  title: "Over",
+  description:
+    "Ömer Akbas is software engineer en founder van Zoyare. Bouwt maatwerk software voor ondernemingen — van back-end architectuur tot enterprise integraties.",
+  alternates: { canonical: "https://zoyare.com/about" },
+  openGraph: {
+    title: "Over Zoyare — Ömer Akbas, Software Engineer",
+    description:
+      "Ömer Akbas bouwt maatwerk software voor ondernemingen. Directe samenwerking, technische diepgang, van requirement tot deployment.",
+    url: "https://zoyare.com/about",
+  },
 };
 
 export default function About() {

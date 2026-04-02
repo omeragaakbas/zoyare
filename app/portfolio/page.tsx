@@ -4,8 +4,16 @@ import FadeIn from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
 
 export const metadata: Metadata = {
-  title: "Portfolio — Zoyare",
-  description: "Overzicht van projecten: enterprise integraties, back-end engineering, product development en automations.",
+  title: "Portfolio",
+  description:
+    "Projecten van Zoyare: Siemens BuildingX connector, Workforce Management systemen, mobiele matching apps en ZZP-facturatie automatisering. Enterprise tot startup.",
+  alternates: { canonical: "https://zoyare.com/portfolio" },
+  openGraph: {
+    title: "Portfolio — Zoyare Software Projects",
+    description:
+      "Van Siemens enterprise integraties tot product development. Bekijk hoe Zoyare maatwerk software bouwt.",
+    url: "https://zoyare.com/portfolio",
+  },
 };
 
 export default function Portfolio() {

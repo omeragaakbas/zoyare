@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — Zoyare",
-  description: "Neem contact op voor een project of gesprek.",
+  title: "Contact",
+  description:
+    "Bespreek je project met Zoyare. Software laten bouwen, API-integratie of app development? Plan een vrijblijvend gesprek. Reactie binnen 24 uur.",
+  alternates: { canonical: "https://zoyare.com/contact" },
+  openGraph: {
+    title: "Contact — Zoyare Software Studio",
+    description:
+      "Plan een vrijblijvend gesprek over jouw softwareproject. Reactie binnen 24 uur.",
+    url: "https://zoyare.com/contact",
+  },
 };
 
 export default function Contact() {
