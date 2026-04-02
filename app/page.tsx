@@ -143,43 +143,45 @@ export default function Home() {
         <div>
           {services.map((service, i) => (
             <FadeIn key={service.title} delay={i * 0.07}>
-              <motion.div
-                className="group grid grid-cols-12 items-start gap-4 md:gap-6 py-8 border-b border-border cursor-default"
-                whileHover={{ x: 3 }}
-                transition={{ duration: 0.25 }}
-              >
-                {/* Number */}
-                <div className="col-span-2 md:col-span-1 pt-0.5">
-                  <span className="font-mono text-sm text-border group-hover:text-accent transition-colors duration-300">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
+              <Link href={service.href}>
+                <motion.div
+                  className="group grid grid-cols-12 items-start gap-4 md:gap-6 py-8 border-b border-border cursor-pointer"
+                  whileHover={{ x: 3 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  {/* Number */}
+                  <div className="col-span-2 md:col-span-1 pt-0.5">
+                    <span className="font-mono text-sm text-border group-hover:text-accent transition-colors duration-300">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
 
-                {/* Title */}
-                <div className="col-span-10 md:col-span-4">
-                  <h3 className="text-base md:text-lg font-medium text-primary group-hover:text-accent transition-colors duration-300 leading-snug">
-                    {service.title}
-                  </h3>
-                </div>
+                  {/* Title */}
+                  <div className="col-span-10 md:col-span-4">
+                    <h3 className="text-base md:text-lg font-medium text-primary group-hover:text-accent transition-colors duration-300 leading-snug">
+                      {service.title}
+                    </h3>
+                  </div>
 
-                {/* Description */}
-                <div className="col-span-12 md:col-span-6 pl-[calc(16.67%)] md:pl-0">
-                  <p className="text-sm text-secondary leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
+                  {/* Description */}
+                  <div className="col-span-12 md:col-span-6 pl-[calc(16.67%)] md:pl-0">
+                    <p className="text-sm text-secondary leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
 
-                {/* Arrow */}
-                <div className="hidden md:flex col-span-1 justify-end items-start pt-0.5">
-                  <span
-                    className="text-accent text-sm opacity-0 -translate-x-2
-                               group-hover:opacity-100 group-hover:translate-x-0
-                               transition-all duration-300"
-                  >
-                    →
-                  </span>
-                </div>
-              </motion.div>
+                  {/* Arrow */}
+                  <div className="hidden md:flex col-span-1 justify-end items-start pt-0.5">
+                    <span
+                      className="text-accent text-sm opacity-0 -translate-x-2
+                                 group-hover:opacity-100 group-hover:translate-x-0
+                                 transition-all duration-300"
+                    >
+                      →
+                    </span>
+                  </div>
+                </motion.div>
+              </Link>
             </FadeIn>
           ))}
         </div>

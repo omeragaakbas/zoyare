@@ -84,21 +84,25 @@ export const services = [
     title: "Maatwerk Software",
     description:
       "Van requirement tot deployment. Geen kant-en-klare oplossingen, maar software die past bij jouw proces.",
+    href: "/diensten/maatwerk-software",
   },
   {
     title: "API & Integraties",
     description:
       "Systemen die niet met elkaar praten, verbonden. REST APIs, platform-connectoren, data-pipelines.",
+    href: "/diensten/api-integraties",
   },
   {
     title: "Mobiele Applicaties",
     description:
       "iOS en Android apps die daadwerkelijk gebruikt worden. Focus op snelheid, betrouwbaarheid en UX.",
+    href: "/diensten/mobiele-applicaties",
   },
   {
     title: "Process Automation",
     description:
       "Handmatige workflows automatiseren. Minder fouten, minder tijd, meer controle.",
+    href: "/diensten/process-automation",
   },
 ];
 

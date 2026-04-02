@@ -1,0 +1,750 @@
+{
+  "version": 1,
+  "skills": {
+    "ab-test-analysis": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "3e78bcc057b936fcd8f987504b69fdda414b8a4def0b73229e0755b4029e8ba4"
+    },
+    "ab-test-setup": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "039c651784ebc388ef4ccd57ac538a6fe7edbe443b8fd3f24139ac1a610760e6"
+    },
+    "acquisition-channel-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "b9c49828a3502c3c99659169453ee386cda25b20ef252a1a0db1b720e5f68d87"
+    },
+    "ad-creative": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "660ef74aba893d23335366c5bcc11faf7701ce9f441d9450bc80ab53dccbf21e"
+    },
+    "ai-seo": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "0dfe8e2dedc037971bc817fb169c2c1175776b51fd1403f5cd43a8662806ae50"
+    },
+    "ai-shaped-readiness-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "13bd93a84b39f918322d762a97e03d7f9c579866b0fc75fa57e1bf07d1428a9a"
+    },
+    "altitude-horizon-framework": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "01535ce94d8a2ed3201d2446b947efcd188d626f0a07b554c46747c42fa6c4cb"
+    },
+    "analytics-tracking": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "6ea7d8bb78cacaec93f61c953807e35446304f5c6374fda4b190c76c4281fd4d"
+    },
+    "analyze-feature-requests": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "dbf58d384cdf248e5f11fcfddf2a00d9ea0913958cb600976a5d6b0e4b8e0023"
+    },
+    "ansoff-matrix": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "8d4619a27828764e397e7cb65137a951a60cf87ab5f7822833b231089696b049"
+    },
+    "beachhead-segment": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "d85d7ab80e4ae2e00ddff8982c4e19630c43a1efd96ae11b3b0af6eb60f8d2c0"
+    },
+    "brainstorm-experiments-existing": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "3671c7b2669f0c3197348781843cb0a26017929ba5c4d1416555d0bbb07f00bf"
+    },
+    "brainstorm-experiments-new": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "8aadc41391e6c048466240de8feefa63c6b6d74475a629b8f983c293da965787"
+    },
+    "brainstorm-ideas-existing": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "318189ed1869045ba8bded1a250d010c993ba5acbee7a5a52d3e4d9094024178"
+    },
+    "brainstorm-ideas-new": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "9cac3d00cb4414cdc2e02802af8c153c49cdfc2e925a22c5020c24587a31bce0"
+    },
+    "brainstorm-okrs": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "5cbed0f2806a864bab73a26a37f176c15e440739323c2e4bb8ebe3a746139ad7"
+    },
+    "business-health-diagnostic": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "ed43a97fe705eb8311e7d2c113801ad379bb1b2f667ec8e76f2c913bc1e62cbd"
+    },
+    "business-model": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "bedee52fe485016e2810ec4327ea0282679fb4a6bf20603b393f6ee867f2b810"
+    },
+    "churn-prevention": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "e1f4abdffeae2104cecd05d87fbe4c752c6fbcf6a6e856ad584493ed99a69e75"
+    },
+    "cohort-analysis": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "6569a07357c0abf011080b90d2cbd3de0f8c4ac6ff732b4d450a993d73b5c0d4"
+    },
+    "cold-email": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "bd2738a0d28bad7e344de0712feb718637c1259ee91ae48fb1f6895f64f3204c"
+    },
+    "company-research": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "a3f8ef7ba76a14f50dadfc01240dc34748114475795c0bfe51be66ce3666aa8b"
+    },
+    "competitive-battlecard": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "3e950c496f15b629b5c68bb600a5e049fef2d962094da960c76eddfef56329a9"
+    },
+    "competitor-alternatives": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "d763652f36568b03d8daec3e1e98ac2cc730dcab663d87e2560acee3b9af1a3c"
+    },
+    "competitor-analysis": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "182488f313aba2174ed888e6d77cb6920c2fbf40604cf40bf07a04128bf39f3f"
+    },
+    "content-strategy": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "e1ab02527702ead90a9e5774cfe1be9a222bdcc6e861f2cae778ad7cc293f225"
+    },
+    "context-engineering-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "afbc850811782ae2869b814f152e56dc5598c48e21a0c83bcc29035528da7f31"
+    },
+    "copy-editing": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "f8bb575dff23a5cf1f105b4e94ef32038a8b45984a96cfe1f3c4a5b38996ce4d"
+    },
+    "copywriting": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "c008c80aff1eec1aba190edf421772a3f350e91405d4207575092b663c3702a7"
+    },
+    "create-prd": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "3368fad0b60a31605f03340e33fbe0fb90982ba4e80a904298168f3fbcba4ba7"
+    },
+    "customer-journey-map": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "8f9e591c23c212878bdf34a2c083e0bb09d717ef0a32a4ac065acd6f7bee94ef"
+    },
+    "customer-journey-mapping-workshop": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "0184a9a23b230b9a9794c9ebf9aba79af943ee2ef9ac2e126ed2ab860abe1dd2"
+    },
+    "customer-research": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "09cba35fcf3fa79896a0f0f1cf66e891498c6111f892e5b1b7bfcfa4ce68b229"
+    },
+    "deploy-to-vercel": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "3a0481591523c55ecfe2569b6b28b2dcbfa3742367667697219d29170981ad53"
+    },
+    "director-readiness-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "2c6ccb90239f3ab13c27021b2a2e408c7ed25ee928004b51fda1aa5ee25a7a20"
+    },
+    "discovery-interview-prep": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "19c6df1936d385940800a5944162e31e12f0eab3e90015c14448be1548a05686"
+    },
+    "discovery-process": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "1db1d23099231123a479df8f9a58fc5f4a7ed6a57ee7ebbf1653843303518ede"
+    },
+    "draft-nda": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "9006aa3708e4f36b1140961df5a291321a65030c70056e975378b5d23cb6c2cc"
+    },
+    "dummy-dataset": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "840611313b78b0e5df519bd95a15c7af39e251540a4e09c74604d6060b969d79"
+    },
+    "email-sequence": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "f4513ca015f509187ec39bff603663ffc82bcd078b9e22bd26ef87dce4e36a7c"
+    },
+    "eol-message": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "e06a765e2acc747c50dcb64000ededb2e8348ef311bb3b1515a63d9ebda7017d"
+    },
+    "epic-breakdown-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "027249af486da4604ba3c3f2dad27474a181100cabb73b7e8fafb48699324ae6"
+    },
+    "epic-hypothesis": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "30dedd28e040872f922fbc6958ca3045dbc57d7b58ade86414970702ab570c9b"
+    },
+    "executive-onboarding-playbook": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "6c7c6d90c61a31b515be1f11a5130506c6511edad4ca85ffb1be31da1da7c2da"
+    },
+    "feature-investment-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "b269448c9ee3029680f98444a8b74016a8bff50adc073b23d8a3b8920e798d5e"
+    },
+    "finance-based-pricing-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "bba181e56f1e3a9d2d964e7158e5218e958250c48daf997757378d8842a21d87"
+    },
+    "finance-metrics-quickref": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "834cd4ea826af19888def4ee70f401ed7642030a2f7b036399bfd2fe311127d2"
+    },
+    "form-cro": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "9eb72b95e9e1df985af42541c498cdd11aca914da97a59d07f397d77f17519a1"
+    },
+    "free-tool-strategy": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "c9ac82b87836d26f69dd21c9f9a9a03d6398a723ed360f275ab5cc1d70c5c4c7"
+    },
+    "grammar-check": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "543ee9e41682444e3ad9f411e443cfbd547620afc83745583c2de697509f9cc7"
+    },
+    "growth-loops": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "d32e728cca11d669d15a936ab8f3b8f4d3e7d6ef49df67a0b24426cdcdc51a8b"
+    },
+    "gtm-motions": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "e52aeafb62bec64a26cad477a0eddc44d0ef582d82ac527e8fa67d06c1d4c7d7"
+    },
+    "gtm-strategy": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "4eef1d029ae0a22117f705a32286f46ea044964f6af96bd063bdb491873995cd"
+    },
+    "ideal-customer-profile": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "dc8f70743a5a2f78ceac3a37bcfda9d468b504d12793a42a5cad6e29992e2d33"
+    },
+    "identify-assumptions-existing": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "d8165539cd6936ce56689d0e073ab8151120f86374bc3befc7e3f3ba16a4215c"
+    },
+    "identify-assumptions-new": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "f516b5f291c633e6d78ce82e02d86260bce8748d8abece121e37630ea0e6ae98"
+    },
+    "interview-script": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "3693252dd48b3bddca244cc53674f3a3ac9c19bd3acddf8843dd6e6c796d9af2"
+    },
+    "job-stories": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "b4576e0cb3a98da5619393644b16f2885c06f101ff99dd22f4368767db0b0122"
+    },
+    "jobs-to-be-done": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "8aa88b3fd1044390bd1d094f50d1d14c91587bfd06251239ae8c0754f77ac9d8"
+    },
+    "launch-strategy": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "d4a9f5152ff8cdc5cb62b02a753a2909e28e4a01bf3dfce66f9437f5b81999b9"
+    },
+    "lead-magnets": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "927819fe8960471cbc1af903534ea6f0633992441de205105e599e79886c0f90"
+    },
+    "lean-canvas": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "d081f584b320a9f33ea652cc9ee613d505d675102c8cbe315f2fff47d0f7bf2b"
+    },
+    "lean-ux-canvas": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "63a48f7d809f1d834c13d248ed9fbc7e9a8220687e09909b85bd0d17ccf1199b"
+    },
+    "market-segments": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "00a4bd33f52f8a824b9236f832698ed541fe4d867f11016e2292ea61b4738127"
+    },
+    "market-sizing": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "566955818d1f1ca9115d846e556183034071a09147ce550732efa2518f9998fb"
+    },
+    "marketing-ideas": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "7bdc7235487ce20384b014c1ecd996e73c1651dfdbaece20dfdb3eb24f192383"
+    },
+    "marketing-psychology": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "5b8654c4d6db63d9da55f7cd56f2babd92e602b089e96a86ef38c7f547f51d52"
+    },
+    "metrics-dashboard": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "de39b1fd8a10868dbe5f07f972fd8aa7208173b17ed757e23cba297aab76ca2a"
+    },
+    "monetization-strategy": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "d27d638023aeec412bf8dd424fbf278321342b4bb350ce34a4b0e02badb29f23"
+    },
+    "north-star-metric": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "a400a8870558a4d063ef00d288bb38de3bd2b95677748781e0957e14c3dfb4d9"
+    },
+    "onboarding-cro": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "b051b45c234c59f97e0e1d365a81cae46adcb75baa95260299f617d80c1cb378"
+    },
+    "opportunity-solution-tree": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "f1c96dc763e1bc1887be7ad3db31670cd5e62aabc0b989591c8116f7e4fc062d"
+    },
+    "outcome-roadmap": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "81dfe79f81d5acc689b1144cda14297efec63005154dd6fe3cd600f4576a661c"
+    },
+    "page-cro": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "97fa14549ae123830f1096821a0aadc898f48542c0473897e0bc3d0c90b024f4"
+    },
+    "paid-ads": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "b5f152fad2a67387088b72f05109646e153e168315ab3f9200b9fa3a3cd0e280"
+    },
+    "paywall-upgrade-cro": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "16ba56a987c0df61653de6401ba2702f74e9b3e281a651619020677ea123e416"
+    },
+    "pestel-analysis": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "ce26546efbf317b8fa0a5c2bc4dff4ff1e76385b8e58afe7fc53834b1b72acba"
+    },
+    "pestle-analysis": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "48a8bf74ae4f1b028badc6ca1651ae3e3491cd7eceba3060e1849706001174a6"
+    },
+    "pol-probe": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "3f508b799493a19e812e4b04bdb4e26ba483e9f327c8d25a7965062c5da89b44"
+    },
+    "pol-probe-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "08ce1dfeed2c0cd725761c739e9c8b2988d7f44a6022fe5cf3e7edba11248310"
+    },
+    "popup-cro": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "d62750cd309aaae426bdc91b267199169f1799edd5dcfb3b5526e08505a1b0e7"
+    },
+    "porters-five-forces": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "9436074cdef99dd83e7ff7d95313fd833ce2dc87f33982b8b95922823aee8c00"
+    },
+    "positioning-ideas": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "e687f210775aee3e5d85ad8fb8b6c3572bdc0af5d2e70dca8c007a496998b333"
+    },
+    "positioning-statement": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "3a9435bb1d231522f6a83dbce105ff50b2252592bca68bb88ae817a14ece3d77"
+    },
+    "positioning-workshop": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "62d80aeb7daacc432cc7d3c038f2d3b2fba4a623e415b082a006bef970b5b50d"
+    },
+    "prd-development": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "1b7f6de0d407c7ed581ab96fcdd332392f4552ddafa26da5fe29eff863123c7f"
+    },
+    "pre-mortem": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "c65c8678f31896a2dccb1df2d8245abaf02efbfd58af2128a06f4ac711a57f4d"
+    },
+    "press-release": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "5c22800b6065c4b390b5d51cabbe4ea8fd52ffa78c02f7267acdb65e64813111"
+    },
+    "pricing-strategy": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "223e5ed8c4abd05ed259629272b4cbd14280ce65654de00134dab91442b3ec56"
+    },
+    "prioritization-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "634c80c52e7cea4eba3c1e4b46bf9db12d6d4c43b0366b72b91bfd434a64139b"
+    },
+    "prioritization-frameworks": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "0767054f99ae816c1e21fcd25f84cd17b0f78aff033355a87264505db49dad64"
+    },
+    "prioritize-assumptions": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "954ff9e5168c269809ac582f826b88fa0336fb4fe26a1f564909f5938962e3cc"
+    },
+    "prioritize-features": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "ccfabdf9944819b0d46ec3d8621be11a731e2f476ecc50c0a099759d3341f8e8"
+    },
+    "privacy-policy": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "4f79d99d3bc7d1a14108bbff25d28cce0f86a70d89edb1ef908f30001b176a9c"
+    },
+    "problem-framing-canvas": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "436c84b4b3c84abcccc653b9574ca61b6889381351670930df13dfb2b75a89a8"
+    },
+    "problem-statement": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "07098e48436849689ee2fff83037747e4f84d13d575cd55f834b6e6240af156e"
+    },
+    "product-marketing-context": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "e0c954d8b63d562b997fe6d60f0b39aef49517bdbb93ad67e61989ecbc647cf8"
+    },
+    "product-name": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "3a5bad48c840519b2c775bdb5d69fed37537de77001a8822aa31676a21cf163e"
+    },
+    "product-sense-interview-answer": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "7c1fc3ac79d4538017d70dea5fa2b70a1b886544230222aba565497ef15f67fe"
+    },
+    "product-strategy": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "1046a3f07b319296e6552b3dbc5f64455bc7cdf6677c28988f611619b2b66afd"
+    },
+    "product-strategy-session": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "7b4515881efca051541c136684e936b7bdc03b952fbfc5ab6609f6d346d3dc1b"
+    },
+    "product-vision": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "83187e7e0db26fa8823ff0c4149b92d732b086e9abdcf0eac5407bacdd1dda9a"
+    },
+    "programmatic-seo": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "c6384f24bb0203f8aa98b23b55d35b9e6721b94532a0e7965215c340ae96f1e0"
+    },
+    "proto-persona": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "23e2ed06a7dc21d369ce77e6e335d0bd7fd181936421592966f79736df5bf4c2"
+    },
+    "recommendation-canvas": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "61c2a5a6cf9902405dbe47b7ab9d0cc055ec69e853e05895991628ddfd9db8f7"
+    },
+    "referral-program": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "32d66dac06f00b18f6e9077053ce7de6d2c5a4bee3a7ef50a5eb9dc5c5412746"
+    },
+    "release-notes": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "3553814c2f40e0c59ffe55315741a04f8e13f3b37d2e348aae3de58be730fd42"
+    },
+    "retro": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "4b7acd6479e4b710777ba6131d644e77c497a4f0f17e31b06237ddc7fa5b97b8"
+    },
+    "review-resume": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "c5278789e6491dd276de8dbc091e4823a0ab8b4d143c68af0a72a1e099b6a3e7"
+    },
+    "revops": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "df5a86fa12fc9f0200c040f319b70d149b33a07228a6692648e30e15e38e6b84"
+    },
+    "roadmap-planning": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "c00261ab88f619056d3008cd51563591cdfb2653233f36e80f565895ee77d897"
+    },
+    "saas-economics-efficiency-metrics": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "d8c9b637b04ca35bb3bcb8d4d769d3076602066f2d9792ddd11685618284ee5f"
+    },
+    "saas-revenue-growth-metrics": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "0853a0da63113aad7c867fd697b066d4fbfaf33d61f53da15ac299442846d639"
+    },
+    "sales-enablement": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "827c4d55e07a5a4cfc6c956d0cff44b4a04c39a037f2f109b0b0b530025527d9"
+    },
+    "schema-markup": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "7e94629c1bafd6459b4f113237655a98761438eb1b26aa15c440351f79a86d2e"
+    },
+    "sentiment-analysis": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "0ce85da912a73d9828ed8b414dfdcda31ce1a9af3e0ef462bb2fc158e1ef315d"
+    },
+    "seo-audit": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "2e91c1a968d435712d1deb3845a35021842c168f132f81027c071ad43f78cb0a"
+    },
+    "signup-flow-cro": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "9ed0af5cecc6d6b9956a7ffd79c15cb18e5a19d3249bb760418a9b763eb21503"
+    },
+    "site-architecture": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "040cf6fcceb0d57322c97aff2e75e1f8d2bf49df7a4e1faccd6f34ebf7f3fab1"
+    },
+    "skill-authoring-workflow": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "9237b9bc2face1442b6549ba1ce274f8492c005878d56290438481d9f35dc233"
+    },
+    "social-content": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "computedHash": "89c1726323ac944b02fb8f27c1d86e84c6310ebacb6b0f62dae74e0351873c08"
+    },
+    "sprint-plan": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "ffe8c793276c753d75eca75fda6f98a5654c4f3e3b1f9a1c4803271823cebd1a"
+    },
+    "sql-queries": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "9e536c811ca95a15f11bf55cf13112de7c63646dcd1bc87b18a3063594ca505c"
+    },
+    "stakeholder-map": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "1c7b66ad7d7be2aef27b259bf56333588f7f0650c2a35530139c96c0f7e7733b"
+    },
+    "startup-canvas": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "d9b2b0d493703b0bdff1776a390ac3786fb93dad4a2f308f0a1b641eaa03981d"
+    },
+    "storyboard": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "6a65dc7159be6116c95089d31f62710b8f3f44fe67e67427895fbbe8e21f9002"
+    },
+    "summarize-interview": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "a0c51fb5cc9243eb22a61d6d328505367263e98848e3b21b44f898c91c14a0a3"
+    },
+    "summarize-meeting": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "aff2dd02f137454d4c6bc27a99a2f0b27c16351ae1f6a444d5815068c98e6b2e"
+    },
+    "swot-analysis": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "262504779a1d1d26ed2a1a9a72b17784c60f5cfa8261cd41eda745478f7abc76"
+    },
+    "tam-sam-som-calculator": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "bce5a9173efc693821184bafa6f187d0acb9e830859830ff59ed23fff608d675"
+    },
+    "test-scenarios": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "66225d50d6eb80ffbdc0d75cee39d3638b5953e24a7c8b39711cc9d1846612c8"
+    },
+    "user-personas": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "ee72fcbc6025177be0f7b44794e4e9387f4c6ad463baebc13d82751185f9945a"
+    },
+    "user-segmentation": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "fde518e205a364335004aefc2db2eec7ef444e4fad6a4dec87a147433a2ec629"
+    },
+    "user-stories": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "f430b0828102f2f54eb5d1658726e8feaacae9f04afad6ab56e5d6334e4f7dd7"
+    },
+    "user-story": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "9c9c5780c408ac4cd8476facb2332275609650d0b8f8f3148d766f89777ee285"
+    },
+    "user-story-mapping": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "ba589bb55f9361beb047b562565aa2f878ed5c85b31db0c7c439403d76520926"
+    },
+    "user-story-mapping-workshop": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "077b25802e79953984eaa7b5a426a3f1e5121fd5a8b52e5ed4e64ebc82d303a9"
+    },
+    "user-story-splitting": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "40217c8fa4d5eefd90471fa011a256bd6c576e4fb318b83afb97211be399837d"
+    },
+    "value-prop-statements": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "6c3605396bbc7e3e7a6bffe6365f9b03311d5509ac400015b7f3052130756ef1"
+    },
+    "value-proposition": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "b9bfc23451e23a465a2192e612fe8f8da4e45f615ec6385758b3487ff73f0e9d"
+    },
+    "vercel-cli-with-tokens": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "e1e480328b12b79669604c8849845be7582f6c0a6da1e8d1d6d1ec1a2806dbf0"
+    },
+    "vercel-composition-patterns": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "10eb4ec94577b79ae98c63ce3e7f35f8a6a06436a4011bff083b397de6960eeb"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "257b84bf218a7d3b2cba56e929b7e933cf71cb89f2e24ab601759c599d1c23f2"
+    },
+    "vercel-react-native-skills": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "a804b4e848059822638c390359976f7021380bcefb1469d473aa4e9202c15ecb"
+    },
+    "vercel-react-view-transitions": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "db55fee57546ae8b7cee3d9cc08e8e810bf78cce43e2d3dd26eea69e1bf357ae"
+    },
+    "vp-cpo-readiness-advisor": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "6244339e4ee55a33d892344badc4fc5f0d69aede3342226180b3a27283e14ee5"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "d8e7d3afe37dcc8a97b99ffb5afdb4d0919ae0092ea8b68f44eb201f035e33ac"
+    },
+    "workshop-facilitation": {
+      "source": "deanpeters/Product-Manager-Skills",
+      "sourceType": "github",
+      "computedHash": "55173eb666a5953c4d41c70635feef92153269435a7787093f8a795147253b40"
+    },
+    "wwas": {
+      "source": "phuryn/pm-skills",
+      "sourceType": "github",
+      "computedHash": "5b51da69db655652538777dc7cc30e08865f1b2e17232b8850bf58871ee744be"
+    }
+  }
+}

@@ -39,6 +39,41 @@ body {
 ::-webkit-scrollbar-track { background: #0D0D0D; }
 ::-webkit-scrollbar-thumb { background: #333333; }
 
+/* Blog article typography */
+.prose-zoyare h2 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #EBEBEB;
+  letter-spacing: -0.03em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.prose-zoyare h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #EBEBEB;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-zoyare p {
+  color: #9A9A9A;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+.prose-zoyare ul,
+.prose-zoyare ol {
+  color: #9A9A9A;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  padding-left: 1.25rem;
+}
+.prose-zoyare ul { list-style: disc; }
+.prose-zoyare ol { list-style: decimal; }
+.prose-zoyare li { margin-bottom: 0.4rem; }
+.prose-zoyare strong { color: #EBEBEB; font-weight: 600; }
+.prose-zoyare a { color: #F15F0E; text-decoration: underline; text-underline-offset: 3px; }
+
 /* Underline input style — used on contact page */
 .input-line {
   background: transparent;
