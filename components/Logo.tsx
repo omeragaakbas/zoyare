@@ -27,7 +27,7 @@ interface LogoProps {
 */
 
 const ICON_TRANSFORM     = "translate(2 5) scale(0.373) translate(-285 -385)";
-const WORDMARK_TRANSFORM = "translate(117 30) scale(0.503) translate(-510 -395)";
+const WORDMARK_TRANSFORM = "translate(117 20) scale(0.503) translate(-510 -395)";
 
 // Three orange paths extracted from the original vectorized SVG
 const iconPaths = [

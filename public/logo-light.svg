@@ -12,7 +12,7 @@
   </g>
 
   <!-- ZOYARE wordmark — dark fill for light backgrounds -->
-  <g fill="#111111" transform="translate(-21.2 7.9) scale(2.766)">
+  <g fill="#111111" transform="translate(-21.2 -2.2) scale(2.766)">
     <!-- Z -->
     <path d="M50 8h14v3.5L54.5 28H64v3.5H50V28l9.5-16.5H50V8z"/>
     <!-- O -->
