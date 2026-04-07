@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { projects, services } from "@/lib/content";
+import { projects, services, testimonials, contact } from "@/lib/content";
 import FadeIn from "@/components/animations/FadeIn";
 
 const heroVariants = {
@@ -102,12 +102,14 @@ export default function Home() {
                 Bekijk werk
               </span>
             </Link>
-            <Link
-              href="/contact"
+            <a
+              href={contact.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
             >
               Gesprek plannen
-            </Link>
+            </a>
           </motion.div>
         </div>
 
@@ -244,6 +246,32 @@ export default function Home() {
                   ))}
                 </div>
               </motion.div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
+
+      {/* ─── Testimonials ─── */}
+      <section className="px-6 md:px-12 py-24 border-t border-border">
+        <FadeIn className="mb-14">
+          <p className="font-mono text-xs text-muted tracking-widest uppercase">Wat klanten zeggen</p>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
+          {testimonials.map((t, i) => (
+            <FadeIn key={i} delay={i * 0.08}>
+              <div className="bg-background p-8 md:p-10 flex flex-col justify-between min-h-[18rem]">
+                <p className="text-primary text-base leading-relaxed mb-8">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div>
+                  <div className="h-px bg-border mb-6" />
+                  <p className="text-sm text-primary font-medium">{t.name}</p>
+                  <p className="font-mono text-xs text-muted tracking-widest uppercase mt-1">
+                    {t.role} — {t.company}
+                  </p>
+                </div>
+              </div>
             </FadeIn>
           ))}
         </div>

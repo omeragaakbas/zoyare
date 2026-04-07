@@ -109,4 +109,33 @@ export const services = [
 export const contact = {
   email: "hello@zoyare.com",
   cta: "Een project bespreken?",
+  bookingUrl: "https://cal.com/zoyare", // vervang met jouw Calendly of Cal.com link
 };
+
+export type Testimonial = {
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote: "Ömer leverde precies wat we nodig hadden — technisch sterk, goede communicatie en binnen de afgesproken tijd. De connector werkt feilloos in productie.",
+    name: "Projectmanager",
+    role: "Enterprise Integration Lead",
+    company: "Siemens",
+  },
+  {
+    quote: "Van database-ontwerp tot API — solide werk. Onze back-end staat als een huis en het team kon er direct mee verder.",
+    name: "CTO",
+    role: "Chief Technology Officer",
+    company: "StrateX",
+  },
+  {
+    quote: "Het automatiseringsproces dat Zoyare bouwde bespaart ons wekelijks uren aan handmatig werk. Precies wat we vroegen, plus net iets meer.",
+    name: "Directeur",
+    role: "Operations Director",
+    company: "ProAspect",
+  },
+];
