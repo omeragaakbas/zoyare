@@ -1,8 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest } from "next/server";
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-
 const SYSTEM_PROMPT = `Je bent de digitale assistent van Zoyare — een software engineering studio opgericht door Ömer Akbas.
 
 OVER ZOYARE:
@@ -33,6 +31,7 @@ JOUW ROL:
 - Noem geen prijzen — die bespreekt Ömer in een gesprek op maat`;
 
 export async function POST(req: NextRequest) {
+  const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   const { messages } = await req.json();
 
   if (!messages || !Array.isArray(messages)) {
