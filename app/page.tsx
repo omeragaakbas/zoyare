@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects, services, clients, contact } from "@/lib/content";
 import FadeIn from "@/components/animations/FadeIn";
+import LeadMagnetSection from "@/components/LeadMagnetSection";
 
 const heroVariants = {
   hidden: {},
@@ -267,6 +268,9 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* ─── Lead Magnet ─── */}
+      <LeadMagnetSection />
 
       {/* ─── CTA ─── */}
       <section className="px-6 md:px-12 py-32 border-t border-border">
