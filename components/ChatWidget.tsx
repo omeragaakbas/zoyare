@@ -136,7 +136,7 @@ export default function ChatWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.97 }}
             transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-22 right-6 z-50 w-80 md:w-96 bg-background border border-border shadow-2xl flex flex-col"
+            className="fixed bottom-20 right-4 left-4 sm:left-auto sm:right-6 sm:w-80 md:w-96 z-50 bg-background border border-border shadow-2xl flex flex-col"
             style={{ maxHeight: "480px" }}
           >
             {/* Header */}
