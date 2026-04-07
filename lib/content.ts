@@ -126,7 +126,7 @@ export const services = [
 export const contact = {
   email: "hello@zoyare.com",
   cta: "Een project bespreken?",
-  bookingUrl: "https://cal.com/zoyare", // vervang met jouw Calendly of Cal.com link
+  bookingUrl: "https://cal.eu/zoyare", // vervang met jouw Calendly of Cal.com link
 };
 
 export const clients = [

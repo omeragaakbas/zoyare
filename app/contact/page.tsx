@@ -196,7 +196,7 @@ export default function Contact() {
               Zowel kortlopende opdrachten als langdurige samenwerking.
             </p>
             <a
-              href="https://cal.com/zoyare"
+              href="https://cal.eu/zoyare"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-accent hover:text-primary transition-colors duration-200 underline underline-offset-4"
