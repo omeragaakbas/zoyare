@@ -1,0 +1,51 @@
+name: Wekelijkse Blog Generator
+
+on:
+  schedule:
+    - cron: "0 8 * * 1" # Elke maandag om 08:00 UTC (10:00 NL zomertijd)
+  workflow_dispatch:     # Ook handmatig te triggeren via GitHub UI
+    inputs:
+      topic:
+        description: "Onderwerp voor de blogpost (leeg = automatisch)"
+        required: false
+        default: ""
+
+jobs:
+  generate-blog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Genereer blogpost
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          TOPIC="${{ github.event.inputs.topic }}"
+          if [ -n "$TOPIC" ]; then
+            node scripts/generate-blog.mjs "$TOPIC"
+          else
+            node scripts/generate-blog.mjs
+          fi
+
+      - name: Commit en push
+        run: |
+          git config --local user.email "blog-bot@zoyare.com"
+          git config --local user.name "Zoyare Blog Bot"
+          git add content/posts-generated.json content/linkedin-drafts/
+          git diff --staged --quiet && echo "Geen wijzigingen." || (
+            git commit -m "blog: automatisch gegenereerde post $(date +%Y-%m-%d)"
+            git push
+          )
