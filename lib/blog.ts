@@ -1,3 +1,5 @@
+import generatedPosts from "@/content/posts-generated.json";
+
 export type Post = {
   slug: string;
   title: string;
@@ -389,12 +391,14 @@ Geen app store nodig — de website gedraagt zich als een app. Beperkte toegang 
   },
 ];
 
+const allPosts: Post[] = [...posts, ...(generatedPosts as Post[])];
+
 export function getPost(slug: string): Post | undefined {
-  return posts.find((p) => p.slug === slug);
+  return allPosts.find((p) => p.slug === slug);
 }
 
 export function getAllPosts(): Post[] {
-  return [...posts].sort(
+  return [...allPosts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 }

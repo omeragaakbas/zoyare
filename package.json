@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "new-blog": "node scripts/generate-blog.mjs",
+    "new-blog:topic": "node scripts/generate-blog.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.82.0",
