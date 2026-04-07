@@ -1,5 +1,6 @@
 import { projects } from "@/lib/content";
 import type { Metadata } from "next";
+import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
 
@@ -33,7 +34,8 @@ export default function Portfolio() {
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
         {projects.map((project, i) => (
           <StaggerItem key={project.id}>
-            <article className="relative bg-background group flex flex-col justify-between p-10 min-h-[22rem] hover:bg-surface transition-colors duration-300 overflow-hidden">
+            <Link href={`/portfolio/${project.id}`}>
+            <article className="relative bg-background group flex flex-col justify-between p-10 min-h-[22rem] hover:bg-surface transition-colors duration-300 overflow-hidden cursor-pointer">
               {/* Large decorative number */}
               <span
                 className="absolute right-8 top-6 font-mono text-[5rem] font-bold leading-none text-border/40
@@ -72,6 +74,7 @@ export default function Portfolio() {
                 </div>
               </div>
             </article>
+            </Link>
           </StaggerItem>
         ))}
       </StaggerContainer>

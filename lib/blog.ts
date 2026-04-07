@@ -186,6 +186,128 @@ Een administratiekantoor verwerkte handmatig de urenstaten van tientallen ZZP'er
     `.trim(),
   },
   {
+    slug: "business-process-automation",
+    title: "Business process automation: wanneer loont automatiseren en hoe pak je het aan?",
+    description:
+      "Welke processen zijn geschikt voor automatisering, wat levert het op en hoe voorkom je dat je een automation bouwt die niemand gebruikt?",
+    date: "2026-04-07",
+    category: "Process Automation",
+    readTime: 7,
+    body: `
+<p>Elk bedrijf heeft ze: processen die elke week opnieuw handmatig worden uitgevoerd. Urenstaten verwerken, rapporten samenstellen, facturen opmaken, data overzetten tussen systemen. Werk dat iemand doet, maar dat eigenlijk een computer zou moeten doen.</p>
+
+<p>Business process automation (BPA) lost dit op. Maar niet elk proces is geschikt voor automatisering — en een slecht geautomatiseerd proces is soms erger dan een handmatig proces. In dit artikel leg ik uit wanneer automatiseren loont, hoe je het aanpakt en wat de valkuilen zijn.</p>
+
+<h2>Wat is business process automation?</h2>
+
+<p>BPA is het automatiseren van terugkerende bedrijfsprocessen met software. De scope is breed:</p>
+
+<ul>
+  <li>Een script dat elke nacht data synchroniseert tussen twee systemen</li>
+  <li>Een tool die CSV-bestanden inleest en automatisch facturen genereert</li>
+  <li>Een workflow die een nieuwe klant registreert in drie systemen tegelijk</li>
+  <li>Een rapportage-tool die elke maandag automatisch een managementrapport verstuurt</li>
+</ul>
+
+<p>Het gaat om één ding: handmatig, repetitief werk elimineren.</p>
+
+<h2>Wanneer is automatiseren de moeite waard?</h2>
+
+<p>De vuistregel is simpel: als een proces meer dan <strong>2 uur per week</strong> kost, regelmatig uitgevoerd wordt en weinig uitzonderingen kent, is automatisering vrijwel altijd rendabel.</p>
+
+<p>Concrete signalen dat je moet automatiseren:</p>
+
+<ul>
+  <li>Medewerkers kopiëren data handmatig tussen Excel, e-mail of systemen</li>
+  <li>Hetzelfde rapport wordt elke week opnieuw handmatig samengesteld</li>
+  <li>Fouten ontstaan doordat mensen data overtypen</li>
+  <li>Een nieuwe medewerker heeft een week nodig om "het proces" te leren</li>
+  <li>Als de vaste persoon ziek is, weet niemand hoe het proces werkt</li>
+</ul>
+
+<h2>Welke processen zijn niet geschikt?</h2>
+
+<p>Automatisering werkt het best bij processen met duidelijke regels en weinig uitzonderingen. Processen die <em>niet</em> goed automatiseren:</p>
+
+<ul>
+  <li>Processen met veel menselijk oordeel ("dit klopt niet helemaal, maar toch...")</li>
+  <li>Processen die sterk afhangen van externe partijen die geen API hebben</li>
+  <li>Processen die zo zeldzaam zijn dat de bouwkosten nooit terugverdiend worden</li>
+  <li>Processen die binnenkort fundamenteel wijzigen</li>
+</ul>
+
+<h2>Een concreet voorbeeld: ZZP-facturatie</h2>
+
+<p>Voor ProAspect bouwde ik een automatiseringstool voor een administratiekantoor. Het handmatige proces zag er zo uit:</p>
+
+<ol>
+  <li>ZZP'ers sturen wekelijks een urenstaat in</li>
+  <li>Medewerker downloadt de CSV-bestanden</li>
+  <li>Medewerker zoekt het juiste tarief op per ZZP'er per opdrachtgever</li>
+  <li>Medewerker maakt handmatig een factuur aan in Word</li>
+  <li>Medewerker exporteert naar PDF</li>
+  <li>Medewerker verstuurt de factuur per e-mail</li>
+</ol>
+
+<p>Dit proces duurde voor tientallen ZZP'ers meerdere uren per week. En het was foutgevoelig: verkeerd tarief, verkeerde opdrachtgever, vergeten factuur.</p>
+
+<p>De automatisering vervangt stap 2 tot en met 6 volledig. De medewerker uploadt de CSV — de rest gaat automatisch. Van urenstaat naar verzonden factuur in seconden.</p>
+
+<h2>Hoe pak je een automatiseringsproject aan?</h2>
+
+<ol>
+  <li>
+    <strong>Breng het huidige proces in kaart</strong><br>
+    Schrijf stap voor stap op wat er nu gebeurt. Inclusief uitzonderingen. Dit is de meest onderschatte stap — en de belangrijkste.
+  </li>
+  <li>
+    <strong>Definieer de happy path</strong><br>
+    Wat is het standaard geval? Begin daar. Uitzonderingen kun je later toevoegen.
+  </li>
+  <li>
+    <strong>Bepaal de integratiepunten</strong><br>
+    Welke systemen zijn betrokken? Hebben ze een API? Wat is het input- en outputformaat?
+  </li>
+  <li>
+    <strong>Bouw en test met echte data</strong><br>
+    Test altijd met echte data uit het verleden voordat je live gaat. Productiedata bevat altijd randgevallen die je niet had voorzien.
+  </li>
+  <li>
+    <strong>Bouw monitoring in</strong><br>
+    Een automatisering die stilletjes faalt is gevaarlijker dan een handmatig proces. Zorg voor logging en alerts.
+  </li>
+</ol>
+
+<h2>Wat kost het?</h2>
+
+<p>Richtprijzen voor automatiseringsprojecten:</p>
+
+<ul>
+  <li><strong>Eenvoudige automatisering (1–3 systemen, duidelijk proces)</strong>: €3.000 – €10.000</li>
+  <li><strong>Middelgrote automatisering met meerdere integraties</strong>: €10.000 – €30.000</li>
+  <li><strong>Complexe enterprise automation</strong>: €30.000+</li>
+</ul>
+
+<p>De terugverdientijd is bij een goed gekozen proces bijna altijd korter dan 6 maanden. Een medewerker die 4 uur per week minder kwijt is aan handmatig werk bespaart jaarlijks al snel €5.000–€10.000 aan loonkosten — nog los van de foutreductie.</p>
+
+<h2>No-code tools of maatwerk?</h2>
+
+<p>Tools als Zapier, Make (Integromat) of Power Automate zijn geschikt voor eenvoudige koppelingen tussen populaire SaaS-tools. Ze werken prima als het proces eenvoudig is en de betrokken systemen native integraties hebben.</p>
+
+<p>Maatwerk is beter als:</p>
+<ul>
+  <li>Het proces complexe businesslogica bevat</li>
+  <li>Je werkt met eigen of legacy systemen zonder standaard integraties</li>
+  <li>Performance en betrouwbaarheid kritisch zijn</li>
+  <li>Je niet afhankelijk wil zijn van externe tools met maandelijkse kosten</li>
+</ul>
+
+<h2>Klaar om een proces te automatiseren?</h2>
+
+<p>Beschrijf het proces dat je wil automatiseren — hoe het nu werkt, welke systemen erbij betrokken zijn en hoeveel tijd het kost. Dan geef ik je een eerlijk advies over haalbaarheid en aanpak.</p>
+    `.trim(),
+  },
+  {
     slug: "mobiele-app-laten-maken",
     title: "Mobiele app laten maken in 2026: alles wat je moet weten",
     description:
