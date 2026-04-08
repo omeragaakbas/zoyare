@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap');
 
 :root {
   --font-space-grotesk: 'Space Grotesk', sans-serif;
   --font-space-mono:    'Space Mono', monospace;
+  --font-display:       'Instrument Serif', serif;
 }
 
 * {
@@ -19,18 +20,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Lenis smooth scroll: disable native smooth scroll once Lenis takes over */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
 h1, h2, h3 {
   text-wrap: balance;
 }
 
 body {
   background-color: #F8F6F2;
-  background-image:
-    radial-gradient(ellipse 140% 50% at 50% -8%, rgba(241, 95, 14, 0.08) 0%, transparent 60%);
   color: #1A1916;
   font-family: var(--font-space-grotesk);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -42,6 +53,14 @@ body {
 ::-webkit-scrollbar       { width: 1px; }
 ::-webkit-scrollbar-track { background: #F8F6F2; }
 ::-webkit-scrollbar-thumb { background: #D9D5CC; }
+
+/* Display font helper for hero accents */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
 
 /* Blog article typography */
 .prose-zoyare h2 {
@@ -94,3 +113,10 @@ body {
 }
 .input-line::placeholder { color: #8A8680; }
 .input-line:focus         { border-bottom-color: #F15F0E; }
+
+/* Hide native cursor on desktop where the custom one runs */
+@media (hover: hover) and (pointer: fine) {
+  body, a, button {
+    cursor: none;
+  }
+}

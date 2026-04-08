@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-space-grotesk)", "sans-serif"],
         mono: ["var(--font-space-mono)", "monospace"],
+        display: ["var(--font-display)", "serif"],
       },
       colors: {
         background: "#F8F6F2",

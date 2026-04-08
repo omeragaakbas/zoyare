@@ -5,37 +5,24 @@ import { motion } from "framer-motion";
 import { projects, services, clients, contact } from "@/lib/content";
 import FadeIn from "@/components/animations/FadeIn";
 import LeadMagnetSection from "@/components/LeadMagnetSection";
-
-const heroVariants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
-};
-
-const heroLine = {
-  hidden: { opacity: 0, y: 40 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } },
-};
+import SplitText from "@/components/SplitText";
+import MagneticButton from "@/components/MagneticButton";
+import FloatingShape from "@/components/FloatingShape";
+import Counter from "@/components/Counter";
+import Marquee from "@/components/Marquee";
 
 export default function Home() {
   return (
     <>
       {/* ─── Hero ─── */}
       <section className="relative min-h-screen flex flex-col justify-end px-6 md:px-12 pb-20 pt-32 overflow-hidden">
-
-        {/* Ambient glow behind heading */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 55% at 15% 55%, rgba(241,95,14,0.10) 0%, transparent 65%)",
-          }}
-        />
+        {/* Floating accent shape (right side, desktop only) */}
+        <FloatingShape />
 
         <div className="relative max-w-5xl">
           {/* Status badge */}
           <motion.div
-            className="inline-flex items-center gap-2 mb-10 border border-border px-3 py-1.5"
+            className="inline-flex items-center gap-2 mb-10 border border-border bg-background/40 backdrop-blur-sm px-3 py-1.5"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -46,71 +33,129 @@ export default function Home() {
             </span>
           </motion.div>
 
-          {/* Heading */}
-          <motion.h1
-            className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-primary leading-[0.93] mb-10"
-            variants={heroVariants}
-            initial="hidden"
-            animate="show"
+          {/* Stats row */}
+          <motion.div
+            className="flex flex-wrap items-center gap-x-8 gap-y-3 mb-10"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <motion.span className="block overflow-hidden">
-              <motion.span className="block" variants={heroLine}>Software</motion.span>
-            </motion.span>
-            <motion.span className="block overflow-hidden">
-              <motion.span className="block" variants={heroLine}>built to</motion.span>
-            </motion.span>
-            <motion.span className="block overflow-hidden">
-              <motion.span className="block" variants={heroLine}>
-                <span className="text-accent">scale.</span>
-                <motion.span
-                  className="inline-block w-[3px] h-[0.82em] bg-accent ml-2 align-middle"
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ duration: 0.75, repeat: Infinity, repeatType: "reverse", ease: "steps(1)" }}
-                />
-              </motion.span>
-            </motion.span>
-          </motion.h1>
+            <div className="flex items-baseline gap-2">
+              <Counter
+                to={4}
+                pad={2}
+                className="font-mono text-2xl text-primary tabular-nums"
+              />
+              <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
+                Actieve projecten
+              </span>
+            </div>
+            <span className="w-px h-6 bg-border hidden md:block" />
+            <div className="flex items-baseline gap-2">
+              <span className="font-mono text-2xl text-primary tabular-nums">
+                100%
+              </span>
+              <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
+                Maatwerk
+              </span>
+            </div>
+            <span className="w-px h-6 bg-border hidden md:block" />
+            <div className="flex items-baseline gap-2">
+              <span className="font-mono text-2xl text-primary tabular-nums">
+                EST.
+              </span>
+              <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
+                2024
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Heading — character split + display accent */}
+          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-primary leading-[0.95] mb-10">
+            <span className="block">
+              <SplitText delay={0.2}>Software</SplitText>
+            </span>
+            <span className="block">
+              <SplitText delay={0.45}>built to</SplitText>
+            </span>
+            <span className="block">
+              <SplitText
+                delay={0.75}
+                className="font-display italic text-accent"
+              >
+                scale.
+              </SplitText>
+              <motion.span
+                className="inline-block w-[3px] h-[0.78em] bg-accent ml-2 align-middle"
+                animate={{ opacity: [1, 0] }}
+                transition={{
+                  duration: 0.75,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "linear",
+                }}
+              />
+            </span>
+          </h1>
 
           {/* Subline */}
           <motion.p
             className="text-secondary text-lg md:text-xl max-w-lg leading-relaxed mb-12 font-light"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.7,
+              delay: 1.4,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
             Maatwerk software en mobiele applicaties voor ondernemingen die
             verder willen dan standaard oplossingen.
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTAs — magnetic */}
           <motion.div
-            className="flex items-center gap-6"
+            className="flex items-center gap-6 flex-wrap"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.6,
+              delay: 1.55,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
-            <Link
-              href="/portfolio"
-              className="group relative px-6 py-3 bg-primary text-background text-sm font-medium overflow-hidden"
-            >
-              <motion.span
-                className="absolute inset-0 bg-accent"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              />
-              <span className="relative group-hover:text-white transition-colors duration-300">
-                Bekijk werk
-              </span>
-            </Link>
-            <a
-              href={contact.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
-            >
-              Gesprek plannen
-            </a>
+            <MagneticButton>
+              <Link
+                href="/portfolio"
+                data-magnetic
+                className="group relative inline-flex items-center gap-3 px-7 py-3.5 bg-primary text-background text-sm font-medium overflow-hidden"
+              >
+                <motion.span
+                  className="absolute inset-0 bg-accent"
+                  initial={{ y: "100%" }}
+                  whileHover={{ y: 0 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                />
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                  Bekijk werk
+                </span>
+                <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-300">
+                  →
+                </span>
+              </Link>
+            </MagneticButton>
+
+            <MagneticButton strength={0.25}>
+              <a
+                href={contact.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-magnetic
+                className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+              >
+                Gesprek plannen
+              </a>
+            </MagneticButton>
           </motion.div>
         </div>
 
@@ -119,13 +164,17 @@ export default function Home() {
           className="mt-24 flex items-center gap-3"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.3 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
         >
           <motion.div
             className="h-px bg-muted"
             initial={{ width: 0 }}
             animate={{ width: 48 }}
-            transition={{ duration: 0.8, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.8,
+              delay: 1.9,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           />
           <motion.span
             className="font-mono text-xs text-muted tracking-widest uppercase"
@@ -138,9 +187,11 @@ export default function Home() {
       </section>
 
       {/* ─── Services ─── */}
-      <section className="px-6 md:px-12 py-24 border-t border-border">
+      <section className="relative px-6 md:px-12 py-24 border-t border-border">
         <FadeIn className="mb-14">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase">Wat ik doe</p>
+          <p className="font-mono text-xs text-muted tracking-widest uppercase">
+            Wat ik doe
+          </p>
         </FadeIn>
 
         <div>
@@ -148,10 +199,18 @@ export default function Home() {
             <FadeIn key={service.title} delay={i * 0.07}>
               <Link href={service.href}>
                 <motion.div
-                  className="group grid grid-cols-12 items-start gap-4 md:gap-6 py-8 border-b border-border cursor-pointer"
-                  whileHover={{ x: 3 }}
+                  className="group grid grid-cols-12 items-start gap-4 md:gap-6 py-8 border-b border-border cursor-pointer relative"
+                  whileHover={{ x: 4 }}
                   transition={{ duration: 0.25 }}
                 >
+                  {/* Hover accent bar */}
+                  <motion.span
+                    className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top opacity-0 group-hover:opacity-100"
+                    initial={{ scaleY: 0 }}
+                    whileHover={{ scaleY: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+
                   {/* Number */}
                   <div className="col-span-2 md:col-span-1 pt-0.5">
                     <span className="font-mono text-sm text-border group-hover:text-accent transition-colors duration-300">
@@ -191,9 +250,11 @@ export default function Home() {
       </section>
 
       {/* ─── Selected work ─── */}
-      <section className="px-6 md:px-12 py-24 border-t border-border">
+      <section className="relative px-6 md:px-12 py-24 border-t border-border">
         <FadeIn className="flex justify-between items-end mb-14">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase">Geselecteerd werk</p>
+          <p className="font-mono text-xs text-muted tracking-widest uppercase">
+            Geselecteerd werk
+          </p>
           <Link
             href="/portfolio"
             className="text-sm text-secondary hover:text-primary transition-colors duration-200"
@@ -252,31 +313,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Klanten ─── */}
-      <section className="px-6 md:px-12 py-20 border-t border-border">
-        <FadeIn className="mb-10">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase">Gebouwd voor</p>
+      {/* ─── Klanten — marquee ─── */}
+      <section className="relative py-20 border-t border-border">
+        <FadeIn className="mb-10 px-6 md:px-12">
+          <p className="font-mono text-xs text-muted tracking-widest uppercase">
+            Gebouwd voor
+          </p>
         </FadeIn>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border">
-          {clients.map((c, i) => (
-            <FadeIn key={c.name} delay={i * 0.06}>
-              <div className="bg-background px-8 py-10 flex flex-col gap-2">
-                <p className="text-lg font-bold tracking-tight text-primary">{c.name}</p>
-                <p className="font-mono text-xs text-muted tracking-widest uppercase leading-relaxed">{c.detail}</p>
-              </div>
-            </FadeIn>
+
+        <Marquee duration={40}>
+          {clients.concat(clients).map((c, i) => (
+            <div
+              key={`${c.name}-${i}`}
+              className="flex items-center gap-6 px-10 border-r border-border"
+            >
+              <span className="font-display italic text-3xl md:text-4xl text-primary">
+                {c.name}
+              </span>
+              <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
+                {c.detail}
+              </span>
+            </div>
           ))}
-        </div>
+        </Marquee>
+
+        <Marquee duration={50} reverse className="mt-6 opacity-60">
+          {clients.concat(clients).map((c, i) => (
+            <div
+              key={`r-${c.name}-${i}`}
+              className="flex items-center gap-4 px-8"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <span className="font-mono text-xs text-muted tracking-widest uppercase">
+                {c.detail}
+              </span>
+            </div>
+          ))}
+        </Marquee>
       </section>
 
       {/* ─── Lead Magnet ─── */}
       <LeadMagnetSection />
 
       {/* ─── CTA ─── */}
-      <section className="px-6 md:px-12 py-32 border-t border-border">
+      <section className="relative px-6 md:px-12 py-32 border-t border-border">
         <FadeIn>
           <div className="flex items-center gap-2.5 mb-10">
-            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <p className="font-mono text-xs text-muted tracking-widest uppercase">
               Beschikbaar
             </p>
@@ -284,29 +367,32 @@ export default function Home() {
         </FadeIn>
         <FadeIn delay={0.08}>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary leading-tight mb-10">
-            Een project
+            Een <span className="font-display italic text-accent">project</span>
             <br />
             bespreken?
           </h2>
         </FadeIn>
         <FadeIn delay={0.16}>
-          <Link
-            href="/contact"
-            className="group relative inline-flex items-center gap-3 px-6 py-3 border border-primary text-primary text-sm font-medium overflow-hidden"
-          >
-            <motion.span
-              className="absolute inset-0 bg-accent border-accent"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: 0 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            />
-            <span className="relative group-hover:text-white transition-colors duration-300">
-              Neem contact op
-            </span>
-            <span className="relative group-hover:text-white transition-colors duration-300">
-              →
-            </span>
-          </Link>
+          <MagneticButton>
+            <Link
+              href="/contact"
+              data-magnetic
+              className="group relative inline-flex items-center gap-3 px-7 py-3.5 border border-primary text-primary text-sm font-medium overflow-hidden"
+            >
+              <motion.span
+                className="absolute inset-0 bg-accent"
+                initial={{ y: "100%" }}
+                whileHover={{ y: 0 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              />
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                Neem contact op
+              </span>
+              <span className="relative z-10 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                →
+              </span>
+            </Link>
+          </MagneticButton>
         </FadeIn>
       </section>
     </>
