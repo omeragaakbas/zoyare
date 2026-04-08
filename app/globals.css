@@ -20,17 +20,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Lenis smooth scroll: disable native smooth scroll once Lenis takes over */
-html.lenis {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
 h1, h2, h3 {
   text-wrap: balance;
 }

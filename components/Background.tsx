@@ -4,13 +4,13 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 /**
- * Living background — vervangt de statische cream achtergrond.
- * Combineert:
- *  - subtiel dot grid (engineering feel)
- *  - 3 langzaam drijvende warm-orange blobs (meer leven, animatie alleen desktop)
- *  - SVG film grain overlay (premium texture)
+ * Living background — performance-tuned versie.
+ *  - dot grid (CSS, geen paint cost)
+ *  - 2 langzaam drijvende warm-orange blobs (lichtere blur, alleen desktop)
+ *  - SVG film grain via een 256×256 tile pattern (i.p.v. fullscreen filter)
  *
- * Op touch devices staan de blobs stil (de blur(80px) animatie kost te veel GPU).
+ * Op touch devices staan de blobs stil; de zware filter wordt eenmalig
+ * berekend voor een kleine tile en daarna goedkoop herhaald.
  */
 export default function Background() {
   const reduced = useReducedMotion();
@@ -36,74 +36,71 @@ export default function Background() {
         }}
       />
 
-      {/* Animated gradient blobs */}
+      {/* Animated gradient blobs — lichtere blur (40-50px) */}
       <motion.div
-        className="absolute -top-1/4 -left-1/4 w-[60vw] h-[60vw] rounded-full"
+        className="absolute -top-1/4 -left-1/4 w-[55vw] h-[55vw] rounded-full will-change-transform"
         style={{
           background:
-            "radial-gradient(circle, rgba(241,95,14,0.18) 0%, transparent 60%)",
-          filter: "blur(80px)",
+            "radial-gradient(circle, rgba(241,95,14,0.20) 0%, transparent 60%)",
+          filter: "blur(50px)",
+          transform: "translateZ(0)",
         }}
         animate={
           animate
             ? {
-                x: [0, 80, -40, 0],
-                y: [0, -60, 40, 0],
+                x: [0, 70, -30, 0],
+                y: [0, -50, 30, 0],
               }
             : undefined
         }
-        transition={{ duration: 50, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 55, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-1/3 -right-1/4 w-[55vw] h-[55vw] rounded-full"
+        className="absolute top-1/3 -right-1/4 w-[50vw] h-[50vw] rounded-full will-change-transform"
         style={{
           background:
-            "radial-gradient(circle, rgba(241,95,14,0.13) 0%, transparent 60%)",
-          filter: "blur(90px)",
+            "radial-gradient(circle, rgba(241,95,14,0.14) 0%, transparent 60%)",
+          filter: "blur(60px)",
+          transform: "translateZ(0)",
         }}
         animate={
           animate
             ? {
-                x: [0, -60, 30, 0],
-                y: [0, 50, -30, 0],
+                x: [0, -50, 20, 0],
+                y: [0, 40, -20, 0],
               }
             : undefined
         }
-        transition={{ duration: 60, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-[-10%] left-1/4 w-[45vw] h-[45vw] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,180,80,0.10) 0%, transparent 60%)",
-          filter: "blur(100px)",
-        }}
-        animate={
-          animate
-            ? {
-                x: [0, 50, -50, 0],
-                y: [0, -30, 30, 0],
-              }
-            : undefined
-        }
-        transition={{ duration: 70, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 65, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Film grain overlay */}
+      {/* Film grain overlay — small tiled pattern (cheap to paint) */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.08] mix-blend-multiply"
+        className="absolute inset-0 w-full h-full opacity-[0.07] mix-blend-multiply"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <filter id="zoyare-noise">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.9"
-            numOctaves="3"
-            stitchTiles="stitch"
-          />
-          <feColorMatrix type="saturate" values="0" />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#zoyare-noise)" />
+        <defs>
+          <filter id="zoyare-noise" x="0" y="0" width="200" height="200">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.85"
+              numOctaves="2"
+              stitchTiles="stitch"
+            />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <pattern
+            id="zoyare-grain"
+            x="0"
+            y="0"
+            width="200"
+            height="200"
+            patternUnits="userSpaceOnUse"
+          >
+            <rect width="200" height="200" filter="url(#zoyare-noise)" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#zoyare-grain)" />
       </svg>
     </div>
   );

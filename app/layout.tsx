@@ -8,7 +8,6 @@ import Cursor from "@/components/Cursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import ChatWidget from "@/components/ChatWidget";
 import Background from "@/components/Background";
-import SmoothScroll from "@/components/SmoothScroll";
 
 const GA_ID = "G-VEHJDXHGQT";
 
@@ -168,7 +167,6 @@ export default function RootLayout({
             gtag('config', '${GA_ID}', { page_path: window.location.pathname });
           `}
         </Script>
-        <SmoothScroll />
         <Background />
         <Cursor />
         <ScrollProgress />
