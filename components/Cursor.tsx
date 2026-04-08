@@ -18,17 +18,15 @@ export default function Cursor() {
   const mouseX = useMotionValue(-200);
   const mouseY = useMotionValue(-200);
 
-  // Soft glow follower (slow)
-  const glowX = useSpring(mouseX, { stiffness: 60, damping: 20 });
-  const glowY = useSpring(mouseY, { stiffness: 60, damping: 20 });
+  // Soft glow follower (slow ambient)
+  const glowX = useSpring(mouseX, { stiffness: 80, damping: 20 });
+  const glowY = useSpring(mouseY, { stiffness: 80, damping: 20 });
 
-  // Ring follower (medium)
-  const ringX = useSpring(mouseX, { stiffness: 220, damping: 22 });
-  const ringY = useSpring(mouseY, { stiffness: 220, damping: 22 });
+  // Ring follower (snappy)
+  const ringX = useSpring(mouseX, { stiffness: 420, damping: 30 });
+  const ringY = useSpring(mouseY, { stiffness: 420, damping: 30 });
 
-  // Dot follower (snappy)
-  const dotX = useSpring(mouseX, { stiffness: 500, damping: 35 });
-  const dotY = useSpring(mouseY, { stiffness: 500, damping: 35 });
+  // NB: dot is bound directly to mouseX/mouseY for 1:1 feel — no spring
 
   useEffect(() => {
     const move = (e: MouseEvent) => {
@@ -81,12 +79,12 @@ export default function Cursor() {
         <div className="w-full h-full rounded-full border border-primary/70" />
       </motion.div>
 
-      {/* Accent dot */}
+      {/* Accent dot — bound directly to raw mouse for instant response */}
       <motion.div
         className="pointer-events-none fixed top-0 left-0 z-[9999] w-1.5 h-1.5 rounded-full bg-accent hidden md:block"
         style={{
-          x: dotX,
-          y: dotY,
+          x: mouseX,
+          y: mouseY,
           translateX: "-50%",
           translateY: "-50%",
           opacity: visible ? 1 : 0,

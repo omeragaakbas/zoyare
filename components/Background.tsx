@@ -1,16 +1,25 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 /**
  * Living background — vervangt de statische cream achtergrond.
  * Combineert:
  *  - subtiel dot grid (engineering feel)
- *  - 3 langzaam drijvende warm-orange blobs (meer leven)
+ *  - 3 langzaam drijvende warm-orange blobs (meer leven, animatie alleen desktop)
  *  - SVG film grain overlay (premium texture)
+ *
+ * Op touch devices staan de blobs stil (de blur(80px) animatie kost te veel GPU).
  */
 export default function Background() {
   const reduced = useReducedMotion();
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    setAnimate(!isTouch && !reduced);
+  }, [reduced]);
 
   return (
     <div
@@ -36,12 +45,12 @@ export default function Background() {
           filter: "blur(80px)",
         }}
         animate={
-          reduced
-            ? undefined
-            : {
+          animate
+            ? {
                 x: [0, 80, -40, 0],
                 y: [0, -60, 40, 0],
               }
+            : undefined
         }
         transition={{ duration: 50, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -53,12 +62,12 @@ export default function Background() {
           filter: "blur(90px)",
         }}
         animate={
-          reduced
-            ? undefined
-            : {
+          animate
+            ? {
                 x: [0, -60, 30, 0],
                 y: [0, 50, -30, 0],
               }
+            : undefined
         }
         transition={{ duration: 60, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -70,12 +79,12 @@ export default function Background() {
           filter: "blur(100px)",
         }}
         animate={
-          reduced
-            ? undefined
-            : {
+          animate
+            ? {
                 x: [0, 50, -50, 0],
                 y: [0, -30, 30, 0],
               }
+            : undefined
         }
         transition={{ duration: 70, repeat: Infinity, ease: "easeInOut" }}
       />

@@ -5,17 +5,19 @@ import Lenis from "lenis";
 
 /**
  * Lenis smooth scroll wrapper.
- * Mount once at the layout root. Respects prefers-reduced-motion via a no-op.
+ * Skipped entirely on touch devices and reduced-motion users —
+ * native momentum scroll on mobile is faster than anything Lenis adds.
  */
 export default function SmoothScroll() {
   useEffect(() => {
+    const isTouch = window.matchMedia("(pointer: coarse)").matches;
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    if (prefersReduced) return;
+    if (isTouch || prefersReduced) return;
 
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
