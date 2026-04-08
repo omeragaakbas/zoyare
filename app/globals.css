@@ -24,10 +24,10 @@ h1, h2, h3 {
 }
 
 body {
-  background-color: #121212;
+  background-color: #F8F6F2;
   background-image:
-    radial-gradient(ellipse 140% 50% at 50% -8%, rgba(241, 95, 14, 0.09) 0%, transparent 65%);
-  color: #F5F5F5;
+    radial-gradient(ellipse 140% 50% at 50% -8%, rgba(241, 95, 14, 0.08) 0%, transparent 60%);
+  color: #1A1916;
   font-family: var(--font-space-grotesk);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,19 +35,19 @@ body {
 
 ::selection {
   background: #F15F0E;
-  color: #EBEBEB;
+  color: #ffffff;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar       { width: 1px; }
-::-webkit-scrollbar-track { background: #121212; }
-::-webkit-scrollbar-thumb { background: #404040; }
+::-webkit-scrollbar-track { background: #F8F6F2; }
+::-webkit-scrollbar-thumb { background: #D9D5CC; }
 
 /* Blog article typography */
 .prose-zoyare h2 {
   font-size: 1.375rem;
   font-weight: 600;
-  color: #F5F5F5;
+  color: #1A1916;
   letter-spacing: -0.03em;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -55,19 +55,19 @@ body {
 .prose-zoyare h3 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #F5F5F5;
+  color: #1A1916;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
 }
 .prose-zoyare p {
-  color: #B2B2B2;
+  color: #5C5854;
   line-height: 1.8;
   margin-bottom: 1.25rem;
   font-size: 1rem;
 }
 .prose-zoyare ul,
 .prose-zoyare ol {
-  color: #B2B2B2;
+  color: #5C5854;
   line-height: 1.8;
   margin-bottom: 1.25rem;
   padding-left: 1.25rem;
@@ -75,16 +75,16 @@ body {
 .prose-zoyare ul { list-style: disc; }
 .prose-zoyare ol { list-style: decimal; }
 .prose-zoyare li { margin-bottom: 0.4rem; }
-.prose-zoyare strong { color: #F5F5F5; font-weight: 600; }
+.prose-zoyare strong { color: #1A1916; font-weight: 600; }
 .prose-zoyare a { color: #F15F0E; text-decoration: underline; text-underline-offset: 3px; }
 
 /* Underline input style — used on contact page */
 .input-line {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #2E2E2E;
+  border-bottom: 1px solid #D9D5CC;
   border-radius: 0;
-  color: #F5F5F5;
+  color: #1A1916;
   font-family: var(--font-space-grotesk);
   font-size: 0.875rem;
   padding: 0.75rem 0;
@@ -92,5 +92,5 @@ body {
   outline: none;
   transition: border-color 0.2s ease;
 }
-.input-line::placeholder { color: #6E6E6E; }
+.input-line::placeholder { color: #8A8680; }
 .input-line:focus         { border-bottom-color: #F15F0E; }

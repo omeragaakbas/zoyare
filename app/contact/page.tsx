@@ -135,7 +135,7 @@ export default function Contact() {
                     required
                     rows={5}
                     className="input-line resize-none"
-                    style={{ borderBottom: "1px solid #2E2E2E" }}
+                    style={{ borderBottom: "1px solid #D9D5CC" }}
                     placeholder="Wat wil je bouwen? Geef een korte omschrijving van het project of de uitdaging."
                     disabled={status === "loading"}
                   />
@@ -154,7 +154,7 @@ export default function Contact() {
                 <div>
                   <button
                     type="submit"
-                    className="group relative inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium overflow-hidden hover:bg-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    className="group relative inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium overflow-hidden hover:bg-accent hover:text-white transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     {status === "loading" ? (
                       <>

@@ -103,7 +103,7 @@ export default function LeadMagnetSection() {
                     whileHover={{ x: 0 }}
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   />
-                  <span className="relative group-hover:text-primary transition-colors duration-300">
+                  <span className="relative group-hover:text-white transition-colors duration-300">
                     {status === "loading" ? "Versturen..." : "Ontvang gratis →"}
                   </span>
                 </button>

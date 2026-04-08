@@ -92,7 +92,7 @@ export default function ChatWidget() {
       {/* Floating button */}
       <motion.button
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-accent text-background flex items-center justify-center shadow-lg hover:bg-primary transition-colors duration-200"
+        className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-accent text-white flex items-center justify-center shadow-lg hover:bg-primary hover:text-background transition-colors duration-200"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         aria-label={open ? "Chat sluiten" : "Chat openen"}
@@ -158,7 +158,7 @@ export default function ChatWidget() {
                   <div
                     className={`max-w-[85%] text-sm leading-relaxed px-3 py-2 ${
                       msg.role === "user"
-                        ? "bg-accent text-background"
+                        ? "bg-accent text-white"
                         : "bg-surface text-primary border border-border"
                     }`}
                   >

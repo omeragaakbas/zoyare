@@ -28,7 +28,7 @@ export default function Home() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 70% 55% at 15% 55%, rgba(241,95,14,0.07) 0%, transparent 65%)",
+              "radial-gradient(ellipse 70% 55% at 15% 55%, rgba(241,95,14,0.10) 0%, transparent 65%)",
           }}
         />
 
@@ -99,7 +99,7 @@ export default function Home() {
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               />
-              <span className="relative group-hover:text-primary transition-colors duration-300">
+              <span className="relative group-hover:text-white transition-colors duration-300">
                 Bekijk werk
               </span>
             </Link>
@@ -300,10 +300,10 @@ export default function Home() {
               whileHover={{ x: 0 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             />
-            <span className="relative group-hover:text-primary transition-colors duration-300">
+            <span className="relative group-hover:text-white transition-colors duration-300">
               Neem contact op
             </span>
-            <span className="relative group-hover:text-primary transition-colors duration-300">
+            <span className="relative group-hover:text-white transition-colors duration-300">
               →
             </span>
           </Link>
