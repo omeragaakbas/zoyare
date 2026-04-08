@@ -95,7 +95,7 @@ export default function ChatWidget() {
         className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-accent text-background flex items-center justify-center shadow-lg hover:bg-primary transition-colors duration-200"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        aria-label="Chat openen"
+        aria-label={open ? "Chat sluiten" : "Chat openen"}
       >
         <AnimatePresence mode="wait">
           {open ? (
@@ -185,12 +185,14 @@ export default function ChatWidget() {
                 onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && send()}
                 placeholder="Stel een vraag…"
                 disabled={loading}
-                className="flex-1 bg-transparent text-sm text-primary placeholder:text-muted outline-none disabled:opacity-50"
+                aria-label="Bericht aan Zoyare assistent"
+                className="flex-1 bg-transparent text-sm text-primary placeholder:text-muted focus-visible:outline-none disabled:opacity-50"
               />
               <button
                 onClick={send}
                 disabled={loading || !input.trim()}
-                className="text-accent hover:text-primary transition-colors duration-200 disabled:opacity-30 flex-shrink-0"
+                aria-label="Verstuur bericht"
+                className="text-accent hover:text-primary transition-colors duration-200 disabled:opacity-30 flex-shrink-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded-sm"
               >
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path d="M2 9h14M9 2l7 7-7 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square"/>

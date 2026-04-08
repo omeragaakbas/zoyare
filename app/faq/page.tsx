@@ -129,7 +129,9 @@ export default function FAQ() {
                     <div key={key}>
                       <button
                         onClick={() => toggle(key)}
-                        className="w-full flex items-start justify-between gap-6 py-6 text-left group"
+                        aria-expanded={isOpen}
+                        aria-controls={`faq-answer-${key}`}
+                        className="w-full flex items-start justify-between gap-6 py-6 text-left group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded-sm"
                       >
                         <span
                           className={`text-base font-medium leading-snug transition-colors duration-200 ${
@@ -141,6 +143,7 @@ export default function FAQ() {
                         <motion.span
                           animate={{ rotate: isOpen ? 45 : 0 }}
                           transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                          aria-hidden="true"
                           className={`shrink-0 text-xl leading-none mt-0.5 transition-colors duration-200 ${
                             isOpen ? "text-accent" : "text-muted group-hover:text-primary"
                           }`}
@@ -153,6 +156,8 @@ export default function FAQ() {
                         {isOpen && (
                           <motion.div
                             key="answer"
+                            id={`faq-answer-${key}`}
+                            role="region"
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}

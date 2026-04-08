@@ -86,22 +86,27 @@ export default function Contact() {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="flex flex-col gap-2">
-                    <label className="font-mono text-xs text-muted tracking-widest uppercase">Naam</label>
+                    <label htmlFor="contact-name" className="font-mono text-xs text-muted tracking-widest uppercase">Naam</label>
                     <input
+                      id="contact-name"
                       type="text"
                       name="name"
                       required
+                      autoComplete="name"
                       className="input-line"
                       placeholder="Jan de Vries"
                       disabled={status === "loading"}
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="font-mono text-xs text-muted tracking-widest uppercase">E-mail</label>
+                    <label htmlFor="contact-email" className="font-mono text-xs text-muted tracking-widest uppercase">E-mail</label>
                     <input
+                      id="contact-email"
                       type="email"
                       name="email"
                       required
+                      autoComplete="email"
+                      spellCheck={false}
                       className="input-line"
                       placeholder="jan@bedrijf.nl"
                       disabled={status === "loading"}
@@ -110,10 +115,12 @@ export default function Contact() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="font-mono text-xs text-muted tracking-widest uppercase">Bedrijf</label>
+                  <label htmlFor="contact-company" className="font-mono text-xs text-muted tracking-widest uppercase">Bedrijf</label>
                   <input
+                    id="contact-company"
                     type="text"
                     name="company"
+                    autoComplete="organization"
                     className="input-line"
                     placeholder="Bedrijf B.V. (optioneel)"
                     disabled={status === "loading"}
@@ -121,13 +128,14 @@ export default function Contact() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="font-mono text-xs text-muted tracking-widest uppercase">Project</label>
+                  <label htmlFor="contact-message" className="font-mono text-xs text-muted tracking-widest uppercase">Project</label>
                   <textarea
+                    id="contact-message"
                     name="message"
                     required
                     rows={5}
                     className="input-line resize-none"
-                    style={{ borderBottom: "1px solid #222222" }}
+                    style={{ borderBottom: "1px solid #2E2E2E" }}
                     placeholder="Wat wil je bouwen? Geef een korte omschrijving van het project of de uitdaging."
                     disabled={status === "loading"}
                   />
@@ -146,18 +154,17 @@ export default function Contact() {
                 <div>
                   <button
                     type="submit"
-                    disabled={status === "loading"}
-                    className="group relative inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium overflow-hidden hover:bg-accent transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="group relative inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium overflow-hidden hover:bg-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   >
                     {status === "loading" ? (
                       <>
-                        <span className="w-3.5 h-3.5 border border-background border-t-transparent rounded-full animate-spin" />
+                        <span className="w-3.5 h-3.5 border border-background border-t-transparent rounded-full animate-spin" aria-hidden="true" />
                         Versturen…
                       </>
                     ) : (
                       <>
                         Verstuur bericht
-                        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                        <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
                       </>
                     )}
                   </button>

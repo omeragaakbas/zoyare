@@ -78,13 +78,19 @@ export default function LeadMagnetSection() {
                 onSubmit={handleSubmit}
                 className="flex flex-col sm:flex-row gap-4 items-start"
               >
+                <label htmlFor="leadmagnet-email" className="sr-only">
+                  E-mailadres
+                </label>
                 <input
+                  id="leadmagnet-email"
                   type="email"
                   required
                   placeholder="jouw@email.nl"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="input-line flex-1 max-w-sm"
+                  autoComplete="email"
+                  spellCheck={false}
+                  className="input-line flex-1 min-w-0 max-w-sm"
                 />
                 <button
                   type="submit"

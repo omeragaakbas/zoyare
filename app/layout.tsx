@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import Logo from "@/components/Logo";
 import Cursor from "@/components/Cursor";
@@ -136,8 +137,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nl">
+    <html lang="nl" style={{ colorScheme: "dark" }}>
       <head>
+        <meta name="theme-color" content="#121212" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -165,7 +174,10 @@ export default function RootLayout({
         <footer className="border-t border-border px-6 md:px-12 py-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <div className="flex items-center gap-4">
             <Logo variant="mark" height={16} className="text-primary opacity-30" />
-            <span className="font-mono text-xs text-muted tracking-widest uppercase">
+            <span
+              className="font-mono text-xs text-muted tracking-widest uppercase"
+              suppressHydrationWarning
+            >
               Zoyare © {new Date().getFullYear()}
             </span>
           </div>
@@ -174,12 +186,12 @@ export default function RootLayout({
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span className="font-mono text-xs text-muted tracking-widest uppercase">Beschikbaar</span>
             </div>
-            <a
+            <Link
               href="/faq"
               className="text-sm text-secondary hover:text-accent transition-colors duration-200"
             >
               FAQ
-            </a>
+            </Link>
             <a
               href="mailto:hello@zoyare.com"
               className="text-sm text-secondary hover:text-accent transition-colors duration-200"

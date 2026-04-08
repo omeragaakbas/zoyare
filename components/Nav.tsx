@@ -31,7 +31,7 @@ export default function Nav() {
             <li key={href} className="relative flex flex-col items-center gap-1.5">
               <Link
                 href={href}
-                className={`text-sm transition-colors duration-200 ${
+                className={`text-sm transition-colors duration-200 rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                   active ? "text-primary" : "text-secondary hover:text-primary"
                 }`}
               >
