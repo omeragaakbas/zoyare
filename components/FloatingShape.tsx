@@ -5,8 +5,8 @@ import Logo from "./Logo";
 
 /**
  * Hero accent: oversized Zoyare cube as a faint watermark.
- * Slowly drifts + tilts. A radial glow sits behind it for warmth.
- * Hidden on mobile to keep the hero clean.
+ * Organic circular drift + scale breath (no clumsy rocking rotation).
+ * Hidden on mobile.
  */
 export default function FloatingShape() {
   const reduced = useReducedMotion();
@@ -14,52 +14,69 @@ export default function FloatingShape() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none absolute right-[-2%] xl:right-[4%] top-[8%] hidden lg:block"
+      className="pointer-events-none absolute right-[8%] xl:right-[12%] top-[16%] hidden lg:block"
     >
       {/* Soft warm glow behind the mark */}
-      <div
+      <motion.div
         className="absolute -inset-32 rounded-full"
         style={{
           background:
-            "radial-gradient(circle, rgba(241,95,14,0.18) 0%, transparent 60%)",
-          filter: "blur(40px)",
+            "radial-gradient(circle, rgba(241,95,14,0.20) 0%, transparent 60%)",
+          filter: "blur(50px)",
+        }}
+        animate={
+          reduced
+            ? undefined
+            : {
+                scale: [1, 1.08, 1],
+                opacity: [0.85, 1, 0.85],
+              }
+        }
+        transition={{
+          duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut",
         }}
       />
 
-      {/* Floating cube */}
+      {/* Cube — gentle entrance */}
       <motion.div
         className="relative"
-        initial={{ opacity: 0, scale: 0.92, y: 20 }}
+        initial={{ opacity: 0, scale: 0.94, y: 24 }}
         animate={{
           opacity: 1,
           scale: 1,
           y: 0,
         }}
         transition={{
-          duration: 1.4,
+          duration: 1.6,
           delay: 0.4,
           ease: [0.22, 1, 0.36, 1],
         }}
       >
+        {/* Inner motion: organic circular drift + scale breath */}
         <motion.div
           animate={
             reduced
               ? undefined
               : {
-                  y: [0, -18, 0],
-                  rotate: [-2, 2, -2],
+                  x: [0, 8, 0, -8, 0],
+                  y: [0, -14, -22, -14, 0],
+                  scale: [1, 1.025, 1.035, 1.025, 1],
                 }
           }
           transition={{
-            y: { duration: 9, repeat: Infinity, ease: "easeInOut" },
-            rotate: { duration: 14, repeat: Infinity, ease: "easeInOut" },
+            duration: 11,
+            repeat: Infinity,
+            ease: "easeInOut",
+            times: [0, 0.25, 0.5, 0.75, 1],
           }}
           style={{ transformOrigin: "center center" }}
         >
           <Logo
             variant="mark"
-            height={460}
-            className="opacity-[0.18] xl:opacity-[0.22]"
+            height={380}
+            className="opacity-[0.20] xl:opacity-[0.24]"
           />
         </motion.div>
       </motion.div>
