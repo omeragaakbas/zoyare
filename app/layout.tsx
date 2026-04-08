@@ -175,6 +175,12 @@ export default function RootLayout({
               <span className="font-mono text-xs text-muted tracking-widest uppercase">Beschikbaar</span>
             </div>
             <a
+              href="/faq"
+              className="text-sm text-secondary hover:text-accent transition-colors duration-200"
+            >
+              FAQ
+            </a>
+            <a
               href="mailto:hello@zoyare.com"
               className="text-sm text-secondary hover:text-accent transition-colors duration-200"
             >
