@@ -389,6 +389,111 @@ Geen app store nodig — de website gedraagt zich als een app. Beperkte toegang 
 <p>Stuur me een korte beschrijving van wat je wilt bouwen, dan geef ik je een eerlijk beeld van haalbaarheid, kosten en doorlooptijd — gratis en vrijblijvend.</p>
     `.trim(),
   },
+  {
+    slug: "ai-integreren-in-bedrijfssoftware",
+    title: "AI integreren in je bedrijfssoftware: hype vs. realiteit",
+    description:
+      "Wanneer is AI in je software écht zinvol? Wat kost het, wat levert het op en hoe voorkom je dat je geld verspilt aan een chatbot die niemand gebruikt?",
+    date: "2026-04-13",
+    category: "AI & Software",
+    readTime: 7,
+    body: `
+<p>AI is overal. Elke softwareleverancier plakt er een "AI-powered" label op, elk consultancybureau verkoopt AI-trajecten en elke LinkedIn-post belooft dat AI je bedrijf gaat transformeren. Maar wat betekent AI integreren in je bedrijfssoftware concreet? En wanneer is het de investering waard?</p>
+
+<p>In dit artikel scheid ik de hype van de realiteit. Geen buzzwords, maar eerlijke antwoorden op de vragen die ik het vaakst krijg van ondernemers.</p>
+
+<h2>Wat bedoelen we met "AI integreren"?</h2>
+
+<p>AI in bedrijfssoftware is geen robot die je bedrijf overneemt. Het zijn specifieke functies die taken sneller, slimmer of nauwkeuriger maken. Concrete voorbeelden:</p>
+
+<ul>
+  <li><strong>Documentverwerking</strong> — Facturen, contracten of formulieren automatisch uitlezen en verwerken. Geen handmatig overtypen meer.</li>
+  <li><strong>Slimme zoek- en filterfuncties</strong> — Zoeken op betekenis in plaats van exacte woorden. "Toon alle klachten over levertijden" vindt ook mails die het woord "levertijd" niet bevatten.</li>
+  <li><strong>Voorspellende analyses</strong> — Welke klanten dreigen op te zeggen? Welke machines hebben binnenkort onderhoud nodig? Patronen herkennen in historische data.</li>
+  <li><strong>Tekstgeneratie en -samenvatting</strong> — Automatisch samenvattingen maken van lange rapporten, e-mails of vergadernotities.</li>
+  <li><strong>Classificatie en routing</strong> — Binnenkomende berichten automatisch categoriseren en naar de juiste afdeling sturen.</li>
+</ul>
+
+<p>De gemene deler: AI neemt een specifieke, afgebakende taak over die voorheen handmatig werk of complexe regels vereiste.</p>
+
+<h2>Wanneer is AI wél zinvol?</h2>
+
+<p>AI is de moeite waard als aan deze voorwaarden wordt voldaan:</p>
+
+<ol>
+  <li><strong>Je hebt voldoende data</strong> — AI leert van voorbeelden. Zonder historische data of input om mee te werken, heeft AI niets om op te bouwen.</li>
+  <li><strong>De taak is repetitief maar niet triviaal</strong> — Als een simpele if/else-regel volstaat, heb je geen AI nodig. AI schijnt waar de regels te complex of te talrijk zijn om handmatig te programmeren.</li>
+  <li><strong>Fouten zijn acceptabel of controleerbaar</strong> — AI is niet 100% accuraat. Voor taken waar een fout catastrofaal is (medische diagnoses, financiële transacties), moet er altijd een menselijke check zijn.</li>
+  <li><strong>De tijdsbesparing is significant</strong> — Als een medewerker 10 seconden per dag bespaart, is de investering niet rendabel. Als een team 20 uur per week bespaart, is het een no-brainer.</li>
+</ol>
+
+<h2>Wanneer is AI géén goed idee?</h2>
+
+<p>Ik adviseer regelmatig om AI <em>niet</em> te gebruiken. Situaties waarin je beter een andere oplossing kiest:</p>
+
+<ul>
+  <li><strong>Het probleem is een processprobleem, geen technologieprobleem</strong> — Als je workflow niet klopt, maakt AI het alleen sneller fout.</li>
+  <li><strong>Je wilt een chatbot "omdat iedereen het heeft"</strong> — Een chatbot die je FAQ voorleest voegt niets toe. Investeer dat budget in een betere FAQ-pagina.</li>
+  <li><strong>Je data is een puinhoop</strong> — AI op slechte data levert slechte resultaten. Eerst je datahuishouding op orde brengen.</li>
+  <li><strong>De use case is te vaag</strong> — "We willen iets met AI" is geen use case. Begin met het probleem, niet met de technologie.</li>
+</ul>
+
+<h2>Hoe werkt een AI-integratie technisch?</h2>
+
+<p>De meeste AI-integraties in bedrijfssoftware werken via een API-koppeling met een AI-model. Het proces:</p>
+
+<ol>
+  <li><strong>Data voorbereiden</strong> — De input structureren zodat het AI-model ermee kan werken. Dit is vaak het meeste werk.</li>
+  <li><strong>Model selecteren</strong> — Niet elk probleem vereist het grootste en duurste model. Voor classificatie volstaat vaak een kleiner model; voor complexe tekstanalyse heb je meer nodig.</li>
+  <li><strong>Prompt engineering of fine-tuning</strong> — Het model instrueren voor jouw specifieke use case. Bij prompt engineering geef je instructies mee bij elke aanvraag. Bij fine-tuning train je het model op jouw data.</li>
+  <li><strong>Integratie bouwen</strong> — De AI-functie inbouwen in je bestaande software via API-calls, met error handling en fallbacks.</li>
+  <li><strong>Evaluatie en monitoring</strong> — Meten of de output correct is en blijft. AI-modellen kunnen over tijd anders reageren na updates.</li>
+</ol>
+
+<h2>Wat kost het?</h2>
+
+<p>AI-integratie kent twee kostenposten: de <strong>bouwkosten</strong> en de <strong>operationele kosten</strong>.</p>
+
+<p><strong>Bouwkosten (eenmalig):</strong></p>
+<ul>
+  <li><strong>Eenvoudige integratie</strong> (documentverwerking, classificatie): €5.000 – €15.000</li>
+  <li><strong>Middelgrote integratie</strong> (custom workflows, meerdere AI-functies): €15.000 – €40.000</li>
+  <li><strong>Complexe integratie</strong> (fine-tuned modellen, real-time processing): €40.000+</li>
+</ul>
+
+<p><strong>Operationele kosten (doorlopend):</strong></p>
+<p>AI-modellen kosten geld per aanvraag. Afhankelijk van het volume en het model variëren de kosten van enkele euro's per maand tot honderden euro's bij intensief gebruik. Dit is een belangrijk verschil met traditionele software: de kosten schalen mee met gebruik.</p>
+
+<h2>De valkuilen</h2>
+
+<p><strong>1. Te groot beginnen</strong><br>
+Start met één afgebakende use case, bewijs de waarde en breid dan uit. Een bedrijfsbrede "AI-transformatie" faalt bijna altijd.</p>
+
+<p><strong>2. Geen menselijke controle inbouwen</strong><br>
+AI maakt fouten. Altijd. Bouw een feedback-loop in zodat gebruikers fouten kunnen corrigeren en het systeem leert.</p>
+
+<p><strong>3. Privacy en compliance negeren</strong><br>
+Bedrijfsdata naar een extern AI-model sturen heeft privacy-implicaties. Zorg dat je weet waar je data naartoe gaat en of dat past binnen de AVG en je verwerkersovereenkomsten.</p>
+
+<p><strong>4. Vendor lock-in</strong><br>
+Bouw je integratie zo dat je van AI-provider kunt wisselen. De markt beweegt snel — het beste model van vandaag is niet per se het beste model van volgend jaar.</p>
+
+<h2>Mijn aanpak</h2>
+
+<p>Bij Zoyare bouw ik AI-integraties die passen bij de schaal en het budget van het MKB. Dat betekent:</p>
+
+<ul>
+  <li>Beginnen met een concrete use case, niet met technologie</li>
+  <li>Kosten transparant: wat kost het bouwen én wat kost het draaien?</li>
+  <li>Geen vendor lock-in: abstractielaag zodat je kunt wisselen van model</li>
+  <li>Privacy-first: data verwerken waar het mag en moet</li>
+</ul>
+
+<h2>Klaar om te verkennen wat AI voor jouw software kan betekenen?</h2>
+
+<p>Beschrijf je use case — welk proces wil je slimmer maken, welke data heb je beschikbaar en wat is het gewenste resultaat. Dan geef ik je een eerlijk advies: AI of toch een andere oplossing.</p>
+    `.trim(),
+  },
 ];
 
 const allPosts: Post[] = [...posts, ...(generatedPosts as Post[])];
