@@ -12,6 +12,309 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "software-uitbesteden-of-zelf-bouwen",
+    title: "Software uitbesteden of zelf bouwen? De eerlijke vergelijking",
+    description:
+      "Zelf een developer inhuren of software laten bouwen door een specialist? De voor- en nadelen van elke aanpak — met concrete cijfers.",
+    date: "2026-01-19",
+    category: "Software Development",
+    readTime: 7,
+    body: `
+<p>Je hebt software nodig. Misschien een intern tool, een klantportaal of een koppeling tussen twee systemen. De eerste vraag die je jezelf stelt: bouw ik het zelf, huur ik een developer in, of besteed ik het uit aan een specialist?</p>
+
+<p>Het eerlijke antwoord: het hangt af van je situatie. Maar er zijn duidelijke richtlijnen. In dit artikel zet ik de drie opties naast elkaar — met concrete cijfers en de valkuilen die ik in de praktijk tegenkom.</p>
+
+<h2>Optie 1: Een developer in dienst nemen</h2>
+
+<p>De meest voor de hand liggende keuze als je doorlopend software nodig hebt.</p>
+
+<p><strong>Voordelen:</strong></p>
+<ul>
+  <li>Volledige controle over prioriteiten en planning</li>
+  <li>Kennis blijft in huis</li>
+  <li>Directe communicatie, geen externe afhankelijkheid</li>
+</ul>
+
+<p><strong>Nadelen:</strong></p>
+<ul>
+  <li>Kosten: een medior developer kost €55.000–€85.000 per jaar aan salaris, plus werkgeverslasten, hardware, tooling en begeleiding</li>
+  <li>Werving duurt gemiddeld 3–6 maanden in de huidige markt</li>
+  <li>Eén developer heeft per definitie een beperkt skillset — front-end, back-end, infra en design in één persoon is zeldzaam</li>
+  <li>Bij ziekte of vertrek sta je stil</li>
+</ul>
+
+<p><strong>Wanneer verstandig:</strong> als je doorlopend (meer dan 30 uur per week) development werk hebt en een technisch team kunt begeleiden.</p>
+
+<h2>Optie 2: Een freelance developer inhuren</h2>
+
+<p>Flexibeler dan een vaste kracht, maar met eigen risico's.</p>
+
+<p><strong>Voordelen:</strong></p>
+<ul>
+  <li>Flexibel op- en afschalen</li>
+  <li>Geen langlopende verplichting</li>
+  <li>Vaak specialistische kennis beschikbaar</li>
+</ul>
+
+<p><strong>Nadelen:</strong></p>
+<ul>
+  <li>Uurtarieven van €75–€150 lopen snel op</li>
+  <li>Beschikbaarheid is niet gegarandeerd — goede freelancers zijn vaak volgeboekt</li>
+  <li>Kwaliteit varieert enorm — geen team dat meekijkt</li>
+  <li>Kennisoverdracht is een risico als de freelancer stopt</li>
+</ul>
+
+<p><strong>Wanneer verstandig:</strong> voor kortlopende, goed afgebakende taken waar je zelf de technische regie kunt voeren.</p>
+
+<h2>Optie 3: Uitbesteden aan een software partner</h2>
+
+<p>Een bureau of specialist die het volledige traject op zich neemt: van analyse tot oplevering.</p>
+
+<p><strong>Voordelen:</strong></p>
+<ul>
+  <li>Breed skillset zonder meerdere mensen in te huren</li>
+  <li>Ervaring met vergelijkbare projecten — sneller door de valkuilen</li>
+  <li>Vaste prijs of sprint-gebaseerd, dus voorspelbare kosten</li>
+  <li>Documentatie en overdracht zijn onderdeel van de oplevering</li>
+</ul>
+
+<p><strong>Nadelen:</strong></p>
+<ul>
+  <li>Minder directe controle over dagelijkse prioriteiten</li>
+  <li>Communicatie vereist duidelijke afspraken</li>
+  <li>Grote agencies kunnen duurder zijn door overhead</li>
+</ul>
+
+<p><strong>Wanneer verstandig:</strong> voor afgebakende projecten waar je resultaat wilt zonder een intern team op te bouwen. Vooral effectief als je kiest voor een kleinschalige partner waar de engineer die het werk doet ook degene is met wie je praat.</p>
+
+<h2>De kosten naast elkaar</h2>
+
+<p>Voor een middelgroot project (bijvoorbeeld een intern tool met API-koppelingen, doorlooptijd 3 maanden):</p>
+
+<ul>
+  <li><strong>Vaste developer</strong>: ~€25.000 (3 maanden salaris + overhead) — maar je betaalt door als het project klaar is</li>
+  <li><strong>Freelancer</strong>: €30.000–€50.000 (400–500 uur × €75–€100)</li>
+  <li><strong>Software partner</strong>: €20.000–€50.000 (projectprijs, inclusief analyse en documentatie)</li>
+</ul>
+
+<p>Het verschil zit niet alleen in de prijs, maar in wat je ervoor terugkrijgt: een partner levert een afgerond product op, een freelancer levert uren, een vaste kracht levert doorlopende capaciteit.</p>
+
+<h2>De valkuilen bij uitbesteden</h2>
+
+<p><strong>1. Kiezen op prijs</strong><br>
+De goedkoopste offerte wint bijna nooit op de lange termijn. Vraag altijd: wie doet het werk? Is dat dezelfde persoon die je spreekt?</p>
+
+<p><strong>2. Geen technisch aanspreekpunt intern</strong><br>
+Uitbesteden werkt alleen als er iemand intern is die beslissingen kan nemen. Zonder die persoon loopt elk project vast in afstemming.</p>
+
+<p><strong>3. Scope niet vooraf vastleggen</strong><br>
+"We zien wel wat er nodig is" leidt tot eindeloze doorlooptijden en oplopende kosten. Een goede partner helpt je de scope te definiëren vóórdat er gebouwd wordt.</p>
+
+<h2>Mijn advies</h2>
+
+<p>Er is geen universeel juiste keuze. Maar voor de meeste MKB-bedrijven die software nodig hebben voor een specifiek probleem, is uitbesteden aan een gespecialiseerde partner de meest efficiënte route. Je krijgt een breder skillset, voorspelbare kosten en een opgeleverd product — zonder de overhead van werving en een intern team.</p>
+
+<p>Twijfel je welke aanpak bij jouw situatie past? Ik denk graag mee — vrijblijvend en eerlijk.</p>
+    `.trim(),
+  },
+  {
+    slug: "waarom-software-projecten-mislukken",
+    title: "Waarom softwareprojecten mislukken — en hoe je dat voorkomt",
+    description:
+      "80% van de softwareprojecten loopt uit op tijd of budget. De 5 meest voorkomende oorzaken en concrete tips om ze te voorkomen.",
+    date: "2026-02-16",
+    category: "Software Development",
+    readTime: 8,
+    body: `
+<p>De statistieken zijn niet fraai: volgens het Standish Group CHAOS Report haalt slechts 31% van alle softwareprojecten de eindstreep op tijd, binnen budget en met de gewenste functionaliteit. De rest loopt uit, wordt duurder dan gepland of levert niet wat er beloofd was.</p>
+
+<p>In mijn werk als software engineer zie ik dezelfde patronen steeds terugkomen. De meeste projecten falen niet door technische problemen — ze falen door menselijke en organisatorische fouten die vermijdbaar zijn.</p>
+
+<h2>1. De scope is niet scherp genoeg</h2>
+
+<p>Dit is veruit de meest voorkomende oorzaak. Het project begint met een vaag idee: "we willen een platform" of "we hebben een app nodig." Zonder scherpe afbakening groeit de scope met elke vergadering.</p>
+
+<p><strong>Hoe herken je het:</strong></p>
+<ul>
+  <li>"Kunnen we dit er ook nog bij doen?" komt elke week terug</li>
+  <li>Er is geen document dat beschrijft wat de v1 wél en niet bevat</li>
+  <li>Stakeholders hebben verschillende verwachtingen van het eindresultaat</li>
+</ul>
+
+<p><strong>Hoe voorkom je het:</strong></p>
+<ul>
+  <li>Schrijf een scope document vóórdat er één regel code geschreven wordt</li>
+  <li>Definieer expliciet wat er <em>niet</em> in de eerste versie komt</li>
+  <li>Laat alle stakeholders het scope document aftekenen</li>
+</ul>
+
+<h2>2. Geen iteratief proces</h2>
+
+<p>Het watervalmodel — maanden bouwen en dan in één keer opleveren — is een recept voor teleurstelling. Na drie maanden bouwen blijkt dat de opdrachtgever iets heel anders in gedachten had.</p>
+
+<p><strong>Hoe voorkom je het:</strong></p>
+<ul>
+  <li>Werk in sprints van 1–2 weken</li>
+  <li>Laat na elke sprint een werkende versie zien</li>
+  <li>Geef de opdrachtgever de kans om bij te sturen vóórdat het te laat is</li>
+</ul>
+
+<p>Een project dat elke twee weken feedback verwerkt, kan niet drie maanden de verkeerde kant op bouwen.</p>
+
+<h2>3. De verkeerde partner of het verkeerde team</h2>
+
+<p>Niet elke developer of elk bureau is geschikt voor elk project. Een agency die gespecialiseerd is in WordPress-websites is niet de juiste keuze voor een complexe API-integratie.</p>
+
+<p><strong>Rode vlaggen:</strong></p>
+<ul>
+  <li>De partner stelt geen kritische vragen over je requirements</li>
+  <li>Er wordt meteen een offerte gestuurd zonder discovery-fase</li>
+  <li>Je spreekt met een accountmanager, maar weet niet wie het werk doet</li>
+  <li>De prijs is opvallend laag vergeleken met andere offertes</li>
+</ul>
+
+<p><strong>Groene vlaggen:</strong></p>
+<ul>
+  <li>De partner zegt "nee" tegen features die niet in de v1 thuishoren</li>
+  <li>Er wordt tijd besteed aan het begrijpen van je probleem, niet alleen je wensen</li>
+  <li>De persoon die je spreekt is dezelfde die de code schrijft</li>
+</ul>
+
+<h2>4. Te laat beginnen met testen</h2>
+
+<p>Testen is geen fase aan het eind van een project — het is een doorlopende activiteit. Software die pas in de laatste week getest wordt, bevat gegarandeerd bugs die weken kosten om op te lossen.</p>
+
+<p><strong>Hoe voorkom je het:</strong></p>
+<ul>
+  <li>Automatische tests vanaf dag één</li>
+  <li>Een staging-omgeving waar de opdrachtgever tussentijds kan testen</li>
+  <li>Bugfixes prioriteren boven nieuwe features</li>
+</ul>
+
+<h2>5. Geen eigenaarschap aan de klantzijde</h2>
+
+<p>Een softwareproject heeft iemand nodig aan de klantzijde die beslissingen kan en wil nemen. Zonder die persoon wacht het team op antwoorden, worden beslissingen uitgesteld en loopt de planning uit.</p>
+
+<p><strong>Wat je nodig hebt:</strong></p>
+<ul>
+  <li>Eén aanspreekpunt met mandaat om keuzes te maken</li>
+  <li>Beschikbaarheid: minimaal 2–4 uur per week voor het project</li>
+  <li>Bereidheid om te prioriteren — niet alles kan tegelijk</li>
+</ul>
+
+<h2>De rode draad</h2>
+
+<p>Alle vijf de oorzaken hebben dezelfde kern: <strong>communicatie en verwachtingsmanagement</strong>. Technologie is zelden het probleem. Het gaat om duidelijke afspraken, korte feedbackloops en de discipline om de scope te bewaken.</p>
+
+<p>Een goed softwareproject begint niet met code. Het begint met een gesprek waarin het probleem helder wordt, de scope wordt afgebakend en de samenwerking wordt ingericht. Alles daarna is uitvoering.</p>
+
+<h2>Hulp nodig bij het opzetten van een project?</h2>
+
+<p>Ik help je graag met een discovery-sessie: het probleem doorgronden, de scope afbakenen en een realistisch plan maken. Voordat er één regel code geschreven wordt.</p>
+    `.trim(),
+  },
+  {
+    slug: "digitale-transformatie-mkb",
+    title: "Digitale transformatie voor het MKB: waar begin je?",
+    description:
+      "Digitale transformatie klinkt als iets voor grote corporates. Maar ook voor het MKB is het relevant — mits je nuchter blijft. Een praktische gids.",
+    date: "2026-03-08",
+    category: "Digitale Transformatie",
+    readTime: 7,
+    body: `
+<p>Digitale transformatie. Het is een term die je overal hoort — van overheidssubsidies tot consultancy-pitches. Maar wat betekent het concreet als je een bedrijf runt met 5, 20 of 50 medewerkers? Moet je alles omgooien? Een nieuw ERP-systeem kopen? Een app bouwen?</p>
+
+<p>Meestal niet. Digitale transformatie voor het MKB is geen revolutie — het is een reeks slimme verbeteringen die je bedrijf efficiënter, schaalbaarder en minder afhankelijk van handmatig werk maken.</p>
+
+<h2>Wat is digitale transformatie eigenlijk?</h2>
+
+<p>In de kern: <strong>processen die nu handmatig, op papier of in losse systemen draaien, vervangen door software die het beter, sneller en betrouwbaarder doet.</strong></p>
+
+<p>Voorbeelden uit de praktijk:</p>
+
+<ul>
+  <li>Van Excel-lijsten naar een centraal systeem waar iedereen in werkt</li>
+  <li>Van handmatige facturatie naar geautomatiseerde workflows</li>
+  <li>Van e-mail als projectmanagement-tool naar een ingericht systeem</li>
+  <li>Van data opvragen bij collega's naar dashboards die real-time inzicht geven</li>
+  <li>Van papieren formulieren naar digitale intake die direct in je systeem landt</li>
+</ul>
+
+<p>Geen van deze stappen vereist een miljoenenbudget of een consultancytraject van zes maanden.</p>
+
+<h2>Waar begin je?</h2>
+
+<p>De fout die veel bedrijven maken: te groot beginnen. Een "digitale transformatie roadmap" van 40 pagina's die alles tegelijk wil veranderen. Dat werkt niet. Dit wel:</p>
+
+<h3>Stap 1: Inventariseer je pijnpunten</h3>
+
+<p>Loop een week lang mee met je team en noteer elk moment waarop iemand:</p>
+<ul>
+  <li>Data handmatig overtypt van het ene systeem naar het andere</li>
+  <li>Een Excel-bestand deelt via e-mail</li>
+  <li>Informatie moet opvragen bij een collega omdat er geen centraal systeem is</li>
+  <li>Een handmatig rapport samenstelt</li>
+  <li>Een proces uitvoert dat afhankelijk is van één specifiek persoon</li>
+</ul>
+
+<h3>Stap 2: Prioriteer op impact en haalbaarheid</h3>
+
+<p>Niet elk pijnpunt is even urgent. Scoor elk punt op twee assen:</p>
+<ul>
+  <li><strong>Impact</strong>: hoeveel tijd, geld of fouten bespaart een oplossing?</li>
+  <li><strong>Haalbaarheid</strong>: hoe complex is de oplossing? Zijn er bestaande tools of is maatwerk nodig?</li>
+</ul>
+
+<p>Begin met het punt dat hoog scoort op beide: veel impact, relatief eenvoudig op te lossen.</p>
+
+<h3>Stap 3: Kies de juiste oplossing</h3>
+
+<p>Niet alles vereist maatwerk software. De juiste oplossing hangt af van het probleem:</p>
+
+<ul>
+  <li><strong>Standaard SaaS-tool</strong> — Als je probleem generiek is (projectmanagement, CRM, boekhouding), is een bestaande tool bijna altijd beter en goedkoper dan maatwerk.</li>
+  <li><strong>Integratie tussen bestaande tools</strong> — Als je tools hebt die niet met elkaar praten, is een API-koppeling vaak voldoende.</li>
+  <li><strong>Maatwerk automatisering</strong> — Als het proces te specifiek is voor standaard software, is een op maat gebouwde oplossing de weg.</li>
+  <li><strong>Maatwerk applicatie</strong> — Alleen als er echt niets op de markt is dat past bij jouw werkwijze.</li>
+</ul>
+
+<h3>Stap 4: Begin klein en meet het resultaat</h3>
+
+<p>Implementeer één verbetering, meet het effect (tijdsbesparing, foutreductie, kosten) en gebruik dat als basis voor de volgende stap. Dit creëert intern draagvlak en voorkomt dat je een groot budget moet vrijmaken zonder bewezen resultaat.</p>
+
+<h2>Veelgemaakte fouten</h2>
+
+<p><strong>1. Technologie kopen zonder het probleem te begrijpen</strong><br>
+Een nieuw CRM lost niets op als je salesproces niet duidelijk is. Eerst het proces, dan de tool.</p>
+
+<p><strong>2. Alles tegelijk willen</strong><br>
+Digitale transformatie is geen project met een einddatum. Het is een doorlopend proces van verbeteren. Probeer niet alles in één keer te veranderen.</p>
+
+<p><strong>3. De mensen vergeten</strong><br>
+Software werkt alleen als mensen het gebruiken. Investeer in training en betrek je team bij de keuze. Een systeem dat niemand gebruikt is weggegooid geld.</p>
+
+<p><strong>4. Geen eigenaar aanwijzen</strong><br>
+Iemand moet verantwoordelijk zijn voor de voortgang. Zonder eigenaar verzandt elk digitaliseringsproject in de dagelijkse drukte.</p>
+
+<h2>Wat kost digitale transformatie?</h2>
+
+<p>Dat hangt volledig af van de scope. Maar om een beeld te geven:</p>
+
+<ul>
+  <li><strong>SaaS-tools implementeren en configureren</strong>: €1.000 – €5.000 (eenmalig) + abonnementskosten</li>
+  <li><strong>API-integratie tussen twee systemen</strong>: €2.500 – €15.000</li>
+  <li><strong>Maatwerk automatisering</strong>: €5.000 – €30.000</li>
+  <li><strong>Volledig maatwerk systeem</strong>: €20.000+</li>
+</ul>
+
+<p>De terugverdientijd is bij goed gekozen projecten vrijwel altijd binnen 6–12 maanden. Vooral de combinatie van tijdsbesparing én foutreductie levert snel meetbaar resultaat.</p>
+
+<h2>Klaar om de eerste stap te zetten?</h2>
+
+<p>Beschrijf je huidige situatie: welke processen kosten te veel tijd, welke systemen gebruik je nu en waar zit de grootste frustratie. Dan kijk ik mee welke stap het meeste oplevert — en of dat een standaard tool, een integratie of maatwerk is.</p>
+    `.trim(),
+  },
+  {
     slug: "maatwerk-software-laten-bouwen",
     title: "Maatwerk software laten bouwen: wat kost het en wat moet je weten?",
     description:
