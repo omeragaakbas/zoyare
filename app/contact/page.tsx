@@ -31,29 +31,27 @@ export default function Contact() {
         form.reset();
       } else {
         const json = await res.json();
-        setErrorMsg(json.error || "Er is iets misgegaan.");
+        setErrorMsg(json.error || "Something went wrong.");
         setStatus("error");
       }
     } catch {
-      setErrorMsg("Geen verbinding. Probeer het opnieuw.");
+      setErrorMsg("No connection. Please try again.");
       setStatus("error");
     }
   }
 
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
-      {/* Header */}
       <div className="mb-20">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Contact</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
-          Een project
+          Discuss a
           <br />
-          bespreken?
+          project?
         </h1>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 border-t border-border pt-16">
-        {/* Form */}
         <div className="lg:col-span-7">
           <AnimatePresence mode="wait">
             {status === "success" ? (
@@ -67,13 +65,13 @@ export default function Contact() {
               >
                 <div className="flex items-center gap-3 mb-6">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <p className="font-mono text-xs text-muted tracking-widest uppercase">Verstuurd</p>
+                  <p className="font-mono text-xs text-muted tracking-widest uppercase">Sent</p>
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter text-primary mb-4">
-                  Bericht ontvangen.
+                  Message received.
                 </h2>
                 <p className="text-secondary leading-relaxed max-w-md">
-                  Ik neem binnen 24 uur contact met je op. Tot dan!
+                  I&apos;ll get back to you within 24 hours. Talk soon!
                 </p>
               </motion.div>
             ) : (
@@ -86,7 +84,7 @@ export default function Contact() {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="contact-name" className="font-mono text-xs text-muted tracking-widest uppercase">Naam</label>
+                    <label htmlFor="contact-name" className="font-mono text-xs text-muted tracking-widest uppercase">Name</label>
                     <input
                       id="contact-name"
                       type="text"
@@ -94,12 +92,12 @@ export default function Contact() {
                       required
                       autoComplete="name"
                       className="input-line"
-                      placeholder="Jan de Vries"
+                      placeholder="John Smith"
                       disabled={status === "loading"}
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="contact-email" className="font-mono text-xs text-muted tracking-widest uppercase">E-mail</label>
+                    <label htmlFor="contact-email" className="font-mono text-xs text-muted tracking-widest uppercase">Email</label>
                     <input
                       id="contact-email"
                       type="email"
@@ -108,21 +106,21 @@ export default function Contact() {
                       autoComplete="email"
                       spellCheck={false}
                       className="input-line"
-                      placeholder="jan@bedrijf.nl"
+                      placeholder="john@company.com"
                       disabled={status === "loading"}
                     />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="contact-company" className="font-mono text-xs text-muted tracking-widest uppercase">Bedrijf</label>
+                  <label htmlFor="contact-company" className="font-mono text-xs text-muted tracking-widest uppercase">Company</label>
                   <input
                     id="contact-company"
                     type="text"
                     name="company"
                     autoComplete="organization"
                     className="input-line"
-                    placeholder="Bedrijf B.V. (optioneel)"
+                    placeholder="Company Ltd. (optional)"
                     disabled={status === "loading"}
                   />
                 </div>
@@ -136,7 +134,7 @@ export default function Contact() {
                     rows={5}
                     className="input-line resize-none"
                     style={{ borderBottom: "1px solid #D9D5CC" }}
-                    placeholder="Wat wil je bouwen? Geef een korte omschrijving van het project of de uitdaging."
+                    placeholder="What do you want to build? Give a short description of the project or challenge."
                     disabled={status === "loading"}
                   />
                 </div>
@@ -159,11 +157,11 @@ export default function Contact() {
                     {status === "loading" ? (
                       <>
                         <span className="w-3.5 h-3.5 border border-background border-t-transparent rounded-full animate-spin" aria-hidden="true" />
-                        Versturen…
+                        Sending…
                       </>
                     ) : (
                       <>
-                        Verstuur bericht
+                        Send message
                         <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
                       </>
                     )}
@@ -174,7 +172,6 @@ export default function Contact() {
           </AnimatePresence>
         </div>
 
-        {/* Sidebar */}
         <div className="lg:col-span-4 lg:col-start-9 flex flex-col gap-12">
           <div>
             <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Direct</p>
@@ -187,20 +184,20 @@ export default function Contact() {
           </div>
 
           <div>
-            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Reactietijd</p>
+            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Response time</p>
             <p className="text-sm text-secondary leading-relaxed">
-              Binnen 24 uur. Voor urgente zaken, stuur een directe mail.
+              Within 24 hours. For urgent matters, send a direct email.
             </p>
           </div>
 
           <div>
-            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Beschikbaarheid</p>
+            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Availability</p>
             <div className="flex items-center gap-2.5 mb-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400" />
-              <span className="text-sm text-primary">Beschikbaar</span>
+              <span className="text-sm text-primary">Available</span>
             </div>
             <p className="text-sm text-secondary leading-relaxed mb-6">
-              Zowel kortlopende opdrachten als langdurige samenwerking.
+              Both short-term projects and long-term collaboration.
             </p>
             <a
               href="https://cal.eu/zoyare"
@@ -208,7 +205,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-accent hover:text-primary transition-colors duration-200 underline underline-offset-4"
             >
-              Direct een gesprek inplannen →
+              Schedule a call directly →
             </a>
           </div>
         </div>

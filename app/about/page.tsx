@@ -5,14 +5,14 @@ import FadeIn from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
 
 export const metadata: Metadata = {
-  title: "Over",
+  title: "About",
   description:
-    "Ömer Akbas is software engineer en founder van Zoyare. Bouwt maatwerk software voor ondernemingen — van back-end architectuur tot enterprise integraties.",
+    "Ömer Akbas is a software engineer and founder of Zoyare. Builds custom software for businesses — from back-end architecture to enterprise integrations.",
   alternates: { canonical: "https://zoyare.com/about" },
   openGraph: {
-    title: "Over Zoyare — Ömer Akbas, Software Engineer",
+    title: "About Zoyare — Ömer Akbas, Software Engineer",
     description:
-      "Ömer Akbas bouwt maatwerk software voor ondernemingen. Directe samenwerking, technische diepgang, van requirement tot deployment.",
+      "Ömer Akbas builds custom software for businesses. Direct collaboration, technical depth, from requirement to deployment.",
     url: "https://zoyare.com/about",
   },
 };
@@ -20,16 +20,14 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
-      {/* Header */}
       <FadeIn className="mb-20">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Over</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">About</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
           {about.name}
         </h1>
         <p className="text-secondary text-base font-light mt-4 tracking-wide">{about.role}</p>
       </FadeIn>
 
-      {/* Content grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 border-t border-border pt-16">
         <FadeIn className="lg:col-span-7" delay={0.1}>
           <p className="text-primary text-xl md:text-2xl leading-relaxed font-light tracking-tight">
@@ -50,28 +48,27 @@ export default function About() {
         </FadeIn>
       </div>
 
-      {/* Approach */}
       <div className="mt-24 border-t border-border pt-16">
         <FadeIn className="mb-12">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase">Werkwijze</p>
+          <p className="font-mono text-xs text-muted tracking-widest uppercase">Approach</p>
         </FadeIn>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
           {[
             {
               num: "01",
-              title: "Probleem eerst",
-              text: "Software bouwen begint met begrijpen wat je oplost. Geen aannames, geen overengineering.",
+              title: "Problem first",
+              text: "Building software starts with understanding what you're solving. No assumptions, no overengineering.",
             },
             {
               num: "02",
-              title: "Technische diepgang",
-              text: "Van database-schema tot API-contract — elk onderdeel wordt doordacht gebouwd, niet snel geplakt.",
+              title: "Technical depth",
+              text: "From database schema to API contract — every component is thoughtfully built, not hastily patched.",
             },
             {
               num: "03",
               title: "Direct contact",
-              text: "Geen lagen van project managers. Je werkt rechtstreeks met de engineer die het bouwt.",
+              text: "No layers of project managers. You work directly with the engineer who builds it.",
             },
           ].map((item) => (
             <StaggerItem key={item.num}>
@@ -85,14 +82,13 @@ export default function About() {
         </StaggerContainer>
       </div>
 
-      {/* CTA */}
       <FadeIn className="mt-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Samenwerken</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Collaborate</p>
         <Link
           href="/contact"
           className="group inline-flex items-center gap-3 text-3xl md:text-5xl font-bold tracking-tighter text-primary hover:text-accent transition-colors duration-200"
         >
-          Laten we praten.
+          Let&apos;s talk.
           <span className="text-accent transition-transform duration-300 group-hover:translate-x-2">→</span>
         </Link>
       </FadeIn>

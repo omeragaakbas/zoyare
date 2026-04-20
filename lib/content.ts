@@ -2,16 +2,16 @@ export const site = {
   name: "Zoyare",
   tagline: "Software built to scale.",
   description:
-    "Zoyare ontwikkelt maatwerk software en mobiele applicaties voor ondernemingen die verder willen dan standaard oplossingen.",
+    "Zoyare builds custom software and mobile applications for businesses that need more than off-the-shelf solutions.",
 };
 
 export const about = {
   name: "Ömer Akbas",
   role: "Software Engineer & Founder",
-  bio: "Ik bouw software die werkt — van enterprise-integraties tot producten die van nul naar productie gaan. Zoyare is opgericht vanuit een eenvoudig idee: goede software vereist technische diepgang én begrip van het probleem dat je oplost.",
+  bio: "I build software that works — from enterprise integrations to products that go from zero to production. Zoyare was founded on a simple idea: great software requires both technical depth and a deep understanding of the problem you're solving.",
   focus: [
-    "Back-end architectuur & API-design",
-    "Enterprise systeem-integraties",
+    "Back-end architecture & API design",
+    "Enterprise system integrations",
     "Full-stack product development",
     "Business process automation",
   ],
@@ -39,14 +39,14 @@ export const projects: Project[] = [
     client: "Siemens",
     category: "Enterprise Integration",
     title: "BuildingX Platform Connector",
-    short: "Mendix-connector voor het Siemens BuildingX platform — Java, REST API-integraties en een volledige sample applicatie.",
-    description: "Ontwikkeling van een production-ready connector voor het Siemens BuildingX IoT-platform via Mendix. Het project omvatte complexe Java-implementatie, gelaagde REST API-integraties en een custom sample applicatie die de volledige functionaliteit en use-cases van het platform demonstreert aan enterprise-klanten.",
+    short: "Mendix connector for the Siemens BuildingX platform — Java, REST API integrations and a complete sample application.",
+    description: "Development of a production-ready connector for the Siemens BuildingX IoT platform via Mendix. The project involved complex Java implementation, layered REST API integrations and a custom sample application demonstrating the platform's full functionality and use cases to enterprise customers.",
     tags: ["Java", "Mendix", "REST API", "IoT", "Enterprise"],
     type: "Enterprise",
     year: "2024",
-    challenge: "Siemens had een production-ready connector nodig die het BuildingX IoT-platform toegankelijk maakt voor Mendix-developers wereldwijd. De API was complex, de documentatie beperkt en de connector moest voldoen aan enterprise-kwaliteitseisen.",
-    approach: "Gestart met een grondige analyse van de BuildingX REST API en OAuth-authenticatieflow. Vervolgens een gelaagde Java-implementatie gebouwd in Mendix met abstractie per API-domein. Parallel een volledige sample-applicatie ontwikkeld die alle use-cases demonstreert — zodat andere developers direct kunnen starten.",
-    result: "Een production-ready connector die live staat in de Siemens ecosystem. Enterprise-developers kunnen BuildingX-functionaliteit direct integreren in hun Mendix-applicaties zonder de onderliggende API te hoeven begrijpen.",
+    challenge: "Siemens needed a production-ready connector to make the BuildingX IoT platform accessible to Mendix developers worldwide. The API was complex, documentation was limited and the connector had to meet enterprise quality standards.",
+    approach: "Started with a thorough analysis of the BuildingX REST API and OAuth authentication flow. Then built a layered Java implementation in Mendix with abstraction per API domain. Developed a complete sample application in parallel that demonstrates all use cases — so other developers can get started immediately.",
+    result: "A production-ready connector that's live in the Siemens ecosystem. Enterprise developers can integrate BuildingX functionality directly into their Mendix applications without needing to understand the underlying API.",
     stack: ["Java", "Mendix", "REST API", "OAuth 2.0", "IoT", "JSON"],
   },
   {
@@ -54,14 +54,14 @@ export const projects: Project[] = [
     client: "StrateX",
     category: "Back-end Engineering",
     title: "Workforce Management System",
-    short: "Back-end voor een Workforce Management platform — database-architectuur en RESTful API's in teamverband.",
-    description: "Verantwoordelijk voor de volledige back-end ontwikkeling van een Workforce Management System. Ontwerp van het database-schema, implementatie van RESTful API's en samenwerking binnen een professioneel engineering-team. Focus op schaalbaarheid en betrouwbaarheid van de data-laag.",
+    short: "Back-end for a Workforce Management platform — database architecture and RESTful APIs built within a team.",
+    description: "Responsible for the full back-end development of a Workforce Management System. Database schema design, RESTful API implementation and collaboration within a professional engineering team. Focus on scalability and reliability of the data layer.",
     tags: ["Back-end", "REST API", "Database Design", "Team"],
     type: "Engineering",
     year: "2024",
-    challenge: "Een Workforce Management platform dat planning, urenregistratie en rapportage moest samenvoegen in één schaalbare back-end. Bestaande data-architectuur was niet ontworpen op groei — een redesign was noodzakelijk.",
-    approach: "Database-schema volledig herontworpen met focus op query-performance en schaalbaarheid. RESTful API's geïmplementeerd per domein (planning, medewerkers, rapportage) met consistente error-handling en authenticatie. Nauw samengewerkt met het front-end team voor afstemming op de interface-behoeften.",
-    result: "Een stabiele, schaalbare back-end die het front-end team direct kon overnemen. Duidelijke API-documentatie en een solide datamodel als fundament voor doorontwikkeling.",
+    challenge: "A Workforce Management platform that needed to combine scheduling, time tracking and reporting into one scalable back-end. The existing data architecture wasn't designed for growth — a redesign was necessary.",
+    approach: "Completely redesigned the database schema with a focus on query performance and scalability. Implemented RESTful APIs per domain (scheduling, employees, reporting) with consistent error handling and authentication. Worked closely with the front-end team to align with interface requirements.",
+    result: "A stable, scalable back-end that the front-end team could immediately adopt. Clear API documentation and a solid data model as the foundation for further development.",
     stack: ["Node.js", "PostgreSQL", "REST API", "Docker", "TypeScript"],
   },
   {
@@ -69,69 +69,69 @@ export const projects: Project[] = [
     client: "StudyBuddy",
     category: "Product Development",
     title: "Student Matching Platform",
-    short: "Matching-app voor studenten om lokale studiegenoten te vinden op basis van vak, locatie en beschikbaarheid.",
-    description: "Concept en ontwikkeling van een student-matching applicatie. Studenten vinden lokale peers op basis van gedeelde vakken, locatie en beschikbaarheid — met een swipe-interface en directe chat bij een match. Volledig eigen product, van architectuur tot UX.",
+    short: "Matching app for students to find local study partners based on course, location and availability.",
+    description: "Concept and development of a student matching application. Students find local peers based on shared courses, location and availability — with a swipe interface and direct chat upon matching. Fully owned product, from architecture to UX.",
     tags: ["Product", "Mobile", "Matching", "Full-stack"],
     type: "Product",
     year: "2025",
-    challenge: "Studenten hebben moeite om studiegenoten te vinden die hetzelfde vak volgen, in de buurt zijn en op hetzelfde moment beschikbaar zijn. Bestaande tools (WhatsApp-groepen, Facebook) zijn ongeorganiseerd en schaalbaar niet.",
-    approach: "Van nul gebouwd als eigen product. Begonnen met user research onder studenten, daarna architectuur uitgetekend (matching-algoritme, real-time chat, locatiebepaling). React Native gekozen voor cross-platform bereik. Swipe-interface gebouwd voor laagdrempeligheid, met directe chat zodra twee studenten elkaar matchen.",
-    result: "Een volledig werkende MVP met matching op basis van vak, locatie en beschikbaarheid. Real-time chat via WebSockets. Klaar voor app store lancering.",
+    challenge: "Students struggle to find study partners taking the same course, nearby and available at the same time. Existing tools (WhatsApp groups, Facebook) are unorganized and don't scale.",
+    approach: "Built from scratch as an owned product. Started with user research among students, then mapped out the architecture (matching algorithm, real-time chat, geolocation). Chose React Native for cross-platform reach. Built a swipe interface for low-friction interaction, with direct chat when two students match.",
+    result: "A fully functional MVP with matching based on course, location and availability. Real-time chat via WebSockets. Ready for app store launch.",
     stack: ["React Native", "Expo", "Node.js", "WebSockets", "PostgreSQL", "TypeScript"],
   },
   {
     id: "proaspect",
     client: "ProAspect",
     category: "Business Automation",
-    title: "ZZP Facturatie Automatisering",
-    short: "Automatiseringstool voor urenverwerking en facturatie tussen ZZP'ers en opdrachtgevers via een administratiekantoor.",
-    description: "Maatwerk automatiseringstool die de wekelijkse urenstaten van ZZP'ers verwerkt en automatisch facturen genereert richting opdrachtgevers. Elimineert handmatig werk in het administratieve proces — van CSV-upload tot verzonden PDF-factuur.",
+    title: "Freelancer Invoicing Automation",
+    short: "Automation tool for timesheet processing and invoicing between freelancers and clients through an accounting firm.",
+    description: "Custom automation tool that processes weekly freelancer timesheets and automatically generates invoices for clients. Eliminates manual work in the administrative process — from CSV upload to sent PDF invoice.",
     tags: ["Automation", "Finance", "PDF", "Admin"],
     type: "Automation",
     year: "2025",
-    challenge: "Een administratiekantoor verwerkte handmatig de wekelijkse urenstaten van tientallen ZZP'ers. Elke week: CSV's downloaden, facturen opmaken, PDF's genereren, e-mails versturen. Foutgevoelig, tijdrovend en niet schaalbaar.",
-    approach: "Het volledige proces in kaart gebracht — van CSV-aanlevering tot verzonden factuur. Een automatiseringstool gebouwd die de CSV inleest, de juiste tarieven en klantgegevens ophaalt, een PDF-factuur genereert op basis van een template en de factuur automatisch verstuurt naar de opdrachtgever.",
-    result: "Het wekelijkse handmatige proces van meerdere uren is teruggebracht naar nul. De tool draait volledig automatisch. Geen fouten meer door handmatig overtypen. Schaalbaar naar elk aantal ZZP'ers.",
+    challenge: "An accounting firm manually processed weekly timesheets from dozens of freelancers. Every week: downloading CSVs, creating invoices, generating PDFs, sending emails. Error-prone, time-consuming and not scalable.",
+    approach: "Mapped the entire process — from CSV delivery to sent invoice. Built an automation tool that reads the CSV, retrieves the correct rates and client data, generates a PDF invoice from a template and automatically sends the invoice to the client.",
+    result: "The weekly manual process of several hours has been reduced to zero. The tool runs fully automatically. No more errors from manual data entry. Scalable to any number of freelancers.",
     stack: ["Node.js", "PDF-lib", "CSV parsing", "Nodemailer", "PostgreSQL"],
   },
 ];
 
 export const services = [
   {
-    title: "Maatwerk Software",
+    title: "Custom Software",
     description:
-      "Van requirement tot deployment. Geen kant-en-klare oplossingen, maar software die past bij jouw proces.",
-    href: "/diensten/maatwerk-software",
+      "From requirement to deployment. No off-the-shelf solutions — software that fits your process.",
+    href: "/services/custom-software",
   },
   {
-    title: "API & Integraties",
+    title: "API & Integrations",
     description:
-      "Systemen die niet met elkaar praten, verbonden. REST APIs, platform-connectoren, data-pipelines.",
-    href: "/diensten/api-integraties",
+      "Systems that don't talk to each other, connected. REST APIs, platform connectors, data pipelines.",
+    href: "/services/api-integrations",
   },
   {
-    title: "Mobiele Applicaties",
+    title: "Mobile Applications",
     description:
-      "iOS en Android apps die daadwerkelijk gebruikt worden. Focus op snelheid, betrouwbaarheid en UX.",
-    href: "/diensten/mobiele-applicaties",
+      "iOS and Android apps that actually get used. Focus on speed, reliability and UX.",
+    href: "/services/mobile-applications",
   },
   {
     title: "Process Automation",
     description:
-      "Handmatige workflows automatiseren. Minder fouten, minder tijd, meer controle.",
-    href: "/diensten/process-automation",
+      "Automate manual workflows. Fewer errors, less time, more control.",
+    href: "/services/process-automation",
   },
 ];
 
 export const contact = {
   email: "hello@zoyare.com",
-  cta: "Een project bespreken?",
-  bookingUrl: "https://cal.eu/zoyare", // vervang met jouw Calendly of Cal.com link
+  cta: "Discuss a project?",
+  bookingUrl: "https://cal.eu/zoyare",
 };
 
 export const clients = [
-  { name: "Siemens",    detail: "Enterprise IoT-integratie" },
+  { name: "Siemens",    detail: "Enterprise IoT integration" },
   { name: "StrateX",   detail: "Workforce Management back-end" },
-  { name: "StudyBuddy",detail: "Mobiel product — matching platform" },
-  { name: "ProAspect", detail: "Facturatie automatisering" },
+  { name: "StudyBuddy",detail: "Mobile product — matching platform" },
+  { name: "ProAspect", detail: "Invoicing automation" },
 ];

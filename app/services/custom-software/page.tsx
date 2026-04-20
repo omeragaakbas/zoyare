@@ -3,56 +3,55 @@ import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Maatwerk Software Laten Bouwen",
+  title: "Custom Software Development",
   description:
-    "Zoyare bouwt maatwerk software voor Nederlandse ondernemingen. Van requirement tot deployment — geen standaard oplossingen, maar software die past bij jouw proces.",
-  alternates: { canonical: "https://zoyare.com/diensten/maatwerk-software" },
+    "Zoyare builds custom software for businesses. From requirement to deployment — no off-the-shelf solutions, but software that fits your process.",
+  alternates: { canonical: "https://zoyare.com/services/custom-software" },
   openGraph: {
-    title: "Maatwerk Software Laten Bouwen — Zoyare",
+    title: "Custom Software Development — Zoyare",
     description:
-      "Custom software development voor bedrijven die meer nodig hebben dan standaard SaaS. Van requirement tot deployment.",
-    url: "https://zoyare.com/diensten/maatwerk-software",
+      "Custom software development for businesses that need more than standard SaaS. From requirement to deployment.",
+    url: "https://zoyare.com/services/custom-software",
   },
 };
 
 const steps = [
-  { num: "01", title: "Discovery", text: "Het probleem begrijpen vóór de eerste regel code. Proces, pijnpunten, gewenst resultaat." },
-  { num: "02", title: "Architectuur", text: "Technische keuzes die schalen. Database-design, API-structuur, deployment-strategie." },
-  { num: "03", title: "Iteratief bouwen", text: "Werken in sprints. Vroeg feedback, geen verrassingen bij oplevering." },
-  { num: "04", title: "Oplevering", text: "Gedocumenteerde code, tests, overdracht. Zodat je daarna met elke developer verder kunt." },
+  { num: "01", title: "Discovery", text: "Understanding the problem before the first line of code. Process, pain points, desired outcome." },
+  { num: "02", title: "Architecture", text: "Technical choices that scale. Database design, API structure, deployment strategy." },
+  { num: "03", title: "Iterative building", text: "Working in sprints. Early feedback, no surprises at delivery." },
+  { num: "04", title: "Delivery", text: "Documented code, tests, handover. So you can continue with any developer afterward." },
 ];
 
 const useCases = [
-  "Interne tools en dashboards",
-  "Procesautomatisering",
-  "Portals voor klanten of medewerkers",
-  "Integraties met bestaande systemen",
-  "Data-pipelines en rapportagesoftware",
-  "Vervangen van handmatige Excel-processen",
+  "Internal tools and dashboards",
+  "Process automation",
+  "Client or employee portals",
+  "Integrations with existing systems",
+  "Data pipelines and reporting software",
+  "Replacing manual spreadsheet processes",
 ];
 
-export default function MaatwerkSoftware() {
+export default function CustomSoftware() {
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
       <FadeIn className="mb-20 max-w-4xl">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">
-          Dienst
+          Service
         </p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
-          Maatwerk
+          Custom
           <br />
           software.
         </h1>
         <p className="text-xl md:text-2xl text-secondary font-light leading-relaxed max-w-2xl">
-          Software die past bij jouw proces, niet andersom. Van requirement tot
-          deployment — zonder lagen van projectmanagers.
+          Software that fits your process, not the other way around. From requirement to
+          deployment — without layers of project managers.
         </p>
       </FadeIn>
 
-      {/* Use cases */}
       <FadeIn className="mb-24 border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-10">
-          Wanneer is dit de oplossing?
+          When is this the solution?
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {useCases.map((item, i) => (
@@ -64,10 +63,9 @@ export default function MaatwerkSoftware() {
         </div>
       </FadeIn>
 
-      {/* Process */}
       <FadeIn className="mb-24 border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-12">
-          Werkwijze
+          Process
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
           {steps.map((step) => (
@@ -80,14 +78,13 @@ export default function MaatwerkSoftware() {
         </div>
       </FadeIn>
 
-      {/* Pricing signal */}
       <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investering</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investment</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
           {[
-            { range: "€5k – €20k", label: "Kleine automatisering", time: "2–6 weken" },
-            { range: "€20k – €75k", label: "Middelgroot systeem", time: "2–4 maanden" },
-            { range: "€75k+", label: "Enterprise platform", time: "4–12 maanden" },
+            { range: "€5k – €20k", label: "Small automation", time: "2–6 weeks" },
+            { range: "€20k – €75k", label: "Mid-sized system", time: "2–4 months" },
+            { range: "€75k+", label: "Enterprise platform", time: "4–12 months" },
           ].map((tier) => (
             <div key={tier.label} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
               <span className="text-2xl font-bold text-accent block mb-2">{tier.range}</span>
@@ -98,17 +95,16 @@ export default function MaatwerkSoftware() {
         </div>
       </FadeIn>
 
-      {/* CTA */}
       <FadeIn className="border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Volgende stap</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>
         <p className="text-3xl md:text-4xl font-bold tracking-tighter text-primary mb-8">
-          Bespreek jouw project.
+          Discuss your project.
         </p>
         <Link
           href="/contact"
           className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium hover:bg-accent transition-colors duration-300"
         >
-          Gratis gesprek plannen →
+          Schedule a free call →
         </Link>
       </FadeIn>
     </div>

@@ -16,18 +16,18 @@ const BASE_URL = "https://zoyare.com";
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Zoyare — Maatwerk Software & App Development",
+    default: "Zoyare — Custom Software & App Development",
     template: "%s — Zoyare",
   },
   description:
-    "Zoyare is een software engineering studio in Nederland. Maatwerk software, API-integraties en mobiele applicaties voor ondernemingen. Van requirement tot deployment.",
+    "Zoyare is a software engineering studio. Custom software, API integrations and mobile applications for businesses. From requirement to deployment.",
   keywords: [
-    "maatwerk software",
-    "software laten bouwen",
-    "app development nederland",
-    "API integratie",
+    "custom software development",
+    "software development agency",
+    "app development",
+    "API integration",
     "software engineering studio",
-    "mobiele app laten bouwen",
+    "mobile app development",
     "enterprise software",
     "mendix developer",
     "business automation",
@@ -48,12 +48,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "nl_NL",
+    locale: "en_US",
     url: BASE_URL,
     siteName: "Zoyare",
-    title: "Zoyare — Maatwerk Software & App Development",
+    title: "Zoyare — Custom Software & App Development",
     description:
-      "Software engineering studio in Nederland. Maatwerk software, API-integraties en mobiele apps voor ondernemingen.",
+      "Software engineering studio. Custom software, API integrations and mobile apps for businesses.",
     images: [
       {
         url: "/og-image.png",
@@ -65,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zoyare — Maatwerk Software & App Development",
+    title: "Zoyare — Custom Software & App Development",
     description:
-      "Software engineering studio in Nederland. Maatwerk software, API-integraties en mobiele apps voor ondernemingen.",
+      "Software engineering studio. Custom software, API integrations and mobile apps for businesses.",
     images: ["/og-image.png"],
     creator: "@zoyare",
   },
@@ -76,7 +76,6 @@ export const metadata: Metadata = {
   },
 };
 
-// JSON-LD structured data
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -91,7 +90,7 @@ const jsonLd = {
       },
       email: "hello@zoyare.com",
       description:
-        "Software engineering studio voor maatwerk software, API-integraties en mobiele applicaties voor ondernemingen.",
+        "Software engineering studio for custom software, API integrations and mobile applications for businesses.",
       founder: {
         "@type": "Person",
         name: "Ömer Akbas",
@@ -108,7 +107,7 @@ const jsonLd = {
       url: BASE_URL,
       name: "Zoyare",
       publisher: { "@id": `${BASE_URL}/#organization` },
-      inLanguage: "nl-NL",
+      inLanguage: "en",
     },
     {
       "@type": "ProfessionalService",
@@ -116,15 +115,15 @@ const jsonLd = {
       name: "Zoyare",
       url: BASE_URL,
       description:
-        "Maatwerk software, API-integraties en mobiele applicaties voor ondernemingen.",
+        "Custom software, API integrations and mobile applications for businesses.",
       areaServed: "NL",
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Software Engineering Diensten",
+        name: "Software Engineering Services",
         itemListElement: [
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Maatwerk Software Development" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "API & Systeem Integraties" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobiele App Development" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Software Development" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "API & System Integrations" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile App Development" } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Process Automation" } },
         ],
       },
@@ -138,7 +137,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nl" style={{ colorScheme: "light" }}>
+    <html lang="en" style={{ colorScheme: "light" }}>
       <head>
         <meta name="theme-color" content="#F8F6F2" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -154,7 +153,6 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {/* Google Analytics 4 */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
@@ -186,7 +184,7 @@ export default function RootLayout({
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span className="font-mono text-xs text-muted tracking-widest uppercase">Beschikbaar</span>
+              <span className="font-mono text-xs text-muted tracking-widest uppercase">Available</span>
             </div>
             <Link
               href="/faq"

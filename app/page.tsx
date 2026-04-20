@@ -16,11 +16,9 @@ export default function Home() {
     <>
       {/* ─── Hero ─── */}
       <section className="relative min-h-screen flex flex-col justify-end px-6 md:px-12 pb-20 pt-32 overflow-hidden">
-        {/* Floating accent shape (right side, desktop only) */}
         <FloatingShape />
 
         <div className="relative max-w-5xl">
-          {/* Status badge */}
           <motion.div
             className="inline-flex items-center gap-2 mb-10 border border-border bg-background/40 backdrop-blur-sm px-3 py-1.5"
             initial={{ opacity: 0, y: -8 }}
@@ -29,11 +27,10 @@ export default function Home() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="font-mono text-xs text-muted tracking-widest uppercase">
-              Beschikbaar voor projecten
+              Available for projects
             </span>
           </motion.div>
 
-          {/* Stats row */}
           <motion.div
             className="flex flex-wrap items-center gap-x-8 gap-y-3 mb-10"
             initial={{ opacity: 0, y: 10 }}
@@ -47,7 +44,7 @@ export default function Home() {
                 className="font-mono text-2xl text-primary tabular-nums"
               />
               <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
-                Actieve projecten
+                Active projects
               </span>
             </div>
             <span className="w-px h-6 bg-border hidden md:block" />
@@ -56,7 +53,7 @@ export default function Home() {
                 100%
               </span>
               <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
-                Maatwerk
+                Custom
               </span>
             </div>
             <span className="w-px h-6 bg-border hidden md:block" />
@@ -70,7 +67,6 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Heading — character split + display accent */}
           <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-primary leading-[0.95] mb-10">
             <span className="block">
               <SplitText delay={0.2}>Software</SplitText>
@@ -98,7 +94,6 @@ export default function Home() {
             </span>
           </h1>
 
-          {/* Subline */}
           <motion.p
             className="text-secondary text-lg md:text-xl max-w-lg leading-relaxed mb-12 font-light"
             initial={{ opacity: 0, y: 16 }}
@@ -109,11 +104,10 @@ export default function Home() {
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            Maatwerk software en mobiele applicaties voor ondernemingen die
-            verder willen dan standaard oplossingen.
+            Custom software and mobile applications for businesses that need
+            more than off-the-shelf solutions.
           </motion.p>
 
-          {/* CTAs — magnetic */}
           <motion.div
             className="flex items-center gap-6 flex-wrap"
             initial={{ opacity: 0, y: 16 }}
@@ -137,7 +131,7 @@ export default function Home() {
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 />
                 <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                  Bekijk werk
+                  View work
                 </span>
                 <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-300">
                   →
@@ -153,13 +147,12 @@ export default function Home() {
                 data-magnetic
                 className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
               >
-                Gesprek plannen
+                Schedule a call
               </a>
             </MagneticButton>
           </motion.div>
         </div>
 
-        {/* Scroll hint */}
         <motion.div
           className="mt-24 flex items-center gap-3"
           initial={{ opacity: 0 }}
@@ -190,7 +183,7 @@ export default function Home() {
       <section className="relative px-6 md:px-12 py-24 border-t border-border">
         <FadeIn className="mb-14">
           <p className="font-mono text-xs text-muted tracking-widest uppercase">
-            Wat ik doe
+            What I do
           </p>
         </FadeIn>
 
@@ -203,7 +196,6 @@ export default function Home() {
                   whileHover={{ x: 4 }}
                   transition={{ duration: 0.25 }}
                 >
-                  {/* Hover accent bar */}
                   <motion.span
                     className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top opacity-0 group-hover:opacity-100"
                     initial={{ scaleY: 0 }}
@@ -211,28 +203,24 @@ export default function Home() {
                     transition={{ duration: 0.3 }}
                   />
 
-                  {/* Number */}
                   <div className="col-span-2 md:col-span-1 pt-0.5">
                     <span className="font-mono text-sm text-border group-hover:text-accent transition-colors duration-300">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
 
-                  {/* Title */}
                   <div className="col-span-10 md:col-span-4">
                     <h3 className="text-base md:text-lg font-medium text-primary group-hover:text-accent transition-colors duration-300 leading-snug">
                       {service.title}
                     </h3>
                   </div>
 
-                  {/* Description */}
                   <div className="col-span-12 md:col-span-6 pl-[calc(16.67%)] md:pl-0">
                     <p className="text-sm text-secondary leading-relaxed">
                       {service.description}
                     </p>
                   </div>
 
-                  {/* Arrow */}
                   <div className="hidden md:flex col-span-1 justify-end items-start pt-0.5">
                     <span
                       className="text-accent text-sm opacity-0 -translate-x-2
@@ -253,13 +241,13 @@ export default function Home() {
       <section className="relative px-6 md:px-12 py-24 border-t border-border">
         <FadeIn className="flex justify-between items-end mb-14">
           <p className="font-mono text-xs text-muted tracking-widest uppercase">
-            Geselecteerd werk
+            Selected work
           </p>
           <Link
             href="/portfolio"
             className="text-sm text-secondary hover:text-primary transition-colors duration-200"
           >
-            Alles bekijken →
+            View all →
           </Link>
         </FadeIn>
 
@@ -271,7 +259,6 @@ export default function Home() {
                 whileHover={{ x: 4 }}
                 transition={{ duration: 0.22 }}
               >
-                {/* Hover accent bar */}
                 <motion.span
                   className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top"
                   initial={{ scaleY: 0 }}
@@ -313,11 +300,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Klanten — marquee ─── */}
+      {/* ─── Clients — marquee ─── */}
       <section className="relative py-20 border-t border-border">
         <FadeIn className="mb-10 px-6 md:px-12">
           <p className="font-mono text-xs text-muted tracking-widest uppercase">
-            Gebouwd voor
+            Built for
           </p>
         </FadeIn>
 
@@ -361,15 +348,15 @@ export default function Home() {
           <div className="flex items-center gap-2.5 mb-10">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <p className="font-mono text-xs text-muted tracking-widest uppercase">
-              Beschikbaar
+              Available
             </p>
           </div>
         </FadeIn>
         <FadeIn delay={0.08}>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary leading-tight mb-10">
-            Een <span className="font-display italic text-accent">project</span>
-            <br />
-            bespreken?
+            Discuss a{" "}
+            <span className="font-display italic text-accent">project</span>
+            ?
           </h2>
         </FadeIn>
         <FadeIn delay={0.16}>
@@ -386,7 +373,7 @@ export default function Home() {
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               />
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                Neem contact op
+                Get in touch
               </span>
               <span className="relative z-10 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
                 →

@@ -7,12 +7,12 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Projecten van Zoyare: Siemens BuildingX connector, Workforce Management systemen, mobiele matching apps en ZZP-facturatie automatisering. Enterprise tot startup.",
+    "Zoyare projects: Siemens BuildingX connector, Workforce Management systems, mobile matching apps and freelancer invoicing automation. Enterprise to startup.",
   alternates: { canonical: "https://zoyare.com/portfolio" },
   openGraph: {
     title: "Portfolio — Zoyare Software Projects",
     description:
-      "Van Siemens enterprise integraties tot product development. Bekijk hoe Zoyare maatwerk software bouwt.",
+      "From Siemens enterprise integrations to product development. See how Zoyare builds custom software.",
     url: "https://zoyare.com/portfolio",
   },
 };
@@ -20,23 +20,20 @@ export const metadata: Metadata = {
 export default function Portfolio() {
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
-      {/* Header */}
       <FadeIn className="mb-20">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Portfolio</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
-          Geselecteerd
+          Selected
           <br />
-          werk.
+          work.
         </h1>
       </FadeIn>
 
-      {/* Project grid */}
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
         {projects.map((project, i) => (
           <StaggerItem key={project.id}>
             <Link href={`/portfolio/${project.id}`}>
             <article className="relative bg-background group flex flex-col justify-between p-10 min-h-[22rem] hover:bg-surface transition-colors duration-300 overflow-hidden cursor-pointer">
-              {/* Large decorative number */}
               <span
                 className="absolute right-8 top-6 font-mono text-[5rem] font-bold leading-none text-border/40
                            group-hover:text-border/70 transition-colors duration-500 select-none pointer-events-none"

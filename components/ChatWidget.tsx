@@ -8,7 +8,7 @@ type Message = {
   content: string;
 };
 
-const GREETING = "Hoi! Ik ben de assistent van Zoyare. Heb je een vraag over onze diensten of wil je weten of Zoyare bij jouw project past?";
+const GREETING = "Hi! I'm the Zoyare assistant. Have a question about our services or want to know if Zoyare is the right fit for your project?";
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -40,7 +40,6 @@ export default function ChatWidget() {
     setInput("");
     setLoading(true);
 
-    // Placeholder voor streaming response
     setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
 
     try {
@@ -55,7 +54,7 @@ export default function ChatWidget() {
         }),
       });
 
-      if (!res.ok || !res.body) throw new Error("Fout bij ophalen antwoord.");
+      if (!res.ok || !res.body) throw new Error("Error fetching response.");
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -78,7 +77,7 @@ export default function ChatWidget() {
         const updated = [...prev];
         updated[updated.length - 1] = {
           role: "assistant",
-          content: "Er ging iets mis. Stuur een mail naar hello@zoyare.com.",
+          content: "Something went wrong. Send an email to hello@zoyare.com.",
         };
         return updated;
       });
@@ -89,13 +88,12 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Floating button */}
       <motion.button
         onClick={() => setOpen((v) => !v)}
         className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-accent text-white flex items-center justify-center shadow-lg hover:bg-primary hover:text-background transition-colors duration-200"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        aria-label={open ? "Chat sluiten" : "Chat openen"}
+        aria-label={open ? "Close chat" : "Open chat"}
       >
         <AnimatePresence mode="wait">
           {open ? (
@@ -128,7 +126,6 @@ export default function ChatWidget() {
         </AnimatePresence>
       </motion.button>
 
-      {/* Chat panel */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -139,16 +136,14 @@ export default function ChatWidget() {
             className="fixed bottom-20 right-4 left-4 sm:left-auto sm:right-6 sm:w-80 md:w-96 z-50 bg-background border border-border shadow-2xl flex flex-col"
             style={{ maxHeight: "480px" }}
           >
-            {/* Header */}
             <div className="flex items-center gap-3 px-5 py-4 border-b border-border">
               <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0" />
               <div>
-                <p className="text-sm font-medium text-primary">Zoyare Assistent</p>
+                <p className="text-sm font-medium text-primary">Zoyare Assistant</p>
                 <p className="font-mono text-xs text-muted tracking-widest uppercase">Online</p>
               </div>
             </div>
 
-            {/* Messages */}
             <div className="flex-1 overflow-y-auto px-5 py-4 flex flex-col gap-4">
               {messages.map((msg, i) => (
                 <div
@@ -175,7 +170,6 @@ export default function ChatWidget() {
               <div ref={bottomRef} />
             </div>
 
-            {/* Input */}
             <div className="border-t border-border px-4 py-3 flex gap-2">
               <input
                 ref={inputRef}
@@ -183,15 +177,15 @@ export default function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && !e.shiftKey && send()}
-                placeholder="Stel een vraag…"
+                placeholder="Ask a question…"
                 disabled={loading}
-                aria-label="Bericht aan Zoyare assistent"
+                aria-label="Message to Zoyare assistant"
                 className="flex-1 bg-transparent text-sm text-primary placeholder:text-muted focus-visible:outline-none disabled:opacity-50"
               />
               <button
                 onClick={send}
                 disabled={loading || !input.trim()}
-                aria-label="Verstuur bericht"
+                aria-label="Send message"
                 className="text-accent hover:text-primary transition-colors duration-200 disabled:opacity-30 flex-shrink-0 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent rounded-sm"
               >
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">

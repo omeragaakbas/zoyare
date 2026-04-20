@@ -7,82 +7,82 @@ import FadeIn from "@/components/animations/FadeIn";
 
 const faqs = [
   {
-    category: "Kosten & Doorlooptijd",
+    category: "Cost & Timeline",
     items: [
       {
-        q: "Wat kost maatwerk software laten bouwen?",
-        a: "Dat hangt af van de complexiteit. Als richtlijn: een kleine automatisering of tool kost €5.000–€20.000 (2–6 weken). Een middelgroot systeem met API-integraties €20.000–€75.000 (2–4 maanden). Een enterprise platform of mobiele app €75.000+ (4–12 maanden). Ik geef altijd een eerlijke inschatting na een gratis gesprek — zonder verborgen kosten achteraf.",
+        q: "What does custom software cost?",
+        a: "It depends on the complexity. As a guideline: a small automation or tool costs €5,000–€20,000 (2–6 weeks). A mid-sized system with API integrations €20,000–€75,000 (2–4 months). An enterprise platform or mobile app €75,000+ (4–12 months). I always give an honest estimate after a free conversation — no hidden costs afterward.",
       },
       {
-        q: "Hoe lang duurt een typisch project?",
-        a: "Een eenvoudige automatisering: 2–6 weken. Een API-integratie: 2–8 weken. Een mobiele app of groter systeem: 3–6 maanden voor een solide MVP. Ik werk in sprints zodat je vroeg kunt bijsturen — niet 6 maanden wachten op één grote oplevering.",
+        q: "How long does a typical project take?",
+        a: "A simple automation: 2–6 weeks. An API integration: 2–8 weeks. A mobile app or larger system: 3–6 months for a solid MVP. I work in sprints so you can course-correct early — no waiting 6 months for one big delivery.",
       },
       {
-        q: "Werk je met vaste prijs of uurtarief?",
-        a: "Beide zijn mogelijk, afhankelijk van het project. Voor duidelijk afgebakende projecten werk ik liever met een vaste prijs — dat geeft jou zekerheid. Voor doorlopende samenwerking of projecten met een onduidelijke scope is een uurtarief eerlijker. Ik leg dit altijd voor aan het begin.",
+        q: "Do you work with fixed price or hourly rate?",
+        a: "Both are possible, depending on the project. For clearly scoped projects I prefer a fixed price — that gives you certainty. For ongoing collaboration or projects with an unclear scope, an hourly rate is fairer. I always lay this out upfront.",
       },
       {
-        q: "Wat is de minimale projectgrootte?",
-        a: "Er is geen strikte ondergrens, maar voor projecten onder €3.000 is maatwerk zelden de slimste keuze. Dan zijn er betere alternatieven (no-code tools, bestaande SaaS). Als ik denk dat een standaardoplossing beter past, zeg ik dat ook.",
+        q: "What's the minimum project size?",
+        a: "There's no strict minimum, but for projects under €3,000 custom work is rarely the smartest choice. Then there are better alternatives (no-code tools, existing SaaS). If I think a standard solution is a better fit, I'll say so.",
       },
     ],
   },
   {
-    category: "Samenwerking & Werkwijze",
+    category: "Collaboration & Process",
     items: [
       {
-        q: "Hoe ziet het eerste gesprek eruit?",
-        a: "Een half uur, gratis en vrijblijvend. Geen verkooppraatje. We bespreken je probleem, het huidige proces en wat je wilt bereiken. Daarna geef ik een eerlijk advies: of maatwerk de juiste oplossing is, hoe ik het zou aanpakken en een globale prijsindicatie.",
+        q: "What does the first conversation look like?",
+        a: "A 30-minute call, free and no strings attached. No sales pitch. We discuss your problem, the current process and what you want to achieve. Then I give honest advice: whether custom work is the right solution, how I'd approach it and a rough price indication.",
       },
       {
-        q: "Werk je alleen of met een team?",
-        a: "Ik werk als solo engineer — dat is bewust. Geen PM-laag, geen doorschuiven naar juniors. Jij werkt direct met de persoon die de code schrijft. Voor specifieke onderdelen (design, security audit) schakel ik geselecteerde specialisten in, maar de verantwoordelijkheid en aansturing liggen altijd bij mij.",
+        q: "Do you work alone or with a team?",
+        a: "I work as a solo engineer — that's by design. No PM layer, no passing work to juniors. You work directly with the person writing the code. For specific components (design, security audit) I bring in selected specialists, but responsibility and direction always stay with me.",
       },
       {
-        q: "Hoe verloopt de communicatie tijdens een project?",
-        a: "Wekelijkse updates, directe toegang via e-mail of chat, en sprint-reviews waarbij je de voortgang ziet voordat het opgeleverd is. Ik geloof niet in maandenlange stilte gevolgd door één grote oplevering. Je weet altijd wat er gemaakt wordt en waarom.",
+        q: "How does communication work during a project?",
+        a: "Weekly updates, direct access via email or chat, and sprint reviews where you see progress before it's delivered. I don't believe in months of silence followed by one big delivery. You always know what's being built and why.",
       },
       {
-        q: "Kan ik bestaande software laten uitbreiden of verbouwen?",
-        a: "Ja. Ik kijk eerst naar wat er staat — code-review, architectuur, documentatie. Dan geef ik een eerlijk oordeel: doorontwikkelen of opnieuw beginnen. Soms is een herstart goedkoper op de lange termijn. Dat oordeel geef ik zonder commercieel belang.",
+        q: "Can you extend or rebuild existing software?",
+        a: "Yes. I first look at what's there — code review, architecture, documentation. Then I give an honest assessment: continue building or start fresh. Sometimes a restart is cheaper in the long run. I give that assessment without commercial bias.",
       },
     ],
   },
   {
-    category: "Techniek & Oplevering",
+    category: "Technology & Delivery",
     items: [
       {
-        q: "Welke technologieën gebruik je?",
-        a: "Voor back-end en APIs: Node.js, TypeScript, PostgreSQL, REST. Voor mobiele apps: React Native via Expo. Voor enterprise integraties: Java, Mendix, REST APIs. Voor web: Next.js, React. Ik kies de technologie die past bij het probleem — niet bij wat toevallig mijn favoriet is.",
+        q: "Which technologies do you use?",
+        a: "For back-end and APIs: Node.js, TypeScript, PostgreSQL, REST. For mobile apps: React Native via Expo. For enterprise integrations: Java, Mendix, REST APIs. For web: Next.js, React. I choose the technology that fits the problem — not whatever happens to be my favorite.",
       },
       {
-        q: "Wie beheert de software na oplevering?",
-        a: "Dat spreken we vooraf af. Opties: jijzelf (ik lever volledige documentatie en broncode), een intern team, of ik via een onderhoudscontract. Ik zorg altijd voor een overdracht waarbij elke competente developer verder kan — geen vendor lock-in.",
+        q: "Who manages the software after delivery?",
+        a: "We agree on that upfront. Options: you (I deliver full documentation and source code), an internal team, or me via a maintenance contract. I always ensure a handover where any competent developer can continue — no vendor lock-in.",
       },
       {
-        q: "Krijg ik de broncode?",
-        a: "Altijd. De broncode is volledig van jou. Je bent nooit afhankelijk van mij voor toegang tot je eigen software.",
+        q: "Do I get the source code?",
+        a: "Always. The source code is fully yours. You're never dependent on me for access to your own software.",
       },
       {
-        q: "Hoe zit het met testing en kwaliteit?",
-        a: "Automatische tests zijn standaard onderdeel van mijn opleveringen, geen extra optie. Ik lever ook een staging-omgeving zodat je kunt testen voordat iets live gaat. Bugs die na oplevering opduiken en terug te leiden zijn naar mijn code, los ik op.",
+        q: "How do you handle testing and quality?",
+        a: "Automated tests are a standard part of my deliveries, not an extra option. I also provide a staging environment so you can test before anything goes live. Bugs that surface after delivery and trace back to my code get fixed.",
       },
     ],
   },
   {
-    category: "Specifieke Situaties",
+    category: "Specific Situations",
     items: [
       {
-        q: "Ik weet niet zeker of ik maatwerk software nodig heb. Wat dan?",
-        a: "Plan een gratis gesprek in. Ik help je objectief beoordelen of maatwerk de juiste keuze is. Als een no-code tool of SaaS-pakket beter past bij jouw situatie, zeg ik dat eerlijk — ook als dat betekent dat ik geen opdracht krijg.",
+        q: "I'm not sure if I need custom software. What then?",
+        a: "Schedule a free call. I'll help you objectively assess whether custom work is the right choice. If a no-code tool or SaaS package is a better fit for your situation, I'll say so honestly — even if it means I don't get the project.",
       },
       {
-        q: "Werken jullie ook met NDA's en vertrouwelijkheidsovereenkomsten?",
-        a: "Ja. Voor gevoelige projecten teken ik standaard een NDA voordat we inhoudelijk praten. Dat is normaal en geen enkel probleem.",
+        q: "Do you work with NDAs and confidentiality agreements?",
+        a: "Yes. For sensitive projects I sign an NDA by default before we discuss specifics. That's standard and no problem at all.",
       },
       {
-        q: "Kan Zoyare ook ondersteunen bij een Europese aanbesteding of enterprise inkoopproces?",
-        a: "Ja. Ik heb ervaring met enterprise procurement-processen (o.a. Siemens) en kan de benodigde documentatie aanleveren. Neem contact op voor de specifieke vereisten van jouw organisatie.",
+        q: "Can Zoyare support enterprise procurement processes?",
+        a: "Yes. I have experience with enterprise procurement processes (including Siemens) and can provide the required documentation. Get in touch for the specific requirements of your organization.",
       },
     ],
   },
@@ -97,29 +97,25 @@ export default function FAQ() {
 
   return (
     <div className="pt-32 px-6 md:px-12 pb-32">
-      {/* Header */}
       <FadeIn className="mb-20">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">FAQ</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] max-w-2xl">
-          Veelgestelde
+          Frequently
           <br />
-          <span className="text-accent">vragen.</span>
+          <span className="text-accent">asked.</span>
         </h1>
       </FadeIn>
 
-      {/* FAQ Sections */}
       <div className="border-t border-border">
         {faqs.map((section, si) => (
           <FadeIn key={section.category} delay={si * 0.05}>
             <div className="py-16 border-b border-border grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* Category label */}
               <div className="lg:col-span-3">
                 <p className="font-mono text-xs text-muted tracking-widest uppercase sticky top-24">
                   {section.category}
                 </p>
               </div>
 
-              {/* Questions */}
               <div className="lg:col-span-8 lg:col-start-5 flex flex-col divide-y divide-border">
                 {section.items.map((item, ii) => {
                   const key = `${si}-${ii}`;
@@ -179,13 +175,12 @@ export default function FAQ() {
         ))}
       </div>
 
-      {/* CTA */}
       <FadeIn className="pt-20 max-w-xl">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">
-          Staat je vraag er niet bij?
+          Question not listed?
         </p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary leading-tight mb-8">
-          Stel hem direct.
+          Ask directly.
         </h2>
         <Link
           href="/contact"
@@ -198,7 +193,7 @@ export default function FAQ() {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           />
           <span className="relative group-hover:text-white transition-colors duration-300">
-            Neem contact op →
+            Get in touch →
           </span>
         </Link>
       </FadeIn>

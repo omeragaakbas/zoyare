@@ -31,7 +31,6 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
 
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
-      {/* Breadcrumb */}
       <div className="mb-16">
         <Link
           href="/portfolio"
@@ -41,7 +40,6 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         </Link>
       </div>
 
-      {/* Header */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-20 pb-20 border-b border-border">
         <div className="md:col-span-8">
           <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">
@@ -56,11 +54,11 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         </div>
         <div className="md:col-span-4 flex flex-col gap-8 md:items-end md:text-right">
           <div>
-            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-2">Klant</p>
+            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-2">Client</p>
             <p className="text-primary font-medium">{project.client}</p>
           </div>
           <div>
-            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-2">Categorie</p>
+            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-2">Category</p>
             <p className="text-primary font-medium">{project.category}</p>
           </div>
           <div>
@@ -79,28 +77,23 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      {/* Case study body */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-border mb-px">
-        {/* Challenge */}
         <div className="md:col-span-4 bg-background p-10">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">01 — Uitdaging</p>
+          <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">01 — Challenge</p>
           <p className="text-secondary leading-relaxed">{project.challenge}</p>
         </div>
 
-        {/* Approach */}
         <div className="md:col-span-4 bg-background p-10">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">02 — Aanpak</p>
+          <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">02 — Approach</p>
           <p className="text-secondary leading-relaxed">{project.approach}</p>
         </div>
 
-        {/* Result */}
         <div className="md:col-span-4 bg-background p-10">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">03 — Resultaat</p>
+          <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">03 — Result</p>
           <p className="text-secondary leading-relaxed">{project.result}</p>
         </div>
       </div>
 
-      {/* Tags */}
       <div className="flex flex-wrap gap-2 mt-8 mb-24 pb-24 border-b border-border">
         {project.tags.map((tag) => (
           <span
@@ -112,9 +105,8 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         ))}
       </div>
 
-      {/* Next project */}
       <div>
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Volgend project</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Next project</p>
         <Link
           href={`/portfolio/${next.id}`}
           className="group flex items-center justify-between py-8 border-t border-border hover:bg-surface/40 -mx-6 px-6 transition-colors duration-200"
@@ -131,16 +123,15 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         </Link>
       </div>
 
-      {/* CTA */}
       <div className="mt-24 pt-16 border-t border-border">
         <p className="text-secondary mb-6 max-w-md">
-          Soortgelijk project in gedachten? Laten we het bespreken.
+          Have a similar project in mind? Let&apos;s discuss it.
         </p>
         <Link
           href="/contact"
           className="inline-flex items-center gap-3 px-6 py-3 border border-primary text-primary text-sm font-medium hover:bg-primary hover:text-background transition-colors duration-300"
         >
-          Neem contact op →
+          Get in touch →
         </Link>
       </div>
     </div>

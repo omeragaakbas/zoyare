@@ -6,12 +6,12 @@ import FadeIn from "@/components/animations/FadeIn";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Praktische artikelen over maatwerk software, API-integraties en app development in Nederland. Eerlijke kennis zonder verkooppraatje.",
+    "Practical articles about custom software, API integrations and app development. Honest knowledge without the sales pitch.",
   alternates: { canonical: "https://zoyare.com/blog" },
   openGraph: {
     title: "Blog — Zoyare Software Engineering",
     description:
-      "Praktische kennis over maatwerk software, API-integraties en app development.",
+      "Practical knowledge about custom software, API integrations and app development.",
     url: "https://zoyare.com/blog",
   },
 };
@@ -26,9 +26,9 @@ export default function Blog() {
           Blog
         </p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
-          Kennis &amp;
+          Knowledge &amp;
           <br />
-          inzichten.
+          insights.
         </h1>
       </FadeIn>
 
@@ -56,7 +56,7 @@ export default function Blog() {
 
               <div className="flex-shrink-0 flex flex-col items-end gap-2">
                 <span className="font-mono text-xs text-muted">
-                  {new Date(post.date).toLocaleDateString("nl-NL", {
+                  {new Date(post.date).toLocaleDateString("en-US", {
                     day: "numeric",
                     month: "long",
                     year: "numeric",

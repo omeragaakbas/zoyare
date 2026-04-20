@@ -36,23 +36,23 @@ export default function LeadMagnetSection() {
       <div className="max-w-2xl">
         <FadeIn>
           <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">
-            Gratis checklist
+            Free checklist
           </p>
         </FadeIn>
 
         <FadeIn delay={0.07}>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary leading-tight mb-5">
-            12 vragen die je moet stellen{" "}
-            <span className="text-accent">voordat</span> je maatwerk software
-            laat bouwen.
+            12 questions you should ask{" "}
+            <span className="text-accent">before</span> commissioning custom
+            software.
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.13}>
           <p className="text-secondary text-sm leading-relaxed mb-10 max-w-lg">
-            De meeste software-projecten mislukken niet door slechte code — maar
-            door onduidelijke verwachtingen. Deze checklist helpt je de juiste
-            vragen te stellen voordat het budget vrijkomt.
+            Most software projects don&apos;t fail because of bad code — but
+            because of unclear expectations. This checklist helps you ask the
+            right questions before the budget is committed.
           </p>
         </FadeIn>
 
@@ -69,7 +69,7 @@ export default function LeadMagnetSection() {
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
                 <p className="font-mono text-xs text-secondary tracking-widest uppercase">
-                  Checklist onderweg — check je inbox.
+                  Checklist on its way — check your inbox.
                 </p>
               </motion.div>
             ) : (
@@ -79,13 +79,13 @@ export default function LeadMagnetSection() {
                 className="flex flex-col sm:flex-row gap-4 items-start"
               >
                 <label htmlFor="leadmagnet-email" className="sr-only">
-                  E-mailadres
+                  Email address
                 </label>
                 <input
                   id="leadmagnet-email"
                   type="email"
                   required
-                  placeholder="jouw@email.nl"
+                  placeholder="you@company.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
@@ -104,7 +104,7 @@ export default function LeadMagnetSection() {
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   />
                   <span className="relative group-hover:text-white transition-colors duration-300">
-                    {status === "loading" ? "Versturen..." : "Ontvang gratis →"}
+                    {status === "loading" ? "Sending..." : "Get it free →"}
                   </span>
                 </button>
               </motion.form>
@@ -113,13 +113,13 @@ export default function LeadMagnetSection() {
 
           {status === "error" && (
             <p className="mt-3 font-mono text-xs text-red-400">
-              Er ging iets mis. Mail direct naar hello@zoyare.com.
+              Something went wrong. Email directly at hello@zoyare.com.
             </p>
           )}
 
           {status !== "success" && (
             <p className="mt-4 font-mono text-xs text-muted">
-              Geen spam. Één e-mail. Direct bruikbaar.
+              No spam. One email. Immediately useful.
             </p>
           )}
         </FadeIn>
