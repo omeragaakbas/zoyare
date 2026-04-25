@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
+import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Business Process Automation — Automate Manual Workflows",
@@ -15,9 +16,29 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = [
+  service({
+    name: "Business Process Automation",
+    description:
+      "Automation of manual workflows: invoicing, reporting, data processing, document generation and approval flows. Custom-built tools for measurable time savings.",
+    path: "/services/process-automation",
+    serviceType: "Business Process Automation",
+  }),
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services/process-automation" },
+    { name: "Process Automation", path: "/services/process-automation" },
+  ]),
+];
+
 export default function ProcessAutomation() {
   return (
-    <div className="pt-32 px-6 md:px-12 pb-24">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="pt-32 px-6 md:px-12 pb-24">
       <FadeIn className="mb-20 max-w-4xl">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Service</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
@@ -77,5 +98,6 @@ export default function ProcessAutomation() {
         </Link>
       </FadeIn>
     </div>
+    </>
   );
 }

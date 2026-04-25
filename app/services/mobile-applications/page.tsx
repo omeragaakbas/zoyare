@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
+import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Mobile App Development — iOS & Android",
@@ -15,9 +16,29 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = [
+  service({
+    name: "Mobile App Development",
+    description:
+      "iOS and Android mobile application development with React Native and Expo. From MVP to full platform — covering backend, store deployment and OTA updates.",
+    path: "/services/mobile-applications",
+    serviceType: "Mobile App Development",
+  }),
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services/mobile-applications" },
+    { name: "Mobile Applications", path: "/services/mobile-applications" },
+  ]),
+];
+
 export default function MobileApplications() {
   return (
-    <div className="pt-32 px-6 md:px-12 pb-24">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="pt-32 px-6 md:px-12 pb-24">
       <FadeIn className="mb-20 max-w-4xl">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Service</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
@@ -75,5 +96,6 @@ export default function MobileApplications() {
         </Link>
       </FadeIn>
     </div>
+    </>
   );
 }

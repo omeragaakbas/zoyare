@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
+import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Custom Software Development",
@@ -14,6 +15,21 @@ export const metadata: Metadata = {
     url: "https://zoyare.com/services/custom-software",
   },
 };
+
+const jsonLd = [
+  service({
+    name: "Custom Software Development",
+    description:
+      "End-to-end custom software development — from requirement gathering and architecture to deployment and handover. For businesses that need more than off-the-shelf solutions.",
+    path: "/services/custom-software",
+    serviceType: "Custom Software Development",
+  }),
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services/custom-software" },
+    { name: "Custom Software", path: "/services/custom-software" },
+  ]),
+];
 
 const steps = [
   { num: "01", title: "Discovery", text: "Understanding the problem before the first line of code. Process, pain points, desired outcome." },
@@ -33,7 +49,12 @@ const useCases = [
 
 export default function CustomSoftware() {
   return (
-    <div className="pt-32 px-6 md:px-12 pb-24">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="pt-32 px-6 md:px-12 pb-24">
       <FadeIn className="mb-20 max-w-4xl">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">
           Service
@@ -108,5 +129,6 @@ export default function CustomSoftware() {
         </Link>
       </FadeIn>
     </div>
+    </>
   );
 }

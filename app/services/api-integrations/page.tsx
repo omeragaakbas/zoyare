@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
+import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "API Integrations & System Connections",
@@ -15,6 +16,21 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = [
+  service({
+    name: "API & System Integrations",
+    description:
+      "API integration and system connection development. REST APIs, webhooks, ETL flows and platform connectors so your tools share data automatically.",
+    path: "/services/api-integrations",
+    serviceType: "API Integration",
+  }),
+  breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services/api-integrations" },
+    { name: "API & Integrations", path: "/services/api-integrations" },
+  ]),
+];
+
 const systems = [
   "Xero", "HubSpot", "Salesforce", "SAP", "Mendix",
   "Shopify", "Stripe", "Twilio", "Slack", "Custom APIs",
@@ -22,7 +38,12 @@ const systems = [
 
 export default function ApiIntegrations() {
   return (
-    <div className="pt-32 px-6 md:px-12 pb-24">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="pt-32 px-6 md:px-12 pb-24">
       <FadeIn className="mb-20 max-w-4xl">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Service</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
@@ -90,5 +111,6 @@ export default function ApiIntegrations() {
         </Link>
       </FadeIn>
     </div>
+    </>
   );
 }

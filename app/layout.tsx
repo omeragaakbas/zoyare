@@ -54,21 +54,12 @@ export const metadata: Metadata = {
     title: "Zoyare — Custom Software & App Development",
     description:
       "Software engineering studio. Custom software, API integrations and mobile apps for businesses.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Zoyare — Software built to scale.",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Zoyare — Custom Software & App Development",
     description:
       "Software engineering studio. Custom software, API integrations and mobile apps for businesses.",
-    images: ["/og-image.png"],
     creator: "@zoyare",
   },
   alternates: {

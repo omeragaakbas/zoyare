@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPost, getAllPosts } from "@/lib/blog";
+import { breadcrumbList } from "@/lib/jsonld";
+
+const BASE_URL = "https://zoyare.com";
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -18,14 +21,16 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: `https://zoyare.com/blog/${post.slug}` },
+    alternates: { canonical: `${BASE_URL}/blog/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `https://zoyare.com/blog/${post.slug}`,
+      url: `${BASE_URL}/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
+      modifiedTime: post.date,
       authors: ["Ömer Akbas"],
+      section: post.category,
     },
   };
 }
@@ -34,25 +39,44 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   const post = getPost(params.slug);
   if (!post) notFound();
 
-  const jsonLd = {
+  const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    dateModified: post.date,
     author: {
       "@type": "Person",
       name: "Ömer Akbas",
-      url: "https://zoyare.com/about",
+      url: `${BASE_URL}/about`,
     },
     publisher: {
       "@type": "Organization",
       name: "Zoyare",
-      url: "https://zoyare.com",
+      url: BASE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/logo.svg`,
+      },
     },
-    url: `https://zoyare.com/blog/${post.slug}`,
+    image: [`${BASE_URL}/opengraph-image.png`],
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${BASE_URL}/blog/${post.slug}`,
+    },
+    articleSection: post.category,
+    url: `${BASE_URL}/blog/${post.slug}`,
     inLanguage: "en",
   };
+
+  const breadcrumbs = breadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ]);
+
+  const jsonLd = [articleSchema, breadcrumbs];
 
   return (
     <>

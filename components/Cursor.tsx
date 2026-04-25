@@ -14,6 +14,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 export default function Cursor() {
   const [visible, setVisible] = useState(false);
   const [hover, setHover] = useState(false);
+  const [enabled, setEnabled] = useState(false);
 
   const mouseX = useMotionValue(-200);
   const mouseY = useMotionValue(-200);
@@ -29,6 +30,15 @@ export default function Cursor() {
   // NB: dot is bound directly to mouseX/mouseY for 1:1 feel — no spring
 
   useEffect(() => {
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const ok = fine && !reduced;
+    setEnabled(ok);
+    document.body.dataset.cursor = ok ? "on" : "off";
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
     const move = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -42,7 +52,9 @@ export default function Cursor() {
     };
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
-  }, [visible, mouseX, mouseY]);
+  }, [visible, mouseX, mouseY, enabled]);
+
+  if (!enabled) return null;
 
   return (
     <>

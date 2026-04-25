@@ -103,9 +103,25 @@ body {
 .input-line::placeholder { color: #8A8680; }
 .input-line:focus         { border-bottom-color: #F15F0E; }
 
-/* Hide native cursor on desktop where the custom one runs */
+/* Hide native cursor only when the custom cursor is actually mounted.
+   Cursor.tsx sets data-cursor="on" after verifying fine pointer + no reduced-motion. */
 @media (hover: hover) and (pointer: fine) {
-  body, a, button {
+  body[data-cursor="on"],
+  body[data-cursor="on"] a,
+  body[data-cursor="on"] button {
     cursor: none;
   }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto; }
 }
