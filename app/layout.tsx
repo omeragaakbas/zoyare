@@ -87,10 +87,12 @@ const jsonLd = {
         name: "Ömer Akbas",
         jobTitle: "Software Engineer & Founder",
       },
-      areaServed: {
-        "@type": "Country",
-        name: "Netherlands",
-      },
+      areaServed: [
+        { "@type": "Country", name: "Netherlands" },
+        { "@type": "Country", name: "United States" },
+        { "@type": "Country", name: "United Kingdom" },
+        { "@type": "Country", name: "United Arab Emirates" },
+      ],
     },
     {
       "@type": "WebSite",
@@ -107,7 +109,7 @@ const jsonLd = {
       url: BASE_URL,
       description:
         "Custom software, API integrations and mobile applications for businesses.",
-      areaServed: "NL",
+      areaServed: "Worldwide",
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Software Engineering Services",

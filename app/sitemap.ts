@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { projects } from "@/lib/content";
 
 const BASE_URL = "https://zoyare.com";
 
@@ -19,6 +20,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/services/process-automation`,          lastModified: new Date(), changeFrequency: "monthly",  priority: 0.9 },
   ];
 
+  const portfolioRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${BASE_URL}/portfolio/${project.id}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: new Date(),
@@ -26,5 +34,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...blogRoutes];
+  return [...staticRoutes, ...portfolioRoutes, ...blogRoutes];
 }
