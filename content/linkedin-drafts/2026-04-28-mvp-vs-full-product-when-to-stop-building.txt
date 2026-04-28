@@ -1,0 +1,20 @@
+Most software projects fail not because the idea is bad — but because v1 tries to do too much.
+
+I see it constantly: a €50K+ budget spent on features that nobody ends up using. Meanwhile the core problem still isn't solved properly.
+
+The fix? Start with an MVP that does one thing well. Ship it. Get feedback. Then invest where it actually matters.
+
+Some numbers from my own practice:
+→ MVP cost: €15K–€35K (6–10 weeks)
+→ Full product: €50K–€120K (4–8 months)
+→ ~60% of features in a full build are rarely or never used
+
+For ProAspect, our invoicing tool, the MVP was intentionally narrow: CSV upload → auto-generated invoices → PDF export. Replaced 4+ hours of manual work per week from day one. Cost: under €10K.
+
+The client portal and email integration? Those came in v2 — after we confirmed the core actually worked.
+
+Stop building features. Start solving problems.
+
+New blog post with the full breakdown: https://zoyare.com/blog/mvp-vs-full-product-when-to-stop-building
+
+#SoftwareDevelopment #MVP #Zoyare
