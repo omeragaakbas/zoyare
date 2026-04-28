@@ -108,13 +108,13 @@ The cheapest quote almost never wins in the long run. Always ask: who does the w
 Outsourcing only works if there's someone internally who can make decisions. Without that person, every project gets stuck in alignment.</p>
 
 <p><strong>3. Not defining scope upfront</strong><br>
-"We'll see what's needed" leads to endless timelines and rising costs. A good partner helps you define the scope before anything gets built.</p>
+"We'll see what's needed" leads to endless timelines and rising costs. A good partner helps you define the scope before anything gets built. I wrote more about this in <a href="/blog/why-software-projects-fail">why software projects fail</a>.</p>
 
 <h2>My advice</h2>
 
-<p>There's no universally right choice. But for most SMBs that need software for a specific problem, outsourcing to a specialized partner is the most efficient route. You get a broader skillset, predictable costs and a delivered product — without the overhead of hiring and building an internal team.</p>
+<p>There's no universally right choice. But for most SMBs that need software for a specific problem, outsourcing to a specialized partner is the most efficient route. You get a broader skillset, <a href="/blog/custom-software-development-cost">predictable costs</a> and a delivered product — without the overhead of hiring and building an internal team.</p>
 
-<p>Not sure which approach fits your situation? I'm happy to think along — no strings attached.</p>
+<p>Not sure which approach fits your situation? <a href="/contact">I'm happy to think along</a> — no strings attached.</p>
     `.trim(),
   },
   {
@@ -128,7 +128,7 @@ Outsourcing only works if there's someone internally who can make decisions. Wit
     body: `
 <p>The statistics aren't pretty: according to the Standish Group CHAOS Report, only 31% of all software projects cross the finish line on time, within budget and with the desired functionality. The rest runs over, costs more than planned or doesn't deliver what was promised.</p>
 
-<p>In my work as a software engineer, I see the same patterns recurring. Most projects don't fail because of technical problems — they fail because of human and organizational mistakes that are avoidable.</p>
+<p>In my work as a software engineer, I see the same patterns recurring. Most projects don't fail because of technical problems — they fail because of human and organizational mistakes that are avoidable. And when shortcuts accumulate, you end up with <a href="/blog/technical-debt-hidden-cost">technical debt</a> that slows everything down.</p>
 
 <h2>1. The scope isn't sharp enough</h2>
 
@@ -137,7 +137,7 @@ Outsourcing only works if there's someone internally who can make decisions. Wit
 <p><strong>How to recognize it:</strong></p>
 <ul>
   <li>"Can we also add this?" comes up every week</li>
-  <li>There's no document describing what v1 does and doesn't include</li>
+  <li>There's no document describing what <a href="/blog/mvp-vs-full-product-when-to-stop-building">v1 does and doesn't include</a></li>
   <li>Stakeholders have different expectations of the end result</li>
 </ul>
 
@@ -210,7 +210,7 @@ Outsourcing only works if there's someone internally who can make decisions. Wit
 
 <h2>Need help setting up a project?</h2>
 
-<p>I'm happy to help with a discovery session: understanding the problem, defining the scope and creating a realistic plan. Before a single line of code is written.</p>
+<p>I'm happy to help with a <a href="/contact">discovery session</a>: understanding the problem, defining the scope and creating a realistic plan. Want to know <a href="/blog/custom-software-development-cost">what custom software costs</a>? That's a good place to start.</p>
     `.trim(),
   },
   {
@@ -273,8 +273,8 @@ Outsourcing only works if there's someone internally who can make decisions. Wit
 
 <ul>
   <li><strong>Standard SaaS tool</strong> — If your problem is generic (project management, CRM, accounting), an existing tool is almost always better and cheaper than custom work.</li>
-  <li><strong>Integration between existing tools</strong> — If your tools don't talk to each other, an API connection is often sufficient.</li>
-  <li><strong>Custom automation</strong> — If the process is too specific for standard software, a tailor-made solution is the way.</li>
+  <li><strong>Integration between existing tools</strong> — If your tools don't talk to each other, an <a href="/blog/api-integration-connecting-systems">API connection</a> is often sufficient.</li>
+  <li><strong>Custom automation</strong> — If the process is too specific for standard software, a <a href="/blog/business-process-automation-guide">tailor-made automation</a> is the way.</li>
   <li><strong>Custom application</strong> — Only if nothing on the market truly fits your workflow.</li>
 </ul>
 
@@ -302,7 +302,7 @@ Someone needs to be responsible for progress. Without an owner, every digitaliza
 
 <ul>
   <li><strong>Implementing and configuring SaaS tools</strong>: €1,000 – €5,000 (one-time) + subscription costs</li>
-  <li><strong>API integration between two systems</strong>: €2,500 – €15,000</li>
+  <li><strong><a href="/services/api-integrations">API integration</a> between two systems</strong>: €2,500 – €15,000</li>
   <li><strong>Custom automation</strong>: €5,000 – €30,000</li>
   <li><strong>Fully custom system</strong>: €20,000+</li>
 </ul>
@@ -350,7 +350,7 @@ Someone needs to be responsible for progress. Without an owner, every digitaliza
   <li><strong>Enterprise platform or mobile app (4–12 months)</strong>: €75,000+</li>
 </ul>
 
-<p>Compare this with the alternatives: a full-time software developer costs €60,000–€90,000 per year in salary alone, not counting overhead. Custom software is in many cases cheaper than an internal team, especially for scoped projects.</p>
+<p>Compare this with the alternatives: a full-time software developer costs €60,000–€90,000 per year in salary alone, not counting overhead. Custom software is in many cases <a href="/blog/outsource-or-build-software-in-house">cheaper than an internal team</a>, especially for scoped projects.</p>
 
 <h2>What determines the price?</h2>
 
@@ -358,7 +358,7 @@ Someone needs to be responsible for progress. Without an owner, every digitaliza
 
 <ol>
   <li><strong>Complexity of the logic</strong> — The more exceptions, calculations or decision trees, the more time.</li>
-  <li><strong>Integrations with existing systems</strong> — Every API connection takes time, especially when the other system's documentation is poor.</li>
+  <li><strong>Integrations with existing systems</strong> — Every <a href="/blog/api-integration-connecting-systems">API connection</a> takes time, especially when the other system's documentation is poor.</li>
   <li><strong>User interface</strong> — An internal tool without a polished UI is faster than a consumer app where design matters.</li>
   <li><strong>Scaling and performance</strong> — Building software for 10 users is different than for 10,000.</li>
   <li><strong>Maintenance and further development</strong> — Who manages it after delivery?</li>
@@ -380,7 +380,7 @@ Someone needs to be responsible for progress. Without an owner, every digitaliza
 <h2>Most common mistakes</h2>
 
 <p><strong>1. Wanting too much in the first version</strong><br>
-V1 should solve the core problem, not every possible future wish. Every feature you add to the first version nearly doubles the chance of delays.</p>
+<a href="/blog/mvp-vs-full-product-when-to-stop-building">V1 should solve the core problem</a>, not every possible future wish. Every feature you add to the first version nearly doubles the chance of delays.</p>
 
 <p><strong>2. Not investing enough time in the discovery phase</strong><br>
 Building software starts with understanding what you're building. Spending weeks understanding the problem saves months of rework.</p>
@@ -456,11 +456,11 @@ Custom software requires a contact person on your side who can make decisions. W
 
 <h2>Real-world examples</h2>
 
-<p><strong>Siemens BuildingX Connector</strong><br>
+<p><strong><a href="/portfolio/siemens">Siemens BuildingX Connector</a></strong><br>
 For Siemens I built a production-ready Mendix connector for the BuildingX IoT platform. This involved complex Java implementation, layered REST API integrations and a complete sample application for enterprise customers.</p>
 
 <p><strong>Invoicing automation</strong><br>
-An accounting firm manually processed timesheets from dozens of freelancers. We built an automation tool that handles the entire process — from CSV upload to sent PDF invoice — without any manual step.</p>
+An accounting firm manually processed timesheets from dozens of freelancers. We built an <a href="/blog/business-process-automation-guide">automation tool</a> that handles the entire process — from CSV upload to sent PDF invoice — without any manual step.</p>
 
 <h2>What does an API integration cost?</h2>
 
@@ -487,7 +487,7 @@ An accounting firm manually processed timesheets from dozens of freelancers. We 
 
 <h2>Ready to get started?</h2>
 
-<p>Describe which systems you want to connect and what the data flow should be, and I'll take a free look at whether and how this is technically feasible.</p>
+<p>Describe which systems you want to connect and what the data flow should be, and I'll take a free look at whether and how this is technically feasible. See our <a href="/services/api-integrations">API integration service</a> for more details.</p>
     `.trim(),
   },
   {
@@ -508,7 +508,7 @@ An accounting firm manually processed timesheets from dozens of freelancers. We 
 <p>BPA is automating recurring business processes with software. The scope is broad:</p>
 
 <ul>
-  <li>A script that synchronizes data between two systems every night</li>
+  <li>A script that <a href="/blog/api-integration-connecting-systems">synchronizes data between two systems</a> every night</li>
   <li>A tool that reads CSV files and automatically generates invoices</li>
   <li>A workflow that registers a new customer in three systems simultaneously</li>
   <li>A reporting tool that automatically sends a management report every Monday</li>
@@ -543,7 +543,7 @@ An accounting firm manually processed timesheets from dozens of freelancers. We 
 
 <h2>A concrete example: freelancer invoicing</h2>
 
-<p>For ProAspect I built an automation tool for an accounting firm. The manual process looked like this:</p>
+<p>For <a href="/portfolio/proaspect">ProAspect</a> I built an automation tool for an accounting firm. The manual process looked like this:</p>
 
 <ol>
   <li>Freelancers submit weekly timesheets</li>
@@ -609,7 +609,7 @@ An accounting firm manually processed timesheets from dozens of freelancers. We 
 
 <h2>Ready to automate a process?</h2>
 
-<p>Describe the process you want to automate — how it works now, which systems are involved and how much time it takes. Then I'll give you honest advice on feasibility and approach.</p>
+<p>Describe the process you want to automate — how it works now, which systems are involved and how much time it takes. Check out our <a href="/services/process-automation">process automation service</a> or <a href="/contact">get in touch</a> for honest advice on feasibility and approach.</p>
     `.trim(),
   },
   {
@@ -668,7 +668,7 @@ No app store needed — the website behaves like an app. Limited hardware access
 <p>Most apps don't fail because of bad code, but because of bad product decisions. What I always recommend:</p>
 
 <ol>
-  <li><strong>Start with an MVP</strong> — Build the smallest version that solves the core problem. Validate with real users before building further.</li>
+  <li><strong>Start with an MVP</strong> — Build the <a href="/blog/mvp-vs-full-product-when-to-stop-building">smallest version that solves the core problem</a>. Validate with real users before building further.</li>
   <li><strong>Focus on one thing</strong> — The best apps do one thing exceptionally well.</li>
   <li><strong>Performance isn't a luxury</strong> — An app that responds slower than 300ms loses users. Performance must be baked in, not added later.</li>
   <li><strong>App Store Optimization (ASO)</strong> — Visibility in the App Store is the biggest growth lever for many apps.</li>
@@ -685,11 +685,11 @@ No app store needed — the website behaves like an app. Limited hardware access
   <li>Access to native hardware (camera, GPS, biometrics, push notifications)</li>
 </ul>
 
-<p>An example from my portfolio: <strong>StudyBuddy</strong> — a matching app for students to find local study partners based on course, location and availability, with a swipe interface and direct chat upon matching.</p>
+<p>An example from my portfolio: <strong><a href="/portfolio/studybuddy">StudyBuddy</a></strong> — a matching app for students to find local study partners based on course, location and availability, with a swipe interface and direct chat upon matching.</p>
 
 <h2>Ready to discuss your app idea?</h2>
 
-<p>Send me a short description of what you want to build, and I'll give you an honest picture of feasibility, costs and timeline — free and no strings attached.</p>
+<p>Send me a short description of what you want to build, and I'll give you an honest picture of feasibility, <a href="/blog/custom-software-development-cost">costs</a> and timeline — free and no strings attached. See our <a href="/services/mobile-applications">mobile app development service</a> for more.</p>
     `.trim(),
   },
   {
@@ -735,7 +735,7 @@ No app store needed — the website behaves like an app. Limited hardware access
 <p>I regularly advise <em>against</em> using AI. Situations where you're better off choosing a different solution:</p>
 
 <ul>
-  <li><strong>The problem is a process problem, not a technology problem</strong> — If your workflow is broken, AI just makes it go wrong faster.</li>
+  <li><strong>The problem is a process problem, not a technology problem</strong> — If your workflow is broken, AI just makes it go wrong faster. Consider <a href="/blog/business-process-automation-guide">process automation</a> first.</li>
   <li><strong>You want a chatbot "because everyone has one"</strong> — A chatbot that reads your FAQ aloud adds nothing. Invest that budget in a better FAQ page.</li>
   <li><strong>Your data is a mess</strong> — AI on bad data produces bad results. Fix your data housekeeping first.</li>
   <li><strong>The use case is too vague</strong> — "We want to do something with AI" isn't a use case. Start with the problem, not the technology.</li>
@@ -743,7 +743,7 @@ No app store needed — the website behaves like an app. Limited hardware access
 
 <h2>How does an AI integration work technically?</h2>
 
-<p>Most AI integrations in business software work via an API connection to an AI model. The process:</p>
+<p>Most AI integrations in business software work via an <a href="/blog/api-integration-connecting-systems">API connection</a> to an AI model. The process:</p>
 
 <ol>
   <li><strong>Data preparation</strong> — Structuring the input so the AI model can work with it. This is often the most work.</li>
@@ -831,7 +831,7 @@ Build your integration so you can switch AI providers. The market moves fast —
 <p>Technical debt doesn't crash your software overnight. It slowly drains your velocity and budget:</p>
 
 <p><strong>Features take longer</strong><br>
-What should take a week takes three. Your developer isn't slow — they're navigating a codebase where every change has unexpected side effects.</p>
+What should take a week takes three. Your developer isn't slow — they're navigating a codebase where every change has unexpected side effects. This is also one of the main reasons <a href="/blog/why-software-projects-fail">software projects fail</a>.</p>
 
 <p><strong>Bugs multiply</strong><br>
 Fix one thing, break another. Without tests and clean architecture, bug fixes create new bugs. Your team spends more time firefighting than building.</p>
@@ -897,7 +897,7 @@ Outdated dependencies contain known vulnerabilities. The longer you wait, the ha
 
 <h2>Not sure where you stand?</h2>
 
-<p>I offer codebase audits for businesses that suspect their software is carrying more debt than they'd like. You get a clear, prioritized report — no jargon, no upselling, just an honest assessment of what needs attention and what can wait. Reach out and let's take a look.</p>
+<p>I offer codebase audits for businesses that suspect their software is carrying more debt than they'd like. You get a clear, prioritized report — no jargon, no upselling, just an honest assessment of what needs attention and what can wait. <a href="/contact">Reach out</a> and let's take a look. Want to understand <a href="/blog/custom-software-development-cost">what custom software costs</a> in general? Start there.</p>
     `.trim(),
   },
 ];
