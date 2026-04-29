@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Space_Grotesk, Space_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Nav from "@/components/Nav";
@@ -8,6 +9,28 @@ import Cursor from "@/components/Cursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import ChatWidget from "@/components/ChatWidget";
 import Background from "@/components/Background";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -130,16 +153,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" style={{ colorScheme: "light" }}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${spaceMono.variable} ${instrumentSerif.variable}`} style={{ colorScheme: "light" }}>
       <head>
         <meta name="theme-color" content="#F8F6F2" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          rel="preload"
-          as="style"
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Instrument+Serif:ital@0;1&display=swap"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -168,33 +184,65 @@ export default function RootLayout({
         <Nav />
         <main className="relative">{children}</main>
         <ChatWidget />
-        <footer className="border-t border-border px-6 md:px-12 py-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-          <div className="flex items-center gap-4">
-            <Logo variant="mark" height={16} className="text-primary opacity-30" />
-            <span
-              className="font-mono text-xs text-muted tracking-widest uppercase"
-              suppressHydrationWarning
-            >
-              Zoyare © {new Date().getFullYear()}
-            </span>
-          </div>
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span className="font-mono text-xs text-muted tracking-widest uppercase">Available</span>
+        <footer className="border-t border-border px-6 md:px-12 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div>
+              <Logo variant="mark" height={20} className="text-primary opacity-40 mb-4" />
+              <p className="text-sm text-secondary leading-relaxed mb-4">
+                Software engineering studio. Custom software, API integrations and mobile apps.
+              </p>
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span className="font-mono text-xs text-muted tracking-widest uppercase">Available for projects</span>
+              </div>
             </div>
-            <Link
-              href="/faq"
-              className="text-sm text-secondary hover:text-accent transition-colors duration-200"
-            >
-              FAQ
-            </Link>
-            <a
-              href="mailto:hello@zoyare.com"
-              className="text-sm text-secondary hover:text-accent transition-colors duration-200"
-            >
-              hello@zoyare.com
-            </a>
+
+            <div>
+              <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Services</p>
+              <div className="flex flex-col gap-2.5">
+                <Link href="/services/custom-software" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Custom Software</Link>
+                <Link href="/services/api-integrations" className="text-sm text-secondary hover:text-accent transition-colors duration-200">API & Integrations</Link>
+                <Link href="/services/mobile-applications" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Mobile Applications</Link>
+                <Link href="/services/process-automation" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Process Automation</Link>
+              </div>
+            </div>
+
+            <div>
+              <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Company</p>
+              <div className="flex flex-col gap-2.5">
+                <Link href="/about" className="text-sm text-secondary hover:text-accent transition-colors duration-200">About</Link>
+                <Link href="/portfolio" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Portfolio</Link>
+                <Link href="/blog" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Blog</Link>
+                <Link href="/faq" className="text-sm text-secondary hover:text-accent transition-colors duration-200">FAQ</Link>
+                <Link href="/contact" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Contact</Link>
+              </div>
+            </div>
+
+            <div>
+              <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Contact</p>
+              <div className="flex flex-col gap-2.5">
+                <a href="mailto:hello@zoyare.com" className="text-sm text-secondary hover:text-accent transition-colors duration-200">hello@zoyare.com</a>
+                <a href="https://cal.eu/zoyare" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Schedule a call</a>
+                <a href="https://linkedin.com/in/omerakbas" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">LinkedIn</a>
+                <a href="https://github.com/omeragaakbas" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="flex items-center gap-6">
+              <span
+                className="font-mono text-xs text-muted tracking-widest uppercase"
+                suppressHydrationWarning
+              >
+                Zoyare &copy; {new Date().getFullYear()}
+              </span>
+              <span className="font-mono text-xs text-muted">KvK: 94498555</span>
+            </div>
+            <div className="flex items-center gap-6">
+              <Link href="/privacy" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">Privacy</Link>
+              <Link href="/terms" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">Terms</Link>
+            </div>
           </div>
         </footer>
       </body>

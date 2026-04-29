@@ -135,3 +135,24 @@ export const clients = [
   { name: "StudyBuddy",detail: "Mobile product — matching platform" },
   { name: "ProAspect", detail: "Invoicing automation" },
 ];
+
+export const testimonials = [
+  {
+    quote: "Zoyare delivered a production-ready connector that met our enterprise quality standards. The technical depth and understanding of our API was impressive.",
+    name: "Engineering Lead",
+    company: "Siemens",
+    project: "BuildingX Platform Connector",
+  },
+  {
+    quote: "The back-end architecture Ömer designed scaled exactly as we needed. Clean APIs, solid documentation, and seamless collaboration with our front-end team.",
+    name: "Product Owner",
+    company: "StrateX",
+    project: "Workforce Management System",
+  },
+  {
+    quote: "What used to take us hours every week is now fully automated. Zero errors, zero manual work. The ROI was immediate.",
+    name: "Managing Director",
+    company: "ProAspect",
+    project: "Invoicing Automation",
+  },
+];

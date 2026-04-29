@@ -90,12 +90,29 @@ export default function ProcessAutomation() {
 
       <FadeIn className="border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>
-        <p className="text-3xl md:text-4xl font-bold tracking-tighter text-primary mb-8">
-          Which process do you want to automate?
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary mb-4">
+          Which process is eating your time?
+        </h2>
+        <p className="text-secondary leading-relaxed max-w-xl mb-8">
+          Tell me about the manual work that&apos;s slowing you down. I&apos;ll assess whether
+          automation makes sense and estimate the time and cost savings — free, within 24 hours.
         </p>
-        <Link href="/contact" className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium hover:bg-accent transition-colors duration-300">
-          Tell me more →
-        </Link>
+        <div className="flex items-center gap-6 flex-wrap">
+          <a
+            href="https://cal.eu/zoyare"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium hover:bg-accent transition-colors duration-300"
+          >
+            Book a free automation review →
+          </a>
+          <Link
+            href="/contact"
+            className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+          >
+            Or send a message
+          </Link>
+        </div>
       </FadeIn>
     </div>
     </>

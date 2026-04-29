@@ -18,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/services/api-integrations`,            lastModified: new Date(), changeFrequency: "monthly",  priority: 0.9 },
     { url: `${BASE_URL}/services/mobile-applications`,         lastModified: new Date(), changeFrequency: "monthly",  priority: 0.9 },
     { url: `${BASE_URL}/services/process-automation`,          lastModified: new Date(), changeFrequency: "monthly",  priority: 0.9 },
+    { url: `${BASE_URL}/privacy`,                              lastModified: new Date(), changeFrequency: "yearly",   priority: 0.3 },
+    { url: `${BASE_URL}/terms`,                                lastModified: new Date(), changeFrequency: "yearly",   priority: 0.3 },
   ];
 
   const portfolioRoutes: MetadataRoute.Sitemap = projects.map((project) => ({

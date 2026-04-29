@@ -88,12 +88,29 @@ export default function MobileApplications() {
 
       <FadeIn className="border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>
-        <p className="text-3xl md:text-4xl font-bold tracking-tighter text-primary mb-8">
-          Describe your app idea.
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary mb-4">
+          Have an app idea?
+        </h2>
+        <p className="text-secondary leading-relaxed max-w-xl mb-8">
+          Describe what you want to build — I&apos;ll give you an honest assessment of scope,
+          timeline and budget within 24 hours. No sales pitch, just clarity.
         </p>
-        <Link href="/contact" className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium hover:bg-accent transition-colors duration-300">
-          Schedule a free call →
-        </Link>
+        <div className="flex items-center gap-6 flex-wrap">
+          <a
+            href="https://cal.eu/zoyare"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium hover:bg-accent transition-colors duration-300"
+          >
+            Book a free 30-min call →
+          </a>
+          <Link
+            href="/contact"
+            className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+          >
+            Or send a message
+          </Link>
+        </div>
       </FadeIn>
     </div>
     </>
