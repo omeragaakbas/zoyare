@@ -223,8 +223,8 @@ export default function RootLayout({
               <div className="flex flex-col gap-2.5">
                 <a href="mailto:hello@zoyare.com" className="text-sm text-secondary hover:text-accent transition-colors duration-200">hello@zoyare.com</a>
                 <a href="https://cal.eu/zoyare" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Schedule a call</a>
-                <a href="https://linkedin.com/in/omerakbas" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">LinkedIn</a>
-                <a href="https://github.com/omeragaakbas" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">GitHub</a>
+                <a href="https://www.linkedin.com/company/zoyare/" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">LinkedIn</a>
+                <a href="https://www.instagram.com/zoyarehq/" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Instagram</a>
               </div>
             </div>
           </div>
