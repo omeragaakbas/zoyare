@@ -1,5 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { NextRequest } from "next/server";
+import { rateLimitByIp } from "@/lib/rate-limit";
 
 const SYSTEM_PROMPT = `You are the digital assistant of Zoyare — a software engineering studio founded by Ömer Akbas.
 
@@ -31,6 +32,11 @@ YOUR ROLE:
 - Don't mention prices — Ömer discusses those in a tailored conversation`;
 
 export async function POST(req: NextRequest) {
+  const { ok } = rateLimitByIp(req, "chat", 30, 60 * 60 * 1000);
+  if (!ok) {
+    return new Response("Too many requests. Try again later.", { status: 429 });
+  }
+
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   const { messages } = await req.json();
 

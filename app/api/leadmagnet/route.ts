@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimitByIp } from "@/lib/rate-limit";
 
 const checklist = [
   {
@@ -77,6 +78,11 @@ const checklist = [
 ];
 
 export async function POST(req: NextRequest) {
+  const { ok } = rateLimitByIp(req, "leadmagnet", 3, 60 * 60 * 1000);
+  if (!ok) {
+    return NextResponse.json({ error: "Too many requests. Try again later." }, { status: 429 });
+  }
+
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   let email: string;
