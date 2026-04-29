@@ -7,8 +7,9 @@ export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.id }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const project = projects.find((p) => p.id === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.id === slug);
   if (!project) return {};
   return {
     title: project.title,
@@ -22,11 +23,12 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-export default function CaseStudy({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.id === params.slug);
+export default async function CaseStudy({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.id === slug);
   if (!project) notFound();
 
-  const index = projects.findIndex((p) => p.id === params.slug);
+  const index = projects.findIndex((p) => p.id === slug);
   const next = projects[index + 1] ?? projects[0];
 
   return (
