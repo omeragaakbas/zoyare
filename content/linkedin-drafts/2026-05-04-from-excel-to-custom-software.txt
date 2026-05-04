@@ -1,0 +1,20 @@
+88% of spreadsheets contain errors. And yet, most businesses I work with run their core operations on Excel.
+
+Not because they want to. Because it started small and grew into a 47-tab monster that nobody dares touch.
+
+Five signs you've outgrown Excel:
+- Multiple people fight over the same file
+- Someone copies data between sheets for hours every week
+- The file takes 30+ seconds to open
+- Business logic lives in formulas only one person understands
+- Your weekly report is always "slightly off"
+
+The cost of staying too long? A process that takes 4 hours/week in Excel often takes 10 minutes in a proper system. That's €10,000+ per year in labor — for one process.
+
+But not every spreadsheet needs replacing. The goal is to stop using Excel for things it was never designed to do.
+
+I wrote about when the switch is worth it, what the transition looks like, and what it realistically costs:
+
+https://zoyare.com/blog/from-excel-to-custom-software
+
+#CustomSoftware #DigitalTransformation #MKB
