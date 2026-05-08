@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Space_Grotesk, Space_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
@@ -9,6 +8,9 @@ import Cursor from "@/components/Cursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import ChatWidget from "@/components/ChatWidget";
 import Background from "@/components/Background";
+import CookieConsent from "@/components/CookieConsent";
+import AnalyticsLoader from "@/components/AnalyticsLoader";
+import CookiePreferencesButton from "@/components/CookiePreferencesButton";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -162,22 +164,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}', { page_path: window.location.pathname });
-              `}
-            </Script>
-          </>
-        )}
+        {GA_ID && <AnalyticsLoader gaId={GA_ID} />}
         <Background />
         <Cursor />
         <ScrollProgress />
@@ -242,9 +229,11 @@ export default function RootLayout({
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">Privacy</Link>
               <Link href="/terms" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">Terms</Link>
+              <CookiePreferencesButton />
             </div>
           </div>
         </footer>
+        <CookieConsent />
       </body>
     </html>
   );
