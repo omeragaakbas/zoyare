@@ -199,7 +199,7 @@ New:
 
 - Banner is a `<div role="dialog" aria-label="Cookie consent">`.
 - Buttons are real `<button>` elements with clear labels.
-- Tab order: Reject → Accept → Privacy link.
+- Tab order follows visual LTR layout: Privacy link → Reject → Accept.
 - No focus trap (banner is non-blocking; users can interact with the page).
 - Color contrast: all text meets WCAG AA against cream background.
 - Reduced motion: respect `prefers-reduced-motion` to disable slide animation.
