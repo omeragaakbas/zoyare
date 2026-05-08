@@ -10,6 +10,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: "https://zoyare.com/sitemap.xml",
-    host: "https://zoyare.com",
   };
 }
