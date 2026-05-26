@@ -7,12 +7,12 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Ömer Akbas is a software engineer and founder of Zoyare. Builds custom software for businesses — from back-end architecture to enterprise integrations.",
+    "Zoyare is a software engineering studio that builds custom software for businesses — from back-end architecture to enterprise integrations.",
   alternates: { canonical: "https://zoyare.com/about" },
   openGraph: {
-    title: "About Zoyare — Ömer Akbas, Software Engineer",
+    title: "About Zoyare — Software Engineering Studio",
     description:
-      "Ömer Akbas builds custom software for businesses. Direct collaboration, technical depth, from requirement to deployment.",
+      "Zoyare builds custom software for businesses. Direct collaboration, technical depth, from requirement to deployment.",
     url: "https://zoyare.com/about",
   },
 };

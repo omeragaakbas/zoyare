@@ -30,7 +30,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.date,
       modifiedTime: post.date,
-      authors: ["Ömer Akbas"],
+      authors: ["Zoyare"],
       section: post.category,
     },
   };
@@ -49,8 +49,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     datePublished: post.date,
     dateModified: post.date,
     author: {
-      "@type": "Person",
-      name: "Ömer Akbas",
+      "@type": "Organization",
+      name: "Zoyare",
       url: `${BASE_URL}/about`,
     },
     publisher: {

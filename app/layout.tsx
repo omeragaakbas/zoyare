@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     "mendix developer",
     "business automation",
   ],
-  authors: [{ name: "Ömer Akbas", url: BASE_URL }],
+  authors: [{ name: "Zoyare", url: BASE_URL }],
   creator: "Zoyare",
   publisher: "Zoyare",
   robots: {
@@ -106,9 +106,8 @@ const jsonLd = {
       description:
         "Software engineering studio for custom software, API integrations and mobile applications for businesses.",
       founder: {
-        "@type": "Person",
-        name: "Ömer Akbas",
-        jobTitle: "Software Engineer & Founder",
+        "@type": "Organization",
+        name: "Zoyare",
       },
       areaServed: [
         { "@type": "Country", name: "Netherlands" },

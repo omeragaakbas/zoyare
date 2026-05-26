@@ -21,8 +21,8 @@ export default function Privacy() {
 
         <h2>Who we are</h2>
         <p>
-          Zoyare is a software engineering studio based in the Netherlands, operated by
-          Ömer Akbas. KvK: 94498555. For questions about this policy, contact us at{" "}
+          Zoyare is a software engineering studio based in the Netherlands.
+          KvK: 94498555. For questions about this policy, contact us at{" "}
           <a href="mailto:hello@zoyare.com">hello@zoyare.com</a>.
         </p>
 
