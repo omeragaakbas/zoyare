@@ -1,0 +1,22 @@
+The average software project exceeds its budget by 45% and its timeline by 50%.
+
+A project starts at €30,000 and 10 weeks. It finishes at €48,000 and 16 weeks. Nobody is happy — even though the product works.
+
+Scope creep isn't caused by bad intentions. It's caused by learning things during development that nobody knew at the start. The question isn't how to prevent all changes — it's how to manage them.
+
+Six things that actually work:
+
+1. Start with a real discovery phase (20–30% less rework)
+2. Document scope as a living checklist, not a 40-page spec
+3. Make every change request explicit: "This adds Y hours and delays Z days. Still want it?"
+4. Build in phases — ship v1, learn, then plan v2
+5. Lock sprint scope once it starts
+6. Budget 15–20% contingency as an explicit line item
+
+The biggest lever is on the client side: one decision-maker, show up to every sprint review, and trust that "great idea, but that's v2" is the fastest path to a working product.
+
+Full article with numbers and recovery tactics:
+
+https://zoyare.com/blog/how-to-keep-a-software-project-in-scope
+
+#ProjectManagement #SoftwareDevelopment #ScopeCreep
