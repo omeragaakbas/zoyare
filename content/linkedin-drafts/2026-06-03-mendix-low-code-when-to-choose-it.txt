@@ -1,0 +1,16 @@
+Everyone sells low-code as faster and cheaper. Sometimes it is. Often it isn't.
+
+I've built production software on Mendix — including a BuildingX connector for Siemens. So this isn't a low-code-is-bad take. It's about knowing where the platform earns its keep and where it quietly works against you.
+
+The part nobody mentions: licensing. A custom app is a one-time build plus cheap hosting. Low-code adds a subscription you pay every year, scaling with apps and users. Over five years it often overtakes the cost of building custom outright.
+
+My rule of thumb:
+→ Short-lived internal tool, standard screens? Low-code, build it fast.
+→ Long-lived, distinctive product? Custom — before the licence dwarfs the build.
+
+Before you choose, do one piece of math: what does five years of licensing cost versus building it once? It flips the decision more often than people expect.
+
+New post on when low-code makes sense and when it burns you:
+https://zoyare.com/blog/mendix-low-code-when-to-choose-it
+
+#lowcode #softwaredevelopment #mendix
