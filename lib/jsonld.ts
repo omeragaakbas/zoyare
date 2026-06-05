@@ -44,3 +44,44 @@ export function service(opts: {
     },
   };
 }
+
+export function caseStudy(opts: {
+  title: string;
+  description: string;
+  slug: string;
+  client: string;
+  year: string;
+  tags: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: opts.title,
+    description: opts.description,
+    url: `${BASE_URL}/portfolio/${opts.slug}`,
+    dateCreated: opts.year,
+    keywords: opts.tags.join(", "),
+    creator: {
+      "@type": "Organization",
+      "@id": `${BASE_URL}/#organization`,
+      name: "Zoyare",
+    },
+    clientOf: opts.client,
+  };
+}
+
+export function webPage(opts: {
+  name: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: opts.name,
+    description: opts.description,
+    url: `${BASE_URL}${opts.path}`,
+    isPartOf: { "@id": `${BASE_URL}/#website` },
+    about: { "@id": `${BASE_URL}/#organization` },
+  };
+}

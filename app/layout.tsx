@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     "mendix developer",
     "business automation",
   ],
-  authors: [{ name: "Ömer Akbas", url: BASE_URL }],
+  authors: [{ name: "Zoyare", url: BASE_URL }],
   creator: "Zoyare",
   publisher: "Zoyare",
   robots: {
@@ -108,11 +108,32 @@ const jsonLd = {
       email: "hello@zoyare.com",
       description:
         "Software engineering studio for custom software, API integrations and mobile applications for businesses.",
+      foundingDate: "2024",
       founder: {
         "@type": "Person",
         name: "Ömer Akbas",
-        jobTitle: "Software Engineer & Founder",
       },
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "NL",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: "hello@zoyare.com",
+        url: "https://cal.eu/zoyare",
+        contactType: "customer service",
+        availableLanguage: ["English", "Dutch"],
+      },
+      sameAs: [
+        "https://www.linkedin.com/company/zoyare/",
+        "https://www.instagram.com/zoyarehq/",
+      ],
+      knowsAbout: [
+        "Custom Software Development",
+        "API Integration",
+        "Mobile App Development",
+        "Business Process Automation",
+      ],
       areaServed: [
         { "@type": "Country", name: "Netherlands" },
         { "@type": "Country", name: "United States" },

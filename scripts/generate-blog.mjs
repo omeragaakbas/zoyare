@@ -49,7 +49,7 @@ console.log(`\n📝 Onderwerp: "${topic}"\n`);
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-const systemPrompt = `Je bent de ghostwriter voor Ömer Akbas, founder van Zoyare — een software engineering studio in Nederland.
+const systemPrompt = `Je bent de ghostwriter voor Zoyare — een software engineering studio in Nederland.
 
 Zoyare's doelgroep: MKB/enterprise (50–500 medewerkers), Nederlandse ondernemingen die maatwerk software nodig hebben.
 Diensten: maatwerk software, API-integraties, mobiele apps, process automation.

@@ -21,7 +21,7 @@ export default function Terms() {
 
         <h2>1. General</h2>
         <p>
-          These terms apply to all services provided by Zoyare, operated by Ömer Akbas,
+          These terms apply to all services provided by Zoyare,
           registered with KvK number 94498555 in the Netherlands. By engaging our services,
           you agree to these terms.
         </p>

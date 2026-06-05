@@ -1,0 +1,19 @@
+Your ERP doesn't talk to your webshop. Your CRM doesn't know what your invoicing tool is doing. Someone on your team copies data between systems for two hours a day.
+
+An API integration fixes this. But what does it actually cost?
+
+Simple (two modern systems, clean data): €3,000–€8,000
+Medium (data transformation, business logic): €8,000–€20,000
+Complex (legacy systems, custom protocols): €20,000–€50,000+
+
+The biggest cost driver isn't the happy path — it's edge cases. What happens when one system goes down? When data formats change without warning? That's 40–60% of the work.
+
+The ROI math is usually simple: if manual data entry costs your team 8 hours per week, that's €15,000–€20,000 per year. A €12,000 integration pays back in seven months.
+
+But not everything needs a custom integration. If it's once a quarter, a CSV is fine. If Zapier handles it, start there.
+
+I wrote a full breakdown with real project examples:
+
+https://zoyare.com/blog/what-does-an-api-integration-cost
+
+#APIIntegration #SoftwareDevelopment #CustomSoftware

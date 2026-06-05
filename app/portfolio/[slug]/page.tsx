@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { projects } from "@/lib/content";
+import { caseStudy, breadcrumbList } from "@/lib/jsonld";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.id }));
@@ -31,8 +32,31 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   const index = projects.findIndex((p) => p.id === slug);
   const next = projects[index + 1] ?? projects[0];
 
+  const jsonLd = [
+    caseStudy({
+      title: project.title,
+      description: project.description,
+      slug: project.id,
+      client: project.client,
+      year: project.year,
+      tags: project.tags,
+    }),
+    breadcrumbList([
+      { name: "Home", path: "/" },
+      { name: "Portfolio", path: "/portfolio" },
+      { name: project.title, path: `/portfolio/${project.id}` },
+    ]),
+  ];
+
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
+      {jsonLd.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      ))}
       <div className="mb-16">
         <Link
           href="/portfolio"

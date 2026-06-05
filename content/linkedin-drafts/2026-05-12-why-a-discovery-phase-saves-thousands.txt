@@ -1,0 +1,16 @@
+Most software projects don't fail because of bad code. They fail because the wrong thing gets built.
+
+I've seen the same pattern repeat: a company writes a clear brief, development starts fast, and six weeks in the first demo lands with "this is what we asked for, but not what we meant."
+
+The fix? Two to three weeks of discovery before writing any code. Talk to actual users. Map the real workflow. Define what v1 actually needs.
+
+Cost: €2,500–€5,000 (3–5% of a typical project budget).
+What it prevents: €10,000–€15,000 in rework and scope creep.
+
+That's a 3–5x return before a single feature is built.
+
+I wrote about what a good discovery phase looks like, when you can skip it, and how to tell if your project needs one:
+
+https://zoyare.com/blog/why-a-discovery-phase-saves-thousands
+
+#SoftwareDevelopment #ProjectManagement #CustomSoftware

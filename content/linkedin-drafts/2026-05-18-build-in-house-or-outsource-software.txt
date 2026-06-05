@@ -1,0 +1,20 @@
+Your company needs custom software. The first question isn't what to build — it's who builds it.
+
+Hiring a mid-level developer in NL: €75,000–€100,000/year fully loaded. Add 2–4 months of recruitment and 2–3 months of ramp-up before any real output.
+
+Outsourcing to a studio: €32,000–€104,000 for the project. Full team from day one. Production starts this month, not in six months.
+
+Neither option is always better. But the decision becomes clear when you ask:
+
+- Is this a project (has an end date) or a program (runs forever)?
+- Do you need one skill set or four?
+- What happens after launch — daily changes or monthly maintenance?
+- Can you actually retain technical talent long-term?
+
+Most growing companies end up hybrid: outsource v1, hire once the product is proven, keep the studio for specialized work.
+
+I wrote a detailed breakdown with real numbers:
+
+https://zoyare.com/blog/build-in-house-or-outsource-software
+
+#CustomSoftware #Outsourcing #SoftwareEngineering

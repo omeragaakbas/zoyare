@@ -6,9 +6,9 @@ export const site = {
 };
 
 export const about = {
-  name: "Ömer Akbas",
-  role: "Software Engineer & Founder",
-  bio: "I build software that works — from enterprise integrations to products that go from zero to production. Zoyare was founded on a simple idea: great software requires both technical depth and a deep understanding of the problem you're solving.",
+  name: "Zoyare",
+  role: "Software Engineering Studio",
+  bio: "We build software that works — from enterprise integrations to products that go from zero to production. Zoyare was founded on a simple idea: great software requires both technical depth and a deep understanding of the problem you're solving.",
   focus: [
     "Back-end architecture & API design",
     "Enterprise system integrations",
@@ -144,7 +144,7 @@ export const testimonials = [
     project: "BuildingX Platform Connector",
   },
   {
-    quote: "The back-end architecture Ömer designed scaled exactly as we needed. Clean APIs, solid documentation, and seamless collaboration with our front-end team.",
+    quote: "The back-end architecture Zoyare designed scaled exactly as we needed. Clean APIs, solid documentation, and seamless collaboration with our front-end team.",
     name: "Product Owner",
     company: "StrateX",
     project: "Workforce Management System",

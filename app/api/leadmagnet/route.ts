@@ -121,7 +121,7 @@ export async function POST(req: NextRequest) {
   try {
     await Promise.all([
       resend.emails.send({
-        from: "Ömer Akbas — Zoyare <hello@zoyare.com>",
+        from: "Zoyare <hello@zoyare.com>",
         to: email,
         subject: "Checklist: 12 questions to ask before commissioning custom software",
         html: `
@@ -146,7 +146,7 @@ export async function POST(req: NextRequest) {
 
             <div style="margin-top: 40px; padding: 24px; border: 1px solid #222; background: #131313;">
               <p style="color: #9A9A9A; font-size: 13px; line-height: 1.7; margin: 0 0 20px;">
-                Answered these questions and ready to get started? I'm happy to give honest advice on feasibility, approach and cost — free and no strings attached.
+                Answered these questions and ready to get started? We're happy to give honest advice on feasibility, approach and cost — free and no strings attached.
               </p>
               <a href="https://zoyare.com/contact" style="display: inline-block; background: #F15F0E; color: #0D0D0D; font-size: 13px; font-weight: 700; padding: 12px 24px; text-decoration: none; letter-spacing: -0.01em;">
                 Schedule a call →
@@ -154,8 +154,8 @@ export async function POST(req: NextRequest) {
             </div>
 
             <div style="margin-top: 32px; border-top: 1px solid #1C1C1C; padding-top: 24px;">
-              <p style="color: #EBEBEB; font-size: 13px; font-weight: 600; margin: 0 0 2px;">Ömer Akbas</p>
-              <p style="font-family: 'Courier New', monospace; font-size: 11px; color: #444; margin: 0 0 8px; letter-spacing: 0.04em;">Software Engineer & Founder — Zoyare</p>
+              <p style="color: #EBEBEB; font-size: 13px; font-weight: 600; margin: 0 0 2px;">Zoyare</p>
+              <p style="font-family: 'Courier New', monospace; font-size: 11px; color: #444; margin: 0 0 8px; letter-spacing: 0.04em;">Software Engineering Studio</p>
               <a href="mailto:hello@zoyare.com" style="font-family: 'Courier New', monospace; color: #444; font-size: 11px; text-decoration: none;">hello@zoyare.com</a>
             </div>
 

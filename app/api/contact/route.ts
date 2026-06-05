@@ -56,20 +56,20 @@ export async function POST(req: NextRequest) {
         `,
       }),
       resend.emails.send({
-        from: "Ömer Akbas — Zoyare <hello@zoyare.com>",
+        from: "Zoyare <hello@zoyare.com>",
         to: email,
-        subject: "Message received — I'll be in touch soon",
+        subject: "Message received — we'll be in touch soon",
         html: `
           <div style="font-family: monospace; max-width: 600px; margin: 0 auto; padding: 32px; background: #080808; color: #F5F5F5;">
             <div style="border-bottom: 1px solid #1C1C1C; padding-bottom: 24px; margin-bottom: 32px;">
               <span style="font-size: 20px; font-weight: bold; color: #F5F5F5; letter-spacing: -0.03em;">Zoyare</span>
             </div>
             <p style="color: #F5F5F5; font-size: 16px; margin: 0 0 16px;">Hi ${safeName},</p>
-            <p style="color: #888; font-size: 14px; line-height: 1.7; margin: 0 0 24px;">Thanks for your message. I've received it and will get back to you within 24 hours.</p>
-            <p style="color: #888; font-size: 14px; line-height: 1.7; margin: 0 0 32px;">In the meantime, feel free to check out my approach and projects at <a href="https://zoyare.com/portfolio" style="color: #F5F5F5; text-decoration: none;">zoyare.com/portfolio</a>.</p>
+            <p style="color: #888; font-size: 14px; line-height: 1.7; margin: 0 0 24px;">Thanks for your message. We've received it and will get back to you within 24 hours.</p>
+            <p style="color: #888; font-size: 14px; line-height: 1.7; margin: 0 0 32px;">In the meantime, feel free to check out our approach and projects at <a href="https://zoyare.com/portfolio" style="color: #F5F5F5; text-decoration: none;">zoyare.com/portfolio</a>.</p>
             <div style="border-top: 1px solid #1C1C1C; padding-top: 24px;">
-              <p style="color: #F5F5F5; font-size: 14px; margin: 0 0 4px; font-weight: bold;">Ömer Akbas</p>
-              <p style="color: #444; font-size: 12px; margin: 0;">Software Engineer & Founder — Zoyare</p>
+              <p style="color: #F5F5F5; font-size: 14px; margin: 0 0 4px; font-weight: bold;">Zoyare</p>
+              <p style="color: #444; font-size: 12px; margin: 0;">Software Engineering Studio</p>
               <a href="mailto:hello@zoyare.com" style="color: #888; font-size: 12px; text-decoration: none;">hello@zoyare.com</a>
             </div>
           </div>

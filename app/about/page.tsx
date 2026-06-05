@@ -3,23 +3,43 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import FadeIn from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
+import { webPage, breadcrumbList } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Ömer Akbas is a software engineer and founder of Zoyare. Builds custom software for businesses — from back-end architecture to enterprise integrations.",
+    "Zoyare is a software engineering studio that builds custom software for businesses — from back-end architecture to enterprise integrations.",
   alternates: { canonical: "https://zoyare.com/about" },
   openGraph: {
-    title: "About Zoyare — Ömer Akbas, Software Engineer",
+    title: "About Zoyare — Software Engineering Studio",
     description:
-      "Ömer Akbas builds custom software for businesses. Direct collaboration, technical depth, from requirement to deployment.",
+      "Zoyare builds custom software for businesses. Direct collaboration, technical depth, from requirement to deployment.",
     url: "https://zoyare.com/about",
   },
 };
 
 export default function About() {
+  const jsonLd = [
+    webPage({
+      name: "About Zoyare",
+      description: "Zoyare is a software engineering studio that builds custom software for businesses — from back-end architecture to enterprise integrations.",
+      path: "/about",
+    }),
+    breadcrumbList([
+      { name: "Home", path: "/" },
+      { name: "About", path: "/about" },
+    ]),
+  ];
+
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
+      {jsonLd.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      ))}
       <FadeIn className="mb-20">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">About</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
