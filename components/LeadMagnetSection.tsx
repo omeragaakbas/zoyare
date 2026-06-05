@@ -1,10 +1,48 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "@/components/animations/FadeIn";
+import { localeFromPath } from "@/lib/i18n/config";
+
+const copy = {
+  en: {
+    label: "Free checklist",
+    headlinePart1: "12 questions you should ask",
+    headlineAccent: "before",
+    headlinePart2: "commissioning custom software.",
+    description:
+      "Most software projects don't fail because of bad code — but because of unclear expectations. This checklist helps you ask the right questions before the budget is committed.",
+    successMessage: "Checklist on its way — check your inbox.",
+    submitIdle: "Get it free →",
+    submitLoading: "Sending...",
+    errorMessage: "Something went wrong. Email directly at hello@zoyare.com.",
+    fine: "No spam. One email. Immediately useful.",
+    placeholder: "you@company.com",
+    label_input: "Email address",
+  },
+  nl: {
+    label: "Gratis checklist",
+    headlinePart1: "12 vragen die je moet stellen",
+    headlineAccent: "vóór",
+    headlinePart2: "je maatwerksoftware laat bouwen.",
+    description:
+      "De meeste softwareprojecten falen niet door slechte code — maar door onduidelijke verwachtingen. Deze checklist helpt je de juiste vragen te stellen voordat het budget vastligt.",
+    successMessage: "Checklist onderweg — kijk in je inbox.",
+    submitIdle: "Ontvang gratis →",
+    submitLoading: "Versturen...",
+    errorMessage: "Er ging iets mis. Mail direct naar hello@zoyare.com.",
+    fine: "Geen spam. Één mail. Direct bruikbaar.",
+    placeholder: "jij@bedrijf.com",
+    label_input: "E-mailadres",
+  },
+} as const;
 
 export default function LeadMagnetSection() {
+  const pathname = usePathname();
+  const locale = localeFromPath(pathname || "/");
+  const c = copy[locale];
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -36,23 +74,20 @@ export default function LeadMagnetSection() {
       <div className="max-w-2xl">
         <FadeIn>
           <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">
-            Free checklist
+            {c.label}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.07}>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary leading-tight mb-5">
-            12 questions you should ask{" "}
-            <span className="text-accent">before</span> commissioning custom
-            software.
+            {c.headlinePart1}{" "}
+            <span className="text-accent">{c.headlineAccent}</span> {c.headlinePart2}
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.13}>
           <p className="text-secondary text-sm leading-relaxed mb-10 max-w-lg">
-            Most software projects don&apos;t fail because of bad code — but
-            because of unclear expectations. This checklist helps you ask the
-            right questions before the budget is committed.
+            {c.description}
           </p>
         </FadeIn>
 
@@ -69,7 +104,7 @@ export default function LeadMagnetSection() {
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 shrink-0" />
                 <p className="font-mono text-xs text-secondary tracking-widest uppercase">
-                  Checklist on its way — check your inbox.
+                  {c.successMessage}
                 </p>
               </motion.div>
             ) : (
@@ -79,13 +114,13 @@ export default function LeadMagnetSection() {
                 className="flex flex-col sm:flex-row gap-4 items-start"
               >
                 <label htmlFor="leadmagnet-email" className="sr-only">
-                  Email address
+                  {c.label_input}
                 </label>
                 <input
                   id="leadmagnet-email"
                   type="email"
                   required
-                  placeholder="you@company.com"
+                  placeholder={c.placeholder}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   autoComplete="email"
@@ -104,7 +139,7 @@ export default function LeadMagnetSection() {
                     transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   />
                   <span className="relative group-hover:text-white transition-colors duration-300">
-                    {status === "loading" ? "Sending..." : "Get it free →"}
+                    {status === "loading" ? c.submitLoading : c.submitIdle}
                   </span>
                 </button>
               </motion.form>
@@ -113,13 +148,13 @@ export default function LeadMagnetSection() {
 
           {status === "error" && (
             <p className="mt-3 font-mono text-xs text-red-400">
-              Something went wrong. Email directly at hello@zoyare.com.
+              {c.errorMessage}
             </p>
           )}
 
           {status !== "success" && (
             <p className="mt-4 font-mono text-xs text-muted">
-              No spam. One email. Immediately useful.
+              {c.fine}
             </p>
           )}
         </FadeIn>

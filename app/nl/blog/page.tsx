@@ -6,9 +6,9 @@ import FadeIn from "@/components/animations/FadeIn";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Practical articles about custom software, API integrations and app development. Honest knowledge without the sales pitch.",
+    "Praktische artikelen over maatwerk software, API-integraties en app development. Eerlijke kennis zonder sales pitch.",
   alternates: {
-    canonical: "https://zoyare.com/blog",
+    canonical: "https://zoyare.com/nl/blog",
     languages: {
       en: "https://zoyare.com/blog",
       nl: "https://zoyare.com/nl/blog",
@@ -18,13 +18,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog — Zoyare Software Engineering",
     description:
-      "Practical knowledge about custom software, API integrations and app development.",
-    url: "https://zoyare.com/blog",
+      "Praktische kennis over maatwerk software, API-integraties en app development.",
+    url: "https://zoyare.com/nl/blog",
+    locale: "nl_NL",
   },
 };
 
-export default function Blog() {
-  const posts = getAllPosts().filter((p) => p.lang !== "nl");
+export default function BlogNL() {
+  const allPosts = getAllPosts();
+  // Show only NL posts on the NL blog; fall back to all if none tagged yet.
+  const nlPosts = allPosts.filter((p) => p.lang === "nl");
+  const posts = nlPosts.length > 0 ? nlPosts : allPosts;
 
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
@@ -33,9 +37,9 @@ export default function Blog() {
           Blog
         </p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
-          Knowledge &amp;
+          Kennis &amp;
           <br />
-          insights.
+          inzichten.
         </h1>
       </FadeIn>
 
@@ -63,7 +67,7 @@ export default function Blog() {
 
               <div className="flex-shrink-0 flex flex-col items-end gap-2">
                 <span className="font-mono text-xs text-muted">
-                  {new Date(post.date).toLocaleDateString("en-US", {
+                  {new Date(post.date).toLocaleDateString("nl-NL", {
                     day: "numeric",
                     month: "long",
                     year: "numeric",

@@ -4,11 +4,11 @@ import FadeIn from "@/components/animations/FadeIn";
 import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "API Integrations & System Connections",
+  title: "API-integraties & Systeemkoppelingen",
   description:
-    "Connect your systems via API integration. Zoyare links your ERP, CRM, accounting and custom software so data flows automatically.",
+    "Koppel je systemen via API-integratie. Zoyare verbindt je ERP, CRM, boekhouding en maatwerk software zodat data automatisch doorstroomt.",
   alternates: {
-    canonical: "https://zoyare.com/services/api-integrations",
+    canonical: "https://zoyare.com/nl/diensten/api-integraties",
     languages: {
       en: "https://zoyare.com/services/api-integrations",
       nl: "https://zoyare.com/nl/diensten/api-integraties",
@@ -16,25 +16,26 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "API Integrations — Connect Your Systems | Zoyare",
+    title: "API-integraties — Koppel je systemen | Zoyare",
     description:
-      "Stop manually copying data. Zoyare connects your systems via REST APIs and webhooks.",
-    url: "https://zoyare.com/services/api-integrations",
+      "Stop met handmatig data overtikken. Zoyare verbindt je systemen via REST APIs en webhooks.",
+    url: "https://zoyare.com/nl/diensten/api-integraties",
+    locale: "nl_NL",
   },
 };
 
 const jsonLd = [
   service({
-    name: "API & System Integrations",
+    name: "API & Systeemintegraties",
     description:
-      "API integration and system connection development. REST APIs, webhooks, ETL flows and platform connectors so your tools share data automatically.",
-    path: "/services/api-integrations",
+      "API-integratie en systeemkoppeling. REST APIs, webhooks, ETL-flows en platform connectors zodat je tools automatisch data delen.",
+    path: "/nl/diensten/api-integraties",
     serviceType: "API Integration",
   }),
   breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services/api-integrations" },
-    { name: "API & Integrations", path: "/services/api-integrations" },
+    { name: "Home", path: "/nl" },
+    { name: "Diensten", path: "/nl/diensten/api-integraties" },
+    { name: "API & Integraties", path: "/nl/diensten/api-integraties" },
   ]),
 ];
 
@@ -43,7 +44,7 @@ const systems = [
   "Shopify", "Stripe", "Twilio", "Slack", "Custom APIs",
 ];
 
-export default function ApiIntegrations() {
+export default function ApiIntegraties() {
   return (
     <>
       <script
@@ -52,20 +53,20 @@ export default function ApiIntegrations() {
       />
       <div className="pt-32 px-6 md:px-12 pb-24">
       <FadeIn className="mb-20 max-w-4xl">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Service</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Dienst</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
           API &amp;
           <br />
-          Integrations.
+          Integraties.
         </h1>
         <p className="text-xl md:text-2xl text-secondary font-light leading-relaxed max-w-2xl">
-          Systems that don&apos;t talk to each other, connected. No more manual data
-          entry — automatic data flows between all your tools.
+          Systemen die niet met elkaar praten, verbonden. Geen handmatige
+          data-entry meer — automatische dataflows tussen al je tools.
         </p>
       </FadeIn>
 
       <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-10">Systems I connect</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-10">Systemen die ik koppel</p>
         <div className="flex flex-wrap gap-2">
           {systems.map((s) => (
             <span key={s} className="font-mono text-sm text-secondary border border-border px-4 py-2 hover:border-muted hover:text-primary transition-colors duration-200">
@@ -76,12 +77,12 @@ export default function ApiIntegrations() {
       </FadeIn>
 
       <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-12">What you get</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-12">Wat je krijgt</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
           {[
-            { title: "Reliable connection", text: "Error handling, retry logic and monitoring so the integration works even when a system goes offline briefly." },
-            { title: "Documented code", text: "Full documentation of the data flow, fields and transformation logic. Understandable for any developer." },
-            { title: "Maintainable", text: "Clean architecture so when an API changes, the adjustment is minimal." },
+            { title: "Betrouwbare koppeling", text: "Error handling, retry logic en monitoring zodat de integratie werkt, ook als een systeem kortstondig offline is." },
+            { title: "Gedocumenteerde code", text: "Volledige documentatie van de dataflow, velden en transformatielogica. Begrijpelijk voor elke developer." },
+            { title: "Onderhoudbaar", text: "Schone architectuur zodat aanpassingen minimaal zijn wanneer een API verandert." },
           ].map((item) => (
             <div key={item.title} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
               <h3 className="text-base font-medium text-primary mb-3">{item.title}</h3>
@@ -92,12 +93,12 @@ export default function ApiIntegrations() {
       </FadeIn>
 
       <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investment</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investering</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
           {[
-            { range: "€2.5k – €8k", label: "Simple connection", time: "1–3 weeks" },
-            { range: "€8k – €25k", label: "Multi-system integration", time: "3–8 weeks" },
-            { range: "€25k+", label: "Enterprise / legacy", time: "2–6 months" },
+            { range: "€2,5k – €8k", label: "Simpele koppeling", time: "1–3 weken" },
+            { range: "€8k – €25k", label: "Multi-systeem integratie", time: "3–8 weken" },
+            { range: "€25k+", label: "Enterprise / legacy", time: "2–6 maanden" },
           ].map((tier) => (
             <div key={tier.label} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
               <span className="text-2xl font-bold text-accent block mb-2">{tier.range}</span>
@@ -109,13 +110,13 @@ export default function ApiIntegrations() {
       </FadeIn>
 
       <FadeIn className="border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Volgende stap</p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary mb-4">
-          Which systems do you want to connect?
+          Welke systemen wil je koppelen?
         </h2>
         <p className="text-secondary leading-relaxed max-w-xl mb-8">
-          Tell me which tools you&apos;re using and what data needs to flow between them.
-          I&apos;ll send you a feasibility assessment within 24 hours — no strings attached.
+          Vertel me welke tools je gebruikt en welke data er tussen moet stromen.
+          Ik stuur je binnen 24 uur een haalbaarheidsadvies — geheel vrijblijvend.
         </p>
         <div className="flex items-center gap-6 flex-wrap">
           <a
@@ -124,13 +125,13 @@ export default function ApiIntegrations() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium hover:bg-accent transition-colors duration-300"
           >
-            Book a free intake call →
+            Plan een gratis intake →
           </a>
           <Link
-            href="/contact"
+            href="/nl/contact"
             className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
           >
-            Or send a message
+            Of stuur een bericht
           </Link>
         </div>
       </FadeIn>

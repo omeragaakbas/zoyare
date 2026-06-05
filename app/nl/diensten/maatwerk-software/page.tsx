@@ -4,11 +4,11 @@ import FadeIn from "@/components/animations/FadeIn";
 import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development",
+  title: "Maatwerk Software laten ontwikkelen",
   description:
-    "Zoyare builds custom software for businesses. From requirement to deployment — no off-the-shelf solutions, but software that fits your process.",
+    "Zoyare bouwt maatwerk software voor bedrijven. Van requirement tot deployment — geen standaardoplossingen, maar software die past bij jouw proces.",
   alternates: {
-    canonical: "https://zoyare.com/services/custom-software",
+    canonical: "https://zoyare.com/nl/diensten/maatwerk-software",
     languages: {
       en: "https://zoyare.com/services/custom-software",
       nl: "https://zoyare.com/nl/diensten/maatwerk-software",
@@ -16,45 +16,46 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Custom Software Development — Zoyare",
+    title: "Maatwerk Software Development — Zoyare",
     description:
-      "Custom software development for businesses that need more than standard SaaS. From requirement to deployment.",
-    url: "https://zoyare.com/services/custom-software",
+      "Maatwerk software voor bedrijven die meer nodig hebben dan standaard SaaS. Van requirement tot deployment.",
+    url: "https://zoyare.com/nl/diensten/maatwerk-software",
+    locale: "nl_NL",
   },
 };
 
 const jsonLd = [
   service({
-    name: "Custom Software Development",
+    name: "Maatwerk Software Development",
     description:
-      "End-to-end custom software development — from requirement gathering and architecture to deployment and handover. For businesses that need more than off-the-shelf solutions.",
-    path: "/services/custom-software",
+      "End-to-end maatwerk softwareontwikkeling — van requirement gathering en architectuur tot deployment en overdracht. Voor bedrijven die meer nodig hebben dan standaardoplossingen.",
+    path: "/nl/diensten/maatwerk-software",
     serviceType: "Custom Software Development",
   }),
   breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services/custom-software" },
-    { name: "Custom Software", path: "/services/custom-software" },
+    { name: "Home", path: "/nl" },
+    { name: "Diensten", path: "/nl/diensten/maatwerk-software" },
+    { name: "Maatwerk Software", path: "/nl/diensten/maatwerk-software" },
   ]),
 ];
 
 const steps = [
-  { num: "01", title: "Discovery", text: "Understanding the problem before the first line of code. Process, pain points, desired outcome." },
-  { num: "02", title: "Architecture", text: "Technical choices that scale. Database design, API structure, deployment strategy." },
-  { num: "03", title: "Iterative building", text: "Working in sprints. Early feedback, no surprises at delivery." },
-  { num: "04", title: "Delivery", text: "Documented code, tests, handover. So you can continue with any developer afterward." },
+  { num: "01", title: "Discovery", text: "Het probleem begrijpen voordat de eerste regel code geschreven wordt. Proces, knelpunten, gewenste uitkomst." },
+  { num: "02", title: "Architectuur", text: "Technische keuzes die meeschalen. Database-ontwerp, API-structuur, deployment strategie." },
+  { num: "03", title: "Iteratief bouwen", text: "Werken in sprints. Vroege feedback, geen verrassingen bij oplevering." },
+  { num: "04", title: "Oplevering", text: "Gedocumenteerde code, tests, overdracht. Zodat je daarna verder kunt met elke developer." },
 ];
 
 const useCases = [
-  "Internal tools and dashboards",
-  "Process automation",
-  "Client or employee portals",
-  "Integrations with existing systems",
-  "Data pipelines and reporting software",
-  "Replacing manual spreadsheet processes",
+  "Interne tools en dashboards",
+  "Procesautomatisering",
+  "Klant- of medewerkerportalen",
+  "Integraties met bestaande systemen",
+  "Datapipelines en rapportagesoftware",
+  "Handmatige spreadsheet-processen vervangen",
 ];
 
-export default function CustomSoftware() {
+export default function MaatwerkSoftware() {
   return (
     <>
       <script
@@ -64,22 +65,22 @@ export default function CustomSoftware() {
       <div className="pt-32 px-6 md:px-12 pb-24">
       <FadeIn className="mb-20 max-w-4xl">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">
-          Service
+          Dienst
         </p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
-          Custom
+          Maatwerk
           <br />
           software.
         </h1>
         <p className="text-xl md:text-2xl text-secondary font-light leading-relaxed max-w-2xl">
-          Software that fits your process, not the other way around. From requirement to
-          deployment — without layers of project managers.
+          Software die past bij jouw proces, niet andersom. Van requirement tot
+          deployment — zonder lagen project managers.
         </p>
       </FadeIn>
 
       <FadeIn className="mb-24 border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-10">
-          When is this the solution?
+          Wanneer is dit de oplossing?
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
           {useCases.map((item, i) => (
@@ -93,7 +94,7 @@ export default function CustomSoftware() {
 
       <FadeIn className="mb-24 border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-12">
-          Process
+          Proces
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
           {steps.map((step) => (
@@ -107,12 +108,12 @@ export default function CustomSoftware() {
       </FadeIn>
 
       <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investment</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investering</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
           {[
-            { range: "€5k – €20k", label: "Small automation", time: "2–6 weeks" },
-            { range: "€20k – €75k", label: "Mid-sized system", time: "2–4 months" },
-            { range: "€75k+", label: "Enterprise platform", time: "4–12 months" },
+            { range: "€5k – €20k", label: "Kleine automatisering", time: "2–6 weken" },
+            { range: "€20k – €75k", label: "Middelgroot systeem", time: "2–4 maanden" },
+            { range: "€75k+", label: "Enterprise platform", time: "4–12 maanden" },
           ].map((tier) => (
             <div key={tier.label} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
               <span className="text-2xl font-bold text-accent block mb-2">{tier.range}</span>
@@ -124,13 +125,13 @@ export default function CustomSoftware() {
       </FadeIn>
 
       <FadeIn className="border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Volgende stap</p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary mb-4">
-          Have a process that needs better software?
+          Heb je een proces dat betere software nodig heeft?
         </h2>
         <p className="text-secondary leading-relaxed max-w-xl mb-8">
-          Tell me what you&apos;re dealing with — I&apos;ll let you know within 24 hours whether
-          custom software is the right solution, what it would look like and what it would cost.
+          Vertel me waar je tegenaan loopt — ik laat je binnen 24 uur weten of
+          maatwerk software de juiste oplossing is, hoe het eruit zou zien en wat het kost.
         </p>
         <div className="flex items-center gap-6 flex-wrap">
           <a
@@ -139,13 +140,13 @@ export default function CustomSoftware() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium hover:bg-accent transition-colors duration-300"
           >
-            Book a free 30-min call →
+            Plan een gratis kennismaking →
           </a>
           <Link
-            href="/contact"
+            href="/nl/contact"
             className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
           >
-            Or send a message
+            Of stuur een bericht
           </Link>
         </div>
       </FadeIn>

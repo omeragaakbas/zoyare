@@ -5,16 +5,49 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/components/Logo";
+import {
+  alternatePath,
+  localeFromPath,
+  LOCALE_COOKIE,
+  type Locale,
+} from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
-const links = [
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/blog",      label: "Blog" },
-  { href: "/about",     label: "About" },
-  { href: "/contact",   label: "Contact" },
-];
+type NavLink = { href: string; label: string };
+
+function linksForLocale(locale: Locale): NavLink[] {
+  const d = getDictionary(locale);
+  if (locale === "nl") {
+    return [
+      { href: "/nl/portfolio", label: d.nav.portfolio },
+      { href: "/nl/blog", label: d.nav.blog },
+      { href: "/nl/over-ons", label: d.nav.about },
+      { href: "/nl/contact", label: d.nav.contact },
+    ];
+  }
+  return [
+    { href: "/portfolio", label: d.nav.portfolio },
+    { href: "/blog", label: d.nav.blog },
+    { href: "/about", label: d.nav.about },
+    { href: "/contact", label: d.nav.contact },
+  ];
+}
+
+function setLocaleCookie(locale: Locale) {
+  if (typeof document === "undefined") return;
+  document.cookie = `${LOCALE_COOKIE}=${locale}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
+}
 
 export default function Nav() {
   const pathname = usePathname();
+  const locale = localeFromPath(pathname || "/");
+  const links = linksForLocale(locale);
+  const altLocale: Locale = locale === "en" ? "nl" : "en";
+  const altPath =
+    alternatePath(pathname || "/", altLocale) ??
+    (altLocale === "nl" ? "/nl" : "/");
+  const d = getDictionary(locale);
+
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -23,14 +56,18 @@ export default function Nav() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
+
+  const homeHref = locale === "nl" ? "/nl" : "/";
 
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 border-b border-border bg-background/80 backdrop-blur-md">
         <Link
-          href="/"
+          href={homeHref}
           className="text-primary hover:text-accent transition-colors duration-200"
           aria-label="Zoyare home"
         >
@@ -56,6 +93,16 @@ export default function Nav() {
               </li>
             );
           })}
+          <li className="ml-2 flex items-center gap-1.5 border-l border-border pl-4">
+            <Link
+              href={altPath}
+              onClick={() => setLocaleCookie(altLocale)}
+              className="font-mono text-xs tracking-widest uppercase text-secondary hover:text-accent transition-colors duration-200"
+              aria-label={altLocale === "nl" ? "Bekijk in het Nederlands" : "View in English"}
+            >
+              {d.nav.languageSwitch[altLocale]}
+            </Link>
+          </li>
         </ul>
 
         <button
@@ -98,6 +145,19 @@ export default function Nav() {
                   </motion.div>
                 );
               })}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: links.length * 0.06 }}
+              >
+                <Link
+                  href={altPath}
+                  onClick={() => setLocaleCookie(altLocale)}
+                  className="block py-4 border-b border-border text-2xl font-bold tracking-tight text-secondary"
+                >
+                  {altLocale === "nl" ? "Bekijk in Nederlands" : "View in English"}
+                </Link>
+              </motion.div>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

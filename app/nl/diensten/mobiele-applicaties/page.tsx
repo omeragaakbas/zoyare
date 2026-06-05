@@ -4,11 +4,11 @@ import FadeIn from "@/components/animations/FadeIn";
 import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Mobile App Development — iOS & Android",
+  title: "Mobiele App Development — iOS & Android",
   description:
-    "Mobile app development for iOS and Android. Zoyare builds native-quality apps with React Native/Expo. Honest pricing, fast delivery.",
+    "Mobiele app development voor iOS en Android. Zoyare bouwt apps met native-kwaliteit via React Native/Expo. Eerlijke prijzen, snelle oplevering.",
   alternates: {
-    canonical: "https://zoyare.com/services/mobile-applications",
+    canonical: "https://zoyare.com/nl/diensten/mobiele-applicaties",
     languages: {
       en: "https://zoyare.com/services/mobile-applications",
       nl: "https://zoyare.com/nl/diensten/mobiele-applicaties",
@@ -16,29 +16,30 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Mobile App Development — Zoyare",
+    title: "Mobiele App Development — Zoyare",
     description:
-      "iOS and Android app development with React Native. One codebase, native quality, lower costs.",
-    url: "https://zoyare.com/services/mobile-applications",
+      "iOS en Android app development met React Native. Eén codebase, native kwaliteit, lagere kosten.",
+    url: "https://zoyare.com/nl/diensten/mobiele-applicaties",
+    locale: "nl_NL",
   },
 };
 
 const jsonLd = [
   service({
-    name: "Mobile App Development",
+    name: "Mobiele App Development",
     description:
-      "iOS and Android mobile application development with React Native and Expo. From MVP to full platform — covering backend, store deployment and OTA updates.",
-    path: "/services/mobile-applications",
+      "iOS en Android mobiele applicatie ontwikkeling met React Native en Expo. Van MVP tot volledig platform — inclusief backend, store deployment en OTA updates.",
+    path: "/nl/diensten/mobiele-applicaties",
     serviceType: "Mobile App Development",
   }),
   breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services/mobile-applications" },
-    { name: "Mobile Applications", path: "/services/mobile-applications" },
+    { name: "Home", path: "/nl" },
+    { name: "Diensten", path: "/nl/diensten/mobiele-applicaties" },
+    { name: "Mobiele Applicaties", path: "/nl/diensten/mobiele-applicaties" },
   ]),
 ];
 
-export default function MobileApplications() {
+export default function MobieleApplicaties() {
   return (
     <>
       <script
@@ -47,15 +48,15 @@ export default function MobileApplications() {
       />
       <div className="pt-32 px-6 md:px-12 pb-24">
       <FadeIn className="mb-20 max-w-4xl">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Service</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Dienst</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
-          Mobile
+          Mobiele
           <br />
-          applications.
+          applicaties.
         </h1>
         <p className="text-xl md:text-2xl text-secondary font-light leading-relaxed max-w-2xl">
-          iOS and Android apps that actually get used. Focus on
-          speed, reliability and UX — built with React Native &amp; Expo.
+          iOS en Android apps die daadwerkelijk gebruikt worden. Focus op
+          snelheid, betrouwbaarheid en UX — gebouwd met React Native &amp; Expo.
         </p>
       </FadeIn>
 
@@ -63,10 +64,10 @@ export default function MobileApplications() {
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-10">Tech stack</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border">
           {[
-            { title: "React Native + Expo", text: "One codebase for iOS and Android. Native performance, over-the-air updates, access to all hardware features." },
-            { title: "TypeScript", text: "Type-safe code that produces fewer bugs and is easier to maintain." },
-            { title: "Backend of choice", text: "Node.js, Supabase, Firebase or a custom REST API — depending on your requirements." },
-            { title: "App Store + Play Store", text: "I handle the full deployment process including App Store review and Play Store publication." },
+            { title: "React Native + Expo", text: "Eén codebase voor iOS en Android. Native performance, over-the-air updates, toegang tot alle hardware features." },
+            { title: "TypeScript", text: "Type-safe code met minder bugs, makkelijker te onderhouden." },
+            { title: "Backend naar keuze", text: "Node.js, Supabase, Firebase of een custom REST API — afhankelijk van je requirements." },
+            { title: "App Store + Play Store", text: "Ik regel het volledige deployment proces inclusief App Store review en Play Store publicatie." },
           ].map((item) => (
             <div key={item.title} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
               <h3 className="text-base font-medium text-primary mb-3">{item.title}</h3>
@@ -77,12 +78,12 @@ export default function MobileApplications() {
       </FadeIn>
 
       <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investment</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investering</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
           {[
-            { range: "€15k – €35k", label: "MVP (6–10 screens)", time: "6–10 weeks" },
-            { range: "€35k – €80k", label: "Full app + backend", time: "3–5 months" },
-            { range: "€80k+", label: "Complex platform", time: "5–12 months" },
+            { range: "€15k – €35k", label: "MVP (6–10 schermen)", time: "6–10 weken" },
+            { range: "€35k – €80k", label: "Volledige app + backend", time: "3–5 maanden" },
+            { range: "€80k+", label: "Complex platform", time: "5–12 maanden" },
           ].map((tier) => (
             <div key={tier.label} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
               <span className="text-2xl font-bold text-accent block mb-2">{tier.range}</span>
@@ -94,13 +95,13 @@ export default function MobileApplications() {
       </FadeIn>
 
       <FadeIn className="border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>
+        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Volgende stap</p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary mb-4">
-          Have an app idea?
+          Heb je een app-idee?
         </h2>
         <p className="text-secondary leading-relaxed max-w-xl mb-8">
-          Describe what you want to build — I&apos;ll give you an honest assessment of scope,
-          timeline and budget within 24 hours. No sales pitch, just clarity.
+          Beschrijf wat je wilt bouwen — ik geef je binnen 24 uur een eerlijke
+          inschatting van scope, planning en budget. Geen sales pitch, gewoon duidelijkheid.
         </p>
         <div className="flex items-center gap-6 flex-wrap">
           <a
@@ -109,13 +110,13 @@ export default function MobileApplications() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium hover:bg-accent transition-colors duration-300"
           >
-            Book a free 30-min call →
+            Plan een gratis 30-min gesprek →
           </a>
           <Link
-            href="/contact"
+            href="/nl/contact"
             className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
           >
-            Or send a message
+            Of stuur een bericht
           </Link>
         </div>
       </FadeIn>

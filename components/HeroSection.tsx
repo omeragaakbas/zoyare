@@ -1,14 +1,22 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { contact } from "@/lib/content";
 import SplitText from "@/components/SplitText";
 import MagneticButton from "@/components/MagneticButton";
 import FloatingShape from "@/components/FloatingShape";
 import Counter from "@/components/Counter";
+import { localeFromPath } from "@/lib/i18n/config";
+import { getDictionary } from "@/lib/i18n/dictionaries";
 
 export default function HeroSection() {
+  const pathname = usePathname();
+  const locale = localeFromPath(pathname || "/");
+  const d = getDictionary(locale).home;
+  const portfolioHref = locale === "nl" ? "/nl/portfolio" : "/portfolio";
+
   return (
     <section className="relative min-h-screen flex flex-col justify-end px-6 md:px-12 pb-20 pt-32 overflow-hidden">
       <FloatingShape />
@@ -22,7 +30,7 @@ export default function HeroSection() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
           <span className="font-mono text-xs text-muted tracking-widest uppercase">
-            Available for projects
+            {d.badge}
           </span>
         </motion.div>
 
@@ -39,7 +47,7 @@ export default function HeroSection() {
               className="font-mono text-2xl text-primary tabular-nums"
             />
             <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
-              Active projects
+              {d.activeProjects}
             </span>
           </div>
           <span className="w-px h-6 bg-border hidden md:block" />
@@ -48,13 +56,13 @@ export default function HeroSection() {
               100%
             </span>
             <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
-              Custom
+              {d.custom}
             </span>
           </div>
           <span className="w-px h-6 bg-border hidden md:block" />
           <div className="flex items-baseline gap-2">
             <span className="font-mono text-2xl text-primary tabular-nums">
-              EST.
+              {d.estimated}
             </span>
             <span className="font-mono text-[10px] text-muted tracking-widest uppercase">
               2024
@@ -64,17 +72,17 @@ export default function HeroSection() {
 
         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-primary leading-[0.95] mb-10">
           <span className="block">
-            <SplitText delay={0.05}>Software</SplitText>
+            <SplitText delay={0.05}>{d.headlineLine1}</SplitText>
           </span>
           <span className="block">
-            <SplitText delay={0.2}>built to</SplitText>
+            <SplitText delay={0.2}>{d.headlineLine2}</SplitText>
           </span>
           <span className="block">
             <SplitText
               delay={0.35}
               className="font-display italic text-accent"
             >
-              scale.
+              {d.headlineLine3}
             </SplitText>
             <motion.span
               className="inline-block w-[3px] h-[0.78em] bg-accent ml-2 align-middle"
@@ -99,8 +107,7 @@ export default function HeroSection() {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
-          Custom software and mobile applications for businesses that need
-          more than off-the-shelf solutions.
+          {d.subtitle}
         </motion.p>
 
         <motion.div
@@ -115,7 +122,7 @@ export default function HeroSection() {
         >
           <MagneticButton>
             <Link
-              href="/portfolio"
+              href={portfolioHref}
               data-magnetic
               className="group relative inline-flex items-center gap-3 px-7 py-3.5 bg-primary text-background text-sm font-medium overflow-hidden"
             >
@@ -126,7 +133,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
               />
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                View work
+                {d.viewWork}
               </span>
               <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-300">
                 →
@@ -142,7 +149,7 @@ export default function HeroSection() {
               data-magnetic
               className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
             >
-              Schedule a call
+              {d.scheduleCall}
             </a>
           </MagneticButton>
         </motion.div>
@@ -169,7 +176,7 @@ export default function HeroSection() {
           animate={{ y: [0, 3, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         >
-          Scroll
+          {d.scroll}
         </motion.span>
       </motion.div>
     </section>

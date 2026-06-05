@@ -4,9 +4,9 @@ import { webPage, breadcrumbList } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Discuss your project with Zoyare. Custom software, API integrations and mobile applications — get in touch for a free consultation.",
+    "Bespreek je project met Zoyare. Maatwerk software, API-integraties en mobiele applicaties — neem contact op voor een vrijblijvend gesprek.",
   alternates: {
-    canonical: "https://zoyare.com/contact",
+    canonical: "https://zoyare.com/nl/contact",
     languages: {
       en: "https://zoyare.com/contact",
       nl: "https://zoyare.com/nl/contact",
@@ -16,8 +16,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact — Zoyare",
     description:
-      "Discuss your project with Zoyare. Get in touch for a free consultation.",
-    url: "https://zoyare.com/contact",
+      "Bespreek je project met Zoyare. Neem contact op voor een vrijblijvend gesprek.",
+    url: "https://zoyare.com/nl/contact",
+    locale: "nl_NL",
   },
 };
 
@@ -25,12 +26,12 @@ const jsonLd = [
   webPage({
     name: "Contact Zoyare",
     description:
-      "Get in touch with Zoyare for custom software development, API integrations and mobile applications.",
-    path: "/contact",
+      "Neem contact op met Zoyare voor maatwerk software development, API-integraties en mobiele applicaties.",
+    path: "/nl/contact",
   }),
   breadcrumbList([
-    { name: "Home", path: "/" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/nl" },
+    { name: "Contact", path: "/nl/contact" },
   ]),
 ];
 

@@ -3,7 +3,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy policy for Zoyare — how we handle your data.",
-  alternates: { canonical: "https://zoyare.com/privacy" },
+  alternates: {
+    canonical: "https://zoyare.com/privacy",
+    languages: {
+      en: "https://zoyare.com/privacy",
+      nl: "https://zoyare.com/nl/privacy",
+      "x-default": "https://zoyare.com/privacy",
+    },
+  },
 };
 
 export default function Privacy() {

@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Space_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import Nav from "@/components/Nav";
-import Logo from "@/components/Logo";
 import ScrollProgress from "@/components/ScrollProgress";
 import Background from "@/components/Background";
 import CookieConsent from "@/components/CookieConsent";
 import AnalyticsLoader from "@/components/AnalyticsLoader";
-import CookiePreferencesButton from "@/components/CookiePreferencesButton";
 import ClientShell from "@/components/ClientShell";
+import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 
 const spaceGrotesk = Space_Grotesk({
@@ -91,6 +89,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: BASE_URL,
+    languages: {
+      en: BASE_URL,
+      nl: `${BASE_URL}/nl`,
+      "x-default": BASE_URL,
+    },
   },
 };
 
@@ -193,65 +196,7 @@ export default function RootLayout({
         <Nav />
         <main className="relative">{children}</main>
         <ClientShell />
-        <footer className="border-t border-border px-6 md:px-12 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            <div>
-              <Logo variant="mark" height={20} className="text-primary opacity-40 mb-4" />
-              <p className="text-sm text-secondary leading-relaxed mb-4">
-                Software engineering studio. Custom software, API integrations and mobile apps.
-              </p>
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span className="font-mono text-xs text-muted tracking-widest uppercase">Available for projects</span>
-              </div>
-            </div>
-
-            <div>
-              <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Services</p>
-              <div className="flex flex-col gap-2.5">
-                <Link href="/services/custom-software" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Custom Software</Link>
-                <Link href="/services/api-integrations" className="text-sm text-secondary hover:text-accent transition-colors duration-200">API & Integrations</Link>
-                <Link href="/services/mobile-applications" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Mobile Applications</Link>
-                <Link href="/services/process-automation" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Process Automation</Link>
-              </div>
-            </div>
-
-            <div>
-              <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Company</p>
-              <div className="flex flex-col gap-2.5">
-                <Link href="/about" className="text-sm text-secondary hover:text-accent transition-colors duration-200">About</Link>
-                <Link href="/portfolio" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Portfolio</Link>
-                <Link href="/blog" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Blog</Link>
-                <Link href="/faq" className="text-sm text-secondary hover:text-accent transition-colors duration-200">FAQ</Link>
-                <Link href="/contact" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Contact</Link>
-              </div>
-            </div>
-
-            <div>
-              <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">Contact</p>
-              <div className="flex flex-col gap-2.5">
-                <a href="mailto:hello@zoyare.com" className="text-sm text-secondary hover:text-accent transition-colors duration-200">hello@zoyare.com</a>
-                <a href="https://cal.eu/zoyare" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Schedule a call</a>
-                <a href="https://www.linkedin.com/company/zoyare/" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">LinkedIn</a>
-                <a href="https://www.instagram.com/zoyarehq/" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Instagram</a>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div className="flex items-center gap-6">
-              <span className="font-mono text-xs text-muted tracking-widest uppercase">
-                Zoyare &copy; {CURRENT_YEAR}
-              </span>
-              <span className="font-mono text-xs text-muted">KvK: 94498555</span>
-            </div>
-            <div className="flex items-center gap-6">
-              <Link href="/privacy" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">Privacy</Link>
-              <Link href="/terms" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">Terms</Link>
-              <CookiePreferencesButton />
-            </div>
-          </div>
-        </footer>
+        <Footer year={CURRENT_YEAR} />
         <CookieConsent />
         <Analytics />
       </body>

@@ -7,8 +7,8 @@ const BASE_URL = "https://zoyare.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    { url: BASE_URL,                                           lastModified: "2026-05-27", changeFrequency: "monthly",  priority: 1.0 },
+  const enStaticRoutes: MetadataRoute.Sitemap = [
+    { url: BASE_URL,                                           lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 1.0 },
     { url: `${BASE_URL}/portfolio`,                            lastModified: "2026-05-27", changeFrequency: "monthly",  priority: 0.8 },
     { url: `${BASE_URL}/about`,                                lastModified: "2026-04-01", changeFrequency: "yearly",   priority: 0.7 },
     { url: `${BASE_URL}/contact`,                              lastModified: "2026-05-27", changeFrequency: "yearly",   priority: 0.7 },
@@ -20,6 +20,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/services/process-automation`,          lastModified: "2026-04-01", changeFrequency: "monthly",  priority: 0.9 },
     { url: `${BASE_URL}/privacy`,                              lastModified: "2026-03-01", changeFrequency: "yearly",   priority: 0.3 },
     { url: `${BASE_URL}/terms`,                                lastModified: "2026-03-01", changeFrequency: "yearly",   priority: 0.3 },
+  ];
+
+  const nlStaticRoutes: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}/nl`,                                    lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 1.0 },
+    { url: `${BASE_URL}/nl/portfolio`,                          lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.8 },
+    { url: `${BASE_URL}/nl/over-ons`,                           lastModified: "2026-06-05", changeFrequency: "yearly",   priority: 0.7 },
+    { url: `${BASE_URL}/nl/contact`,                            lastModified: "2026-06-05", changeFrequency: "yearly",   priority: 0.7 },
+    { url: `${BASE_URL}/nl/blog`,                               lastModified: "2026-06-05", changeFrequency: "weekly",   priority: 0.8 },
+    { url: `${BASE_URL}/nl/faq`,                                lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.7 },
+    { url: `${BASE_URL}/nl/diensten/maatwerk-software`,         lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.9 },
+    { url: `${BASE_URL}/nl/diensten/api-integraties`,           lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.9 },
+    { url: `${BASE_URL}/nl/diensten/mobiele-applicaties`,       lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.9 },
+    { url: `${BASE_URL}/nl/diensten/process-automation`,        lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.9 },
+    { url: `${BASE_URL}/nl/privacy`,                            lastModified: "2026-06-05", changeFrequency: "yearly",   priority: 0.3 },
+    { url: `${BASE_URL}/nl/voorwaarden`,                        lastModified: "2026-06-05", changeFrequency: "yearly",   priority: 0.3 },
   ];
 
   const portfolioRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
@@ -36,5 +51,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...portfolioRoutes, ...blogRoutes];
+  return [...enStaticRoutes, ...nlStaticRoutes, ...portfolioRoutes, ...blogRoutes];
 }

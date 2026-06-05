@@ -8,6 +8,7 @@ export type Post = {
   category: string;
   readTime: number;
   body: string; // HTML string
+  lang?: "en" | "nl";
 };
 
 export const posts: Post[] = [
@@ -902,7 +903,13 @@ Outdated dependencies contain known vulnerabilities. The longer you wait, the ha
   },
 ];
 
-const allPosts: Post[] = [...posts, ...(generatedPosts as Post[])];
+// Existing posts and generated posts are all in English; tag accordingly so
+// /blog (EN) and /nl/blog (NL) can filter on `lang`. NL translations of these
+// can be added later with `lang: "nl"`.
+const allPosts: Post[] = [
+  ...posts.map((p) => ({ lang: "en" as const, ...p })),
+  ...(generatedPosts as Post[]).map((p) => ({ lang: "en" as const, ...p })),
+];
 
 export function getPost(slug: string): Post | undefined {
   return allPosts.find((p) => p.slug === slug);

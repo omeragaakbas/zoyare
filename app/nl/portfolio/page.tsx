@@ -7,9 +7,9 @@ import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Zoyare projects: Siemens BuildingX connector, Workforce Management systems, mobile matching apps and freelancer invoicing automation. Enterprise to startup.",
+    "Zoyare projecten: Siemens BuildingX connector, Workforce Management systemen, mobiele matching apps en freelancer facturatie automatisering. Van enterprise tot startup.",
   alternates: {
-    canonical: "https://zoyare.com/portfolio",
+    canonical: "https://zoyare.com/nl/portfolio",
     languages: {
       en: "https://zoyare.com/portfolio",
       nl: "https://zoyare.com/nl/portfolio",
@@ -17,22 +17,23 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Portfolio — Zoyare Software Projects",
+    title: "Portfolio — Zoyare Software Projecten",
     description:
-      "From Siemens enterprise integrations to product development. See how Zoyare builds custom software.",
-    url: "https://zoyare.com/portfolio",
+      "Van Siemens enterprise integraties tot productontwikkeling. Zie hoe Zoyare maatwerk software bouwt.",
+    url: "https://zoyare.com/nl/portfolio",
+    locale: "nl_NL",
   },
 };
 
-export default function Portfolio() {
+export default function PortfolioNL() {
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
       <FadeIn className="mb-20">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Portfolio</p>
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
-          Selected
+          Geselecteerd
           <br />
-          work.
+          werk.
         </h1>
       </FadeIn>
 

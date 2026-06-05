@@ -7,7 +7,14 @@ export const metadata: Metadata = {
   title: "Business Process Automation — Automate Manual Workflows",
   description:
     "Automate manual workflows with custom software. Fewer errors, less time, more control. Zoyare builds automation tools for businesses.",
-  alternates: { canonical: "https://zoyare.com/services/process-automation" },
+  alternates: {
+    canonical: "https://zoyare.com/services/process-automation",
+    languages: {
+      en: "https://zoyare.com/services/process-automation",
+      nl: "https://zoyare.com/nl/diensten/process-automation",
+      "x-default": "https://zoyare.com/services/process-automation",
+    },
+  },
   openGraph: {
     title: "Process Automation — Automate Workflows | Zoyare",
     description:

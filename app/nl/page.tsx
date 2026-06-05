@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { projects, clients } from "@/lib/content";
 import FadeIn from "@/components/animations/FadeIn";
@@ -8,8 +9,29 @@ import { ServicesList, ProjectsList, CTASection } from "@/components/HomeSection
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 
-export default function Home() {
-  const d = getDictionary("en");
+export const metadata: Metadata = {
+  title: "Zoyare — Maatwerk Software & App Development",
+  description:
+    "Zoyare is een software engineering studio. Maatwerk software, API-integraties en mobiele apps voor bedrijven. Van requirement tot deployment.",
+  alternates: {
+    canonical: "https://zoyare.com/nl",
+    languages: {
+      en: "https://zoyare.com",
+      nl: "https://zoyare.com/nl",
+      "x-default": "https://zoyare.com",
+    },
+  },
+  openGraph: {
+    title: "Zoyare — Maatwerk Software & App Development",
+    description:
+      "Software engineering studio. Maatwerk software, API-integraties en mobiele apps voor bedrijven.",
+    url: "https://zoyare.com/nl",
+    locale: "nl_NL",
+  },
+};
+
+export default function HomeNL() {
+  const d = getDictionary("nl");
 
   return (
     <>
@@ -30,7 +52,7 @@ export default function Home() {
             {d.home.selectedWork}
           </p>
           <Link
-            href="/portfolio"
+            href="/nl/portfolio"
             className="text-sm text-secondary hover:text-primary transition-colors duration-200"
           >
             {d.home.viewAll}
