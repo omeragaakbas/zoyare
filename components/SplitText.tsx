@@ -46,7 +46,7 @@ export default function SplitText({
                 initial={{ y: 32, opacity: 0, filter: "blur(8px)" }}
                 animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
                 transition={{
-                  duration: 0.85,
+                  duration: 0.55,
                   delay: delay + i * stagger,
                   ease: [0.22, 1, 0.36, 1],
                 }}

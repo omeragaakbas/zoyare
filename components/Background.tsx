@@ -1,26 +1,12 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useState } from "react";
-
 /**
- * Living background — performance-tuned versie.
+ * Living background — server-rendered, pure CSS animations.
  *  - dot grid (CSS, geen paint cost)
- *  - 2 langzaam drijvende warm-orange blobs (lichtere blur, alleen desktop)
- *  - SVG film grain via een 256×256 tile pattern (i.p.v. fullscreen filter)
+ *  - 2 langzaam drijvende warm-orange blobs (GPU-composited)
+ *  - SVG film grain via een 200×200 tile pattern
  *
- * Op touch devices staan de blobs stil; de zware filter wordt eenmalig
- * berekend voor een kleine tile en daarna goedkoop herhaald.
+ * `prefers-reduced-motion` wordt globaal afgevangen in globals.css.
  */
 export default function Background() {
-  const reduced = useReducedMotion();
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
-    setAnimate(!isTouch && !reduced);
-  }, [reduced]);
-
   return (
     <div
       aria-hidden="true"
@@ -36,42 +22,22 @@ export default function Background() {
         }}
       />
 
-      {/* Animated gradient blobs — lichtere blur (40-50px) */}
-      <motion.div
-        className="absolute -top-1/4 -left-1/4 w-[55vw] h-[55vw] rounded-full will-change-transform"
+      {/* Animated gradient blobs — CSS keyframes, GPU-composited */}
+      <div
+        className="zoyare-blob-1 absolute -top-1/4 -left-1/4 w-[55vw] h-[55vw] rounded-full"
         style={{
           background:
             "radial-gradient(circle, rgba(241,95,14,0.20) 0%, transparent 60%)",
           filter: "blur(50px)",
-          transform: "translateZ(0)",
         }}
-        animate={
-          animate
-            ? {
-                x: [0, 70, -30, 0],
-                y: [0, -50, 30, 0],
-              }
-            : undefined
-        }
-        transition={{ duration: 55, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div
-        className="absolute top-1/3 -right-1/4 w-[50vw] h-[50vw] rounded-full will-change-transform"
+      <div
+        className="zoyare-blob-2 absolute top-1/3 -right-1/4 w-[50vw] h-[50vw] rounded-full"
         style={{
           background:
             "radial-gradient(circle, rgba(241,95,14,0.14) 0%, transparent 60%)",
           filter: "blur(60px)",
-          transform: "translateZ(0)",
         }}
-        animate={
-          animate
-            ? {
-                x: [0, -50, 20, 0],
-                y: [0, 40, -20, 0],
-              }
-            : undefined
-        }
-        transition={{ duration: 65, repeat: Infinity, ease: "easeInOut" }}
       />
 
       {/* Film grain overlay — small tiled pattern (cheap to paint) */}

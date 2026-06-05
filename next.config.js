@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    optimizePackageImports: ["framer-motion"],
+  },
   async redirects() {
     return [
       { source: "/diensten/api-integraties", destination: "/services/api-integrations", permanent: true },

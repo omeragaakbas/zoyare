@@ -4,17 +4,16 @@ import "./globals.css";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Logo from "@/components/Logo";
-import Cursor from "@/components/Cursor";
 import ScrollProgress from "@/components/ScrollProgress";
-import ChatWidget from "@/components/ChatWidget";
 import Background from "@/components/Background";
 import CookieConsent from "@/components/CookieConsent";
 import AnalyticsLoader from "@/components/AnalyticsLoader";
 import CookiePreferencesButton from "@/components/CookiePreferencesButton";
+import ClientShell from "@/components/ClientShell";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "700"],
   variable: "--font-space-grotesk",
   display: "swap",
 });
@@ -37,6 +36,8 @@ const instrumentSerif = Instrument_Serif({
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const BASE_URL = "https://zoyare.com";
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -166,11 +167,10 @@ export default function RootLayout({
       <body>
         {GA_ID && <AnalyticsLoader gaId={GA_ID} />}
         <Background />
-        <Cursor />
         <ScrollProgress />
         <Nav />
         <main className="relative">{children}</main>
-        <ChatWidget />
+        <ClientShell />
         <footer className="border-t border-border px-6 md:px-12 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div>
@@ -218,11 +218,8 @@ export default function RootLayout({
 
           <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="flex items-center gap-6">
-              <span
-                className="font-mono text-xs text-muted tracking-widest uppercase"
-                suppressHydrationWarning
-              >
-                Zoyare &copy; {new Date().getFullYear()}
+              <span className="font-mono text-xs text-muted tracking-widest uppercase">
+                Zoyare &copy; {CURRENT_YEAR}
               </span>
               <span className="font-mono text-xs text-muted">KvK: 94498555</span>
             </div>

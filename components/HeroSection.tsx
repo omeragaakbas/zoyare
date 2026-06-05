@@ -64,14 +64,14 @@ export default function HeroSection() {
 
         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-primary leading-[0.95] mb-10">
           <span className="block">
-            <SplitText delay={0.2}>Software</SplitText>
+            <SplitText delay={0.05}>Software</SplitText>
           </span>
           <span className="block">
-            <SplitText delay={0.45}>built to</SplitText>
+            <SplitText delay={0.2}>built to</SplitText>
           </span>
           <span className="block">
             <SplitText
-              delay={0.75}
+              delay={0.35}
               className="font-display italic text-accent"
             >
               scale.
@@ -94,8 +94,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.7,
-            delay: 1.4,
+            duration: 0.6,
+            delay: 0.7,
             ease: [0.22, 1, 0.36, 1],
           }}
         >
@@ -108,8 +108,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.6,
-            delay: 1.55,
+            duration: 0.5,
+            delay: 0.85,
             ease: [0.22, 1, 0.36, 1],
           }}
         >
@@ -152,15 +152,15 @@ export default function HeroSection() {
         className="mt-24 flex items-center gap-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.8 }}
+        transition={{ duration: 0.6, delay: 1.0 }}
       >
         <motion.div
           className="h-px bg-muted"
           initial={{ width: 0 }}
           animate={{ width: 48 }}
           transition={{
-            duration: 0.8,
-            delay: 1.9,
+            duration: 0.6,
+            delay: 1.1,
             ease: [0.22, 1, 0.36, 1],
           }}
         />
