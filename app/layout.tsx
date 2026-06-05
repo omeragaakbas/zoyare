@@ -10,6 +10,7 @@ import CookieConsent from "@/components/CookieConsent";
 import AnalyticsLoader from "@/components/AnalyticsLoader";
 import CookiePreferencesButton from "@/components/CookiePreferencesButton";
 import ClientShell from "@/components/ClientShell";
+import { Analytics } from "@vercel/analytics/next";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -252,6 +253,7 @@ export default function RootLayout({
           </div>
         </footer>
         <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );
