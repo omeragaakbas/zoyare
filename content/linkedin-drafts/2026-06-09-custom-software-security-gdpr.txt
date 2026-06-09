@@ -1,0 +1,12 @@
+"Is it secure?" is one of the first questions clients ask about custom software — and one of the easiest to answer badly.
+
+Here's the uncomfortable truth: most breaches aren't sophisticated attacks. They're skipped basics. A user changing a number in the URL and seeing someone else's data. Passwords stored in plain text. A dependency that hasn't been updated in three years.
+
+Security isn't a feature you add at the end. It's a foundation decision made in week one. And GDPR isn't paperwork — if your software touches personal data, "where does that data physically live?" is a question you need an answer to, especially the moment AI or any external service enters the picture.
+
+The good news: doing it right is mostly competence and discipline, not extra budget. The fines and breach costs for getting it wrong are not.
+
+I wrote a plain-language guide for non-technical owners — including the six questions to ask any developer before you trust them with your data:
+https://zoyare.com/blog/custom-software-security-gdpr
+
+#softwaredevelopment #gdpr #cybersecurity
