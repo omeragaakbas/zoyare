@@ -10,12 +10,7 @@ export const metadata: Metadata = {
   description:
     "Zoyare is a software engineering studio that builds custom software for businesses — from back-end architecture to enterprise integrations.",
   alternates: {
-    canonical: "https://zoyare.com/about",
-    languages: {
-      en: "https://zoyare.com/about",
-      nl: "https://zoyare.com/nl/over-ons",
-      "x-default": "https://zoyare.com/about",
-    },
+    canonical: "https://zoyare.com/about",
   },
   openGraph: {
     title: "About Zoyare — Software Engineering Studio",

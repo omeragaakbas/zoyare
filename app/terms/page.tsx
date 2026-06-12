@@ -4,12 +4,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Terms and conditions for Zoyare software engineering services.",
   alternates: {
-    canonical: "https://zoyare.com/terms",
-    languages: {
-      en: "https://zoyare.com/terms",
-      nl: "https://zoyare.com/nl/voorwaarden",
-      "x-default": "https://zoyare.com/terms",
-    },
+    canonical: "https://zoyare.com/terms",
   },
 };
 

@@ -89,11 +89,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: BASE_URL,
-    languages: {
-      en: BASE_URL,
-      nl: `${BASE_URL}/nl`,
-      "x-default": BASE_URL,
-    },
   },
 };
 

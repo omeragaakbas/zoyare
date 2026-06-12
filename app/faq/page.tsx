@@ -8,11 +8,6 @@ export const metadata: Metadata = {
     "Answers to common questions about Zoyare's custom software work — pricing, timelines, collaboration and technologies.",
   alternates: {
     canonical: "https://zoyare.com/faq",
-    languages: {
-      en: "https://zoyare.com/faq",
-      nl: "https://zoyare.com/nl/faq",
-      "x-default": "https://zoyare.com/faq",
-    },
   },
   openGraph: {
     title: "FAQ — Zoyare",

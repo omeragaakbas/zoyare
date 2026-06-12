@@ -9,12 +9,7 @@ export const metadata: Metadata = {
   description:
     "Zoyare projects: Siemens BuildingX connector, Workforce Management systems, mobile matching apps and freelancer invoicing automation. Enterprise to startup.",
   alternates: {
-    canonical: "https://zoyare.com/portfolio",
-    languages: {
-      en: "https://zoyare.com/portfolio",
-      nl: "https://zoyare.com/nl/portfolio",
-      "x-default": "https://zoyare.com/portfolio",
-    },
+    canonical: "https://zoyare.com/portfolio",
   },
   openGraph: {
     title: "Portfolio — Zoyare Software Projects",

@@ -1,24 +1,11 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Logo from "@/components/Logo";
 import CookiePreferencesButton from "@/components/CookiePreferencesButton";
-import { localeFromPath } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
+import { dict as d } from "@/lib/dictionary";
 
 type Props = { year: number };
 
 export default function Footer({ year }: Props) {
-  const pathname = usePathname();
-  const locale = localeFromPath(pathname || "/");
-  const d = getDictionary(locale);
-
-  const linkPrefix = locale === "nl" ? "/nl" : "";
-  const servicePrefix = locale === "nl" ? "/nl/diensten" : "/services";
-  const aboutHref = locale === "nl" ? "/nl/over-ons" : "/about";
-  const privacyHref = locale === "nl" ? "/nl/privacy" : "/privacy";
-  const termsHref = locale === "nl" ? "/nl/voorwaarden" : "/terms";
 
   return (
     <footer className="border-t border-border px-6 md:px-12 py-16">
@@ -58,11 +45,11 @@ export default function Footer({ year }: Props) {
             {d.footer.companyLabel}
           </p>
           <div className="flex flex-col gap-2.5">
-            <Link href={aboutHref} className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.about}</Link>
-            <Link href={`${linkPrefix}/portfolio`} className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.portfolio}</Link>
-            <Link href={`${linkPrefix}/blog`} className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.blog}</Link>
-            <Link href={`${linkPrefix}/faq`} className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.faq}</Link>
-            <Link href={`${linkPrefix}/contact`} className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.contact}</Link>
+            <Link href="/about" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.about}</Link>
+            <Link href="/portfolio" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.portfolio}</Link>
+            <Link href="/blog" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.blog}</Link>
+            <Link href="/faq" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.faq}</Link>
+            <Link href="/contact" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.contact}</Link>
           </div>
         </div>
 
@@ -87,10 +74,10 @@ export default function Footer({ year }: Props) {
           <span className="font-mono text-xs text-muted">KvK: 94498555</span>
         </div>
         <div className="flex items-center gap-6">
-          <Link href={privacyHref} className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">
+          <Link href="/privacy" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">
             {d.footer.privacy}
           </Link>
-          <Link href={termsHref} className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">
+          <Link href="/terms" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">
             {d.footer.terms}
           </Link>
           <CookiePreferencesButton />

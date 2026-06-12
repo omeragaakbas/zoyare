@@ -1,20 +1,14 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { testimonials } from "@/lib/content";
 import FadeIn from "@/components/animations/FadeIn";
-import { localeFromPath } from "@/lib/i18n/config";
 
 export default function TestimonialsSection() {
-  const pathname = usePathname();
-  const locale = localeFromPath(pathname || "/");
-  const label = locale === "nl" ? "Wat klanten zeggen" : "What clients say";
-
   return (
     <section className="relative px-6 md:px-12 py-24 border-t border-border">
       <FadeIn className="mb-14">
         <p className="font-mono text-xs text-muted tracking-widest uppercase">
-          {label}
+          What clients say
         </p>
       </FadeIn>
 

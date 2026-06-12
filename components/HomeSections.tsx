@@ -1,17 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import type { Project } from "@/lib/content";
 import FadeIn from "@/components/animations/FadeIn";
 import MagneticButton from "@/components/MagneticButton";
-import { localeFromPath } from "@/lib/i18n/config";
 
 export function ServicesList({
   services,
 }: {
-  services: { title: string; description: string; href: string }[];
+  services: readonly { title: string; description: string; href: string }[];
 }) {
   return (
     <div>
@@ -118,37 +116,26 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
 }
 
 export function CTASection() {
-  const pathname = usePathname();
-  const locale = localeFromPath(pathname || "/");
-  const contactHref = locale === "nl" ? "/nl/contact" : "/contact";
-  const projectWord = locale === "nl" ? "project" : "project";
-  const headline = locale === "nl" ? "Een" : "Discuss a";
-  const trailing = locale === "nl" ? "bespreken?" : "?";
-  const ctaLabel = locale === "nl" ? "Neem contact op" : "Get in touch";
-  const availableLabel = locale === "nl" ? "Beschikbaar" : "Available";
-
   return (
     <section className="relative px-6 md:px-12 py-32 border-t border-border">
       <FadeIn>
         <div className="flex items-center gap-2.5 mb-10">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <p className="font-mono text-xs text-muted tracking-widest uppercase">
-            {availableLabel}
+            Available
           </p>
         </div>
       </FadeIn>
       <FadeIn delay={0.08}>
         <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary leading-tight mb-10">
-          {headline}{" "}
-          <span className="font-display italic text-accent">{projectWord}</span>
-          {locale === "nl" ? " " : ""}
-          {trailing}
+          Discuss a{" "}
+          <span className="font-display italic text-accent">project</span>?
         </h2>
       </FadeIn>
       <FadeIn delay={0.16}>
         <MagneticButton>
           <Link
-            href={contactHref}
+            href="/contact"
             data-magnetic
             className="group relative inline-flex items-center gap-3 px-7 py-3.5 border border-primary text-primary text-sm font-medium overflow-hidden"
           >
@@ -159,7 +146,7 @@ export function CTASection() {
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             />
             <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-              {ctaLabel}
+              Get in touch
             </span>
             <span className="relative z-10 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
               →

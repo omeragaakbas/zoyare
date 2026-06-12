@@ -1,48 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import FadeIn from "@/components/animations/FadeIn";
-import { localeFromPath } from "@/lib/i18n/config";
 
-const copy = {
-  en: {
-    label: "Free checklist",
-    headlinePart1: "12 questions you should ask",
-    headlineAccent: "before",
-    headlinePart2: "commissioning custom software.",
-    description:
-      "Most software projects don't fail because of bad code — but because of unclear expectations. This checklist helps you ask the right questions before the budget is committed.",
-    successMessage: "Checklist on its way — check your inbox.",
-    submitIdle: "Get it free →",
-    submitLoading: "Sending...",
-    errorMessage: "Something went wrong. Email directly at hello@zoyare.com.",
-    fine: "No spam. One email. Immediately useful.",
-    placeholder: "you@company.com",
-    label_input: "Email address",
-  },
-  nl: {
-    label: "Gratis checklist",
-    headlinePart1: "12 vragen die je moet stellen",
-    headlineAccent: "vóór",
-    headlinePart2: "je maatwerksoftware laat bouwen.",
-    description:
-      "De meeste softwareprojecten falen niet door slechte code — maar door onduidelijke verwachtingen. Deze checklist helpt je de juiste vragen te stellen voordat het budget vastligt.",
-    successMessage: "Checklist onderweg — kijk in je inbox.",
-    submitIdle: "Ontvang gratis →",
-    submitLoading: "Versturen...",
-    errorMessage: "Er ging iets mis. Mail direct naar hello@zoyare.com.",
-    fine: "Geen spam. Één mail. Direct bruikbaar.",
-    placeholder: "jij@bedrijf.com",
-    label_input: "E-mailadres",
-  },
+const c = {
+  label: "Free checklist",
+  headlinePart1: "12 questions you should ask",
+  headlineAccent: "before",
+  headlinePart2: "commissioning custom software.",
+  description:
+    "Most software projects don't fail because of bad code — but because of unclear expectations. This checklist helps you ask the right questions before the budget is committed.",
+  successMessage: "Checklist on its way — check your inbox.",
+  submitIdle: "Get it free →",
+  submitLoading: "Sending...",
+  errorMessage: "Something went wrong. Email directly at hello@zoyare.com.",
+  fine: "No spam. One email. Immediately useful.",
+  placeholder: "you@company.com",
+  label_input: "Email address",
 } as const;
 
 export default function LeadMagnetSection() {
-  const pathname = usePathname();
-  const locale = localeFromPath(pathname || "/");
-  const c = copy[locale];
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 

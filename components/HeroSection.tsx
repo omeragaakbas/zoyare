@@ -1,21 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { contact } from "@/lib/content";
 import SplitText from "@/components/SplitText";
 import MagneticButton from "@/components/MagneticButton";
 import FloatingShape from "@/components/FloatingShape";
 import Counter from "@/components/Counter";
-import { localeFromPath } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/dictionaries";
+import { dict } from "@/lib/dictionary";
 
 export default function HeroSection() {
-  const pathname = usePathname();
-  const locale = localeFromPath(pathname || "/");
-  const d = getDictionary(locale).home;
-  const portfolioHref = locale === "nl" ? "/nl/portfolio" : "/portfolio";
+  const d = dict.home;
 
   return (
     <section className="relative min-h-screen flex flex-col justify-end px-6 md:px-12 pb-20 pt-32 overflow-hidden">
@@ -122,7 +117,7 @@ export default function HeroSection() {
         >
           <MagneticButton>
             <Link
-              href={portfolioHref}
+              href="/portfolio"
               data-magnetic
               className="group relative inline-flex items-center gap-3 px-7 py-3.5 bg-primary text-background text-sm font-medium overflow-hidden"
             >

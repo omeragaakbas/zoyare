@@ -8,12 +8,7 @@ export const metadata: Metadata = {
   description:
     "Mobile app development for iOS and Android. Zoyare builds native-quality apps with React Native/Expo. Honest pricing, fast delivery.",
   alternates: {
-    canonical: "https://zoyare.com/services/mobile-applications",
-    languages: {
-      en: "https://zoyare.com/services/mobile-applications",
-      nl: "https://zoyare.com/nl/diensten/mobiele-applicaties",
-      "x-default": "https://zoyare.com/services/mobile-applications",
-    },
+    canonical: "https://zoyare.com/services/mobile-applications",
   },
   openGraph: {
     title: "Mobile App Development — Zoyare",

@@ -6,12 +6,7 @@ export const metadata: Metadata = {
   description:
     "Discuss your project with Zoyare. Custom software, API integrations and mobile applications — get in touch for a free consultation.",
   alternates: {
-    canonical: "https://zoyare.com/contact",
-    languages: {
-      en: "https://zoyare.com/contact",
-      nl: "https://zoyare.com/nl/contact",
-      "x-default": "https://zoyare.com/contact",
-    },
+    canonical: "https://zoyare.com/contact",
   },
   openGraph: {
     title: "Contact — Zoyare",

@@ -22,21 +22,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/terms`,                                lastModified: "2026-03-01", changeFrequency: "yearly",   priority: 0.3 },
   ];
 
-  const nlStaticRoutes: MetadataRoute.Sitemap = [
-    { url: `${BASE_URL}/nl`,                                    lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 1.0 },
-    { url: `${BASE_URL}/nl/portfolio`,                          lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.8 },
-    { url: `${BASE_URL}/nl/over-ons`,                           lastModified: "2026-06-05", changeFrequency: "yearly",   priority: 0.7 },
-    { url: `${BASE_URL}/nl/contact`,                            lastModified: "2026-06-05", changeFrequency: "yearly",   priority: 0.7 },
-    { url: `${BASE_URL}/nl/blog`,                               lastModified: "2026-06-05", changeFrequency: "weekly",   priority: 0.8 },
-    { url: `${BASE_URL}/nl/faq`,                                lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.7 },
-    { url: `${BASE_URL}/nl/diensten/maatwerk-software`,         lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.9 },
-    { url: `${BASE_URL}/nl/diensten/api-integraties`,           lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.9 },
-    { url: `${BASE_URL}/nl/diensten/mobiele-applicaties`,       lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.9 },
-    { url: `${BASE_URL}/nl/diensten/process-automation`,        lastModified: "2026-06-05", changeFrequency: "monthly",  priority: 0.9 },
-    { url: `${BASE_URL}/nl/privacy`,                            lastModified: "2026-06-05", changeFrequency: "yearly",   priority: 0.3 },
-    { url: `${BASE_URL}/nl/voorwaarden`,                        lastModified: "2026-06-05", changeFrequency: "yearly",   priority: 0.3 },
-  ];
-
   const portfolioRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
     url: `${BASE_URL}/portfolio/${project.id}`,
     lastModified: `${project.year}-12-01`,
@@ -51,5 +36,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...enStaticRoutes, ...nlStaticRoutes, ...portfolioRoutes, ...blogRoutes];
+  return [...enStaticRoutes, ...portfolioRoutes, ...blogRoutes];
 }

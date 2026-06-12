@@ -8,12 +8,7 @@ export const metadata: Metadata = {
   description:
     "Connect your systems via API integration. Zoyare links your ERP, CRM, accounting and custom software so data flows automatically.",
   alternates: {
-    canonical: "https://zoyare.com/services/api-integrations",
-    languages: {
-      en: "https://zoyare.com/services/api-integrations",
-      nl: "https://zoyare.com/nl/diensten/api-integraties",
-      "x-default": "https://zoyare.com/services/api-integrations",
-    },
+    canonical: "https://zoyare.com/services/api-integrations",
   },
   openGraph: {
     title: "API Integrations — Connect Your Systems | Zoyare",

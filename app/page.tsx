@@ -6,10 +6,9 @@ import Marquee from "@/components/Marquee";
 import HeroSection from "@/components/HeroSection";
 import { ServicesList, ProjectsList, CTASection } from "@/components/HomeSections";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import { getDictionary } from "@/lib/i18n/dictionaries";
+import { dict as d } from "@/lib/dictionary";
 
 export default function Home() {
-  const d = getDictionary("en");
 
   return (
     <>

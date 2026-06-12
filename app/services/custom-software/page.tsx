@@ -8,12 +8,7 @@ export const metadata: Metadata = {
   description:
     "Zoyare builds custom software for businesses. From requirement to deployment — no off-the-shelf solutions, but software that fits your process.",
   alternates: {
-    canonical: "https://zoyare.com/services/custom-software",
-    languages: {
-      en: "https://zoyare.com/services/custom-software",
-      nl: "https://zoyare.com/nl/diensten/maatwerk-software",
-      "x-default": "https://zoyare.com/services/custom-software",
-    },
+    canonical: "https://zoyare.com/services/custom-software",
   },
   openGraph: {
     title: "Custom Software Development — Zoyare",

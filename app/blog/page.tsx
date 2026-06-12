@@ -8,12 +8,7 @@ export const metadata: Metadata = {
   description:
     "Practical articles about custom software, API integrations and app development. Honest knowledge without the sales pitch.",
   alternates: {
-    canonical: "https://zoyare.com/blog",
-    languages: {
-      en: "https://zoyare.com/blog",
-      nl: "https://zoyare.com/nl/blog",
-      "x-default": "https://zoyare.com/blog",
-    },
+    canonical: "https://zoyare.com/blog",
   },
   openGraph: {
     title: "Blog — Zoyare Software Engineering",
@@ -24,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export default function Blog() {
-  const posts = getAllPosts().filter((p) => p.lang !== "nl");
+  const posts = getAllPosts();
 
   return (
     <div className="pt-32 px-6 md:px-12 pb-24">
