@@ -11,7 +11,7 @@ Marketingsite van Zoyare, een eenmans software engineering studio (Ömer Akbas, 
 ## Structuur
 
 - `app/` — routes; elke pagina heeft eigen metadata met canonical
-- `components/` — gedeelde componenten; homepage-secties in `HomeSections.tsx`
+- `components/` — gedeelde componenten; homepage-secties in `HomeSections.tsx`; `ProjectSchematic.tsx` bevat de handgemaakte SVG-blueprints per portfolioproject; `PageBlocks.tsx` de gedeelde editorial-blokken (InvestmentTiers, StepRail)
 - `lib/dictionary.ts` — centrale copy voor Nav, Footer en homepage-secties; paginacopy staat in de pagina's zelf
 - `next.config.js` — **alle 301-redirects staan hier**, plus security headers
 
@@ -24,10 +24,13 @@ Marketingsite van Zoyare, een eenmans software engineering studio (Ömer Akbas, 
 ## Werkafspraken
 
 - Schrijf site-copy in het Engels; communiceer met Ömer in het Nederlands.
+- **framer-motion: gebruik `m.` (niet `motion.`)** — de app draait onder `LazyMotion strict` (zie `components/MotionProvider.tsx`); `motion.` gooit een runtime error. Alleen `domAnimation`-features beschikbaar (geen drag/layout).
+- Typografisch accent: laatste woord van paginakoppen in `font-display` (Instrument Serif italic). Oranje (`accent`) spaarzaam houden.
 - Houd het log hieronder bij: **na elke betekenisvolle wijziging voeg je bovenaan één regel toe** (datum + wat + waarom). Maximaal ~15 regels; oudste regels mogen weg.
 
 ## Laatste wijzigingen
 
+- 2026-06-12 — Designpas: SVG-blueprints per project (`ProjectSchematic`), editorial-blokken op service-pagina's, per-post/case OG-images, LazyMotion (−17 à −28 kB First Load JS). Reden: portfolio miste visuals, binnenpagina's waren te uniform.
 - 2026-06-12 — NL-site (`app/nl/*`, `lib/i18n/`, `lib/faqs-nl.ts`) verwijderd; 301-redirects `/nl/*` → EN in `next.config.js`; hreflang gestript; gedeelde copy verhuisd naar `lib/dictionary.ts`. Reden: internationale doelgroep, EN volstaat.
 - 2026-06-05 — NL-site live gezet naast EN (commit `46e98ab`) — later teruggedraaid, zie hierboven.
 - 2026-06-?? — Vercel Web Analytics toegevoegd (cookieless, geen consent nodig) (commit `545d9ba`).

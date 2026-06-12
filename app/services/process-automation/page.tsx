@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Automate manual workflows with custom software. Fewer errors, less time, more control. Zoyare builds automation tools for businesses.",
   alternates: {
-    canonical: "https://zoyare.com/services/process-automation",
+    canonical: "https://zoyare.com/services/process-automation",
   },
   openGraph: {
     title: "Process Automation — Automate Workflows | Zoyare",
@@ -46,7 +46,7 @@ export default function ProcessAutomation() {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
           Process
           <br />
-          automation.
+          <span className="font-display">automation.</span>
         </h1>
         <p className="text-xl md:text-2xl text-secondary font-light leading-relaxed max-w-2xl">
           Automate manual workflows. Fewer errors, less time, more
@@ -75,19 +75,27 @@ export default function ProcessAutomation() {
 
       <FadeIn className="mb-24 border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Example</p>
-        <div className="bg-surface border border-border p-10 max-w-3xl">
+        <Link
+          href="/portfolio/proaspect"
+          className="group block bg-surface border border-border p-10 max-w-3xl hover:border-muted transition-colors duration-200"
+        >
           <p className="font-mono text-xs text-accent tracking-widest uppercase mb-4">Case study</p>
-          <h3 className="text-xl font-bold text-primary mb-4">Freelancer Invoicing Automation — ProAspect</h3>
+          <h3 className="text-xl font-bold text-primary mb-4 group-hover:text-accent transition-colors duration-200">
+            Freelancer Invoicing Automation — ProAspect
+          </h3>
           <p className="text-secondary leading-relaxed mb-6">
             An accounting firm manually processed weekly timesheets from dozens of
             freelancers and generated invoices for their clients. Time-consuming, error-prone and not scalable.
           </p>
-          <p className="text-secondary leading-relaxed">
+          <p className="text-secondary leading-relaxed mb-6">
             We built an automation tool that handles the entire process: CSV upload of
             timesheets → validation → invoice calculation → PDF generation → delivery. The manual
             work has been eliminated.
           </p>
-        </div>
+          <span className="font-mono text-xs text-muted tracking-widest uppercase group-hover:text-accent transition-colors duration-200">
+            View the case →
+          </span>
+        </Link>
       </FadeIn>
 
       <FadeIn className="border-t border-border pt-16">

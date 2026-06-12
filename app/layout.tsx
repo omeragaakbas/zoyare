@@ -8,6 +8,7 @@ import CookieConsent from "@/components/CookieConsent";
 import AnalyticsLoader from "@/components/AnalyticsLoader";
 import ClientShell from "@/components/ClientShell";
 import Footer from "@/components/Footer";
+import MotionProvider from "@/components/MotionProvider";
 import { Analytics } from "@vercel/analytics/next";
 
 const spaceGrotesk = Space_Grotesk({
@@ -187,12 +188,14 @@ export default function RootLayout({
       <body>
         {GA_ID && <AnalyticsLoader gaId={GA_ID} />}
         <Background />
-        <ScrollProgress />
-        <Nav />
-        <main className="relative">{children}</main>
-        <ClientShell />
-        <Footer year={CURRENT_YEAR} />
-        <CookieConsent />
+        <MotionProvider>
+          <ScrollProgress />
+          <Nav />
+          <main className="relative">{children}</main>
+          <ClientShell />
+          <Footer year={CURRENT_YEAR} />
+          <CookieConsent />
+        </MotionProvider>
         <Analytics />
       </body>
     </html>

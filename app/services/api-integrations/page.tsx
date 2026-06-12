@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
+import { InvestmentTiers } from "@/components/PageBlocks";
 import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Connect your systems via API integration. Zoyare links your ERP, CRM, accounting and custom software so data flows automatically.",
   alternates: {
-    canonical: "https://zoyare.com/services/api-integrations",
+    canonical: "https://zoyare.com/services/api-integrations",
   },
   openGraph: {
     title: "API Integrations — Connect Your Systems | Zoyare",
@@ -51,7 +52,7 @@ export default function ApiIntegrations() {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
           API &amp;
           <br />
-          Integrations.
+          <span className="font-display">integrations.</span>
         </h1>
         <p className="text-xl md:text-2xl text-secondary font-light leading-relaxed max-w-2xl">
           Systems that don&apos;t talk to each other, connected. No more manual data
@@ -86,22 +87,13 @@ export default function ApiIntegrations() {
         </div>
       </FadeIn>
 
-      <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investment</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
-          {[
-            { range: "€2.5k – €8k", label: "Simple connection", time: "1–3 weeks" },
-            { range: "€8k – €25k", label: "Multi-system integration", time: "3–8 weeks" },
-            { range: "€25k+", label: "Enterprise / legacy", time: "2–6 months" },
-          ].map((tier) => (
-            <div key={tier.label} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
-              <span className="text-2xl font-bold text-accent block mb-2">{tier.range}</span>
-              <p className="text-sm text-primary font-medium mb-1">{tier.label}</p>
-              <p className="font-mono text-xs text-muted">{tier.time}</p>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
+      <InvestmentTiers
+        tiers={[
+          { range: "€2.5k – €8k", label: "Simple connection", time: "1–3 weeks" },
+          { range: "€8k – €25k", label: "Multi-system integration", time: "3–8 weeks" },
+          { range: "€25k+", label: "Enterprise / legacy", time: "2–6 months" },
+        ]}
+      />
 
       <FadeIn className="border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>

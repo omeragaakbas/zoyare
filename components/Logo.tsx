@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 type LogoVariant = "full" | "mark";
 
@@ -64,9 +64,9 @@ const fadeIn = {
 function IconGroup({ animated }: { animated: boolean }) {
   if (animated) {
     return (
-      <motion.g fill="#f15f0e" transform={ICON_TRANSFORM} variants={fadeIn} initial="hidden" animate="show">
+      <m.g fill="#f15f0e" transform={ICON_TRANSFORM} variants={fadeIn} initial="hidden" animate="show">
         {iconPaths.map((d, i) => <path key={i} d={d} />)}
-      </motion.g>
+      </m.g>
     );
   }
   return (

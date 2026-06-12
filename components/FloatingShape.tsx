@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import Logo from "./Logo";
 
 /**
@@ -17,7 +17,7 @@ export default function FloatingShape() {
       className="pointer-events-none absolute right-[8%] xl:right-[12%] top-[16%] hidden lg:block"
     >
       {/* Soft warm glow behind the mark */}
-      <motion.div
+      <m.div
         className="absolute -inset-32 rounded-full"
         style={{
           background:
@@ -40,7 +40,7 @@ export default function FloatingShape() {
       />
 
       {/* Cube — gentle entrance */}
-      <motion.div
+      <m.div
         className="relative"
         initial={{ opacity: 0, scale: 0.94, y: 24 }}
         animate={{
@@ -55,7 +55,7 @@ export default function FloatingShape() {
         }}
       >
         {/* Inner motion: organic circular drift + scale breath */}
-        <motion.div
+        <m.div
           animate={
             reduced
               ? undefined
@@ -78,8 +78,8 @@ export default function FloatingShape() {
             height={380}
             className="opacity-[0.20] xl:opacity-[0.24]"
           />
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { contact } from "@/lib/content";
 import SplitText from "@/components/SplitText";
 import MagneticButton from "@/components/MagneticButton";
@@ -17,7 +17,7 @@ export default function HeroSection() {
       <FloatingShape />
 
       <div className="relative max-w-5xl">
-        <motion.div
+        <m.div
           className="inline-flex items-center gap-2 mb-10 border border-border bg-background/40 backdrop-blur-sm px-3 py-1.5"
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -27,9 +27,9 @@ export default function HeroSection() {
           <span className="font-mono text-xs text-muted tracking-widest uppercase">
             {d.badge}
           </span>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="flex flex-wrap items-center gap-x-8 gap-y-3 mb-10"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function HeroSection() {
               2024
             </span>
           </div>
-        </motion.div>
+        </m.div>
 
         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-primary leading-[0.95] mb-10">
           <span className="block">
@@ -79,7 +79,7 @@ export default function HeroSection() {
             >
               {d.headlineLine3}
             </SplitText>
-            <motion.span
+            <m.span
               className="inline-block w-[3px] h-[0.78em] bg-accent ml-2 align-middle"
               animate={{ opacity: [1, 0] }}
               transition={{
@@ -92,7 +92,7 @@ export default function HeroSection() {
           </span>
         </h1>
 
-        <motion.p
+        <m.p
           className="text-secondary text-lg md:text-xl max-w-lg leading-relaxed mb-12 font-light"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -103,9 +103,9 @@ export default function HeroSection() {
           }}
         >
           {d.subtitle}
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           className="flex items-center gap-6 flex-wrap"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ export default function HeroSection() {
               data-magnetic
               className="group relative inline-flex items-center gap-3 px-7 py-3.5 bg-primary text-background text-sm font-medium overflow-hidden"
             >
-              <motion.span
+              <m.span
                 className="absolute inset-0 bg-accent"
                 initial={{ y: "100%" }}
                 whileHover={{ y: 0 }}
@@ -147,16 +147,16 @@ export default function HeroSection() {
               {d.scheduleCall}
             </a>
           </MagneticButton>
-        </motion.div>
+        </m.div>
       </div>
 
-      <motion.div
+      <m.div
         className="mt-24 flex items-center gap-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1.0 }}
       >
-        <motion.div
+        <m.div
           className="h-px bg-muted"
           initial={{ width: 0 }}
           animate={{ width: 48 }}
@@ -166,14 +166,14 @@ export default function HeroSection() {
             ease: [0.22, 1, 0.36, 1],
           }}
         />
-        <motion.span
+        <m.span
           className="font-mono text-xs text-muted tracking-widest uppercase"
           animate={{ y: [0, 3, 0] }}
           transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
         >
           {d.scroll}
-        </motion.span>
-      </motion.div>
+        </m.span>
+      </m.div>
     </section>
   );
 }

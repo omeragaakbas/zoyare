@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 interface SplitTextProps {
   children: string;
@@ -40,7 +40,7 @@ export default function SplitText({
           {word.split("").map((char, ci) => {
             const i = charIndex++;
             return (
-              <motion.span
+              <m.span
                 key={`c-${ci}`}
                 className="inline-block"
                 initial={{ y: 32, opacity: 0, filter: "blur(8px)" }}
@@ -52,7 +52,7 @@ export default function SplitText({
                 }}
               >
                 {char}
-              </motion.span>
+              </m.span>
             );
           })}
           {wi < words.length - 1 && (

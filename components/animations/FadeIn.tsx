@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { m, useInView, useReducedMotion } from "framer-motion";
 import { useRef } from "react";
 
 interface FadeInProps {
@@ -29,7 +29,7 @@ export default function FadeIn({
       };
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       className={className}
       initial={initial}
@@ -37,6 +37,6 @@ export default function FadeIn({
       transition={reduced ? { duration: 0.01, delay: 0 } : { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

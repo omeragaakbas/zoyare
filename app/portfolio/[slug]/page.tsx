@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { projects } from "@/lib/content";
 import { caseStudy, breadcrumbList } from "@/lib/jsonld";
+import ProjectSchematic from "@/components/ProjectSchematic";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.id }));
@@ -101,6 +102,13 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="relative border border-border bg-background mb-20 overflow-hidden">
+        <ProjectSchematic id={project.id} className="w-full h-auto" />
+        <span className="absolute right-6 top-4 font-mono text-[10px] text-muted tracking-widest uppercase">
+          System schematic
+        </span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-px bg-border mb-px">

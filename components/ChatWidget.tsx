@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 type Message = {
   role: "user" | "assistant";
@@ -88,7 +88,7 @@ export default function ChatWidget() {
 
   return (
     <>
-      <motion.button
+      <m.button
         onClick={() => setOpen((v) => !v)}
         className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-accent text-white flex items-center justify-center shadow-lg hover:bg-primary hover:text-background transition-colors duration-200"
         whileHover={{ scale: 1.05 }}
@@ -97,7 +97,7 @@ export default function ChatWidget() {
       >
         <AnimatePresence mode="wait">
           {open ? (
-            <motion.span
+            <m.span
               key="close"
               initial={{ opacity: 0, rotate: -90 }}
               animate={{ opacity: 1, rotate: 0 }}
@@ -106,9 +106,9 @@ export default function ChatWidget() {
               className="text-lg font-bold leading-none"
             >
               ×
-            </motion.span>
+            </m.span>
           ) : (
-            <motion.svg
+            <m.svg
               key="chat"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -121,14 +121,14 @@ export default function ChatWidget() {
                 stroke="currentColor" strokeWidth="1.5"
                 strokeLinejoin="round" fill="none"
               />
-            </motion.svg>
+            </m.svg>
           )}
         </AnimatePresence>
-      </motion.button>
+      </m.button>
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.97 }}
@@ -193,7 +193,7 @@ export default function ChatWidget() {
                 </svg>
               </button>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

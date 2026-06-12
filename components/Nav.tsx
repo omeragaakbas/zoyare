@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import Logo from "@/components/Logo";
 import { dict } from "@/lib/dictionary";
 
@@ -74,7 +74,7 @@ export default function Nav() {
 
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -85,7 +85,7 @@ export default function Nav() {
               {links.map(({ href, label }, i) => {
                 const active = pathname === href;
                 return (
-                  <motion.div
+                  <m.div
                     key={href}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -99,10 +99,10 @@ export default function Nav() {
                     >
                       {label}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 );
               })}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
@@ -114,9 +114,9 @@ export default function Nav() {
                 >
                   hello@zoyare.com
                 </a>
-              </motion.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

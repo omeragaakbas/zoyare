@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import type { Project } from "@/lib/content";
 import FadeIn from "@/components/animations/FadeIn";
 import MagneticButton from "@/components/MagneticButton";
@@ -16,12 +16,12 @@ export function ServicesList({
       {services.map((service, i) => (
         <FadeIn key={service.title} delay={i * 0.07}>
           <Link href={service.href}>
-            <motion.div
+            <m.div
               className="group grid grid-cols-12 items-start gap-4 md:gap-6 py-8 border-b border-border cursor-pointer relative"
               whileHover={{ x: 4 }}
               transition={{ duration: 0.25 }}
             >
-              <motion.span
+              <m.span
                 className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top opacity-0 group-hover:opacity-100"
                 initial={{ scaleY: 0 }}
                 whileHover={{ scaleY: 1 }}
@@ -55,7 +55,7 @@ export function ServicesList({
                   →
                 </span>
               </div>
-            </motion.div>
+            </m.div>
           </Link>
         </FadeIn>
       ))}
@@ -68,12 +68,12 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
     <div className="flex flex-col divide-y divide-border">
       {projects.map((project, i) => (
         <FadeIn key={project.id} delay={i * 0.06} direction="left">
-          <motion.div
+          <m.div
             className="group grid grid-cols-12 gap-4 md:gap-6 py-7 cursor-default relative"
             whileHover={{ x: 4 }}
             transition={{ duration: 0.22 }}
           >
-            <motion.span
+            <m.span
               className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top"
               initial={{ scaleY: 0 }}
               whileHover={{ scaleY: 1 }}
@@ -108,7 +108,7 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </FadeIn>
       ))}
     </div>
@@ -139,7 +139,7 @@ export function CTASection() {
             data-magnetic
             className="group relative inline-flex items-center gap-3 px-7 py-3.5 border border-primary text-primary text-sm font-medium overflow-hidden"
           >
-            <motion.span
+            <m.span
               className="absolute inset-0 bg-accent"
               initial={{ y: "100%" }}
               whileHover={{ y: 0 }}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -47,7 +47,7 @@ export default function Contact() {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
           Discuss a
           <br />
-          project?
+          <span className="font-display">project?</span>
         </h1>
       </div>
 
@@ -55,7 +55,7 @@ export default function Contact() {
         <div className="lg:col-span-7">
           <AnimatePresence mode="wait">
             {status === "success" ? (
-              <motion.div
+              <m.div
                 key="success"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -73,9 +73,9 @@ export default function Contact() {
                 <p className="text-secondary leading-relaxed max-w-md">
                   I&apos;ll get back to you within 24 hours. Talk soon!
                 </p>
-              </motion.div>
+              </m.div>
             ) : (
-              <motion.form
+              <m.form
                 key="form"
                 initial={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -140,13 +140,13 @@ export default function Contact() {
                 </div>
 
                 {status === "error" && (
-                  <motion.p
+                  <m.p
                     initial={{ opacity: 0, y: -8 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="font-mono text-xs text-red-400 tracking-wide"
                   >
                     {errorMsg}
-                  </motion.p>
+                  </m.p>
                 )}
 
                 <div>
@@ -167,7 +167,7 @@ export default function Contact() {
                     )}
                   </button>
                 </div>
-              </motion.form>
+              </m.form>
             )}
           </AnimatePresence>
         </div>

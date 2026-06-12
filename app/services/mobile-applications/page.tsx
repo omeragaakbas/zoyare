@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
+import { InvestmentTiers } from "@/components/PageBlocks";
 import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Mobile app development for iOS and Android. Zoyare builds native-quality apps with React Native/Expo. Honest pricing, fast delivery.",
   alternates: {
-    canonical: "https://zoyare.com/services/mobile-applications",
+    canonical: "https://zoyare.com/services/mobile-applications",
   },
   openGraph: {
     title: "Mobile App Development — Zoyare",
@@ -46,7 +47,7 @@ export default function MobileApplications() {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
           Mobile
           <br />
-          applications.
+          <span className="font-display">applications.</span>
         </h1>
         <p className="text-xl md:text-2xl text-secondary font-light leading-relaxed max-w-2xl">
           iOS and Android apps that actually get used. Focus on
@@ -71,22 +72,13 @@ export default function MobileApplications() {
         </div>
       </FadeIn>
 
-      <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investment</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
-          {[
-            { range: "€15k – €35k", label: "MVP (6–10 screens)", time: "6–10 weeks" },
-            { range: "€35k – €80k", label: "Full app + backend", time: "3–5 months" },
-            { range: "€80k+", label: "Complex platform", time: "5–12 months" },
-          ].map((tier) => (
-            <div key={tier.label} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
-              <span className="text-2xl font-bold text-accent block mb-2">{tier.range}</span>
-              <p className="text-sm text-primary font-medium mb-1">{tier.label}</p>
-              <p className="font-mono text-xs text-muted">{tier.time}</p>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
+      <InvestmentTiers
+        tiers={[
+          { range: "€15k – €35k", label: "MVP (6–10 screens)", time: "6–10 weeks" },
+          { range: "€35k – €80k", label: "Full app + backend", time: "3–5 months" },
+          { range: "€80k+", label: "Complex platform", time: "5–12 months" },
+        ]}
+      />
 
       <FadeIn className="border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>

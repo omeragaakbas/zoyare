@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Practical articles about custom software, API integrations and app development. Honest knowledge without the sales pitch.",
   alternates: {
-    canonical: "https://zoyare.com/blog",
+    canonical: "https://zoyare.com/blog",
   },
   openGraph: {
     title: "Blog — Zoyare Software Engineering",
@@ -30,7 +30,7 @@ export default function Blog() {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93]">
           Knowledge &amp;
           <br />
-          insights.
+          <span className="font-display">insights.</span>
         </h1>
       </FadeIn>
 
@@ -41,7 +41,10 @@ export default function Blog() {
               href={`/blog/${post.slug}`}
               className="group flex flex-col md:flex-row md:items-start gap-4 md:gap-12 py-10 border-b border-border hover:bg-surface/40 px-4 -mx-4 transition-colors duration-200"
             >
-              <div className="flex-shrink-0 md:w-40">
+              <div className="flex-shrink-0 md:w-40 flex md:flex-col items-baseline md:items-start gap-4 md:gap-3">
+                <span className="numeral-outline font-mono text-3xl font-bold leading-none select-none">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <span className="font-mono text-xs text-muted tracking-widest uppercase">
                   {post.category}
                 </span>

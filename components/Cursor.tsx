@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { m, useMotionValue, useSpring } from "framer-motion";
 
 /**
  * Modern triple-layer cursor:
@@ -59,7 +59,7 @@ export default function Cursor() {
   return (
     <>
       {/* Soft warm glow */}
-      <motion.div
+      <m.div
         className="pointer-events-none fixed top-0 left-0 z-[9990] w-80 h-80 rounded-full hidden md:block"
         style={{
           x: glowX,
@@ -73,7 +73,7 @@ export default function Cursor() {
       />
 
       {/* Ring follower */}
-      <motion.div
+      <m.div
         className="pointer-events-none fixed top-0 left-0 z-[9999] hidden md:flex items-center justify-center"
         style={{
           x: ringX,
@@ -89,10 +89,10 @@ export default function Cursor() {
         transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="w-full h-full rounded-full border border-primary/70" />
-      </motion.div>
+      </m.div>
 
       {/* Accent dot — bound directly to raw mouse for instant response */}
-      <motion.div
+      <m.div
         className="pointer-events-none fixed top-0 left-0 z-[9999] w-1.5 h-1.5 rounded-full bg-accent hidden md:block"
         style={{
           x: mouseX,

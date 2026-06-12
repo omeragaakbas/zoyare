@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
 import type { FaqSection } from "@/lib/faqs";
@@ -24,7 +24,7 @@ export default function FAQClient({ faqs }: Props) {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] max-w-2xl">
           Frequently
           <br />
-          <span className="text-accent">asked.</span>
+          <span className="font-display">asked.</span>
         </h1>
       </FadeIn>
 
@@ -58,7 +58,7 @@ export default function FAQClient({ faqs }: Props) {
                         >
                           {item.q}
                         </span>
-                        <motion.span
+                        <m.span
                           animate={{ rotate: isOpen ? 45 : 0 }}
                           transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                           aria-hidden="true"
@@ -67,12 +67,12 @@ export default function FAQClient({ faqs }: Props) {
                           }`}
                         >
                           +
-                        </motion.span>
+                        </m.span>
                       </button>
 
                       <AnimatePresence initial={false}>
                         {isOpen && (
-                          <motion.div
+                          <m.div
                             key="answer"
                             id={`faq-answer-${key}`}
                             role="region"
@@ -85,7 +85,7 @@ export default function FAQClient({ faqs }: Props) {
                             <p className="text-secondary text-sm leading-relaxed pb-6 max-w-2xl">
                               {item.a}
                             </p>
-                          </motion.div>
+                          </m.div>
                         )}
                       </AnimatePresence>
                     </div>
@@ -108,7 +108,7 @@ export default function FAQClient({ faqs }: Props) {
           href="/contact"
           className="group relative inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium overflow-hidden"
         >
-          <motion.span
+          <m.span
             className="absolute inset-0 bg-accent"
             initial={{ x: "-100%" }}
             whileHover={{ x: 0 }}

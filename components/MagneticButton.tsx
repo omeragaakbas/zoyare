@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  motion,
+  m,
   useMotionValue,
   useSpring,
   useReducedMotion,
@@ -47,7 +47,7 @@ export default function MagneticButton({
   };
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -55,6 +55,6 @@ export default function MagneticButton({
       className={`inline-block ${className}`}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

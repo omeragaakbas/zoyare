@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import FadeIn from "@/components/animations/FadeIn";
 
 const c = {
@@ -72,7 +72,7 @@ export default function LeadMagnetSection() {
         <FadeIn delay={0.19}>
           <AnimatePresence mode="wait">
             {status === "success" ? (
-              <motion.div
+              <m.div
                 key="success"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -84,9 +84,9 @@ export default function LeadMagnetSection() {
                 <p className="font-mono text-xs text-secondary tracking-widest uppercase">
                   {c.successMessage}
                 </p>
-              </motion.div>
+              </m.div>
             ) : (
-              <motion.form
+              <m.form
                 key="form"
                 onSubmit={handleSubmit}
                 className="flex flex-col sm:flex-row gap-4 items-start"
@@ -110,7 +110,7 @@ export default function LeadMagnetSection() {
                   disabled={status === "loading"}
                   className="group relative px-6 py-3 bg-primary text-background text-sm font-medium overflow-hidden disabled:opacity-50 whitespace-nowrap shrink-0"
                 >
-                  <motion.span
+                  <m.span
                     className="absolute inset-0 bg-accent"
                     initial={{ x: "-100%" }}
                     whileHover={{ x: 0 }}
@@ -120,7 +120,7 @@ export default function LeadMagnetSection() {
                     {status === "loading" ? c.submitLoading : c.submitIdle}
                   </span>
                 </button>
-              </motion.form>
+              </m.form>
             )}
           </AnimatePresence>
 

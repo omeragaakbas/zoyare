@@ -9,7 +9,7 @@ export default function NotFound() {
       <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-6">
         Page not
         <br />
-        found.
+        <span className="font-display">found.</span>
       </h1>
       <p className="text-secondary text-lg leading-relaxed max-w-md mb-12">
         The page you&apos;re looking for doesn&apos;t exist or has been moved.

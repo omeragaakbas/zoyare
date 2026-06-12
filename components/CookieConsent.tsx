@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import {
   hasDecided,
@@ -35,7 +35,7 @@ export default function CookieConsent() {
   return (
     <AnimatePresence>
       {open && (
-        <motion.div
+        <m.div
           role="dialog"
           aria-label="Cookie consent"
           initial={{ y: "100%" }}
@@ -72,7 +72,7 @@ export default function CookieConsent() {
                   onClick={() => decide(true)}
                   className="group relative inline-flex items-center px-6 py-2.5 bg-primary text-background text-sm font-medium overflow-hidden"
                 >
-                  <motion.span
+                  <m.span
                     className="absolute inset-0 bg-accent"
                     initial={{ y: "100%" }}
                     whileHover={{ y: 0 }}
@@ -85,7 +85,7 @@ export default function CookieConsent() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

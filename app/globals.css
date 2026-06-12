@@ -127,6 +127,21 @@ body {
   animation: zoyare-blob-2 65s ease-in-out infinite;
 }
 
+/* Schematic flow lines — animated dashes over a static base line */
+@keyframes schematic-dash {
+  to { stroke-dashoffset: -20; }
+}
+.schematic-flow {
+  stroke-dasharray: 4 6;
+  animation: schematic-dash 1.4s linear infinite;
+}
+
+/* Outlined drafting numerals for process steps */
+.numeral-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px #D9D5CC;
+}
+
 /* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,

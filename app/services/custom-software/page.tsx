@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
+import { InvestmentTiers, StepRail } from "@/components/PageBlocks";
 import { breadcrumbList, service } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Zoyare builds custom software for businesses. From requirement to deployment — no off-the-shelf solutions, but software that fits your process.",
   alternates: {
-    canonical: "https://zoyare.com/services/custom-software",
+    canonical: "https://zoyare.com/services/custom-software",
   },
   openGraph: {
     title: "Custom Software Development — Zoyare",
@@ -64,7 +65,7 @@ export default function CustomSoftware() {
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary leading-[0.93] mb-8">
           Custom
           <br />
-          software.
+          <span className="font-display">software.</span>
         </h1>
         <p className="text-xl md:text-2xl text-secondary font-light leading-relaxed max-w-2xl">
           Software that fits your process, not the other way around. From requirement to
@@ -86,37 +87,15 @@ export default function CustomSoftware() {
         </div>
       </FadeIn>
 
-      <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-12">
-          Process
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
-          {steps.map((step) => (
-            <div key={step.num} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
-              <span className="font-mono text-xs text-accent block mb-6">{step.num}</span>
-              <h3 className="text-base font-medium text-primary mb-3">{step.title}</h3>
-              <p className="text-sm text-secondary leading-relaxed">{step.text}</p>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
+      <StepRail steps={steps} />
 
-      <FadeIn className="mb-24 border-t border-border pt-16">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">Investment</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
-          {[
-            { range: "€5k – €20k", label: "Small automation", time: "2–6 weeks" },
-            { range: "€20k – €75k", label: "Mid-sized system", time: "2–4 months" },
-            { range: "€75k+", label: "Enterprise platform", time: "4–12 months" },
-          ].map((tier) => (
-            <div key={tier.label} className="bg-background p-8 hover:bg-surface transition-colors duration-200">
-              <span className="text-2xl font-bold text-accent block mb-2">{tier.range}</span>
-              <p className="text-sm text-primary font-medium mb-1">{tier.label}</p>
-              <p className="font-mono text-xs text-muted">{tier.time}</p>
-            </div>
-          ))}
-        </div>
-      </FadeIn>
+      <InvestmentTiers
+        tiers={[
+          { range: "€5k – €20k", label: "Small automation", time: "2–6 weeks" },
+          { range: "€20k – €75k", label: "Mid-sized system", time: "2–4 months" },
+          { range: "€75k+", label: "Enterprise platform", time: "4–12 months" },
+        ]}
+      />
 
       <FadeIn className="border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>

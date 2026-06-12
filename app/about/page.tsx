@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Zoyare is a software engineering studio that builds custom software for businesses — from back-end architecture to enterprise integrations.",
   alternates: {
-    canonical: "https://zoyare.com/about",
+    canonical: "https://zoyare.com/about",
   },
   openGraph: {
     title: "About Zoyare — Software Engineering Studio",
@@ -95,7 +95,9 @@ export default function About() {
           ].map((item) => (
             <StaggerItem key={item.num}>
               <div className="bg-background p-10 h-full group hover:bg-surface transition-colors duration-300">
-                <span className="font-mono text-xs text-accent block mb-8">{item.num}</span>
+                <span className="numeral-outline font-mono text-6xl font-bold leading-none block mb-8 select-none">
+                  {item.num}
+                </span>
                 <h3 className="text-base font-medium text-primary mb-4">{item.title}</h3>
                 <p className="text-sm text-secondary leading-relaxed">{item.text}</p>
               </div>
@@ -110,7 +112,7 @@ export default function About() {
           href="/contact"
           className="group inline-flex items-center gap-3 text-3xl md:text-5xl font-bold tracking-tighter text-primary hover:text-accent transition-colors duration-200"
         >
-          Let&apos;s talk.
+          Let&apos;s <span className="font-display">talk.</span>
           <span className="text-accent transition-transform duration-300 group-hover:translate-x-2">→</span>
         </Link>
       </FadeIn>

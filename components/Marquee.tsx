@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface MarqueeProps {
@@ -38,7 +38,7 @@ export default function Marquee({
       className={`group relative overflow-hidden ${className}`}
       style={maskStyle}
     >
-      <motion.div
+      <m.div
         className="flex whitespace-nowrap will-change-transform"
         animate={
           reduced
@@ -52,7 +52,7 @@ export default function Marquee({
         <div className="flex shrink-0" aria-hidden="true">
           {children}
         </div>
-      </motion.div>
+      </m.div>
     </div>
   );
 }
