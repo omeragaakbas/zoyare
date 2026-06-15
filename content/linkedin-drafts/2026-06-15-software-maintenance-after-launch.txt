@@ -1,0 +1,19 @@
+Everyone asks what custom software costs to build. Almost nobody asks what it costs to keep running.
+
+But the build is only ~60-70% of the total cost of ownership. The rest is maintenance — and skipping it is how a €40k system turns into a five-figure emergency rebuild in year two.
+
+Three things people underestimate:
+
+→ Modern apps are ~80% third-party libraries. Those need security patches. Ignore them and you're running known vulnerabilities.
+
+→ The silent one is "adaptive" maintenance: a payment API deprecates a version, and one morning checkout just stops.
+
+→ A sensible budget is 15-20% of the build cost per year. For a €40k system that's €6-8k — predictable, modest, and far cheaper than a rebuild.
+
+Software that's "left alone" doesn't stay the same. It degrades — not because anyone touched it, but because everything around it kept moving.
+
+I wrote up what maintenance actually covers, what it costs, and what to agree before go-live:
+
+https://zoyare.com/blog/software-maintenance-after-launch
+
+#customsoftware #softwaredevelopment
