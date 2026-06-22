@@ -1,0 +1,21 @@
+"Should we buy a SaaS tool or build something custom?"
+
+It's the most common question I get — and the honest answer is almost never "build."
+
+For 80% of business processes, off-the-shelf software wins. It's cheaper, it's live next week, and someone else maintains it. If your problem is generic — accounting, CRM, project management — buying is the right call, and a developer who tells you otherwise is selling hours.
+
+So when does custom actually win?
+
+→ The process is your competitive edge, not a commodity. Standardising it to fit a SaaS box throws away the thing that makes you you.
+
+→ The subscription math flips. €2,500/month across 40 seats is €30k/year — forever. A €40k custom tool can pay back in well under two years.
+
+→ You're already paying in glue. Three tools that don't talk, an "ops" hire whose real job is copy-pasting between them. That's a hidden custom-software bill you're paying in salary.
+
+The trap isn't buying or building. It's buying five tools that each solve 80% of a problem, then drowning in the gaps between them.
+
+I wrote up the full decision framework — costs, trade-offs, and the questions that actually settle it:
+
+https://zoyare.com/blog/build-vs-buy-software-saas-or-custom
+
+#customsoftware #saas
