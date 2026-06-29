@@ -30,6 +30,7 @@ Marketingsite van Zoyare, een eenmans software engineering studio (Ömer Akbas, 
 
 ## Laatste wijzigingen
 
+- 2026-06-29 — Wekelijkse blog: nieuwe post `vendor-lock-in-software-code-ownership` (vendor lock-in: code/data/hosting-eigendom) + LinkedIn-draft. Reden: nog niet behandeld, hoge-intentie SEO; ondervangt tegelijk het "wat als je wegvalt"-bezwaar tegen een eenmansstudio.
 - 2026-06-22 — Wekelijkse blog: nieuwe post `build-vs-buy-software-saas-or-custom` (build vs. buy: SaaS vs. maatwerk) + LinkedIn-draft. Reden: hoge-intentie SEO-onderwerp dat nog ontbrak; onderscheidt zich van de bestaande "wie bouwt het"- en "Excel→maatwerk"-posts.
 - 2026-06-12 — Designpas: SVG-blueprints per project (`ProjectSchematic`), editorial-blokken op service-pagina's, per-post/case OG-images, LazyMotion (−17 à −28 kB First Load JS). Reden: portfolio miste visuals, binnenpagina's waren te uniform.
 - 2026-06-12 — NL-site (`app/nl/*`, `lib/i18n/`, `lib/faqs-nl.ts`) verwijderd; 301-redirects `/nl/*` → EN in `next.config.js`; hreflang gestript; gedeelde copy verhuisd naar `lib/dictionary.ts`. Reden: internationale doelgroep, EN volstaat.

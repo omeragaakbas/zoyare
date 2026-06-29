@@ -1,0 +1,26 @@
+"If you fell out with your software supplier tomorrow, could you walk away with everything you need?"
+
+Most business owners never ask this — until they're mid-dispute and discover their own domain is registered under their developer's personal email.
+
+Vendor lock-in usually isn't malicious. It's just sloppiness that quietly takes your choices away. It hides in four places:
+
+→ The code. You paid for it, but you don't actually have it — or nobody else can run it.
+→ The data. Easy to get in, a nightmare to export.
+→ The hosting. Domains and accounts in the supplier's name, not yours.
+→ The knowledge. One person understands how it works.
+
+The fix costs almost nothing upfront. Five questions settle it before you ever sign:
+
+1. Do we own the IP to the code outright — in writing?
+2. Does the source live in OUR repository?
+3. Are hosting, domain and accounts in our name?
+4. Can we export all our data ourselves, anytime?
+5. What does a handover to another developer cost?
+
+A good partner answers all five without flinching. The whole point of doing the work well is that you COULD leave — you just won't want to.
+
+Full breakdown, plus what to do if you're already stuck:
+
+https://zoyare.com/blog/vendor-lock-in-software-code-ownership
+
+#customsoftware #vendorlockin
