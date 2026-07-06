@@ -30,6 +30,7 @@ Marketingsite van Zoyare, een eenmans software engineering studio (Ömer Akbas, 
 
 ## Laatste wijzigingen
 
+- 2026-07-06 — Wekelijkse blog: nieuwe post `how-long-does-custom-software-development-take` (realistische doorlooptijden per projecttype) + LinkedIn-draft. Reden: natuurlijk vervolg op de kosten-post, hoge-intentie zoekterm, nog niet behandeld. Tevens `generate-blog.mjs` naar EN omgezet (site is EN-only) + dedup tegen bestaande titels; NB: de GitHub Action faalt sinds juni op "credit balance too low" (API-key zonder tegoed).
 - 2026-06-29 — Wekelijkse blog: nieuwe post `vendor-lock-in-software-code-ownership` (vendor lock-in: code/data/hosting-eigendom) + LinkedIn-draft. Reden: nog niet behandeld, hoge-intentie SEO; ondervangt tegelijk het "wat als je wegvalt"-bezwaar tegen een eenmansstudio.
 - 2026-06-22 — Wekelijkse blog: nieuwe post `build-vs-buy-software-saas-or-custom` (build vs. buy: SaaS vs. maatwerk) + LinkedIn-draft. Reden: hoge-intentie SEO-onderwerp dat nog ontbrak; onderscheidt zich van de bestaande "wie bouwt het"- en "Excel→maatwerk"-posts.
 - 2026-06-12 — Designpas: SVG-blueprints per project (`ProjectSchematic`), editorial-blokken op service-pagina's, per-post/case OG-images, LazyMotion (−17 à −28 kB First Load JS). Reden: portfolio miste visuals, binnenpagina's waren te uniform.

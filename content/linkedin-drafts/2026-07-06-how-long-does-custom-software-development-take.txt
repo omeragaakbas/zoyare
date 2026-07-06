@@ -1,0 +1,23 @@
+"How long will it take?" is the second question in every first call — right after cost. And the answers online are uselessly vague.
+
+So, real numbers for typical business software:
+
+→ API integration between two systems: 2–6 weeks
+→ Internal tool or MVP: 6–12 weeks
+→ Customer-facing app or portal: 3–6 months
+→ Replacing a legacy system: 4–9 months
+
+But here's the part nobody tells you: the timeline is barely about how fast anyone types. Four things dominate it:
+
+1. Scope clarity — decisions made upfront vs. a new discussion per screen
+2. Integrations — one undocumented legacy API costs more time than a month of coding
+3. Your feedback speed — reviews that sit in an inbox for 3 weeks turn a 6-week project into a 4-month one, with zero extra work done
+4. How many people can say "no" — one decision-maker is fast, a monthly steering committee is not
+
+The good news: three of those four are under YOUR control.
+
+Full breakdown, including where the weeks actually go and what to arrange before day one:
+
+https://zoyare.com/blog/how-long-does-custom-software-development-take
+
+#customsoftware #softwaredevelopment
