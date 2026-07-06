@@ -27,20 +27,19 @@ if (fs.existsSync(envPath)) {
   }
 }
 
-// Onderwerpen die aansluiten op Zoyare's ICP en SEO-strategie
+// Onderwerpen die aansluiten op Zoyare's ICP en SEO-strategie.
+// Houd deze lijst bij: verwijder onderwerpen zodra ze gepubliceerd zijn.
 const TOPIC_SUGGESTIONS = [
-  "Mendix development: wanneer kies je voor low-code en wanneer niet?",
-  "Waarom maatwerk software op lange termijn goedkoper is dan een SaaS-abonnement",
-  "5 signalen dat je huidige systemen je bedrijfsgroei remmen",
-  "Software intern bouwen of uitbesteden: wanneer kies je wat?",
-  "Hoe een goede discovery-fase je duizenden euro's kan besparen",
-  "MVP vs. volledig product: wanneer stop je met bouwen?",
-  "React Native in 2026: de eerlijke stand van zaken voor zakelijke apps",
-  "Wat kost een API-integratie en wanneer is het de moeite waard?",
-  "Hoe je een softwareproject in scope houdt (en waarom het toch uitloopt)",
-  "Enterprise software valkuilen: de 6 meest gemaakte fouten",
-  "Van Excel naar maatwerk: wanneer is de stap gerechtvaardigd?",
-  "Back-end architectuur: wat moet je weten als niet-technische opdrachtgever?",
+  "Fixed price vs. time and materials: which contract fits your software project?",
+  "How to write a good brief for a custom software project (non-technical guide)",
+  "Rebuild or refactor: what to do with your aging legacy system",
+  "Web app vs. native app: which one does your business actually need?",
+  "How to evaluate a software development quote (and spot the red flags)",
+  "5 signs your current systems are holding back your company's growth",
+  "The cost of doing nothing: when postponing custom software gets expensive",
+  "One developer or a full team: how much capacity does your project really need?",
+  "SLAs and support contracts for custom software: what should be in them?",
+  "React Native in 2026: an honest assessment for business apps",
 ];
 
 const topic = process.argv[2] || TOPIC_SUGGESTIONS[Math.floor(Math.random() * TOPIC_SUGGESTIONS.length)];
@@ -49,35 +48,49 @@ console.log(`\n📝 Onderwerp: "${topic}"\n`);
 
 const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
-const systemPrompt = `Je bent de ghostwriter voor Zoyare — een software engineering studio in Nederland.
+// Bestaande titels meesturen zodat de generator geen dubbele onderwerpen maakt
+const existingTitles = [];
+try {
+  const generated = JSON.parse(fs.readFileSync(path.join(ROOT, "content", "posts-generated.json"), "utf-8"));
+  existingTitles.push(...generated.map((p) => p.title));
+  const blogTs = fs.readFileSync(path.join(ROOT, "lib", "blog.ts"), "utf-8");
+  for (const m of blogTs.matchAll(/^\s*title:\s*"([^"]+)"/gm)) existingTitles.push(m[1]);
+} catch {
+  // geen harde fout — dedup is best-effort
+}
 
-Zoyare's doelgroep: MKB/enterprise (50–500 medewerkers), Nederlandse ondernemingen die maatwerk software nodig hebben.
-Diensten: maatwerk software, API-integraties, mobiele apps, process automation.
+const systemPrompt = `You are the ghostwriter for Zoyare — a one-person software engineering studio (zoyare.com).
+
+Zoyare's audience: international SMB/enterprise decision-makers (50–500 employees) who need custom software. The site is English-only.
+Services: custom software, API integrations, mobile apps, process automation.
 Track record: Siemens BuildingX connector, StrateX Workforce Management.
 
-Toon: direct, zakelijk, technisch geloofwaardig. Schrijf als een scherpe collega.
-Verboden: "seamless", "robust", "leveraging", "game-changer", "synergy", "holistic", "delve", vage buzzwords.
-Doe wel: korte zinnen, actieve werkwoorden, concrete getallen/prijzen, eerlijk advies.`;
+Tone: direct, businesslike, technically credible. Write like a sharp colleague.
+Forbidden: "seamless", "robust", "leveraging", "game-changer", "synergy", "holistic", "delve", vague buzzwords.
+Do: short sentences, active verbs, concrete numbers/prices, honest advice.`;
 
-const userPrompt = `Schrijf een blogpost voor zoyare.com over: "${topic}"
+const userPrompt = `Write a blog post for zoyare.com about: "${topic}"
 
-Eisen:
-- 750–1000 woorden
-- Nederlandse taal
-- Concrete prijzen of benchmarks waar relevant
-- Eindig met een zachte CTA ("Klaar om te starten? / Wil je weten of dit bij jouw situatie past?")
-- SEO-geoptimaliseerd voor Nederlandse zoektermen
+Requirements:
+- 750–1000 words
+- English language
+- Concrete prices or benchmarks where relevant
+- End with a soft CTA ("Ready to start? / Want to know if this fits your situation?")
+- SEO-optimized for English search terms
+- Must NOT duplicate an existing post. Already published:
+${existingTitles.map((t) => `  - ${t}`).join("\n")}
+  If the topic overlaps with one of these, take a clearly different angle.
 
 Geef de output als valide JSON (geen markdown codeblocks eromheen, puur JSON):
 {
-  "slug": "seo-vriendelijke-url-slug",
-  "title": "De volledige blogtitel",
-  "description": "Meta description max 155 tekens",
+  "slug": "seo-friendly-url-slug",
+  "title": "The full blog title",
+  "description": "Meta description, max 155 characters",
   "date": "${new Date().toISOString().split("T")[0]}",
-  "category": "Maatwerk Software | API & Integraties | Process Automation | Mobiele Applicaties | Engineering",
-  "readTime": <integer minuten>,
-  "body": "<html artikel — gebruik alleen h2, p, ul, ol, li, strong tags. Geen h1.>",
-  "linkedinPost": "Klaar-voor-publicatie LinkedIn post. Max 1200 tekens. Direct, persoonlijk. Eindig met de blog-URL als placeholder: [URL]. Geen hashtag spam — max 3 relevante hashtags."
+  "category": "Custom Software | API & Integrations | Process Automation | Mobile Applications | Software Development",
+  "readTime": <integer minutes>,
+  "body": "<html article — use only h2, p, ul, ol, li, strong tags. No h1.>",
+  "linkedinPost": "Ready-to-publish LinkedIn post in English. Max 1200 characters. Direct, personal. End with the blog URL as placeholder: [URL]. No hashtag spam — max 3 relevant hashtags."
 }`;
 
 let raw;
