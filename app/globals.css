@@ -51,6 +51,7 @@ body {
   letter-spacing: -0.03em;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
+  scroll-margin-top: 96px; /* keep anchored headings clear of the fixed nav */
 }
 .prose-zoyare h3 {
   font-size: 1.1rem;

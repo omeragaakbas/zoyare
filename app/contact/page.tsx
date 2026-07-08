@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
+import { track } from "@/lib/track";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -29,6 +30,7 @@ export default function Contact() {
       if (res.ok) {
         setStatus("success");
         form.reset();
+        track("contact_submitted");
       } else {
         const json = await res.json();
         setErrorMsg(json.error || "Something went wrong.");

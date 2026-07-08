@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { m, AnimatePresence } from "framer-motion";
+import { track } from "@/lib/track";
 
 type Message = {
   role: "user" | "assistant";
@@ -89,7 +90,10 @@ export default function ChatWidget() {
   return (
     <>
       <m.button
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          if (!open) track("chat_opened");
+          setOpen((v) => !v);
+        }}
         className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-accent text-white flex items-center justify-center shadow-lg hover:bg-primary hover:text-background transition-colors duration-200"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}

@@ -25,6 +25,9 @@ export default function Footer({ year }: Props) {
           <div className="mt-2.5">
             <LocalTime />
           </div>
+          <p className="hidden md:block font-mono text-[10px] text-muted tracking-widest uppercase mt-2.5">
+            Ctrl + K — quick nav
+          </p>
         </div>
 
         <div>

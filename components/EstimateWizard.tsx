@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { m, AnimatePresence } from "framer-motion";
 import { contact } from "@/lib/content";
+import { track } from "@/lib/track";
 
 type ServiceKey = "custom" | "api" | "mobile" | "automation";
 
@@ -233,7 +234,14 @@ export default function EstimateWizard() {
                   key={t.label}
                   title={t.label}
                   detail={t.note}
-                  onClick={() => setTimeline(t)}
+                  onClick={() => {
+                    setTimeline(t);
+                    track("estimate_completed", {
+                      service: service ?? "",
+                      tier: tier?.label ?? "",
+                      timeline: t.label,
+                    });
+                  }}
                 />
               ))}
             </div>
@@ -293,6 +301,7 @@ export default function EstimateWizard() {
                 href={contact.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track("book_call_click", { source: "estimate" })}
                 className="inline-flex items-center gap-3 px-7 py-3.5 bg-primary text-background text-sm font-medium hover:bg-accent transition-colors duration-300"
               >
                 Book the free intake call →

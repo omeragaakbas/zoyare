@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import FadeIn from "@/components/animations/FadeIn";
+import { track } from "@/lib/track";
 
 const c = {
   label: "Free checklist",
@@ -39,6 +40,7 @@ export default function LeadMagnetSection() {
       if (res.ok) {
         setStatus("success");
         setEmail("");
+        track("leadmagnet_submitted");
       } else {
         setStatus("error");
       }

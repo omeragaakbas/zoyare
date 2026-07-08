@@ -10,6 +10,9 @@ import ClientShell from "@/components/ClientShell";
 import Footer from "@/components/Footer";
 import MotionProvider from "@/components/MotionProvider";
 import { Analytics } from "@vercel/analytics/next";
+import { getAllPosts } from "@/lib/blog";
+import { projects } from "@/lib/content";
+import { dict } from "@/lib/dictionary";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -171,6 +174,32 @@ const jsonLd = {
   ],
 };
 
+// Lightweight index for the ⌘K command palette — labels and hrefs only.
+const paletteEntries = [
+  { group: "Pages", label: "Home", href: "/" },
+  { group: "Pages", label: "Portfolio", href: "/portfolio" },
+  { group: "Pages", label: "Blog", href: "/blog" },
+  { group: "Pages", label: "About", href: "/about" },
+  { group: "Pages", label: "Contact", href: "/contact" },
+  { group: "Pages", label: "FAQ", href: "/faq" },
+  { group: "Pages", label: "Get an estimate", href: "/estimate" },
+  ...dict.services.items.map((s) => ({
+    group: "Services",
+    label: s.title,
+    href: s.href,
+  })),
+  ...projects.map((p) => ({
+    group: "Work",
+    label: `${p.client} — ${p.title}`,
+    href: `/portfolio/${p.id}`,
+  })),
+  ...getAllPosts().map((p) => ({
+    group: "Articles",
+    label: p.title,
+    href: `/blog/${p.slug}`,
+  })),
+];
+
 export default function RootLayout({
   children,
 }: {
@@ -180,6 +209,12 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${spaceMono.variable} ${instrumentSerif.variable}`} style={{ colorScheme: "light" }}>
       <head>
         <meta name="theme-color" content="#F8F6F2" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Zoyare — Blog"
+          href="/feed.xml"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -198,7 +233,7 @@ export default function RootLayout({
           <ScrollProgress />
           <Nav />
           <main id="main" className="relative">{children}</main>
-          <ClientShell />
+          <ClientShell palette={paletteEntries} />
           <Footer year={CURRENT_YEAR} />
           {/* Only ask for consent when there is actually a tracker to consent to */}
           {GA_ID && <CookieConsent />}

@@ -7,6 +7,28 @@ import ShareRow from "@/components/ShareRow";
 
 const BASE_URL = "https://zoyare.com";
 
+/**
+ * Adds slug ids to <h2> headings so the table of contents can anchor-link
+ * to them. Returns the enriched HTML plus the extracted headings.
+ */
+function withHeadingAnchors(html: string): {
+  html: string;
+  headings: { id: string; text: string }[];
+} {
+  const headings: { id: string; text: string }[] = [];
+  const enriched = html.replace(/<h2>([\s\S]*?)<\/h2>/g, (_, inner: string) => {
+    const text = inner.replace(/<[^>]+>/g, "").trim();
+    const id = text
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, "")
+      .trim()
+      .replace(/\s+/g, "-");
+    headings.push({ id, text });
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
+  return { html: enriched, headings };
+}
+
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
@@ -41,6 +63,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) notFound();
+
+  const { html: bodyHtml, headings } = withHeadingAnchors(post.body);
 
   // Related reading: same category first, then most recent — max 2.
   const related = getAllPosts()
@@ -123,9 +147,35 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           </div>
         </div>
 
+        {headings.length >= 3 && (
+          <nav
+            aria-label="Table of contents"
+            className="max-w-3xl border border-border bg-surface/40 p-6 md:p-8 mb-14"
+          >
+            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-5">
+              In this article
+            </p>
+            <ol className="flex flex-col gap-2.5">
+              {headings.map((h, i) => (
+                <li key={h.id} className="flex items-baseline gap-4">
+                  <span className="font-mono text-xs text-accent tabular-nums select-none">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <a
+                    href={`#${h.id}`}
+                    className="text-sm text-secondary hover:text-accent transition-colors duration-200"
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
         <article
           className="max-w-3xl prose-zoyare"
-          dangerouslySetInnerHTML={{ __html: post.body }}
+          dangerouslySetInnerHTML={{ __html: bodyHtml }}
         />
 
         <div className="max-w-3xl mt-14 pt-8 border-t border-border">

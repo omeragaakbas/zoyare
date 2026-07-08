@@ -7,6 +7,7 @@ import { m, AnimatePresence } from "framer-motion";
 import Logo from "@/components/Logo";
 import { dict } from "@/lib/dictionary";
 import { contact } from "@/lib/content";
+import { track } from "@/lib/track";
 
 const links = [
   { href: "/portfolio", label: dict.nav.portfolio },
@@ -67,6 +68,7 @@ export default function Nav() {
             href={contact.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track("book_call_click", { source: "nav" })}
             className="border border-primary px-4 py-1.5 text-sm font-medium text-primary hover:bg-primary hover:text-background transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             {dict.nav.bookCall}
