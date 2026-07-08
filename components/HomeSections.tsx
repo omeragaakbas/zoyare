@@ -115,9 +115,22 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
   );
 }
 
+function CornerTicks() {
+  const tick = "pointer-events-none select-none absolute font-mono text-sm text-muted/50";
+  return (
+    <span aria-hidden="true">
+      <span className={`${tick} left-4 top-3`}>+</span>
+      <span className={`${tick} right-4 top-3`}>+</span>
+      <span className={`${tick} left-4 bottom-3`}>+</span>
+      <span className={`${tick} right-4 bottom-3`}>+</span>
+    </span>
+  );
+}
+
 export function CTASection() {
   return (
     <section className="relative px-6 md:px-12 py-32 border-t border-border">
+      <CornerTicks />
       <FadeIn>
         <div className="flex items-center gap-2.5 mb-10">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />

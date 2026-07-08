@@ -87,6 +87,17 @@ export default function Footer({ year }: Props) {
           <CookiePreferencesButton />
         </div>
       </div>
+
+      {/* Oversized wordmark watermark — quiet brand statement to close the page */}
+      <div
+        aria-hidden="true"
+        className="mt-16 select-none pointer-events-none overflow-hidden"
+      >
+        <Logo
+          variant="full"
+          className="w-full h-auto text-primary opacity-[0.05]"
+        />
+      </div>
     </footer>
   );
 }

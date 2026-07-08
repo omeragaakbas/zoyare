@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { m, AnimatePresence } from "framer-motion";
 import Logo from "@/components/Logo";
 import { dict } from "@/lib/dictionary";
+import { contact } from "@/lib/content";
 
 const links = [
   { href: "/portfolio", label: dict.nav.portfolio },
@@ -41,26 +42,36 @@ export default function Nav() {
           <Logo variant="full" height={20} animate />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8">
-          {links.map(({ href, label }) => {
-            const active = pathname === href;
-            return (
-              <li key={href} className="relative flex flex-col items-center gap-1.5">
-                <Link
-                  href={href}
-                  className={`text-sm transition-colors duration-200 rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
-                    active ? "text-primary" : "text-secondary hover:text-primary"
-                  }`}
-                >
-                  {label}
-                </Link>
-                {active && (
-                  <span className="absolute -bottom-[22px] w-1 h-1 rounded-full bg-accent" />
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="hidden md:flex items-center gap-8">
+          <ul className="flex items-center gap-8">
+            {links.map(({ href, label }) => {
+              const active = pathname === href;
+              return (
+                <li key={href} className="relative flex flex-col items-center gap-1.5">
+                  <Link
+                    href={href}
+                    className={`text-sm transition-colors duration-200 rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+                      active ? "text-primary" : "text-secondary hover:text-primary"
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                  {active && (
+                    <span className="absolute -bottom-[22px] w-1 h-1 rounded-full bg-accent" />
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+          <a
+            href={contact.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-primary px-4 py-1.5 text-sm font-medium text-primary hover:bg-primary hover:text-background transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            {dict.nav.bookCall}
+          </a>
+        </div>
 
         <button
           onClick={() => setOpen((v) => !v)}
@@ -106,8 +117,16 @@ export default function Nav() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
-                className="mt-12"
+                className="mt-12 flex flex-col items-start gap-6"
               >
+                <a
+                  href={contact.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-background text-sm font-medium"
+                >
+                  {dict.nav.bookCall} →
+                </a>
                 <a
                   href="mailto:hello@zoyare.com"
                   className="font-mono text-xs text-muted tracking-widest uppercase"

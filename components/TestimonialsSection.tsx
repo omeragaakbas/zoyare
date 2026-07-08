@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
         {testimonials.map((t, i) => (
           <FadeIn key={t.company} delay={i * 0.08}>
             <div className="bg-background p-8 md:p-10 flex flex-col justify-between h-full">
-              <p className="text-secondary leading-relaxed text-sm mb-8">
+              <p className="font-display text-lg md:text-xl text-primary/85 leading-relaxed mb-8">
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div>

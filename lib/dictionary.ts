@@ -8,6 +8,7 @@ export const dict = {
     about: "About",
     blog: "Blog",
     contact: "Contact",
+    bookCall: "Book a call",
   },
   footer: {
     available: "Available for projects",
