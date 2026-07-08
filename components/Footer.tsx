@@ -50,6 +50,7 @@ export default function Footer({ year }: Props) {
           </p>
           <div className="flex flex-col gap-2.5">
             <Link href="/about" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.about}</Link>
+            <Link href="/estimate" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Get an estimate</Link>
             <Link href="/portfolio" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.portfolio}</Link>
             <Link href="/blog" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.blog}</Link>
             <Link href="/faq" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.faq}</Link>

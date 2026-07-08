@@ -146,26 +146,34 @@ export function CTASection() {
         </h2>
       </FadeIn>
       <FadeIn delay={0.16}>
-        <MagneticButton>
+        <div className="flex items-center gap-6 flex-wrap">
+          <MagneticButton>
+            <Link
+              href="/contact"
+              data-magnetic
+              className="group relative inline-flex items-center gap-3 px-7 py-3.5 border border-primary text-primary text-sm font-medium overflow-hidden"
+            >
+              <m.span
+                className="absolute inset-0 bg-accent"
+                initial={{ y: "100%" }}
+                whileHover={{ y: 0 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              />
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                Get in touch
+              </span>
+              <span className="relative z-10 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+                →
+              </span>
+            </Link>
+          </MagneticButton>
           <Link
-            href="/contact"
-            data-magnetic
-            className="group relative inline-flex items-center gap-3 px-7 py-3.5 border border-primary text-primary text-sm font-medium overflow-hidden"
+            href="/estimate"
+            className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
           >
-            <m.span
-              className="absolute inset-0 bg-accent"
-              initial={{ y: "100%" }}
-              whileHover={{ y: 0 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            />
-            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-              Get in touch
-            </span>
-            <span className="relative z-10 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
-              →
-            </span>
+            Or get an instant estimate
           </Link>
-        </MagneticButton>
+        </div>
       </FadeIn>
     </section>
   );

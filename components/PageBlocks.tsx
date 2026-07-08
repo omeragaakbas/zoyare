@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
 
 /**
@@ -44,9 +45,17 @@ export function InvestmentTiers({ tiers, highlight = 1 }: { tiers: Tier[]; highl
           );
         })}
       </div>
-      <p className="font-mono text-[10px] text-muted tracking-widest uppercase mt-4">
-        Fixed quote after intake — no hourly surprises
-      </p>
+      <div className="flex items-center justify-between gap-4 flex-wrap mt-4">
+        <p className="font-mono text-[10px] text-muted tracking-widest uppercase">
+          Fixed quote after intake — no hourly surprises
+        </p>
+        <Link
+          href="/estimate"
+          className="font-mono text-[10px] text-accent tracking-widest uppercase hover:text-primary transition-colors duration-200"
+        >
+          Get an instant estimate →
+        </Link>
+      </div>
     </FadeIn>
   );
 }

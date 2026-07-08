@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts, type Post } from "@/lib/blog";
 import FadeIn from "@/components/animations/FadeIn";
-import LoadMoreList from "@/components/LoadMoreList";
+import BlogExplorer from "@/components/BlogExplorer";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -125,13 +125,13 @@ export default function Blog() {
       )}
 
       <div className="border-t border-border">
-        <LoadMoreList
+        <BlogExplorer
           initial={8}
           step={8}
-          label="Load more articles"
-          items={rest.map((post, i) => (
-            <PostRow key={post.slug} post={post} index={i} />
-          ))}
+          items={rest.map((post, i) => ({
+            category: post.category,
+            node: <PostRow key={post.slug} post={post} index={i} />,
+          }))}
         />
       </div>
     </div>
