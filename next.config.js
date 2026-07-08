@@ -38,6 +38,14 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Static brand assets change rarely; let browsers keep them a day
+        // and serve stale while revalidating in the background.
+        source: "/:file(favicon\\.svg|logo\\.svg|logo-light\\.svg)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: [
           { key: "X-Frame-Options", value: "SAMEORIGIN" },

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPost, getAllPosts } from "@/lib/blog";
 import { breadcrumbList } from "@/lib/jsonld";
+import ShareRow from "@/components/ShareRow";
 
 const BASE_URL = "https://zoyare.com";
 
@@ -41,6 +42,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const post = getPost(slug);
   if (!post) notFound();
 
+  // Related reading: same category first, then most recent — max 2.
+  const related = getAllPosts()
+    .filter((p) => p.slug !== post.slug)
+    .sort((a, b) =>
+      Number(b.category === post.category) - Number(a.category === post.category)
+    )
+    .slice(0, 2);
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -62,7 +71,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         url: `${BASE_URL}/logo.svg`,
       },
     },
-    image: [`${BASE_URL}/opengraph-image.png`],
+    image: [`${BASE_URL}/blog/${post.slug}/opengraph-image`],
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${BASE_URL}/blog/${post.slug}`,
@@ -118,6 +127,42 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           className="max-w-3xl prose-zoyare"
           dangerouslySetInnerHTML={{ __html: post.body }}
         />
+
+        <div className="max-w-3xl mt-14 pt-8 border-t border-border">
+          <ShareRow url={`${BASE_URL}/blog/${post.slug}`} title={post.title} />
+        </div>
+
+        {related.length > 0 && (
+          <div className="max-w-3xl mt-16 pt-12 border-t border-border">
+            <p className="font-mono text-xs text-muted tracking-widest uppercase mb-8">
+              Keep reading
+            </p>
+            <div className="flex flex-col divide-y divide-border">
+              {related.map((rel) => (
+                <Link
+                  key={rel.slug}
+                  href={`/blog/${rel.slug}`}
+                  className="group flex items-start justify-between gap-6 py-6"
+                >
+                  <div>
+                    <p className="font-mono text-xs text-muted tracking-widest uppercase mb-2">
+                      {rel.category} — {rel.readTime} min
+                    </p>
+                    <h3 className="text-base md:text-lg font-medium text-primary leading-snug group-hover:text-accent transition-colors duration-200">
+                      {rel.title}
+                    </h3>
+                  </div>
+                  <span
+                    className="text-accent text-sm mt-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                    aria-hidden="true"
+                  >
+                    →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="max-w-3xl mt-20 pt-12 border-t border-border">
           <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">

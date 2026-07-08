@@ -1,6 +1,3 @@
-"use client";
-
-import { m, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface MarqueeProps {
@@ -12,8 +9,10 @@ interface MarqueeProps {
 }
 
 /**
- * Infinite horizontal marquee. Children are rendered twice for seamless loop.
- * Pauses on hover. Edge fade via mask-image.
+ * Infinite horizontal marquee. Children are rendered twice for a seamless
+ * loop. Pure CSS animation (see globals.css) — zero client JS, runs on the
+ * compositor thread and pauses on hover. `prefers-reduced-motion` is
+ * neutralized by the global reduced-motion block.
  */
 export default function Marquee({
   children,
@@ -22,8 +21,6 @@ export default function Marquee({
   reverse = false,
   fade = true,
 }: MarqueeProps) {
-  const reduced = useReducedMotion();
-
   const maskStyle = fade
     ? {
         maskImage:
@@ -38,21 +35,19 @@ export default function Marquee({
       className={`group relative overflow-hidden ${className}`}
       style={maskStyle}
     >
-      <m.div
-        className="flex whitespace-nowrap will-change-transform"
-        animate={
-          reduced
-            ? undefined
-            : { x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }
-        }
-        transition={{ duration, repeat: Infinity, ease: "linear" }}
-        style={{ width: "max-content" }}
+      <div
+        className="marquee-track flex whitespace-nowrap"
+        data-reverse={reverse || undefined}
+        style={{
+          width: "max-content",
+          ["--marquee-duration" as string]: `${duration}s`,
+        }}
       >
         <div className="flex shrink-0">{children}</div>
         <div className="flex shrink-0" aria-hidden="true">
           {children}
         </div>
-      </m.div>
+      </div>
     </div>
   );
 }

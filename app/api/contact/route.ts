@@ -16,12 +16,28 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Too many requests. Try again later." }, { status: 429 });
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
-  const { name, email, company, message } = await req.json();
+  let name: unknown, email: unknown, company: unknown, message: unknown;
+  try {
+    ({ name, email, company, message } = await req.json());
+  } catch {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
 
-  if (!name || !email || !message) {
+  if (
+    typeof name !== "string" || !name.trim() ||
+    typeof email !== "string" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+    typeof message !== "string" || !message.trim()
+  ) {
     return NextResponse.json({ error: "Name, email and message are required." }, { status: 400 });
   }
+  if (company !== undefined && company !== null && typeof company !== "string") {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
+  if (name.length > 200 || email.length > 254 || (company?.length ?? 0) > 200 || message.length > 5000) {
+    return NextResponse.json({ error: "Message is too long." }, { status: 400 });
+  }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const safeName = esc(name);
   const safeEmail = esc(email);
@@ -34,7 +50,7 @@ export async function POST(req: NextRequest) {
         from: "Zoyare Contact <noreply@zoyare.com>",
         to: "hello@zoyare.com",
         replyTo: email,
-        subject: `New message from ${name}${company ? ` (${company})` : ""}`,
+        subject: `New message from ${name.replace(/[\r\n]/g, " ")}${company ? ` (${company.replace(/[\r\n]/g, " ")})` : ""}`,
         html: `
           <div style="font-family: monospace; max-width: 600px; margin: 0 auto; padding: 32px; background: #080808; color: #F5F5F5;">
             <div style="border-bottom: 1px solid #1C1C1C; padding-bottom: 24px; margin-bottom: 24px;">

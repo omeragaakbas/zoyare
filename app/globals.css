@@ -127,6 +127,67 @@ body {
   animation: zoyare-blob-2 65s ease-in-out infinite;
 }
 
+/* Infinite micro-animations — pure CSS so they cost zero main-thread work.
+   All of these are neutralized globally by the prefers-reduced-motion block. */
+@keyframes zoyare-caret {
+  50% { opacity: 0; }
+}
+.hero-caret {
+  animation: zoyare-caret 1.1s steps(1) infinite;
+}
+
+@keyframes zoyare-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(3px); }
+}
+.scroll-bob {
+  display: inline-block;
+  animation: zoyare-bob 2.2s ease-in-out infinite;
+}
+
+@keyframes zoyare-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: zoyare-marquee var(--marquee-duration, 35s) linear infinite;
+  will-change: transform;
+}
+.marquee-track[data-reverse="true"] {
+  animation-direction: reverse;
+}
+.group:hover > .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes zoyare-float-glow {
+  0%, 100% { transform: scale(1);    opacity: 0.85; }
+  50%      { transform: scale(1.08); opacity: 1; }
+}
+.float-glow {
+  animation: zoyare-float-glow 7s ease-in-out infinite;
+}
+
+@keyframes zoyare-float-drift {
+  0%   { transform: translate3d(0, 0, 0)       scale(1); }
+  25%  { transform: translate3d(8px, -14px, 0) scale(1.025); }
+  50%  { transform: translate3d(0, -22px, 0)   scale(1.035); }
+  75%  { transform: translate3d(-8px, -14px, 0) scale(1.025); }
+  100% { transform: translate3d(0, 0, 0)       scale(1); }
+}
+.float-drift {
+  animation: zoyare-float-drift 11s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes zoyare-fade-up {
+  from { opacity: 0; transform: translateY(24px) scale(0.94); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+.float-entrance {
+  animation: zoyare-fade-up 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
 /* Schematic flow lines — animated dashes over a static base line */
 @keyframes schematic-dash {
   to { stroke-dashoffset: -20; }

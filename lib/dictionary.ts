@@ -4,13 +4,10 @@
  */
 export const dict = {
   nav: {
-    services: "Services",
     portfolio: "Portfolio",
     about: "About",
     blog: "Blog",
-    faq: "FAQ",
     contact: "Contact",
-    bookCall: "Book a call",
   },
   footer: {
     available: "Available for projects",

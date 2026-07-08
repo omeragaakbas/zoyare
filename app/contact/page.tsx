@@ -133,7 +133,6 @@ export default function Contact() {
                     required
                     rows={5}
                     className="input-line resize-none"
-                    style={{ borderBottom: "1px solid #D9D5CC" }}
                     placeholder="What do you want to build? Give a short description of the project or challenge."
                     disabled={status === "loading"}
                   />

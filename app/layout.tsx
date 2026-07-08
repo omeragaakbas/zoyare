@@ -186,12 +186,18 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:bg-primary focus:text-background focus:px-4 focus:py-2 focus:text-sm"
+        >
+          Skip to content
+        </a>
         {GA_ID && <AnalyticsLoader gaId={GA_ID} />}
         <Background />
         <MotionProvider>
           <ScrollProgress />
           <Nav />
-          <main className="relative">{children}</main>
+          <main id="main" className="relative">{children}</main>
           <ClientShell />
           <Footer year={CURRENT_YEAR} />
           <CookieConsent />

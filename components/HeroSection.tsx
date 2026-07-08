@@ -79,16 +79,7 @@ export default function HeroSection() {
             >
               {d.headlineLine3}
             </SplitText>
-            <m.span
-              className="inline-block w-[3px] h-[0.78em] bg-accent ml-2 align-middle"
-              animate={{ opacity: [1, 0] }}
-              transition={{
-                duration: 0.75,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "linear",
-              }}
-            />
+            <span className="hero-caret inline-block w-[3px] h-[0.78em] bg-accent ml-2 align-middle" />
           </span>
         </h1>
 
@@ -166,13 +157,9 @@ export default function HeroSection() {
             ease: [0.22, 1, 0.36, 1],
           }}
         />
-        <m.span
-          className="font-mono text-xs text-muted tracking-widest uppercase"
-          animate={{ y: [0, 3, 0] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-        >
+        <span className="scroll-bob font-mono text-xs text-muted tracking-widest uppercase">
           {d.scroll}
-        </m.span>
+        </span>
       </m.div>
     </section>
   );

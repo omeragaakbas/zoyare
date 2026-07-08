@@ -2,6 +2,16 @@ import { Resend } from "resend";
 import { NextRequest, NextResponse } from "next/server";
 import { rateLimitByIp } from "@/lib/rate-limit";
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function esc(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 const checklist = [
   {
     n: "01",
@@ -83,8 +93,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Too many requests. Try again later." }, { status: 429 });
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
   let email: string;
   try {
     ({ email } = await req.json());
@@ -92,9 +100,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  if (!email || !email.includes("@")) {
+  if (typeof email !== "string" || email.length > 254 || !EMAIL_RE.test(email)) {
     return NextResponse.json({ error: "Invalid email address." }, { status: 400 });
   }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  const safeEmail = esc(email);
 
   const checklistRows = checklist
     .map(
@@ -168,6 +179,7 @@ export async function POST(req: NextRequest) {
         to: "hello@zoyare.com",
         replyTo: email,
         subject: `New checklist lead: ${email}`,
+        text: `New lead via the checklist lead magnet: ${email}. Add to leads sheet and follow up within 48 hours.`,
         html: `
           <div style="font-family: monospace; max-width: 600px; margin: 0 auto; padding: 32px; background: #080808; color: #F5F5F5;">
             <div style="border-bottom: 1px solid #1C1C1C; padding-bottom: 20px; margin-bottom: 24px;">
@@ -175,7 +187,7 @@ export async function POST(req: NextRequest) {
             </div>
             <p style="color: #F5F5F5; font-size: 14px; margin: 0 0 8px;">
               <span style="color: #585858;">EMAIL</span>&nbsp;&nbsp;
-              <a href="mailto:${email}" style="color: #F15F0E; text-decoration: none;">${email}</a>
+              <a href="mailto:${safeEmail}" style="color: #F15F0E; text-decoration: none;">${safeEmail}</a>
             </p>
             <p style="color: #585858; font-size: 12px; margin: 24px 0 0;">Add to leads sheet and follow up within 48 hours.</p>
           </div>

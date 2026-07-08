@@ -38,9 +38,34 @@ export async function POST(req: NextRequest) {
   }
 
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-  const { messages } = await req.json();
 
-  if (!messages || !Array.isArray(messages)) {
+  let messages: unknown;
+  try {
+    ({ messages } = await req.json());
+  } catch {
+    return new Response("Invalid request.", { status: 400 });
+  }
+
+  const valid =
+    Array.isArray(messages) &&
+    messages.length > 0 &&
+    messages.every(
+      (msg) =>
+        msg &&
+        typeof msg === "object" &&
+        (msg.role === "user" || msg.role === "assistant") &&
+        typeof msg.content === "string" &&
+        msg.content.length <= 2000
+    );
+  if (!valid) {
+    return new Response("Invalid request.", { status: 400 });
+  }
+
+  // The API requires the first message to be from the user — drop the
+  // widget's assistant greeting (and anything else) before the first user turn.
+  const recent = (messages as { role: "user" | "assistant"; content: string }[]).slice(-10);
+  const firstUser = recent.findIndex((msg) => msg.role === "user");
+  if (firstUser === -1) {
     return new Response("Invalid request.", { status: 400 });
   }
 
@@ -49,7 +74,7 @@ export async function POST(req: NextRequest) {
       model: "claude-haiku-4-5-20251001",
       max_tokens: 1024,
       system: SYSTEM_PROMPT,
-      messages: messages.slice(-10),
+      messages: recent.slice(firstUser),
     });
 
     const encoder = new TextEncoder();
@@ -76,7 +101,6 @@ export async function POST(req: NextRequest) {
     return new Response(readable, {
       headers: {
         "Content-Type": "text/plain; charset=utf-8",
-        "Transfer-Encoding": "chunked",
       },
     });
   } catch (err) {

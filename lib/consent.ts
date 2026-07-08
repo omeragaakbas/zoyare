@@ -51,12 +51,3 @@ export function setConsent(input: ConsentInput): void {
 export function hasDecided(): boolean {
   return getConsent() !== null;
 }
-
-export function clearConsent(): void {
-  if (!isBrowser()) return;
-  try {
-    localStorage.removeItem(STORAGE_KEY);
-  } catch {
-    // ignore
-  }
-}

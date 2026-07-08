@@ -1,10 +1,3 @@
-export const site = {
-  name: "Zoyare",
-  tagline: "Software built to scale.",
-  description:
-    "Zoyare builds custom software and mobile applications for businesses that need more than off-the-shelf solutions.",
-};
-
 export const about = {
   name: "Zoyare",
   role: "Software Engineering Studio",
@@ -96,36 +89,7 @@ export const projects: Project[] = [
   },
 ];
 
-export const services = [
-  {
-    title: "Custom Software",
-    description:
-      "From requirement to deployment. No off-the-shelf solutions — software that fits your process.",
-    href: "/services/custom-software",
-  },
-  {
-    title: "API & Integrations",
-    description:
-      "Systems that don't talk to each other, connected. REST APIs, platform connectors, data pipelines.",
-    href: "/services/api-integrations",
-  },
-  {
-    title: "Mobile Applications",
-    description:
-      "iOS and Android apps that actually get used. Focus on speed, reliability and UX.",
-    href: "/services/mobile-applications",
-  },
-  {
-    title: "Process Automation",
-    description:
-      "Automate manual workflows. Fewer errors, less time, more control.",
-    href: "/services/process-automation",
-  },
-];
-
 export const contact = {
-  email: "hello@zoyare.com",
-  cta: "Discuss a project?",
   bookingUrl: "https://cal.eu/zoyare",
 };
 

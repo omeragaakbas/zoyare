@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import CookiePreferencesButton from "@/components/CookiePreferencesButton";
+import LocalTime from "@/components/LocalTime";
 import { dict as d } from "@/lib/dictionary";
 
 type Props = { year: number };
@@ -20,6 +21,9 @@ export default function Footer({ year }: Props) {
             <span className="font-mono text-xs text-muted tracking-widest uppercase">
               {d.footer.available}
             </span>
+          </div>
+          <div className="mt-2.5">
+            <LocalTime />
           </div>
         </div>
 

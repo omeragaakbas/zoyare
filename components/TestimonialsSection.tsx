@@ -1,5 +1,3 @@
-"use client";
-
 import { testimonials } from "@/lib/content";
 import FadeIn from "@/components/animations/FadeIn";
 
