@@ -28,6 +28,15 @@ export default function AnalyticsLoader({ gaId }: Props) {
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          // Consent Mode v2 — the script only loads after the visitor accepts,
+          // so analytics is granted; ad signals stay denied until the banner
+          // copy actually asks for marketing consent.
+          gtag('consent', 'default', {
+            analytics_storage: 'granted',
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied'
+          });
           gtag('js', new Date());
           gtag('config', '${gaId}', { page_path: window.location.pathname });
         `}

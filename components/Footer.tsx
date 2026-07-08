@@ -85,7 +85,7 @@ export default function Footer({ year }: Props) {
           <Link href="/terms" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">
             {d.footer.terms}
           </Link>
-          <CookiePreferencesButton />
+          {process.env.NEXT_PUBLIC_GA_ID && <CookiePreferencesButton />}
         </div>
       </div>
 

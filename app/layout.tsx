@@ -200,7 +200,8 @@ export default function RootLayout({
           <main id="main" className="relative">{children}</main>
           <ClientShell />
           <Footer year={CURRENT_YEAR} />
-          <CookieConsent />
+          {/* Only ask for consent when there is actually a tracker to consent to */}
+          {GA_ID && <CookieConsent />}
         </MotionProvider>
         <Analytics />
       </body>
