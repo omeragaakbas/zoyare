@@ -17,6 +17,8 @@ Marketingsite van Zoyare, een eenmans software engineering studio (Ömer Akbas, 
 
 ## Belangrijke beslissingen (niet terugdraaien zonder overleg)
 
+- **Juli 2026: Ömer blijft anoniem op de site.** Zijn naam mag nergens in de publieke sitecode staan (geen founder-blok, geen Person in JSON-LD). Het bedrijf presenteert zich als "Zoyare" / "one engineer, every project" — zonder naam. KvK-nummer in de footer blijft (wettelijk verplicht).
+
 - **Juni 2026: NL-site verwijderd.** De site was kort tweetalig (`/nl/*` met NL-slugs zoals `/nl/diensten/maatwerk-software`), maar de doelgroep is internationaal. Alle `/nl/*` URL's én de oudere root-level NL-URL's (`/diensten/*`, NL-blogslugs) 301'en in één hop naar hun EN-tegenhanger via `next.config.js`. Verwijder die redirects niet — Google heeft deze URL's geïndexeerd.
 - Geen hreflang/`languages`-alternates meer in metadata; de site is monolinguaal `en`.
 - Sitemap (`app/sitemap.ts`) bevat alleen EN-routes.
