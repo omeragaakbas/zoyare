@@ -115,10 +115,6 @@ const jsonLd = {
       description:
         "Software engineering studio for custom software, API integrations and mobile applications for businesses.",
       foundingDate: "2024",
-      founder: {
-        "@type": "Person",
-        name: "Ömer Akbas",
-      },
       address: {
         "@type": "PostalAddress",
         addressCountry: "NL",
