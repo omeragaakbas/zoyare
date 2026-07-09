@@ -106,7 +106,10 @@ const jsonLd = {
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/logo.svg`,
+        // PNG route — Google's logo rich results don't reliably accept SVG
+        url: `${BASE_URL}/apple-icon`,
+        width: 180,
+        height: 180,
       },
       email: "hello@zoyare.com",
       description:

@@ -92,7 +92,9 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/logo.svg`,
+        url: `${BASE_URL}/apple-icon`,
+        width: 180,
+        height: 180,
       },
     },
     image: [`${BASE_URL}/blog/${post.slug}/opengraph-image`],

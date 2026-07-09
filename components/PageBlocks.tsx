@@ -60,6 +60,67 @@ export function InvestmentTiers({ tiers, highlight = 1 }: { tiers: Tier[]; highl
   );
 }
 
+export type QA = { q: string; a: string };
+
+/** Zero-JS FAQ block — native <details>, matches the /faq page look. */
+export function ServiceFaq({ items }: { items: QA[] }) {
+  return (
+    <FadeIn className="mb-24 border-t border-border pt-16">
+      <p className="font-mono text-xs text-muted tracking-widest uppercase mb-10">
+        Common questions
+      </p>
+      <div className="max-w-3xl flex flex-col divide-y divide-border border-b border-border">
+        {items.map((item) => (
+          <details key={item.q} className="group py-6">
+            <summary className="flex items-start justify-between gap-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden text-base font-medium leading-snug text-primary hover:text-accent transition-colors duration-200">
+              {item.q}
+              <span
+                className="shrink-0 text-xl leading-none mt-0.5 text-muted group-open:rotate-45 group-open:text-accent transition-transform duration-200"
+                aria-hidden="true"
+              >
+                +
+              </span>
+            </summary>
+            <p className="text-secondary text-sm leading-relaxed pt-4 max-w-2xl">
+              {item.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </FadeIn>
+  );
+}
+
+/** Single client quote — social proof on the page where the decision happens. */
+export function PullQuote({
+  quote,
+  name,
+  company,
+}: {
+  quote: string;
+  name: string;
+  company: string;
+}) {
+  return (
+    <FadeIn className="mb-24 border-t border-border pt-16">
+      <blockquote className="max-w-3xl">
+        <p className="font-display text-2xl md:text-3xl text-primary/85 leading-snug mb-6">
+          &ldquo;{quote}&rdquo;
+        </p>
+        <footer className="flex items-center gap-3">
+          <span className="w-6 h-px bg-accent" aria-hidden="true" />
+          <cite className="not-italic text-sm text-secondary">
+            {name},{" "}
+            <span className="font-mono text-xs text-muted tracking-widest uppercase">
+              {company}
+            </span>
+          </cite>
+        </footer>
+      </blockquote>
+    </FadeIn>
+  );
+}
+
 export type Step = { num: string; title: string; text: string };
 
 export function StepRail({ steps, label = "Process" }: { steps: Step[]; label?: string }) {

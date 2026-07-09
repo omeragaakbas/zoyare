@@ -72,6 +72,52 @@ export default function About() {
 
       <div className="mt-24 border-t border-border pt-16">
         <FadeIn className="mb-12">
+          <p className="font-mono text-xs text-muted tracking-widest uppercase">The engineer</p>
+        </FadeIn>
+        <FadeIn>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <div className="lg:col-span-7">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary mb-6">
+                Ömer <span className="font-display">Akbas.</span>
+              </h2>
+              <p className="text-secondary leading-relaxed max-w-xl mb-6">
+                Zoyare is run by one engineer — by design. Ömer built the
+                BuildingX platform connector that&apos;s live in the Siemens
+                ecosystem, designed back-end architecture for workforce
+                management platforms, and ships products from zero to
+                production. Every project gets the same pair of hands from
+                first call to handover, so nothing gets lost between layers.
+              </p>
+              <a
+                href="https://www.linkedin.com/company/zoyare/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-accent hover:text-primary transition-colors duration-200 underline underline-offset-4"
+              >
+                Connect on LinkedIn →
+              </a>
+            </div>
+            <div className="lg:col-span-4 lg:col-start-9 flex flex-col gap-5">
+              {[
+                { label: "Role", value: "Founder & engineer" },
+                { label: "Registered", value: "KvK 94498555 — Netherlands" },
+                { label: "Working", value: "Worldwide, remote-first" },
+                { label: "Responds", value: "Within 24 hours" },
+              ].map((row) => (
+                <div key={row.label} className="flex items-baseline justify-between gap-6 border-b border-border pb-4">
+                  <span className="font-mono text-xs text-muted tracking-widest uppercase">
+                    {row.label}
+                  </span>
+                  <span className="text-sm text-primary text-right">{row.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+
+      <div className="mt-24 border-t border-border pt-16">
+        <FadeIn className="mb-12">
           <p className="font-mono text-xs text-muted tracking-widest uppercase">Approach</p>
         </FadeIn>
 

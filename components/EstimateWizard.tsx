@@ -307,7 +307,9 @@ export default function EstimateWizard() {
                 Book the free intake call →
               </a>
               <Link
-                href="/contact"
+                href={`/contact?service=${encodeURIComponent(
+                  SERVICES.find((s) => s.key === service)?.title ?? ""
+                )}&tier=${encodeURIComponent(tier.label)}&range=${encodeURIComponent(tier.range)}`}
                 className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
               >
                 Or send a message

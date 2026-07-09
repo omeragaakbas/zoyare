@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
-import { InvestmentTiers, StepRail } from "@/components/PageBlocks";
-import { breadcrumbList, service } from "@/lib/jsonld";
+import { InvestmentTiers, StepRail, ServiceFaq, PullQuote } from "@/components/PageBlocks";
+import { breadcrumbList, service, faqPage } from "@/lib/jsonld";
+import { testimonials } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Custom Software Development",
@@ -19,7 +20,27 @@ export const metadata: Metadata = {
   },
 };
 
+const faq = [
+  {
+    q: "Who owns the code when the project is done?",
+    a: "You do — always. You get the full source code, documentation and deployment setup. Any competent developer can continue the work; you're never locked in to Zoyare.",
+  },
+  {
+    q: "Can custom software connect to the tools we already use?",
+    a: "Yes, and it usually should. Integrations with your accounting package, CRM, e-mail or existing databases are typically part of the scope — that's often exactly where the time savings come from.",
+  },
+  {
+    q: "Custom software or an off-the-shelf SaaS package — how do I choose?",
+    a: "Rule of thumb: if an existing tool covers 80% of what you need, buy it. Build custom when the process is core to how you win business, or when tool sprawl and manual workarounds cost more than software would. In the intake I'll tell you honestly which side your project falls on — even if that means no project for me.",
+  },
+  {
+    q: "What happens if Zoyare is unavailable — am I stuck?",
+    a: "No. Every delivery includes documented code, automated tests and a handover that any developer can pick up. That's deliberate: software that only its maker understands is a liability, not an asset.",
+  },
+];
+
 const jsonLd = [
+  faqPage(faq),
   service({
     name: "Custom Software Development",
     description:
@@ -96,6 +117,14 @@ export default function CustomSoftware() {
           { range: "€75k+", label: "Enterprise platform", time: "4–12 months" },
         ]}
       />
+
+      <PullQuote
+        quote={testimonials[1].quote}
+        name={testimonials[1].name}
+        company={testimonials[1].company}
+      />
+
+      <ServiceFaq items={faq} />
 
       <FadeIn className="border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>

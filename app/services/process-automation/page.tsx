@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
-import { breadcrumbList, service } from "@/lib/jsonld";
+import { ServiceFaq, PullQuote } from "@/components/PageBlocks";
+import { breadcrumbList, service, faqPage } from "@/lib/jsonld";
+import { testimonials } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Business Process Automation — Automate Manual Workflows",
@@ -18,7 +20,27 @@ export const metadata: Metadata = {
   },
 };
 
+const faq = [
+  {
+    q: "Which processes are worth automating?",
+    a: "Repetitive, rule-based work that eats hours every week: invoicing, report generation, data entry between systems, document creation. Rule of thumb: if a process follows the same steps every time and costs your team multiple hours weekly, automation usually pays for itself quickly.",
+  },
+  {
+    q: "Will automation work with the tools we already use?",
+    a: "Yes — that's the point. Automation is built around your existing tools (Excel, e-mail, accounting software, CRM), not as a replacement for them. Your team keeps working the way they know; the robot work disappears.",
+  },
+  {
+    q: "What if our process changes later?",
+    a: "Processes always change, so automations are built with configuration instead of hard-coded rules where it matters — rates, templates, recipients. Small changes you adjust yourself; bigger ones are a small, quoted adjustment.",
+  },
+  {
+    q: "How quickly does automation pay for itself?",
+    a: "For a weekly manual process, typically within months. Example: ProAspect's invoicing took several hours every week and now runs fully automatically with zero errors. Multiply your hours per week by an honest hourly cost and compare that to a one-time build — the math is usually clear.",
+  },
+];
+
 const jsonLd = [
+  faqPage(faq),
   service({
     name: "Business Process Automation",
     description:
@@ -97,6 +119,14 @@ export default function ProcessAutomation() {
           </span>
         </Link>
       </FadeIn>
+
+      <PullQuote
+        quote={testimonials[2].quote}
+        name={testimonials[2].name}
+        company={testimonials[2].company}
+      />
+
+      <ServiceFaq items={faq} />
 
       <FadeIn className="border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>

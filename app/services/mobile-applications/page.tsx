@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
-import { InvestmentTiers } from "@/components/PageBlocks";
-import { breadcrumbList, service } from "@/lib/jsonld";
+import { InvestmentTiers, ServiceFaq } from "@/components/PageBlocks";
+import { breadcrumbList, service, faqPage } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Mobile App Development — iOS & Android",
@@ -19,7 +19,27 @@ export const metadata: Metadata = {
   },
 };
 
+const faq = [
+  {
+    q: "Native or cross-platform — what do you build?",
+    a: "React Native with Expo: one codebase that ships to both iOS and Android with native-level performance for the vast majority of apps. If your app genuinely needs full native (heavy 3D, specialized hardware), I'll say so in the intake instead of forcing a fit.",
+  },
+  {
+    q: "Do you handle App Store and Play Store publication?",
+    a: "Yes — the full process: certificates, store listings, review submission and the inevitable back-and-forth with Apple. Your app isn't delivered until it's live.",
+  },
+  {
+    q: "Can you build the backend too?",
+    a: "Yes. Most apps need accounts, data and notifications — I build the API and infrastructure alongside the app (Node.js, Supabase, Firebase or custom), so there's one responsible party for the whole product.",
+  },
+  {
+    q: "What does maintaining an app cost after launch?",
+    a: "Apps need periodic updates for new OS versions and dependencies. Thanks to over-the-air updates most fixes ship without a store review. We agree on a maintenance setup before launch, so there are no surprise invoices afterward.",
+  },
+];
+
 const jsonLd = [
+  faqPage(faq),
   service({
     name: "Mobile App Development",
     description:
@@ -79,6 +99,8 @@ export default function MobileApplications() {
           { range: "€80k+", label: "Complex platform", time: "5–12 months" },
         ]}
       />
+
+      <ServiceFaq items={faq} />
 
       <FadeIn className="border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>

@@ -1,12 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { track } from "@/lib/track";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+
+  // Arriving from the estimator? Pre-fill the message with their choices so
+  // the lead lands warm and the context isn't lost.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get("service");
+    const tier = params.get("tier");
+    const range = params.get("range");
+    if (!service || !tier) return;
+    const el = document.getElementById("contact-message") as HTMLTextAreaElement | null;
+    if (el && !el.value) {
+      el.value = `Via the project estimator: ${service} — ${tier}${range ? ` (${range})` : ""}.\n\nAbout my project: `;
+    }
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();

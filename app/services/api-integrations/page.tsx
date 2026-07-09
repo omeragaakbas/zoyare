@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/animations/FadeIn";
-import { InvestmentTiers } from "@/components/PageBlocks";
-import { breadcrumbList, service } from "@/lib/jsonld";
+import { InvestmentTiers, ServiceFaq, PullQuote } from "@/components/PageBlocks";
+import { breadcrumbList, service, faqPage } from "@/lib/jsonld";
+import { testimonials } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "API Integrations & System Connections",
@@ -19,7 +20,27 @@ export const metadata: Metadata = {
   },
 };
 
+const faq = [
+  {
+    q: "Can you connect systems that don't have an API?",
+    a: "Often, yes. There's usually another route: database access, file exports, scheduled reports or e-mail parsing. During the intake I'll assess what's technically possible — and tell you honestly when a connection isn't worth building.",
+  },
+  {
+    q: "What happens when one of the connected systems changes its API?",
+    a: "Integrations are built in layers, so a change in one system means a small, isolated fix — not a rebuild. Error handling and monitoring flag issues early, and a maintenance agreement can cover adjustments if you want them handled for you.",
+  },
+  {
+    q: "How do you handle data security in an integration?",
+    a: "Authentication via OAuth 2.0 or API keys with minimal permissions, encrypted connections, and no data stored outside your systems unless the design requires it. For sensitive projects an NDA is standard before we discuss specifics.",
+  },
+  {
+    q: "How long does an integration project take?",
+    a: "A simple one-way connection: 1–3 weeks. Multi-system integrations with transformations: 3–8 weeks. Enterprise or legacy systems with limited documentation take longer — you'll get a realistic estimate after the intake, not an optimistic one.",
+  },
+];
+
 const jsonLd = [
+  faqPage(faq),
   service({
     name: "API & System Integrations",
     description:
@@ -94,6 +115,14 @@ export default function ApiIntegrations() {
           { range: "€25k+", label: "Enterprise / legacy", time: "2–6 months" },
         ]}
       />
+
+      <PullQuote
+        quote={testimonials[0].quote}
+        name={testimonials[0].name}
+        company={testimonials[0].company}
+      />
+
+      <ServiceFaq items={faq} />
 
       <FadeIn className="border-t border-border pt-16">
         <p className="font-mono text-xs text-muted tracking-widest uppercase mb-6">Next step</p>
