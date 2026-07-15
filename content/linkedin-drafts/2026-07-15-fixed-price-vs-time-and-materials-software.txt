@@ -1,0 +1,13 @@
+"Fixed price feels safer." I hear it in almost every first call. Sometimes it's true. Often you're paying a 15–30% fear premium for a number that will change anyway.
+
+Here's the thing nobody tells you: no supplier quotes a fixed price at their expected effort. They quote expected effort plus a risk buffer. You're buying insurance — which is fine, as long as you know that's what you're buying.
+
+And fixed price only stays fixed while the scope does. Every new insight becomes a change request, a mini-quote, and a week of delay.
+
+My advice for most SMB projects: a hybrid. Fixed-price discovery first. Fixed price per milestone for the well-defined work. Capped time & materials — with weekly demos — for the genuinely uncertain parts.
+
+Certainty where certainty is possible. Honest flexibility where it isn't.
+
+I wrote up the full breakdown, including the red flags that should make you walk away: https://zoyare.com/blog/fixed-price-vs-time-and-materials-software
+
+#customsoftware #softwaredevelopment #freelance

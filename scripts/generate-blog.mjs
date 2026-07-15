@@ -30,7 +30,6 @@ if (fs.existsSync(envPath)) {
 // Onderwerpen die aansluiten op Zoyare's ICP en SEO-strategie.
 // Houd deze lijst bij: verwijder onderwerpen zodra ze gepubliceerd zijn.
 const TOPIC_SUGGESTIONS = [
-  "Fixed price vs. time and materials: which contract fits your software project?",
   "How to write a good brief for a custom software project (non-technical guide)",
   "Rebuild or refactor: what to do with your aging legacy system",
   "Web app vs. native app: which one does your business actually need?",
