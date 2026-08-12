@@ -30,14 +30,10 @@ if (fs.existsSync(envPath)) {
 // Onderwerpen die aansluiten op Zoyare's ICP en SEO-strategie.
 // Houd deze lijst bij: verwijder onderwerpen zodra ze gepubliceerd zijn.
 const TOPIC_SUGGESTIONS = [
-  "How to write a good brief for a custom software project (non-technical guide)",
   "Rebuild or refactor: what to do with your aging legacy system",
   "Web app vs. native app: which one does your business actually need?",
-  "How to evaluate a software development quote (and spot the red flags)",
-  "5 signs your current systems are holding back your company's growth",
   "The cost of doing nothing: when postponing custom software gets expensive",
   "One developer or a full team: how much capacity does your project really need?",
-  "SLAs and support contracts for custom software: what should be in them?",
   "React Native in 2026: an honest assessment for business apps",
 ];
 
