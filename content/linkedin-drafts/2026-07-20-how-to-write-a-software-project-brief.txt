@@ -1,0 +1,13 @@
+Most software briefs I get are either three vague sentences or twelve pages of screens nobody asked for.
+
+Neither helps.
+
+A brief that actually works answers five things: the problem (not the solution you have in mind), who uses it and how often, what "done" looks like, what systems it needs to touch, and your real budget and deadline.
+
+That's it. No wireframes, no tech stack wishlist — unless you have a specific reason for one.
+
+The difference shows up immediately: a vague brief gets a padded, guessed price. A clear one gets a number within 10% of reality, because the studio isn't pricing in the risk of being wrong about what you meant.
+
+Wrote up the five-question framework, plus a real before/after example, here: https://zoyare.com/blog/how-to-write-a-software-project-brief
+
+#CustomSoftware #SoftwareDevelopment #SMB

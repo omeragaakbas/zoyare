@@ -1,0 +1,16 @@
+Got three quotes for the same software project? €18k, €42k, €65k?
+
+That's normal. It doesn't mean two of them are wrong — it usually means the three quotes aren't pricing the same thing, even though they look like they are.
+
+Before comparing numbers, compare:
+→ Is the scope specific, or one vague sentence?
+→ Does the contract model (fixed price vs. hourly) match how uncertain the work actually is?
+→ Is there a discovery phase, or straight into building on assumptions?
+→ Do you own the code, domain and credentials when it's done?
+→ What's covered after launch — and what isn't?
+
+The cheapest number on the page is sometimes the best deal. Sometimes it's a studio that hasn't found the complexity yet, or plans to recover it through change requests later.
+
+Wrote up the full checklist and the red flags worth walking away from: https://zoyare.com/blog/how-to-evaluate-a-software-development-quote
+
+#SoftwareDevelopment #CustomSoftware #SMB

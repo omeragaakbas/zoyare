@@ -1,0 +1,15 @@
+Growth doesn't break businesses. Bad infrastructure does — growth just exposes it faster.
+
+Five signs I see most often when a company has outgrown its systems:
+
+1. Hiring someone doesn't add capacity, just more people doing the same manual workaround
+2. One person leaving would break half the operation
+3. Reporting takes days and nobody fully trusts the number at the end
+4. The same data gets typed into three different systems by hand
+5. Doubling revenue more than doubles your back-office hours
+
+None of these show up on a P&L as "systems problem." They show up as overtime, late decisions and stress on the people carrying too much in their heads.
+
+If two or more of these sound familiar, it's worth looking at before the next growth spurt makes it worse: https://zoyare.com/blog/signs-your-systems-are-holding-back-growth
+
+#SMB #CustomSoftware #BusinessGrowth

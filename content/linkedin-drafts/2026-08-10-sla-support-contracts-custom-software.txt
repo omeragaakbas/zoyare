@@ -1,0 +1,16 @@
+Software launches. Everyone celebrates. Then someone has to answer: what happens when it breaks at 6pm on a Friday?
+
+Without a support contract, the honest answer is usually "whoever picks up the phone, whenever they're free." That's not a plan.
+
+A usable SLA answers three things in numbers, not adjectives:
+→ How fast will someone respond (not resolve — respond)
+→ How fast will it actually get fixed, tiered by severity
+→ What uptime is guaranteed, and what happens if it's missed
+
+A support contract on top should cover security patches and dependency updates, not just "fix it when it's already broken" — otherwise the software quietly rots underneath a clean-looking bug tracker.
+
+Typical cost: 10–20% of the original build price per year. Cheaper than it sounds compared to ad-hoc support with no guaranteed response time.
+
+Full breakdown, including severity tiers and what to ask before signing: https://zoyare.com/blog/sla-support-contracts-custom-software
+
+#SoftwareDevelopment #CustomSoftware #SLA
