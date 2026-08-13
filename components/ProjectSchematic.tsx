@@ -308,11 +308,96 @@ function ProaspectSchematic() {
   );
 }
 
+function CustomsComplianceSchematic() {
+  const stages = [
+    { x: 44, label: "PRE-DEPARTURE", sub: "SHIPMENT DATA" },
+    { x: 178, label: "ELIGIBILITY", sub: "ORIGIN · TRANSPORT" },
+    { x: 312, label: "T+2H WAIT", sub: "COMPLIANCE WINDOW", accent: true },
+    { x: 446, label: "STATUS POLL", sub: "CLEARANCE API" },
+    { x: 580, label: "SORT DECISION", sub: "ROUTED" },
+  ];
+  return (
+    <>
+      <Frame />
+      {stages.map((s, i) => (
+        <g key={s.label}>
+          <Node x={s.x} y={172} w={96} h={72} label={s.label} sub={s.sub} accent={s.accent} />
+          {i < stages.length - 1 && <Flow d={`M ${s.x + 96} 208 H ${s.x + 134}`} />}
+        </g>
+      ))}
+
+      {/* per-parcel compliance state */}
+      <Cylinder x={318} y={64} w={84} h={62} label="STATE" />
+      <Flow d="M 360 126 V 172" />
+
+      {/* event bus trigger */}
+      <rect x={44} y={92} width={96} height={26} fill={SURFACE} stroke={BORDER} />
+      <text x={92} y={109} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.5} fill={MUTED}>
+        EVENTBRIDGE
+      </text>
+      <path d="M 92 118 V 172" fill="none" stroke={BORDER} strokeDasharray="2 4" />
+
+      {/* outcome strip */}
+      <rect x={44} y={300} width={632} height={44} fill={BG} stroke={BORDER} />
+      <text x={64} y={327} fontFamily={mono} fontSize={9} letterSpacing={1.5} fill={MUTED}>
+        MANUAL TRACKING
+      </text>
+      <text x={656} y={328} textAnchor="end" fontFamily={mono} fontSize={16} letterSpacing={2} fill={ACCENT}>
+        0
+      </text>
+      <line x1={220} y1={322} x2={630} y2={322} stroke={BORDER} strokeDasharray="2 4" />
+
+      <Caption text="FIG. 05 — CUSTOMS COMPLIANCE STATUS PIPELINE" />
+    </>
+  );
+}
+
+function MembershipPlatformSchematic() {
+  return (
+    <>
+      <Frame />
+      {[
+        { x: 84, label: "MEMBER AUTH", sub: "SESSION · REFRESH" },
+        { x: 290, label: "WEBSHOP", sub: "CART · CHECKOUT" },
+        { x: 496, label: "CONTENT", sub: "BANNERS · DOCS" },
+      ].map((d) => (
+        <g key={d.label}>
+          <Node x={d.x} y={64} w={140} h={64} label={d.label} sub={d.sub} />
+          <Flow d={`M ${d.x + 70} 128 V 188`} />
+        </g>
+      ))}
+
+      {/* shared routing layer */}
+      <rect x={84} y={188} width={552} height={48} fill="rgba(241,95,14,0.05)" stroke={ACCENT} strokeWidth={1} />
+      <text x={360} y={208} textAnchor="middle" fontFamily={mono} fontSize={10} letterSpacing={1.5} fill={ACCENT}>
+        MVC ROUTING LAYER
+      </text>
+      <text x={360} y={224} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.2} fill={MUTED}>
+        CONTENT TYPE → CONTROLLER → VIEW
+      </text>
+
+      <Flow d="M 360 236 V 296" />
+      <Cylinder x={296} y={296} w={128} h={86} label="HEADLESS CMS" />
+
+      {/* cache chip */}
+      <rect x={520} y={314} width={116} height={28} fill={SURFACE} stroke={BORDER} />
+      <text x={578} y={332} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.5} fill={MUTED}>
+        RSS + CACHE
+      </text>
+      <path d="M 424 339 H 520" fill="none" stroke={BORDER} strokeDasharray="2 4" />
+
+      <Caption text="FIG. 06 — MEMBERSHIP & CONTENT PLATFORM" />
+    </>
+  );
+}
+
 const schematics: Record<string, () => React.ReactNode> = {
   siemens: SiemensSchematic,
   stratex: StratexSchematic,
   studybuddy: StudybuddySchematic,
   proaspect: ProaspectSchematic,
+  "customs-compliance": CustomsComplianceSchematic,
+  "membership-content-platform": MembershipPlatformSchematic,
 };
 
 export default function ProjectSchematic({
