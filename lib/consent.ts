@@ -6,6 +6,7 @@ export const CONSENT_REOPEN_EVENT = "consent:reopen";
 
 export type ConsentState = {
   analytics: boolean;
+  marketing: boolean;
   timestamp: number;
 };
 
@@ -25,8 +26,12 @@ export function getConsent(): ConsentState | null {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as ConsentState;
+    // Records written before marketing consent existed have no `marketing`
+    // field. They are deliberately treated as "no decision" — a new purpose
+    // needs its own consent, so those visitors see the banner once more.
     if (
       typeof parsed.analytics !== "boolean" ||
+      typeof parsed.marketing !== "boolean" ||
       typeof parsed.timestamp !== "number"
     ) {
       return null;

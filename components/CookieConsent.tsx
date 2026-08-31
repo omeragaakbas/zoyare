@@ -26,8 +26,8 @@ export default function CookieConsent() {
     return () => window.removeEventListener(CONSENT_REOPEN_EVENT, reopen);
   }, []);
 
-  function decide(analytics: boolean) {
-    setConsent({ analytics });
+  function decide(analytics: boolean, marketing: boolean) {
+    setConsent({ analytics, marketing });
     window.dispatchEvent(new Event(CONSENT_CHANGED_EVENT));
     setOpen(false);
   }
@@ -50,7 +50,9 @@ export default function CookieConsent() {
             </p>
             <p className="text-sm text-secondary leading-relaxed mb-5">
               We use Google Analytics to understand how visitors use our site.
-              No personal data is sold or shared.
+              With your permission we also use advertising cookies, which let us
+              measure whether our ads bring in the right people. No personal
+              data is sold or shared.
             </p>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <Link
@@ -62,14 +64,21 @@ export default function CookieConsent() {
               <div className="flex items-center gap-5">
                 <button
                   type="button"
-                  onClick={() => decide(false)}
+                  onClick={() => decide(false, false)}
                   className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
                 >
                   Reject
                 </button>
                 <button
                   type="button"
-                  onClick={() => decide(true)}
+                  onClick={() => decide(true, false)}
+                  className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+                >
+                  Analytics only
+                </button>
+                <button
+                  type="button"
+                  onClick={() => decide(true, true)}
                   className="group relative inline-flex items-center px-6 py-2.5 bg-primary text-background text-sm font-medium overflow-hidden"
                 >
                   <m.span
@@ -79,7 +88,7 @@ export default function CookieConsent() {
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                   />
                   <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-                    Accept
+                    Accept all
                   </span>
                 </button>
               </div>
