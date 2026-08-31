@@ -1,0 +1,18 @@
+"We need an app" is almost never the actual requirement.
+
+Nine times out of ten it means "people need to do this on their phone, away from a desk." That's a different problem, and it has more than one answer.
+
+A web app is enough when users have decent coverage, they log in (so app store discovery is worth nothing to you), and you don't need hardware beyond the camera. For internal tools that's most of the time. Nobody browses the App Store looking for your approval tool.
+
+Native earns its cost when a missed notification means a missed shift, when people work for hours without signal, or when you need background location, NFC or heavy barcode scanning.
+
+Rough numbers:
+→ Web app: EUR 20-60k, 2-4 months
+→ Cross-platform native: EUR 40-90k, 3-6 months
+→ Fully native, both platforms: EUR 80-160k, 5-9 months
+
+If you're unsure, build the web app first. Going the other way - native first, then discovering half your users are on desktop - means paying twice for the same functionality.
+
+Full comparison, including the app store overhead nobody puts in the quote: https://zoyare.com/blog/web-app-vs-native-app
+
+#MobileApps #WebDevelopment #CustomSoftware

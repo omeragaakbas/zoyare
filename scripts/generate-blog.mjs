@@ -30,10 +30,7 @@ if (fs.existsSync(envPath)) {
 // Onderwerpen die aansluiten op Zoyare's ICP en SEO-strategie.
 // Houd deze lijst bij: verwijder onderwerpen zodra ze gepubliceerd zijn.
 const TOPIC_SUGGESTIONS = [
-  "Rebuild or refactor: what to do with your aging legacy system",
-  "Web app vs. native app: which one does your business actually need?",
   "The cost of doing nothing: when postponing custom software gets expensive",
-  "One developer or a full team: how much capacity does your project really need?",
   "React Native in 2026: an honest assessment for business apps",
 ];
 

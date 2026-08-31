@@ -1,0 +1,20 @@
+"How many developers do we need?" is the wrong first question.
+
+Team size isn't an input you choose. It's an output of what the work looks like.
+
+Two things people underestimate:
+
+1. On most business software the bottleneck isn't typing, it's decisions. Which spreadsheet is the source of truth? Who signs off? Those answers come from the client side. If a decision takes four days, a second developer just means two people waiting.
+
+2. Coordination isn't free. Two people have one relationship to maintain. Four have six. Eight have twenty-eight. One developer to four isn't 4x output - realistically 2-3x.
+
+What one senior developer delivers full time:
+→ Internal tool or portal: 2-4 months
+→ Integration between two systems: 3-8 weeks
+→ Line-of-business app replacing a spreadsheet process: 4-6 months
+
+Staff a team when the deadline genuinely can't move, the work splits cleanly, or it needs skills one person can't credibly hold. "It's important" isn't on that list - important and large aren't the same thing.
+
+Costs per option and the honest downside of one person: https://zoyare.com/blog/one-developer-or-a-team-project-capacity
+
+#SoftwareDevelopment #ProjectManagement #CustomSoftware

@@ -1,0 +1,17 @@
+Every company has one: the system nobody wants to touch.
+
+It still works. But a one-line change now takes a week and a nervous Friday release.
+
+A system isn't legacy because it's old. It's legacy when the cost of changing it stops matching the value of the change. Plenty of ten-year-old systems are fine. Plenty of three-year-old ones aren't.
+
+Refactor when the business rules are still right, the platform is still supported, and the pain sits in a few modules.
+
+Rebuild when the platform is out of support, nobody can build it anymore, or the data model no longer matches how the business works.
+
+But there's a third option most people skip: put a thin layer in front of the old system and move one capability at a time behind it. Reporting first, then invoicing, then order entry. No big-bang cutover weekend, and you can stop halfway if priorities change.
+
+Two things almost every plan underestimates: the business rules that exist only in the code, and fifteen years of messy data. Reserve 15-30% of the budget for migration alone.
+
+Full breakdown, with costs per route: https://zoyare.com/blog/rebuild-or-refactor-legacy-system
+
+#LegacySystems #CustomSoftware #SoftwareDevelopment
