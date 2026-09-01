@@ -64,15 +64,21 @@ export function LogoMark({ size = 56, color = brand.accent }) {
  *
  * LogoMark draws into a 90x108 box the artwork only partly fills — fine beside
  * text, wrong when the mark is alone on a square canvas, where it drifts up and
- * left. This viewBox is trimmed to the artwork so centring actually centres.
+ * left.
+ *
+ * With that transform applied the artwork measures 69.264 x 79.289 and sits
+ * at x 8.169..77.433, y -2.624..76.664. This viewBox is that box squared off
+ * on its own centre with 8% room. The earlier "0 2 80 70" was guessed rather
+ * than measured: it was shorter than the artwork, so it clipped the mark top
+ * and bottom and still left it off-centre horizontally.
  */
 export function LogoSquare({ size = 300 }) {
   return React.createElement(
     "svg",
     {
       width: size,
-      height: Math.round((size * 70) / 80),
-      viewBox: "0 2 80 70",
+      height: size,
+      viewBox: "-3.186 -8.967 91.975 91.975",
       xmlns: "http://www.w3.org/2000/svg",
     },
     React.createElement(

@@ -1,14 +1,15 @@
 import { ImageResponse } from "next/og";
-import { og, OgLogoSquare } from "@/lib/og-elements";
+import { OgLogoSquare } from "@/lib/og-elements";
 
 /**
- * The favicon Google shows beside zoyare.com in search results.
+ * The favicon: the browser tab, and the circle Google shows beside zoyare.com.
  *
- * A bare SVG mark on transparency renders as a thin orange squiggle inside
- * Google's circle — hard to read at 16px and invisible against a dark theme.
- * This gives the mark a solid brand ground and room to breathe, which is what
- * makes a favicon legible at that size. Google wants a square icon whose side
- * is a multiple of 48; 192 is the largest of those it caches.
+ * The mark is drawn on transparency so it sits on whatever ground it lands on —
+ * a dark tab strip, or the light disc Google draws behind it — instead of
+ * carrying its own pale square around. That only works because the mark is a
+ * solid orange volume rather than thin line art: it holds up at 16px against
+ * both. Google wants a square icon whose side is a multiple of 48; 192 is the
+ * largest of those it caches.
  */
 export const size = { width: 192, height: 192 };
 export const contentType = "image/png";
@@ -23,10 +24,9 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: og.bg,
         }}
       >
-        <OgLogoSquare size={112} />
+        <OgLogoSquare size={150} />
       </div>
     ),
     { ...size }

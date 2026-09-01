@@ -106,18 +106,100 @@ async function png(element, frame, path) {
   writeFileSync(path, Buffer.from(await res.arrayBuffer()));
 }
 
+/*
+ * Each network gets its own folder inside the post's directory, because the two
+ * are not interchangeable: LinkedIn takes the 4:5 slides as a multi-image
+ * post, Instagram takes the 1:1 set as a carousel.
+ * in posting order, so "upload everything in this folder, in order" is the
+ * whole instruction.
+ */
+const PLATFORMS = {
+  carousel: { dir: "linkedin", label: "LinkedIn", ratio: "4:5 (1080×1350)" },
+  square: { dir: "instagram", label: "Instagram", ratio: "1:1 (1080×1080)" },
+};
+
+/** The written post that goes with the slides, straight from the drafts folder. */
+function loadCaption(post) {
+  const file = `${root}content/linkedin-drafts/${post.date}-${post.slug}.txt`;
+  return existsSync(file) ? readFileSync(file, "utf8").trim() : null;
+}
+
+/*
+ * Instagram cannot take a clickable link in the caption, so the draft's URL
+ * becomes a pointer to the bio link instead of a dead string in the text.
+ */
+function instagramCaption(linkedinCaption) {
+  return linkedinCaption
+    .replace(/https?:\/\/\S+/g, "link in bio")
+    .replace(/^(#.*)$/m, "$1 #Zoyare");
+}
+
+function writeCaptions(post, dir, { square }) {
+  const caption = loadCaption(post);
+  if (!caption) return null;
+  writeFileSync(`${dir}/linkedin/caption.txt`, `${caption}\n`);
+  if (square) writeFileSync(`${dir}/instagram/caption.txt`, `${instagramCaption(caption)}\n`);
+  return caption;
+}
+
+/** A per-post README so the folder explains itself without this script. */
+function writePostGuide(post, copy, dir, { square, hasCaption }) {
+  const slides = copy.points.length + 2;
+  const pad = (name) => name.padEnd(18);
+  const order = [
+    `${pad("01-cover.png")}— opening slide, the title`,
+    ...copy.points.map((pt, n) => `${pad(`0${n + 2}-point-${n + 1}.png`)}— ${pt.heading}`),
+    `${pad(`0${slides}-cta.png`)}— closing slide with the blog URL`,
+  ];
+
+  const lines = [
+    `${post.title}`,
+    `${post.date} · zoyare.com/blog/${post.slug}`,
+    "",
+    "=".repeat(72),
+    "1. LINKEDIN — post this as a multi-image post",
+    "=".repeat(72),
+    "Order matters: LinkedIn keeps the order you add them in.",
+    `Folder:  linkedin/     ${PLATFORMS.carousel.ratio}`,
+    hasCaption ? "Caption: linkedin/caption.txt (paste as-is, the link is clickable)" : "Caption: none on file",
+    "",
+    `Upload these ${slides} images in this order:`,
+    ...order.map((l) => `  ${l}`),
+    "",
+    "  share-card.png    — NOT part of the carousel. Use this one instead if you",
+    "                      post the blog link as a normal link post.",
+    "",
+  ];
+
+  if (square) {
+    lines.push(
+      "=".repeat(72),
+      "2. INSTAGRAM — post this as a carousel",
+      "=".repeat(72),
+      `Folder:  instagram/    ${PLATFORMS.square.ratio}`,
+      hasCaption ? "Caption: instagram/caption.txt (link replaced by 'link in bio')" : "Caption: none on file",
+      "",
+      `Upload these ${slides} images in this order:`,
+      ...order.map((l) => `  ${l}`),
+      ""
+    );
+  }
+
+  writeFileSync(`${dir}/POST.txt`, `${lines.join("\n")}\n`);
+}
+
 async function renderPost(post, { square }) {
   const copy = loadCopy(post);
   const dir = `${OUT}/${post.slug}`;
-  mkdirSync(dir, { recursive: true });
 
   const sizes = [["carousel", formats.carousel]];
   if (square) sizes.push(["square", formats.square]);
 
-  for (const [label, frame] of sizes) {
-    const suffix = label === "carousel" ? "" : `-${label}`;
-    const total = copy.points.length + 2;
+  for (const [key, frame] of sizes) {
+    const out = `${dir}/${PLATFORMS[key].dir}`;
+    mkdirSync(out, { recursive: true });
     let n = 1;
+    const name = (label) => `${out}/${String(n++).padStart(2, "0")}-${label}.png`;
 
     await png(
       T.cover({
@@ -127,14 +209,14 @@ async function renderPost(post, { square }) {
         footerRight: `${post.readTime} min read`,
       }),
       frame,
-      `${dir}/${String(n++).padStart(2, "0")}-cover${suffix}.png`
+      name("cover")
     );
 
-    for (const [i, p] of copy.points.entries()) {
+    for (const [i, pt] of copy.points.entries()) {
       await png(
-        T.point({ frame, index: i + 1, total: copy.points.length, heading: p.heading, body: p.body }),
+        T.point({ frame, index: i + 1, total: copy.points.length, heading: pt.heading, body: pt.body }),
         frame,
-        `${dir}/${String(n++).padStart(2, "0")}-point-${i + 1}${suffix}.png`
+        name(`point-${i + 1}`)
       );
     }
 
@@ -146,18 +228,23 @@ async function renderPost(post, { square }) {
         url: `zoyare.com/blog/${post.slug}`,
       }),
       frame,
-      `${dir}/${String(n++).padStart(2, "0")}-cta${suffix}.png`
+      name("cta")
     );
   }
 
-  // In-article visual, same ratio as the post's OG image.
+  // Link-post / in-article visual, same ratio as the post's OG image. Not a
+  // carousel slide, so it sits beside them rather than in the numbered run.
   await png(
     T.card({ frame: formats.card, quote: copy.card.quote, attribution: copy.card.attribution }),
     formats.card,
-    `${dir}/card.png`
+    `${dir}/linkedin/share-card.png`
   );
 
-  console.log(`✓ ${post.slug} — ${copy.points.length + 2} slides + card`);
+  const caption = writeCaptions(post, dir, { square });
+  writePostGuide(post, copy, dir, { square, hasCaption: Boolean(caption) });
+
+  const where = square ? "linkedin/ + instagram/" : "linkedin/";
+  console.log(`✓ ${post.slug} — ${copy.points.length + 2} slides → ${where}`);
 }
 
 /**
@@ -180,6 +267,51 @@ async function renderBanner() {
     `${OUT}/linkedin-banner.png`
   );
   console.log("✓ linkedin-banner.png (1128×191 — LinkedIn page cover)");
+}
+
+/*
+ * A single sheet listing every post in publishing order, so the schedule reads
+ * without opening 22 folders. Written only on a full run; rendering one post
+ * leaves the existing sheet alone.
+ */
+function writeIndex(posts, { square }) {
+  const ordered = [...posts].sort((a, b) => (a.date < b.date ? -1 : 1));
+
+  const header = [
+    "# Posting guide",
+    "",
+    `${ordered.length} posts, oldest first. Every post folder repeats these`,
+    "instructions in its own POST.txt.",
+    "",
+    "**Per post the order is always LinkedIn first, then Instagram.** Slides are",
+    "numbered in upload order: 01 is the cover, the last one is the call to action.",
+    "",
+    "Brand assets that belong to no single post:",
+    "",
+    "- `brand-avatar.png` — 1080x1080 profile picture (LinkedIn, Instagram, Google Business Profile, Clutch)",
+    "- `linkedin-banner.png` — 1128x191 LinkedIn page cover",
+    "",
+    "---",
+    "",
+  ];
+
+  const body = ordered.map((post, i) => {
+    const dir = `social-assets/${post.slug}`;
+    return [
+      `### ${i + 1}. ${post.date} — ${post.title}`,
+      "",
+      "| # | Network | Upload | Caption |",
+      "| --- | --- | --- | --- |",
+      `| 1 | LinkedIn | \`${dir}/linkedin/\` — numbered PNGs in order, as a multi-image post | \`linkedin/caption.txt\` |`,
+      square
+        ? `| 2 | Instagram | \`${dir}/instagram/\` — numbered PNGs in order, as a carousel | \`instagram/caption.txt\` |`
+        : "| 2 | Instagram | not rendered — re-run with --square | — |",
+      "",
+    ].join("\n");
+  });
+
+  writeFileSync(`${OUT}/POSTING-GUIDE.md`, `${[...header, ...body].join("\n")}\n`);
+  console.log(`✓ POSTING-GUIDE.md — ${ordered.length} posts in publishing order`);
 }
 
 /* -------------------------------------------------------------------- main */
@@ -209,5 +341,9 @@ if (flags.has("--banner")) {
   for (const post of targets) await renderPost(post, { square });
   await renderBanner();
   await renderAvatar();
-  console.log(`\nAssets in social-assets/ — upload the numbered PNGs in order as a carousel.`);
+  if (flags.has("--all")) writeIndex(targets, { square });
+  console.log(
+    "\nsocial-assets/POSTING-GUIDE.md lists every post in order; each post folder" +
+      " holds linkedin/ and instagram/ plus its own POST.txt."
+  );
 }

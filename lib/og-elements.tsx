@@ -93,15 +93,19 @@ export function OgFullLogo({
  *
  * OgLogoMark draws into a 90x108 box that the mark only partly fills, which is
  * fine beside text but leaves the mark hanging off-centre when it is the only
- * thing on a square canvas — the favicon, or a profile avatar. This viewBox is
- * trimmed to the artwork so centring actually centres it.
+ * thing on a square canvas — the favicon, or a profile avatar.
+ *
+ * With ICON.transform applied the artwork measures 69.264 x 79.289 and sits
+ * at x 8.169..77.433, y -2.624..76.664. This viewBox is that box squared off
+ * on its own centre with 8% room, so the mark is neither clipped — the
+ * hand-guessed "0 2 80 70" cut the top and bottom off — nor skewed.
  */
 export function OgLogoSquare({ size = 112 }: { size?: number }) {
   return (
     <svg
       width={size}
-      height={Math.round((size * 70) / 80)}
-      viewBox="0 2 80 70"
+      height={size}
+      viewBox="-3.186 -8.967 91.975 91.975"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g fill={og.accent} transform={ICON.transform}>
