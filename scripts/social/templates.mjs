@@ -22,6 +22,69 @@ const h = React.createElement;
 /** Scale a 1080-frame size to whatever frame we are actually rendering. */
 const s = (frame) => (n) => Math.round((n * frame.width) / 1080);
 
+/*
+ * The three faces the site actually uses. Registered in render.mjs; named here
+ * so a layout never hardcodes a family string.
+ */
+export const FONT = {
+  sans: "Space Grotesk",
+  mono: "Space Mono",
+  display: "Instrument Serif",
+};
+
+/*
+ * The brand's signature move: the closing words of a line set in Instrument
+ * Serif italic and orange — "Software built to scale." on the site.
+ *
+ * Splitting on the last word alone breaks on titles that end in a short
+ * function word ("...is the switch worth it?"), where italicising "it?" reads
+ * as a mistake. Anything under four letters takes the word before it along.
+ */
+function accentSplit(text) {
+  const words = text.trim().split(/\s+/);
+  if (words.length < 3) return [text, ""];
+  const last = words[words.length - 1].replace(/[^A-Za-z0-9]/g, "");
+  let take = last.length >= 4 ? 1 : 2;
+
+  // A parenthetical must not be cut in half: italicising only "flags)" out of
+  // "(and spot the red flags)" reads as a typo. Walk the split back until the
+  // opening bracket comes along, and drop the accent if it never does.
+  const unbalanced = () => {
+    const tail = words.slice(-take).join(" ");
+    return (tail.split(")").length - 1) > (tail.split("(").length - 1);
+  };
+  while (unbalanced() && take < words.length) take += 1;
+  if (unbalanced()) return [text, ""];
+
+  if (words.length <= take) return [text, ""];
+  return [words.slice(0, -take).join(" "), words.slice(-take).join(" ")];
+}
+
+/**
+ * A heading with that accent applied. Falls back to plain text when the line is
+ * too short to split, so a two-word headline never loses half itself to italics.
+ */
+function accentHeading(key, style, text) {
+  const [head, tail] = accentSplit(text);
+  if (!tail) return h("div", { key, style: { display: "flex", ...style } }, text);
+  return h("div", { key, style: { display: "flex", flexWrap: "wrap", ...style } }, [
+    h("span", { key: "a" }, head + String.fromCharCode(160)),
+    h(
+      "span",
+      {
+        key: "b",
+        style: {
+          fontFamily: FONT.display,
+          fontStyle: "italic",
+          fontWeight: 400,
+          color: brand.accent,
+        },
+      },
+      tail
+    ),
+  ]);
+}
+
 /** The small uppercase label used as an eyebrow throughout the brand. */
 function eyebrow(px, text, color = brand.secondary) {
   return h(
@@ -34,6 +97,7 @@ function eyebrow(px, text, color = brand.secondary) {
         textTransform: "uppercase",
         color,
         fontWeight: 500,
+        fontFamily: FONT.mono,
       },
     },
     text
@@ -62,6 +126,7 @@ function footer(px, frame, right = "", tone = "light", left = "zoyare.com") {
         letterSpacing: long ? "0.12em" : "0.2em",
         textTransform: "uppercase",
         color: text,
+        fontFamily: FONT.mono,
       },
     },
     [
@@ -87,7 +152,7 @@ function frameBox(frame, tone, children) {
         padding: `${px(84)}px ${px(80)}px`,
         backgroundColor: dark ? brand.inkBg : brand.bg,
         color: dark ? brand.onInk : brand.ink,
-        fontFamily: "sans-serif",
+        fontFamily: FONT.sans,
         borderLeft: `${px(16)}px solid ${brand.accent}`,
       },
     },
@@ -111,21 +176,13 @@ export function cover({ frame, eyebrowText, title, footerRight }) {
       },
       [h(FullLogo, { key: "logo", height: px(46) }), eyebrow(px, eyebrowText)]
     ),
-    h(
-      "div",
-      {
-        key: "title",
-        style: {
-          display: "flex",
-          fontSize: size,
-          lineHeight: 1.05,
-          fontWeight: 700,
-          letterSpacing: "-0.03em",
-          maxWidth: "100%",
-        },
-      },
-      title
-    ),
+    accentHeading("title", {
+      fontSize: size,
+      lineHeight: 1.05,
+      fontWeight: 700,
+      letterSpacing: "-0.03em",
+      maxWidth: "100%",
+    }, title),
     footer(px, frame, footerRight),
   ]);
 }
@@ -142,7 +199,13 @@ export function point({ frame, index, total, heading, body }) {
           "span",
           {
             key: "n",
-            style: { fontSize: px(30), fontWeight: 700, color: brand.accent, letterSpacing: "0.08em" },
+            style: {
+              fontSize: px(30),
+              fontWeight: 700,
+              color: brand.accent,
+              letterSpacing: "0.08em",
+              fontFamily: FONT.mono,
+            },
           },
           String(index).padStart(2, "0")
         ),
@@ -155,6 +218,7 @@ export function point({ frame, index, total, heading, body }) {
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               color: "rgba(248,246,242,0.55)",
+              fontFamily: FONT.mono,
             },
           },
           `of ${String(total).padStart(2, "0")}`
@@ -205,20 +269,12 @@ export function cta({ frame, headline, sub, url }) {
       h(FullLogo, { key: "logo", height: px(46) }),
     ]),
     h("div", { key: "mid", style: { display: "flex", flexDirection: "column", gap: px(28) } }, [
-      h(
-        "div",
-        {
-          key: "h",
-          style: {
-            display: "flex",
-            fontSize: px(72),
-            lineHeight: 1.06,
-            fontWeight: 700,
-            letterSpacing: "-0.03em",
-          },
-        },
-        headline
-      ),
+      accentHeading("h", {
+        fontSize: px(72),
+        lineHeight: 1.06,
+        fontWeight: 700,
+        letterSpacing: "-0.03em",
+      }, headline),
       sub
         ? h(
             "div",
@@ -305,21 +361,18 @@ export function banner({ frame, line }) {
         padding: `0 ${py(38)}px`,
         backgroundColor: brand.inkBg,
         color: brand.onInk,
-        fontFamily: "sans-serif",
+        fontFamily: FONT.sans,
         borderLeft: `${py(8)}px solid ${brand.accent}`,
       },
     },
     [
       h("div", { key: "l", style: { display: "flex", alignItems: "center", gap: py(26) } }, [
         h(FullLogo, { key: "logo", height: py(40), tone: "dark" }),
-        h(
-          "span",
-          {
-            key: "t",
-            style: { fontSize: py(22), fontWeight: 500, color: "rgba(248,246,242,0.82)" },
-          },
-          line
-        ),
+        accentHeading("t", {
+          fontSize: py(22),
+          fontWeight: 500,
+          color: "rgba(248,246,242,0.82)",
+        }, line),
       ]),
       h(
         "span",

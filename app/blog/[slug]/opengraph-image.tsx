@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getPost, getAllPosts } from "@/lib/blog";
-import { og, OgFullLogo } from "@/lib/og-elements";
+import { og, ogFont, ogFonts, OgFullLogo } from "@/lib/og-elements";
 
 export const alt = "Zoyare blog article";
 export const size = { width: 1200, height: 630 };
@@ -29,7 +29,7 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
           padding: "72px 80px",
           backgroundColor: og.bg,
           color: og.ink,
-          fontFamily: "sans-serif",
+          fontFamily: ogFont.sans,
           borderLeft: `16px solid ${og.accent}`,
         }}
       >
@@ -46,6 +46,7 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
               fontSize: "20px",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
+              fontFamily: ogFont.mono,
               color: og.accent,
               fontWeight: 500,
             }}
@@ -76,6 +77,7 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
             fontSize: "20px",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
+            fontFamily: ogFont.mono,
             color: og.muted,
             borderTop: `1px solid ${og.border}`,
             paddingTop: "28px",
@@ -86,6 +88,6 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts: ogFonts }
   );
 }

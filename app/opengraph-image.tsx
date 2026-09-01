@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { OgFullLogo } from "@/lib/og-elements";
+import { og, ogFont, ogFonts, OgFullLogo } from "@/lib/og-elements";
 
 export const alt = "Zoyare — software built to scale.";
 export const size = { width: 1200, height: 630 };
@@ -18,7 +18,7 @@ export default async function OGImage() {
           padding: "80px",
           backgroundColor: "#F8F6F2",
           color: "#1A1916",
-          fontFamily: "sans-serif",
+          fontFamily: ogFont.sans,
         }}
       >
         <OgFullLogo height={64} />
@@ -36,7 +36,14 @@ export default async function OGImage() {
             }}
           >
             <span>Software built to&nbsp;</span>
-            <span style={{ color: "#F15F0E", fontStyle: "italic", fontWeight: 500 }}>
+            <span
+              style={{
+                color: og.accent,
+                fontFamily: ogFont.display,
+                fontStyle: "italic",
+                fontWeight: 400,
+              }}
+            >
               scale.
             </span>
           </div>
@@ -61,6 +68,7 @@ export default async function OGImage() {
             fontSize: "20px",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
+            fontFamily: ogFont.mono,
             color: "#8A8680",
           }}
         >
@@ -80,6 +88,6 @@ export default async function OGImage() {
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts: ogFonts }
   );
 }

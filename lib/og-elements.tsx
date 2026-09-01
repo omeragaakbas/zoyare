@@ -14,6 +14,33 @@ export const og = {
   border: "#D9D5CC",
 };
 
+/*
+ * The faces the site is actually set in, for the images satori renders.
+ *
+ * satori ships no system fonts and cannot read woff2 — the format next/font
+ * caches — so an ImageResponse without this renders in its built-in fallback,
+ * which is not Space Grotesk. Every OG image and the social generator read the
+ * same files out of public/fonts so the two can never drift.
+ */
+const fontFile = (file: string) =>
+  readFileSync(path.join(process.cwd(), "public", "fonts", file));
+
+export const ogFonts = [
+  { name: "Space Grotesk", data: fontFile("SpaceGrotesk-Regular.woff"), weight: 400 as const, style: "normal" as const },
+  { name: "Space Grotesk", data: fontFile("SpaceGrotesk-Medium.woff"), weight: 500 as const, style: "normal" as const },
+  { name: "Space Grotesk", data: fontFile("SpaceGrotesk-Bold.woff"), weight: 700 as const, style: "normal" as const },
+  { name: "Space Mono", data: fontFile("SpaceMono-Regular.ttf"), weight: 400 as const, style: "normal" as const },
+  { name: "Space Mono", data: fontFile("SpaceMono-Bold.ttf"), weight: 700 as const, style: "normal" as const },
+  { name: "Instrument Serif", data: fontFile("InstrumentSerif-Italic.ttf"), weight: 400 as const, style: "italic" as const },
+];
+
+/** Family names, so a layout never hardcodes a font string. */
+export const ogFont = {
+  sans: "Space Grotesk",
+  mono: "Space Mono",
+  display: "Instrument Serif",
+};
+
 export function OgLogoMark({ size = 56 }: { size?: number }) {
   return (
     <svg

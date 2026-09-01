@@ -101,8 +101,36 @@ function loadCopy(post) {
 
 /* ------------------------------------------------------------------ render */
 
+/*
+ * The three faces the site is set in, read from the same public/fonts the
+ * site's own OG images use so the two can never drift.
+ *
+ * satori ships no system fonts and cannot read woff2 — the format next/font
+ * caches — so without registering these every slide came out in next/og's
+ * built-in fallback. That is why the generated set never looked like zoyare.com.
+ */
+const FONT_DIR = `${root}public/fonts/`;
+const face = (file, name, weight, style = "normal") => ({
+  name,
+  data: readFileSync(`${FONT_DIR}${file}`),
+  weight,
+  style,
+});
+const FONTS = [
+  face("SpaceGrotesk-Regular.woff", "Space Grotesk", 400),
+  face("SpaceGrotesk-Medium.woff", "Space Grotesk", 500),
+  face("SpaceGrotesk-Bold.woff", "Space Grotesk", 700),
+  face("SpaceMono-Regular.ttf", "Space Mono", 400),
+  face("SpaceMono-Bold.ttf", "Space Mono", 700),
+  face("InstrumentSerif-Italic.ttf", "Instrument Serif", 400, "italic"),
+];
+
 async function png(element, frame, path) {
-  const res = new ImageResponse(element, { width: frame.width, height: frame.height });
+  const res = new ImageResponse(element, {
+    width: frame.width,
+    height: frame.height,
+    fonts: FONTS,
+  });
   writeFileSync(path, Buffer.from(await res.arrayBuffer()));
 }
 
