@@ -159,10 +159,16 @@ async function renderPost(post, { square }) {
   console.log(`✓ ${post.slug} — ${copy.points.length + 2} slides + card`);
 }
 
+/**
+ * The brand line. This is the slogan, not a piece of campaign copy — it stays
+ * "software built to scale" and matches the tagline set into public/logo-light.svg.
+ */
+const SLOGAN = "software built to scale";
+
 async function renderBanner() {
   mkdirSync(OUT, { recursive: true });
   await png(
-    T.banner({ frame: formats.banner, line: "Custom software, built by the engineer you talk to." }),
+    T.banner({ frame: formats.banner, line: SLOGAN }),
     formats.banner,
     `${OUT}/linkedin-banner.png`
   );
