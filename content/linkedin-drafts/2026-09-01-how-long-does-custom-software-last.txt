@@ -1,0 +1,28 @@
+Everyone asks how long custom software takes to build. Almost nobody asks how long it lasts - which is odd, because that's the number that decides whether the investment made sense.
+
+Realistic lifespans, assuming it's maintained:
+
+→ Integration between two systems: 3-6 years (its life is set by the systems it connects)
+→ Internal tool or dashboard: 5-8 years
+→ Customer-facing portal: 4-7 years - the interface ages faster than the code
+→ Line-of-business system: 10-15 years, often longer
+→ Mobile app: 3-5 years before real rework, because Apple and Google set that rhythm
+
+Unmaintained? Halve all of it.
+
+What actually ends a system's life is almost never that the code stopped working. It's the platform underneath going end-of-support, the business changing shape faster than the software, integrations quietly rotting - and most commonly, nobody understanding it anymore because the developer left and nothing was written down.
+
+Quick diagnostic. Three or more of these and you're on the back half:
+
+- A small change takes weeks and nobody can say why
+- Nobody currently working on it has read the code end to end
+- The framework is past its official end-of-support date
+- Manual steps exist purely to work around the software
+- Deploying is scary, so it happens rarely, which makes it scarier
+- No automated tests, so every release is manual verification
+
+None of that means "rebuild". It means maintenance cost is rising and will keep rising. Budget 15-20% of the build cost per year and most of this never happens.
+
+Full piece, including how to buy software that lasts: https://zoyare.com/blog/how-long-does-custom-software-last
+
+#CustomSoftware #SoftwareDevelopment #TechnicalDebt #LegacySystems

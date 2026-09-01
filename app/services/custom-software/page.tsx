@@ -8,7 +8,7 @@ import { testimonials } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Custom Software Development",
   description:
-    "Zoyare builds custom software for businesses. From requirement to deployment — no off-the-shelf solutions, but software that fits your process.",
+    "Custom software development for businesses in the Netherlands and Benelux. From requirement to deployment — no off-the-shelf solutions, but software that fits your process. Fixed quote after a free intake.",
   alternates: {
     canonical: "https://zoyare.com/services/custom-software",
   },
@@ -151,6 +151,16 @@ export default function CustomSoftware() {
             Or send a message
           </Link>
         </div>
+        <p className="text-sm text-muted leading-relaxed max-w-xl mt-8">
+          Based in the Netherlands, working across the Benelux —{" "}
+          <Link
+            href="/software-development-netherlands"
+            className="text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+          >
+            what that means for Dutch clients
+          </Link>
+          .
+        </p>
       </FadeIn>
     </div>
     </>

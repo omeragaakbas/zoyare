@@ -19,9 +19,10 @@ export const dict = {
     privacy: "Privacy",
     terms: "Terms",
     tagline:
-      "Software engineering studio. Custom software, API integrations and mobile apps.",
+      "Dutch software engineering studio. Custom software, API integrations and mobile apps for businesses in the Netherlands and Benelux.",
     aboutLinks: {
       about: "About",
+      netherlands: "For Dutch businesses",
       portfolio: "Portfolio",
       blog: "Blog",
       faq: "FAQ",

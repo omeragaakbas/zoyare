@@ -29,9 +29,17 @@ if (fs.existsSync(envPath)) {
 
 // Onderwerpen die aansluiten op Zoyare's ICP en SEO-strategie.
 // Houd deze lijst bij: verwijder onderwerpen zodra ze gepubliceerd zijn.
+//
+// De onderste vier komen uit Search Console (sep 2026): zoekopdrachten waarop de site
+// al vertoningen krijgt zonder dat er een pagina is die de vraag beantwoordt. Vul de
+// lijst bij voorkeur zo aan — met echte vraag, niet met bedachte onderwerpen.
 const TOPIC_SUGGESTIONS = [
   "The cost of doing nothing: when postponing custom software gets expensive",
   "React Native in 2026: an honest assessment for business apps",
+  "How long does an API integration take? Realistic timelines by system type",
+  "iPaaS vs custom integration: when Zapier or Make stops being enough",
+  "Integrating with Exact Online and AFAS: what Dutch businesses should expect",
+  "What a software development SLA should actually contain",
 ];
 
 const topic = process.argv[2] || TOPIC_SUGGESTIONS[Math.floor(Math.random() * TOPIC_SUGGESTIONS.length)];

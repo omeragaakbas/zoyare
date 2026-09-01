@@ -1,0 +1,19 @@
+Most "we should do something with AI" projects fail for the same reason: nobody picked a process first.
+
+After a year of these conversations, almost all the value in existing business software sits in three patterns:
+
+1. Reading unstructured input - invoices, supplier PDFs, scanned forms, free-text tickets. Someone reads them and types the contents somewhere else. This is the highest-return AI integration in most businesses and the least exciting one.
+
+2. Routing and classification - which department, urgent or not, fast track or not. Decisions that are cheap individually and eat a full day in aggregate.
+
+3. Search over your own material - "what did we agree with this client about delivery times". Works well, provided the documents are findable. If they live across five systems, that is the project.
+
+What it costs: €8k-25k to build a well-scoped integration into existing software. Running cost is usually a few hundred euros a month - the expense people forget to budget is human review, and you do need it.
+
+The comparison that matters isn't "what does AI cost". It's what the manual step costs now. Two hours a day of copying data is roughly €25k a year. Two hours a month is never worth automating, and anyone telling you otherwise is selling something.
+
+Before connecting anything, four questions: where does the data physically go, what happens on the 3% it gets wrong, can you measure whether it's working, and can you switch providers without a migration project.
+
+Full breakdown including the AVG side: https://zoyare.com/blog/ai-integration-existing-software
+
+#AI #SoftwareDevelopment #Automation #CustomSoftware

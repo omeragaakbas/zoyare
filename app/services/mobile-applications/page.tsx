@@ -7,7 +7,7 @@ import { breadcrumbList, service, faqPage } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: "Mobile App Development — iOS & Android",
   description:
-    "Mobile app development for iOS and Android. Zoyare builds native-quality apps with React Native/Expo. Honest pricing, fast delivery.",
+    "Mobile app development for iOS and Android, for businesses in the Netherlands and Benelux. Native-quality apps built with React Native and Expo. Honest pricing, fixed quote after intake.",
   alternates: {
     canonical: "https://zoyare.com/services/mobile-applications",
   },
@@ -127,6 +127,16 @@ export default function MobileApplications() {
             Or send a message
           </Link>
         </div>
+        <p className="text-sm text-muted leading-relaxed max-w-xl mt-8">
+          Based in the Netherlands, working across the Benelux —{" "}
+          <Link
+            href="/software-development-netherlands"
+            className="text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+          >
+            what that means for Dutch clients
+          </Link>
+          .
+        </p>
       </FadeIn>
     </div>
     </>

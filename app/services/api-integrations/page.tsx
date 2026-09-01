@@ -8,7 +8,7 @@ import { testimonials } from "@/lib/content";
 export const metadata: Metadata = {
   title: "API Integrations & System Connections",
   description:
-    "Connect your systems via API integration. Zoyare links your ERP, CRM, accounting and custom software so data flows automatically.",
+    "API integration for businesses in the Netherlands and Benelux. Zoyare links your ERP, CRM, accounting and custom software — Exact, AFAS, Mollie, PostNL — so data flows automatically.",
   alternates: {
     canonical: "https://zoyare.com/services/api-integrations",
   },
@@ -149,6 +149,16 @@ export default function ApiIntegrations() {
             Or send a message
           </Link>
         </div>
+        <p className="text-sm text-muted leading-relaxed max-w-xl mt-8">
+          Based in the Netherlands, working across the Benelux —{" "}
+          <Link
+            href="/software-development-netherlands"
+            className="text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+          >
+            what that means for Dutch clients
+          </Link>
+          .
+        </p>
       </FadeIn>
     </div>
     </>

@@ -45,21 +45,21 @@ const CURRENT_YEAR = new Date().getFullYear();
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Zoyare — Custom Software & App Development",
+    default: "Zoyare — Custom Software Development in the Netherlands",
     template: "%s — Zoyare",
   },
   description:
-    "Zoyare is a software engineering studio. Custom software, API integrations and mobile applications for businesses. From requirement to deployment.",
+    "Dutch software engineering studio. Custom software, API integrations, mobile apps and process automation for businesses in the Netherlands and Benelux. Fixed quote after a free intake call.",
   keywords: [
-    "custom software development",
-    "software development agency",
-    "app development",
-    "API integration",
+    "custom software development netherlands",
+    "software development company netherlands",
+    "software ontwikkeling op maat",
+    "api integration netherlands",
+    "maatwerk software",
     "software engineering studio",
-    "mobile app development",
-    "enterprise software",
-    "mendix developer",
-    "business automation",
+    "mobile app development netherlands",
+    "process automation",
+    "mendix developer netherlands",
   ],
   authors: [{ name: "Zoyare", url: BASE_URL }],
   creator: "Zoyare",
@@ -80,15 +80,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: BASE_URL,
     siteName: "Zoyare",
-    title: "Zoyare — Custom Software & App Development",
+    title: "Zoyare — Custom Software Development in the Netherlands",
     description:
-      "Software engineering studio. Custom software, API integrations and mobile apps for businesses.",
+      "Dutch software engineering studio. Custom software, API integrations and mobile apps for businesses in the Netherlands and Benelux.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zoyare — Custom Software & App Development",
+    title: "Zoyare — Custom Software Development in the Netherlands",
     description:
-      "Software engineering studio. Custom software, API integrations and mobile apps for businesses.",
+      "Dutch software engineering studio. Custom software, API integrations and mobile apps for businesses in the Netherlands and Benelux.",
     creator: "@zoyare",
   },
   alternates: {
@@ -113,12 +113,21 @@ const jsonLd = {
       },
       email: "hello@zoyare.com",
       description:
-        "Software engineering studio for custom software, API integrations and mobile applications for businesses.",
+        "Dutch software engineering studio for custom software, API integrations, mobile applications and process automation. Based in the Netherlands, working with businesses across the Benelux and worldwide.",
       foundingDate: "2024",
+      // Chamber of Commerce registration — a verifiable entity signal for a studio that
+      // deliberately stays anonymous at the person level.
+      legalName: "Zoyare",
+      identifier: {
+        "@type": "PropertyValue",
+        name: "KvK",
+        value: "94498555",
+      },
       address: {
         "@type": "PostalAddress",
         addressCountry: "NL",
       },
+      knowsLanguage: ["nl-NL", "en-GB"],
       contactPoint: {
         "@type": "ContactPoint",
         email: "hello@zoyare.com",
@@ -136,11 +145,15 @@ const jsonLd = {
         "Mobile App Development",
         "Business Process Automation",
       ],
+      // Home market first: the Netherlands and Benelux are where Zoyare can realistically
+      // rank and where a client can meet in person. The rest stays listed, not led with.
       areaServed: [
         { "@type": "Country", name: "Netherlands" },
-        { "@type": "Country", name: "United States" },
+        { "@type": "Country", name: "Belgium" },
+        { "@type": "Country", name: "Luxembourg" },
+        { "@type": "Country", name: "Germany" },
         { "@type": "Country", name: "United Kingdom" },
-        { "@type": "Country", name: "United Arab Emirates" },
+        { "@type": "Country", name: "United States" },
       ],
     },
     {
@@ -157,8 +170,19 @@ const jsonLd = {
       name: "Zoyare",
       url: BASE_URL,
       description:
-        "Custom software, API integrations and mobile applications for businesses.",
-      areaServed: "Worldwide",
+        "Custom software, API integrations and mobile applications for businesses in the Netherlands and Benelux.",
+      email: "hello@zoyare.com",
+      priceRange: "€€€",
+      currenciesAccepted: "EUR",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "NL",
+      },
+      areaServed: [
+        { "@type": "Country", name: "Netherlands" },
+        { "@type": "Country", name: "Belgium" },
+        { "@type": "AdministrativeArea", name: "Benelux" },
+      ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Software Engineering Services",
@@ -182,6 +206,7 @@ const paletteEntries = [
   { group: "Pages", label: "Contact", href: "/contact" },
   { group: "Pages", label: "FAQ", href: "/faq" },
   { group: "Pages", label: "Get an estimate", href: "/estimate" },
+  { group: "Pages", label: "For Dutch businesses", href: "/software-development-netherlands" },
   ...dict.services.items.map((s) => ({
     group: "Services",
     label: s.title,

@@ -8,7 +8,7 @@ import { testimonials } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Business Process Automation — Automate Manual Workflows",
   description:
-    "Automate manual workflows with custom software. Fewer errors, less time, more control. Zoyare builds automation tools for businesses.",
+    "Business process automation for companies in the Netherlands and Benelux. Fewer errors, less manual work, more control — automation built around the process you already run.",
   alternates: {
     canonical: "https://zoyare.com/services/process-automation",
   },
@@ -153,6 +153,16 @@ export default function ProcessAutomation() {
             Or send a message
           </Link>
         </div>
+        <p className="text-sm text-muted leading-relaxed max-w-xl mt-8">
+          Based in the Netherlands, working across the Benelux —{" "}
+          <Link
+            href="/software-development-netherlands"
+            className="text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+          >
+            what that means for Dutch clients
+          </Link>
+          .
+        </p>
       </FadeIn>
     </div>
     </>
