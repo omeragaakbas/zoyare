@@ -15,7 +15,7 @@
  * same template works for the 1080x1350 carousel and the 1200x630 card.
  */
 import React from "react";
-import { brand, LogoMark } from "./brand.mjs";
+import { brand, LogoMark, FullLogo } from "./brand.mjs";
 
 const h = React.createElement;
 
@@ -103,10 +103,14 @@ export function cover({ frame, eyebrowText, title, footerRight }) {
   // Long titles step down through these sizes so nothing ever overflows.
   const size = title.length > 78 ? px(64) : title.length > 52 ? px(76) : px(92);
   return frameBox(frame, "light", [
-    h("div", { key: "top", style: { display: "flex", alignItems: "center", gap: px(20) } }, [
-      h(LogoMark, { key: "logo", size: px(52) }),
-      eyebrow(px, eyebrowText),
-    ]),
+    h(
+      "div",
+      {
+        key: "top",
+        style: { display: "flex", alignItems: "center", justifyContent: "space-between" },
+      },
+      [h(FullLogo, { key: "logo", height: px(46) }), eyebrow(px, eyebrowText)]
+    ),
     h(
       "div",
       {
@@ -197,9 +201,8 @@ export function point({ frame, index, total, heading, body }) {
 export function cta({ frame, headline, sub, url }) {
   const px = s(frame);
   return frameBox(frame, "light", [
-    h("div", { key: "top", style: { display: "flex", alignItems: "center", gap: px(20) } }, [
-      h(LogoMark, { key: "logo", size: px(52) }),
-      eyebrow(px, "Zoyare", brand.accent),
+    h("div", { key: "top", style: { display: "flex" } }, [
+      h(FullLogo, { key: "logo", height: px(46) }),
     ]),
     h("div", { key: "mid", style: { display: "flex", flexDirection: "column", gap: px(28) } }, [
       h(
@@ -236,8 +239,8 @@ export function cta({ frame, headline, sub, url }) {
 export function card({ frame, quote, attribution }) {
   const px = s(frame);
   return frameBox(frame, "light", [
-    h("div", { key: "top", style: { display: "flex", alignItems: "center", gap: px(18) } }, [
-      h(LogoMark, { key: "logo", size: px(44) }),
+    h("div", { key: "top", style: { display: "flex" } }, [
+      h(FullLogo, { key: "logo", height: px(40) }),
     ]),
     h(
       "div",
@@ -282,13 +285,13 @@ export function banner({ frame, line }) {
       },
     },
     [
-      h("div", { key: "l", style: { display: "flex", alignItems: "center", gap: py(18) } }, [
-        h(LogoMark, { key: "logo", size: py(46) }),
+      h("div", { key: "l", style: { display: "flex", alignItems: "center", gap: py(26) } }, [
+        h(FullLogo, { key: "logo", height: py(40), tone: "dark" }),
         h(
           "span",
           {
             key: "t",
-            style: { fontSize: py(27), fontWeight: 700, letterSpacing: "-0.015em" },
+            style: { fontSize: py(22), fontWeight: 500, color: "rgba(248,246,242,0.82)" },
           },
           line
         ),

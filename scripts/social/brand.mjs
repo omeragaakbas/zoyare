@@ -32,12 +32,13 @@ export const brand = {
   onInk: token("bg"),
 };
 
-/** The three vector paths of the wordmark's icon, lifted verbatim from OgLogoMark. */
+/** The three vector paths of the icon on its own, lifted verbatim from OgLogoMark. */
 const logoPaths = [...ogSource.matchAll(/<path\s+d="([^"]+)"\s*\/>/g)].map((m) => m[1]);
 if (logoPaths.length !== 3) {
   throw new Error(`Expected 3 logo paths in lib/og-elements.tsx, found ${logoPaths.length}`);
 }
 
+/** Icon only — the mark without the "ZOYARE" wordmark next to it. */
 export function LogoMark({ size = 56, color = brand.accent }) {
   return React.createElement(
     "svg",
@@ -55,6 +56,65 @@ export function LogoMark({ size = 56, color = brand.accent }) {
       },
       logoPaths.map((d, i) => React.createElement("path", { key: i, d }))
     )
+  );
+}
+
+/*
+ * The full lockup — orange icon plus the ZOYARE wordmark — comes out of
+ * public/logo-light.svg. Both public logos carry the same geometry and differ
+ * only in the wordmark's fill, so one parse serves both tones.
+ *
+ * The source file also holds the "software built to scale" tagline as an SVG
+ * <text> node below the mark. That is deliberately left out: it depends on
+ * Space Grotesk being available, which it is not in this renderer, so it would
+ * fall back to a different face and look wrong next to the vector letterforms.
+ */
+const logoSvg = readFileSync(
+  fileURLToPath(new URL("../../public/logo-light.svg", import.meta.url)),
+  "utf8"
+);
+
+function group(marker) {
+  const start = logoSvg.indexOf(marker);
+  if (start === -1) throw new Error(`"${marker}" not found in public/logo-light.svg`);
+  const openTag = logoSvg.slice(logoSvg.indexOf("<g", start));
+  const transform = openTag.match(/transform="([^"]+)"/)?.[1];
+  const body = openTag.slice(0, openTag.indexOf("</g>"));
+  const paths = [...body.matchAll(/<path\s+d="([^"]+)"\s*\/>/g)].map((m) => m[1]);
+  if (!transform || paths.length === 0) throw new Error(`Could not parse group "${marker}"`);
+  return { transform, paths };
+}
+
+const iconGroup = group("<!-- Orange icon -->");
+const wordGroup = group("<!-- ZOYARE wordmark");
+
+/**
+ * Full logo: icon + wordmark, cropped to just those two (the tagline in the
+ * source file sits below y=80, outside this viewBox).
+ */
+export function FullLogo({ height = 56, tone = "light" }) {
+  const VB = { w: 452, h: 78 };
+  const wordFill = tone === "dark" ? brand.bg : brand.ink;
+  return React.createElement(
+    "svg",
+    {
+      width: Math.round((height * VB.w) / VB.h),
+      height,
+      viewBox: `0 0 ${VB.w} ${VB.h}`,
+      xmlns: "http://www.w3.org/2000/svg",
+    },
+    [
+      React.createElement(
+        "g",
+        { key: "icon", fill: brand.accent, transform: iconGroup.transform },
+        iconGroup.paths.map((d, i) => React.createElement("path", { key: i, d }))
+      ),
+      React.createElement(
+        "g",
+        { key: "word", fill: wordFill, transform: wordGroup.transform },
+        wordGroup.paths.map((d, i) => React.createElement("path", { key: i, d }))
+      ),
+    ]
   );
 }
 
