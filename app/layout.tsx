@@ -146,7 +146,10 @@ const jsonLd = {
         "Business Process Automation",
       ],
       // Home market first: the Netherlands and Benelux are where Zoyare can realistically
-      // rank and where a client can meet in person. The rest stays listed, not led with.
+      // rank and where a client can meet in person. The markets after that are where the
+      // studio wants to grow — this is the right place for that ambition, unlike the
+      // Google Business Profile, whose service areas are ranked on physical proximity and
+      // are therefore kept to the Netherlands.
       areaServed: [
         { "@type": "Country", name: "Netherlands" },
         { "@type": "Country", name: "Belgium" },
@@ -154,6 +157,8 @@ const jsonLd = {
         { "@type": "Country", name: "Germany" },
         { "@type": "Country", name: "United Kingdom" },
         { "@type": "Country", name: "United States" },
+        { "@type": "Country", name: "United Arab Emirates" },
+        { "@type": "Country", name: "Qatar" },
       ],
     },
     {
