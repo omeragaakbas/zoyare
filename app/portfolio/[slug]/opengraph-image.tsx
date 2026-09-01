@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { projects } from "@/lib/content";
-import { og, OgLogoMark } from "@/lib/og-elements";
+import { og, OgFullLogo } from "@/lib/og-elements";
 
 export const alt = "Zoyare case study";
 export const size = { width: 1200, height: 630 };
@@ -39,20 +39,7 @@ export default async function OGImage({ params }: { params: Promise<{ slug: stri
             justifyContent: "space-between",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "18px" }}>
-            <OgLogoMark size={48} />
-            <span
-              style={{
-                fontSize: "22px",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "#B8B4AC",
-                fontWeight: 500,
-              }}
-            >
-              Zoyare — Case study
-            </span>
-          </div>
+          <OgFullLogo height={44} tone="dark" />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>

@@ -6,6 +6,7 @@
  *   npm run social -- <slug>       one post
  *   npm run social -- --all        every post
  *   npm run social -- --banner     just the LinkedIn page cover
+ *   npm run social -- --avatar     just the square profile picture
  *   npm run social -- <slug> --square   also render the 1:1 Instagram variant
  *
  * Output lands in social-assets/<slug>/ as numbered PNGs, ready to upload as a
@@ -165,6 +166,12 @@ async function renderPost(post, { square }) {
  */
 const SLOGAN = "software built to scale";
 
+async function renderAvatar() {
+  mkdirSync(OUT, { recursive: true });
+  await png(T.avatar({ frame: formats.avatar }), formats.avatar, `${OUT}/brand-avatar.png`);
+  console.log("✓ brand-avatar.png (1080×1080 — Google Business Profile, Clutch, LinkedIn)");
+}
+
 async function renderBanner() {
   mkdirSync(OUT, { recursive: true });
   await png(
@@ -184,6 +191,8 @@ const square = flags.has("--square");
 
 if (flags.has("--banner")) {
   await renderBanner();
+} else if (flags.has("--avatar")) {
+  await renderAvatar();
 } else {
   const posts = loadPosts();
   let targets;
@@ -199,5 +208,6 @@ if (flags.has("--banner")) {
 
   for (const post of targets) await renderPost(post, { square });
   await renderBanner();
+  await renderAvatar();
   console.log(`\nAssets in social-assets/ — upload the numbered PNGs in order as a carousel.`);
 }

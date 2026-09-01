@@ -15,7 +15,7 @@
  * same template works for the 1080x1350 carousel and the 1200x630 card.
  */
 import React from "react";
-import { brand, LogoMark, FullLogo } from "./brand.mjs";
+import { brand, LogoMark, LogoSquare, FullLogo } from "./brand.mjs";
 
 const h = React.createElement;
 
@@ -258,6 +258,31 @@ export function card({ frame, quote, attribution }) {
     ),
     footer(px, frame, attribution ?? ""),
   ]);
+}
+
+/**
+ * Square profile picture.
+ *
+ * Every network crops this differently — Google rounds the corners, some crop
+ * to a circle — so the mark sits centred with a wide margin and nothing else
+ * competes with it. The wordmark is deliberately absent: at avatar sizes it
+ * shrinks to an unreadable smudge.
+ */
+export function avatar({ frame }) {
+  return h(
+    "div",
+    {
+      style: {
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: brand.bg,
+      },
+    },
+    h(LogoSquare, { size: Math.round(frame.width * 0.46) })
+  );
 }
 
 /**

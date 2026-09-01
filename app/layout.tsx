@@ -70,10 +70,15 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   icons: {
+    // The PNG is listed first and sized: Google picks a square raster icon for
+    // search results and ignores an SVG that has no intrinsic size. Browsers
+    // that prefer vector still get the SVG.
     icon: [
+      { url: "/icon", type: "image/png", sizes: "192x192" },
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    shortcut: "/favicon.svg",
+    shortcut: "/icon",
+    apple: "/apple-icon",
   },
   openGraph: {
     type: "website",

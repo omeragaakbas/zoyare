@@ -59,6 +59,30 @@ export function LogoMark({ size = 56, color = brand.accent }) {
   );
 }
 
+/**
+ * The icon cropped tight to its own bounds.
+ *
+ * LogoMark draws into a 90x108 box the artwork only partly fills — fine beside
+ * text, wrong when the mark is alone on a square canvas, where it drifts up and
+ * left. This viewBox is trimmed to the artwork so centring actually centres.
+ */
+export function LogoSquare({ size = 300 }) {
+  return React.createElement(
+    "svg",
+    {
+      width: size,
+      height: Math.round((size * 70) / 80),
+      viewBox: "0 2 80 70",
+      xmlns: "http://www.w3.org/2000/svg",
+    },
+    React.createElement(
+      "g",
+      { fill: brand.accent, transform: "translate(2 5) scale(0.373) translate(-285 -385)" },
+      logoPaths.map((d, i) => React.createElement("path", { key: i, d }))
+    )
+  );
+}
+
 /*
  * The full lockup — orange icon plus the ZOYARE wordmark — comes out of
  * public/logo-light.svg. Both public logos carry the same geometry and differ
@@ -131,4 +155,6 @@ export const formats = {
   card: { width: 1200, height: 630 },
   /** LinkedIn company page cover image. */
   banner: { width: 1128, height: 191 },
+  /** Square profile picture — Google Business Profile, Clutch, LinkedIn. */
+  avatar: { width: 1080, height: 1080 },
 };
