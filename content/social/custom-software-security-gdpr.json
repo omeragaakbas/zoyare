@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "Is your custom software secure? Security and GDPR essentials for business owners",
+  "points": [
+    {
+      "heading": "Security is a baseline, not a feature",
+      "body": "The most expensive misunderstanding in software is treating security as something you add later, like a feature."
+    },
+    {
+      "heading": "The basics every business application needs",
+      "body": "You can hold your developer to these five, regardless of what you're building:"
+    },
+    {
+      "heading": "GDPR: what actually applies to your software",
+      "body": "If your software touches personal data — names, emails, customer records, employee data, anything that identifies a person — the GDPR (in Dutch: AVG) applies."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Security and GDPR aren't optional in custom software."
+  },
+  "card": {
+    "quote": "Security and GDPR aren't optional in custom software.",
+    "attribution": "Software Development"
+  }
+}

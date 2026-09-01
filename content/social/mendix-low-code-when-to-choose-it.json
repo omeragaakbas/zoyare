@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "Mendix and low-code: when to choose it, and when to walk away",
+  "points": [
+    {
+      "heading": "What low-code actually is",
+      "body": "A low-code platform gives you a visual development environment."
+    },
+    {
+      "heading": "Where low-code wins",
+      "body": "Low-code is genuinely the right call in a few clear situations:"
+    },
+    {
+      "heading": "Where low-code costs you",
+      "body": "The trouble starts when a project drifts outside the platform's comfort zone:"
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Low-code platforms like Mendix promise faster, cheaper software."
+  },
+  "card": {
+    "quote": "Low-code platforms like Mendix promise faster, cheaper software.",
+    "attribution": "Software Development"
+  }
+}

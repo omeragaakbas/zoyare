@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "Why a proper discovery phase saves you thousands",
+  "points": [
+    {
+      "heading": "What happens when you skip discovery",
+      "body": "Here's a pattern I've seen more times than I'd like:"
+    },
+    {
+      "heading": "What a good discovery phase includes",
+      "body": "User interviews (not stakeholder interviews)"
+    },
+    {
+      "heading": "What discovery costs — and what it saves",
+      "body": "A typical discovery phase for a mid-sized business application runs two to three weeks and costs between €2,500 and €5,000."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Skipping discovery saves you €3,000 upfront and costs you €30,000 in rework."
+  },
+  "card": {
+    "quote": "Skipping discovery saves you €3,000 upfront and costs you €30,000 in rework.",
+    "attribution": "Software Development"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "One developer or a full team: how much capacity does your project need?",
+  "points": [
+    {
+      "heading": "What actually limits delivery speed",
+      "body": "On most business software projects the bottleneck isn't typing."
+    },
+    {
+      "heading": "The coordination cost nobody quotes",
+      "body": "Everyone you add has to stay in sync with everyone else."
+    },
+    {
+      "heading": "What one experienced developer realistically delivers",
+      "body": "Concretely, with clear requirements and a client who answers questions, one senior developer working full time delivers roughly:"
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "More developers rarely means faster delivery."
+  },
+  "card": {
+    "quote": "More developers rarely means faster delivery.",
+    "attribution": "Software Development"
+  }
+}

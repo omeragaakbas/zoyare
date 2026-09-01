@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "MVP vs. full product: when should you stop building?",
+  "points": [
+    {
+      "heading": "What is an MVP, really?",
+      "body": "An MVP is the smallest version of your product that solves the core problem well enough to get real feedback from real users."
+    },
+    {
+      "heading": "The cost difference is bigger than you think",
+      "body": "Here's where the numbers matter."
+    },
+    {
+      "heading": "How to decide what goes into v1",
+      "body": "This is the hardest conversation in any project."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "How to decide what belongs in your first version, when to ship, and how to avoid the trap of building forever."
+  },
+  "card": {
+    "quote": "How to decide what belongs in your first version, when to ship, and how to avoid the trap of building forever.",
+    "attribution": "Software Development"
+  }
+}

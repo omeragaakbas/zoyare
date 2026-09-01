@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Custom Software",
+  "title": "How long does custom software development take? Realistic timelines",
+  "points": [
+    {
+      "heading": "Realistic timelines by project type",
+      "body": "Notice that none of these say \"one week\" and none say \"two years\"."
+    },
+    {
+      "heading": "What actually determines the timeline",
+      "body": "People assume the timeline is about how fast a developer types."
+    },
+    {
+      "heading": "Where the time actually goes",
+      "body": "A typical 10-week project doesn't mean 10 weeks of writing code."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "From a 3-week API integration to a 6-month platform: realistic timelines for custom software, what stretches them, and how to keep yours short."
+  },
+  "card": {
+    "quote": "From a 3-week API integration to a 6-month platform: realistic timelines for custom software, what stretches them, and how to keep yours short.",
+    "attribution": "Custom Software"
+  }
+}

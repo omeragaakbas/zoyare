@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "Software maintenance after launch: what it costs and why it matters",
+  "points": [
+    {
+      "heading": "Maintenance isn't just fixing bugs",
+      "body": "When people hear \"maintenance\" they think of bug fixes."
+    },
+    {
+      "heading": "Why \"we'll just leave it alone\" doesn't work",
+      "body": "The most common assumption I hear: \"Once it's built and working, we don't need to touch it.\" It sounds reasonable."
+    },
+    {
+      "heading": "What maintenance actually costs",
+      "body": "There are two separate cost lines: hosting and maintenance."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Software isn't done at launch."
+  },
+  "card": {
+    "quote": "Software isn't done at launch.",
+    "attribution": "Software Development"
+  }
+}

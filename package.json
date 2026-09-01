@@ -9,7 +9,8 @@
     "lint": "next lint",
     "new-blog": "node scripts/generate-blog.mjs",
     "new-blog:topic": "node scripts/generate-blog.mjs",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "social": "node scripts/social/render.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.82.0",

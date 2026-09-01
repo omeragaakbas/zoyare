@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Custom Software",
+  "title": "Rebuild or refactor: what to do with an aging legacy system",
+  "points": [
+    {
+      "heading": "\"Legacy\" isn't about age",
+      "body": "A system isn't legacy because it's old."
+    },
+    {
+      "heading": "When refactoring is the right answer",
+      "body": "Refactoring means changing how the software is built without changing what it does: add tests first, break up the modules everything depends on, replace dead dependencies, move to a support…"
+    },
+    {
+      "heading": "When a rebuild is the honest answer",
+      "body": "Sometimes the foundation is the problem, and no amount of tidying fixes it."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Replace your legacy system or modernise it piece by piece?"
+  },
+  "card": {
+    "quote": "Replace your legacy system or modernise it piece by piece?",
+    "attribution": "Custom Software"
+  }
+}

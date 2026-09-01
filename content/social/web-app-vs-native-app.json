@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Mobile Applications",
+  "title": "Web app or native app: which one does your business actually need?",
+  "points": [
+    {
+      "heading": "The three options, briefly",
+      "body": ""
+    },
+    {
+      "heading": "When a web app is enough",
+      "body": "A web app is the right answer more often than the market suggests, and it's the cheapest thing to change after launch."
+    },
+    {
+      "heading": "What native actually buys you",
+      "body": "Native earns its extra cost when you need things a browser handles badly or not at all:"
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Most business apps don't need to be native."
+  },
+  "card": {
+    "quote": "Most business apps don't need to be native.",
+    "attribution": "Mobile Applications"
+  }
+}

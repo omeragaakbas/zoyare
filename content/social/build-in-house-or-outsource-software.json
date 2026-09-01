@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Custom Software",
+  "title": "Build in-house or outsource your software? Here's how to decide",
+  "points": [
+    {
+      "heading": "The real cost of building in-house",
+      "body": "Hiring a mid-level developer in the Netherlands costs between €55,000 and €75,000 per year in gross salary."
+    },
+    {
+      "heading": "The real cost of outsourcing",
+      "body": "A Dutch software studio typically charges €80–€130 per hour."
+    },
+    {
+      "heading": "When to build in-house",
+      "body": "In-house development makes sense when:"
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Hiring a developer vs."
+  },
+  "card": {
+    "quote": "Hiring a developer vs.",
+    "attribution": "Custom Software"
+  }
+}

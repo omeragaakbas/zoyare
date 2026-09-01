@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "SLAs and support contracts for custom software: what should be in them?",
+  "points": [
+    {
+      "heading": "What an SLA actually promises",
+      "body": "An SLA isn't a vague reassurance that \"we'll take care of you.\" It's a specific, measurable commitment."
+    },
+    {
+      "heading": "Severity tiers: the part most SLAs get wrong",
+      "body": "A good SLA doesn't treat every issue the same."
+    },
+    {
+      "heading": "What a support contract should cover beyond the SLA",
+      "body": "Scope of support"
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "What a usable SLA actually promises, how severity tiers work, what a support contract should cover, and what it typically costs per year."
+  },
+  "card": {
+    "quote": "What a usable SLA actually promises, how severity tiers work, what a support contract should cover, and what it typically costs per year.",
+    "attribution": "Software Development"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Custom Software",
+  "title": "5 signs your current systems are holding back your company's growth",
+  "points": [
+    {
+      "heading": "1. Adding a person doesn't add capacity",
+      "body": "In a healthy operation, hiring someone increases what you can handle."
+    },
+    {
+      "heading": "2. One person is a single point of failure",
+      "body": "Ask yourself: if someone in operations took two weeks off with no laptop, what would stop working?"
+    },
+    {
+      "heading": "3. Reporting takes days and nobody fully trusts the numbers",
+      "body": "If getting a straight answer to \"how are we doing this month?\" means someone manually combining four spreadsheets, cross-checking totals and still saying \"roughly\" — you're flying without i…"
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Five signals your business has outgrown its current systems — from single points of failure to admin growing faster than revenue — and what they cost."
+  },
+  "card": {
+    "quote": "Five signals your business has outgrown its current systems — from single points of failure to admin growing faster than revenue — and what they cost.",
+    "attribution": "Custom Software"
+  }
+}

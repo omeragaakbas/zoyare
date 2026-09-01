@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "Fixed price vs. time and materials: which contract fits your software project?",
+  "points": [
+    {
+      "heading": "How the two models work",
+      "body": "On paper, fixed price puts the risk on the supplier and T&amp;M puts it on you."
+    },
+    {
+      "heading": "The hidden cost of fixed price",
+      "body": "No supplier prices a fixed-price project at their expected effort."
+    },
+    {
+      "heading": "The hidden cost of time and materials",
+      "body": "T&amp;M has the opposite failure mode: nothing forces convergence."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Fixed price or time and materials for your software project?"
+  },
+  "card": {
+    "quote": "Fixed price or time and materials for your software project?",
+    "attribution": "Software Development"
+  }
+}

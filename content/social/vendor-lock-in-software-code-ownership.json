@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Custom Software",
+  "title": "Vendor lock-in: how to avoid getting trapped by your software",
+  "points": [
+    {
+      "heading": "What vendor lock-in really means",
+      "body": "Lock-in is any situation where the cost of switching suppliers is high enough that you stay put even when you'd rather not."
+    },
+    {
+      "heading": "1. Who owns the code?",
+      "body": "This is the one people get wrong most often."
+    },
+    {
+      "heading": "2. Can you get your data out?",
+      "body": "Your data is yours, but only if you can actually extract it."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Who owns your code, your data and your hosting?"
+  },
+  "card": {
+    "quote": "Who owns your code, your data and your hosting?",
+    "attribution": "Custom Software"
+  }
+}

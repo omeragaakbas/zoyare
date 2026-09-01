@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "What does an API integration cost — and when is it worth it?",
+  "points": [
+    {
+      "heading": "What is an API integration?",
+      "body": "An API (Application Programming Interface) is a way for two software systems to exchange data."
+    },
+    {
+      "heading": "What it costs: real numbers",
+      "body": "API integration costs depend on three factors: the quality of the APIs involved, the complexity of the data mapping, and the error handling required."
+    },
+    {
+      "heading": "When an API integration pays for itself",
+      "body": "The math is usually straightforward."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "API integrations connect your systems and eliminate manual data entry."
+  },
+  "card": {
+    "quote": "API integrations connect your systems and eliminate manual data entry.",
+    "attribution": "Software Development"
+  }
+}

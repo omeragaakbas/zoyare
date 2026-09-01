@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Custom Software",
+  "title": "Build vs. buy: when off-the-shelf software wins, and when you need custom",
+  "points": [
+    {
+      "heading": "When buying off-the-shelf wins",
+      "body": "For generic, well-understood processes, standard SaaS is almost always the right choice."
+    },
+    {
+      "heading": "When building custom wins",
+      "body": "Custom software earns its keep in a narrower set of cases than vendors would like you to believe — but when it fits, the payoff is large."
+    },
+    {
+      "heading": "The numbers, side by side",
+      "body": "Take a 30-person company that needs a system to manage a specific operational workflow."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Should you buy a SaaS subscription or build custom software?"
+  },
+  "card": {
+    "quote": "Should you buy a SaaS subscription or build custom software?",
+    "attribution": "Custom Software"
+  }
+}

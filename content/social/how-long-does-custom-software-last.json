@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Custom Software",
+  "title": "How long does custom software last?",
+  "points": [
+    {
+      "heading": "Realistic lifespans by type",
+      "body": "These assume the software is maintained."
+    },
+    {
+      "heading": "What actually ends a system's life",
+      "body": "It is almost never that the code stopped working."
+    },
+    {
+      "heading": "How to tell where yours stands",
+      "body": "A rough diagnostic."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "The realistic lifespan of custom business software, what actually kills it, and how to tell whether yours has three years left or three months."
+  },
+  "card": {
+    "quote": "The realistic lifespan of custom business software, what actually kills it, and how to tell whether yours has three years left or three months.",
+    "attribution": "Custom Software"
+  }
+}

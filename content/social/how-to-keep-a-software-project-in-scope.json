@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Custom Software",
+  "title": "How to keep a software project in scope (and why it still runs over)",
+  "points": [
+    {
+      "heading": "Why projects run over: the real reasons",
+      "body": "Scope creep gets blamed on vague requirements or indecisive clients."
+    },
+    {
+      "heading": "Six techniques that actually work",
+      "body": "1."
+    },
+    {
+      "heading": "The cost of scope creep in numbers",
+      "body": "Industry data from the Standish Group suggests that the average software project exceeds its original budget by 45% and its timeline by 50%."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "Most software projects exceed their original timeline and budget."
+  },
+  "card": {
+    "quote": "Most software projects exceed their original timeline and budget.",
+    "attribution": "Custom Software"
+  }
+}
