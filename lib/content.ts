@@ -117,6 +117,36 @@ export const projects: Project[] = [
     result: "Visitors can register, log in and manage their own account, buy through an integrated webshop, and find practical resources grouped by category — all served through a content model the editorial team can extend without a developer for every new banner or document type.",
     stack: ["ASP.NET Core", "C#", "Umbraco Headless CMS", "Razor"],
   },
+  {
+    id: "malole-studio",
+    client: "Malole Studio",
+    category: "Booking & Payments",
+    title: "Commission-Free Booking & Payment System",
+    short: "Online booking with iDEAL deposits, automatic invoicing and a phone-first admin — replacing a per-booking commission platform for a beauty studio.",
+    description: "A booking system for a beauty studio that wanted online appointments and paid deposits without handing a commission to a marketplace on every booking. Clients pick a slot, pay a deposit via iDEAL and receive a confirmation, a calendar file and an invoice automatically. The studio runs the whole thing — availability, treatments, invoices, VAT totals — from a phone.",
+    tags: ["Next.js", "Payments", "iDEAL", "Scheduling", "SMB"],
+    type: "Product",
+    year: "2026",
+    challenge: "Booking marketplaces take a cut of every appointment and own the client relationship, but running on WhatsApp and a paper diary means no-shows, double bookings and an evening of invoice admin every quarter. The studio also doesn't work a fixed week — availability changes per week around other commitments, so a standard opening-hours model was never going to fit.",
+    approach: "Built as an owned product on Next.js and Postgres. Availability is opt-in per day rather than a recurring week: the studio opens blocks from a phone, and the booking page only ever offers what's actually been opened. Deposits run through Mollie over iDEAL, with a slot held for twenty minutes and released automatically if payment doesn't land. Every booking generates its confirmation email, an .ics calendar file and a PDF deposit invoice; cancelling inside the notice period refunds through the same payment provider without anyone touching it. The admin side covers treatments and add-ons, the day's agenda, a reminder run the day before, and an invoice overview with quarterly totals for the VAT return. Data is hosted in the EU under GDPR.",
+    result: "Bookings and deposits run without commission and without manual confirmation. The quarterly VAT figure comes straight out of the invoice overview, and the studio's own domain — not a marketplace profile — is what clients book through.",
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "Drizzle ORM", "Mollie / iDEAL", "Resend", "pdf-lib"],
+  },
+  {
+    id: "refaja-zorgt",
+    client: "Refaja Zorgt",
+    category: "Local Discovery",
+    title: "Independent Care Provider Site & Local SEO",
+    short: "A single hand-built page with structured data for an independent care provider — built to be found in her own region, not to win design awards.",
+    description: "An independent care provider working in home care and disability support needed a site that explains what she does, what the intake process looks like, and how care is funded and invoiced — and that shows up when someone in her region searches for exactly that. Built as one hand-written page with full structured data, moved off a hosted website builder onto her own infrastructure.",
+    tags: ["Local SEO", "Structured Data", "Healthcare", "Static Site"],
+    type: "Website",
+    year: "2026",
+    challenge: "Care is bought locally and on trust: families and case managers search by service and by town, then want to know within a minute whether this person can take on the care, and how it gets funded. The existing setup was a hosted website-builder subscription — recurring cost, no control over markup, and nothing a search engine could read beyond plain text.",
+    approach: "Wrote a single page by hand — no framework, no build step — covering the six care services, the intake path from first meeting through care agreement and care plan to invoicing, and the business details a case manager needs to check before placing care. Marked it up with LocalBusiness, Service and OfferCatalog structured data, with the service area listed municipality by municipality so the region she actually travels to is machine-readable. Contact is direct: phone and email, no form to wait on. Deployed on the studio's own hosting by repointing DNS, so the site is no longer tied to a builder subscription.",
+    result: "One page that loads instantly, reads correctly in both light and dark mode, states the funding and administrative details up front, and gives search engines an explicit, structured answer for every service and every town in the region.",
+    stack: ["HTML", "CSS", "JSON-LD Structured Data", "Vercel"],
+  },
 ];
 
 export const contact = {
@@ -128,6 +158,8 @@ export const clients = [
   { name: "StrateX",   detail: "Workforce Management back-end" },
   { name: "StudyBuddy",detail: "Mobile product — matching platform" },
   { name: "ProAspect", detail: "Invoicing automation" },
+  { name: "Malole Studio", detail: "Booking & iDEAL deposits" },
+  { name: "Refaja Zorgt", detail: "Local discovery for a care practice" },
 ];
 
 export const testimonials = [

@@ -391,6 +391,108 @@ function MembershipPlatformSchematic() {
   );
 }
 
+function MaloleSchematic() {
+  return (
+    <>
+      <Frame />
+      <text x={28} y={62} fontFamily={mono} fontSize={8} letterSpacing={1.5} fill={MUTED}>
+        STUDIO ADMIN
+      </text>
+
+      {/* the two things that steer the flow from outside it */}
+      <rect x={210} y={44} width={112} height={28} fill={SURFACE} stroke={BORDER} />
+      <text x={266} y={62} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.5} fill={MUTED}>
+        AVAILABILITY
+      </text>
+      <path d="M 266 72 V 100" fill="none" stroke={BORDER} strokeDasharray="2 4" />
+
+      <rect x={408} y={44} width={112} height={28} fill={SURFACE} stroke={BORDER} />
+      <text x={464} y={62} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.5} fill={MUTED}>
+        WEBHOOK
+      </text>
+      <path d="M 464 72 V 100" fill="none" stroke={BORDER} strokeDasharray="2 4" />
+
+      {/* booking pipeline */}
+      <Node x={28} y={110} w={110} h={64} label="CLIENT" sub="PICKS SLOT" />
+      <Flow d="M 138 142 H 196" />
+      <Node x={196} y={100} w={140} h={84} label="BOOKING" sub="HOLD · 20 MIN" />
+      <Flow d="M 336 142 H 394" />
+      <Node x={394} y={100} w={140} h={84} label="MOLLIE" sub="IDEAL DEPOSIT" accent />
+      <Flow d="M 534 142 H 592" />
+      <Node x={592} y={110} w={100} h={64} label="CONFIRMED" />
+
+      <Flow d="M 642 174 V 236" />
+
+      {/* everything that fires once a deposit lands */}
+      <rect x={84} y={236} width={552} height={48} fill="rgba(241,95,14,0.05)" stroke={ACCENT} strokeWidth={1} />
+      <text x={360} y={256} textAnchor="middle" fontFamily={mono} fontSize={10} letterSpacing={1.5} fill={ACCENT}>
+        CONFIRMATION PIPELINE
+      </text>
+      <text x={360} y={272} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.2} fill={MUTED}>
+        EMAIL · .ICS · PDF DEPOSIT INVOICE
+      </text>
+
+      <Flow d="M 360 284 V 316" />
+      <Cylinder x={296} y={316} w={128} h={76} label="POSTGRES · EU" />
+
+      {/* reminder chip */}
+      <rect x={520} y={334} width={116} height={28} fill={SURFACE} stroke={BORDER} />
+      <text x={578} y={352} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.5} fill={MUTED}>
+        CRON REMINDER
+      </text>
+      <path d="M 424 348 H 520" fill="none" stroke={BORDER} strokeDasharray="2 4" />
+
+      <Caption text="FIG. 07 — BOOKING & DEPOSIT FLOW" />
+    </>
+  );
+}
+
+function RefajaSchematic() {
+  return (
+    <>
+      <Frame />
+      {/* edge delivery */}
+      <rect x={272} y={36} width={112} height={28} fill={SURFACE} stroke={BORDER} />
+      <text x={328} y={54} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.5} fill={MUTED}>
+        EDGE CDN
+      </text>
+      <path d="M 328 64 V 88" fill="none" stroke={BORDER} strokeDasharray="2 4" />
+
+      <Node x={28} y={100} w={132} h={76} label="SEARCH" sub="+ AI CRAWLERS" />
+      <Flow d="M 160 138 H 228" />
+      <Node x={228} y={88} w={180} h={100} label="STATIC PAGE" sub="ONE FILE · NO BUILD" accent />
+      <Flow d="M 408 138 H 476" />
+      <Node x={476} y={100} w={132} h={76} label="VISITOR" sub="TEL · MAIL" />
+
+      <Flow d="M 318 188 V 236" />
+
+      {/* what makes the page machine-readable */}
+      <rect x={84} y={236} width={552} height={48} fill="rgba(241,95,14,0.05)" stroke={ACCENT} strokeWidth={1} />
+      <text x={360} y={256} textAnchor="middle" fontFamily={mono} fontSize={10} letterSpacing={1.5} fill={ACCENT}>
+        JSON-LD STRUCTURED DATA
+      </text>
+      <text x={360} y={272} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.2} fill={MUTED}>
+        LOCALBUSINESS · SERVICE · OFFERCATALOG
+      </text>
+
+      <Flow d="M 360 284 V 320" />
+
+      {/* service area, one tile per municipality */}
+      {Array.from({ length: 12 }, (_, i) => (
+        <g key={`area${i}`}>
+          <rect x={103 + i * 44} y={330} width={30} height={30} fill={BG} stroke={BORDER} />
+          <circle cx={118 + i * 44} cy={345} r={3} fill={i % 4 === 1 ? ACCENT : MUTED} />
+        </g>
+      ))}
+      <text x={360} y={384} textAnchor="middle" fontFamily={mono} fontSize={8} letterSpacing={1.5} fill={MUTED}>
+        SERVICE AREA · 12 MUNICIPALITIES
+      </text>
+
+      <Caption text="FIG. 08 — LOCAL DISCOVERY SETUP" />
+    </>
+  );
+}
+
 const schematics: Record<string, () => React.ReactNode> = {
   siemens: SiemensSchematic,
   stratex: StratexSchematic,
@@ -398,6 +500,8 @@ const schematics: Record<string, () => React.ReactNode> = {
   proaspect: ProaspectSchematic,
   "customs-compliance": CustomsComplianceSchematic,
   "membership-content-platform": MembershipPlatformSchematic,
+  "malole-studio": MaloleSchematic,
+  "refaja-zorgt": RefajaSchematic,
 };
 
 export default function ProjectSchematic({
