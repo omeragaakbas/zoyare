@@ -1,0 +1,24 @@
+A client once asked me: "Is it tested?" I said yes — and then realised that answer means almost nothing without context.
+
+Here's what I've seen happen on projects where testing was deferred to the end:
+
+The bug found two days before launch? Two hours to fix. The same bug found two months after launch — when it had quietly wrong'd every invoice that went out? Weeks of damage control.
+
+IBM published this math decades ago: a bug found during development costs 1x to fix. Found in production: 10–15x. The numbers hold up.
+
+What actually makes the difference:
+— Tests written alongside the code, not in a dedicated "QA sprint" at the end
+— A staging environment ready from week two, not the day before go-live
+— A CI pipeline that runs the full suite on every commit, so problems surface immediately
+
+The testing budget on a typical project is 15–25% of build time. On a €40,000 project, that's €6,000–€10,000. Skipping it tends to cost €15,000–€40,000 over the following two years in fixes, support and eventual refactoring.
+
+It's also the question most people don't ask when evaluating a quote: "What does the test coverage look like at handover?"
+
+Worth asking before you sign.
+
+New post on what software testing and QA actually involve — and what to ask any developer before you commit:
+
+https://zoyare.com/blog/software-testing-qa-explained
+
+#softwaredevelopment #QA #maatwerksoftware
