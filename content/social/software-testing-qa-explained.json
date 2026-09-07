@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Software Development",
+  "title": "Software testing and QA: what it costs, what it catches, and why leaving it to the end doesn't work",
+  "points": [
+    {
+      "heading": "What testing actually covers",
+      "body": "Testing isn't one activity."
+    },
+    {
+      "heading": "The real cost of bugs in production",
+      "body": "Research from IBM and others has put numbers on this for decades: a bug found during development costs roughly 1x to fix."
+    },
+    {
+      "heading": "Why \"we'll test at the end\" fails",
+      "body": "Deferring testing until the build is \"done\" is one of the costliest patterns in software development — and one of the reasons projects fail on their last mile."
+    }
+  ],
+  "cta": {
+    "headline": "The full piece is on the site.",
+    "sub": "What testing and QA actually involve in a custom software project, what they cost, and how to evaluate whether your developer takes them seriously."
+  },
+  "card": {
+    "quote": "What testing and QA actually involve in a custom software project, what they cost, and how to evaluate whether your developer takes them seriously.",
+    "attribution": "Software Development"
+  }
+}
