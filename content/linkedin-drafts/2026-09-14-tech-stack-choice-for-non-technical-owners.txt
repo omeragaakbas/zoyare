@@ -1,0 +1,24 @@
+One question comes up in almost every first call: "Does it matter what technology you use?"
+
+The honest answer: the technology choice rarely determines whether the software works. But it does determine two things that matter a lot to you as a business owner:
+
+1. How easy it is to find someone else to maintain it in three years
+2. How deeply you're locked into whoever built it
+
+PHP and JavaScript have massive talent pools — tens of thousands of developers in the Netherlands alone. A "custom framework" the studio built themselves? That talent pool might be twelve people.
+
+When your developer leaves, raises their rates, or simply isn't available — and at some point, they will be — the tech stack decides whether you're free to move on or stuck negotiating from weakness.
+
+Four questions worth asking before you approve any tech proposal:
+→ Why this stack over the alternatives?
+→ How many developers in the Netherlands know it well?
+→ Is the framework actively maintained?
+→ If you were unavailable, how long would it take another developer to get up to speed?
+
+A good developer using a good stack answers all four calmly and concretely. Vagueness here is the signal that matters.
+
+New post on the blog — plain language, no jargon:
+
+https://zoyare.com/blog/tech-stack-choice-for-non-technical-owners
+
+#softwaredevelopment #techstrategy #digitalisering
