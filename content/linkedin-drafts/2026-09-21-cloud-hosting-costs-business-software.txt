@@ -1,0 +1,21 @@
+Your software project has a build cost. It also has a hosting cost you'll pay every month for as long as the software runs.
+
+Most clients don't think about this until the first invoice.
+
+A €40,000 custom build can easily cost €200–€400/month to host — that's €2,400–€4,800/year, compounding over a 5–10 year lifespan. Over five years: up to €24,000 on top of the build.
+
+Three questions worth asking before your developer picks the infrastructure:
+
+→ What does it cost at normal load — and at 10x load?
+→ Which country are the servers in? (EU region = GDPR compliant; US-east-1 default = not)
+→ Whose name is on the hosting account?
+
+That last one matters more than it sounds. If the account is in your developer's name, you don't really control your own application — you're one difficult conversation away from losing access to everything.
+
+For Dutch and EU businesses: verify the EU region explicitly. It's not the default in most tutorials or most developers' habits.
+
+New post this week: what hosting actually costs, the hidden lines most estimates leave out (staging, monitoring, database), and what good infrastructure looks like — explained for non-technical owners.
+
+https://zoyare.com/blog/cloud-hosting-costs-business-software
+
+#softwaredevelopment #clouddhosting #maatwerksoftware
