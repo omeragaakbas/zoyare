@@ -1,0 +1,21 @@
+Most business owners never ask about the backend.
+
+Then six months after launch they ask why adding a new feature takes three weeks, or why the developer is nervous every time something changes.
+
+The backend is where those costs were decided — in week one, before a line of code was written.
+
+Three decisions made early have a bigger long-term impact than any technology choice:
+
+→ Monolith or microservices? For most SMB business software, a well-structured monolith is the right answer. Microservices add €25–40k to the build and years of operational complexity — justified for Netflix, not for an internal tool with 50 users.
+
+→ Which database? Relational (PostgreSQL) for anything involving orders, invoices or customer records. It's not exciting, but it enforces data integrity by design and any developer can maintain it.
+
+→ Does it handle failures? What happens when the payment provider goes down for 90 seconds? Does the order queue or disappear? The answer to that question is the real quality signal.
+
+You don't need to be an engineer to ask these questions. You just need to know that they exist — and that "we'll handle it technically" isn't a good enough answer when it's your data and your maintenance budget on the line.
+
+New post this week: the five questions every business owner should ask before approving a backend architecture.
+
+https://zoyare.com/blog/backend-architecture-explained-for-business-owners
+
+#CustomSoftware #SoftwareOntwikkeling #Zoyare
