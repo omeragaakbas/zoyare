@@ -1,0 +1,23 @@
+Most Dutch software projects underestimate payment integration.
+
+Not because iDEAL or Stripe is hard to use — the APIs are well-documented. But payments have more edge cases than almost any other integration.
+
+A webhook arrives twice. A card expires mid-subscription. A user disputes a charge three weeks after delivery. The happy path is easy. Everything around it takes real engineering.
+
+A few things I see clients get wrong:
+
+1. Skipping iDEAL. It's 70% of Dutch online transactions. Launching without it is a conversion disaster.
+
+2. Budgeting only for the happy path. Webhook idempotency, refund flows, state management — that's 3–4x the work of just "calling the API."
+
+3. Ignoring PSD2/SCA. Recurring card charges need to be flagged correctly as merchant-initiated or you'll see soft declines. This isn't automatic.
+
+4. Not modelling transaction fees upfront. Mollie's flat €0.29 per iDEAL transaction vs. a percentage-based provider makes a real difference at volume.
+
+Payment integration in custom software typically runs €4,000–€25,000 depending on scope — on top of the main build. Worth knowing before you budget the project.
+
+I wrote a practical breakdown of the Dutch payment landscape, provider comparison, PSD2 requirements, and what integration actually costs:
+
+https://zoyare.com/blog/payment-integration-dutch-business-software
+
+#softwaredevelopment #payments #nederland
