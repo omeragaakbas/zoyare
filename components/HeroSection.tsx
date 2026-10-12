@@ -36,7 +36,7 @@ export default function HeroSection() {
           className="rise inline-flex items-center gap-2 mb-10 border border-border bg-background/60 md:bg-background/40 md:backdrop-blur-sm px-3 py-1.5"
           style={enter(0, 0.4, -8)}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot" />
           <span className="font-mono text-xs text-muted tracking-widest uppercase">
             {d.badge}
           </span>

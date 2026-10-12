@@ -42,51 +42,56 @@ export default function CookieConsent() {
           animate={{ y: 0 }}
           exit={{ y: "100%" }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-0 left-0 right-0 z-50 px-4 pb-4 md:pb-6 pointer-events-none"
+          className="fixed bottom-0 left-0 right-0 z-50 px-3 pb-3 md:px-4 md:pb-6 pointer-events-none"
         >
-          <div className="mx-auto max-w-3xl bg-background border border-border shadow-lg p-6 md:p-7 pointer-events-auto">
-            <p className="font-mono text-[11px] text-muted tracking-widest uppercase mb-3">
+          {/* Compact on phones (it used to cover about a third of the screen,
+              including the hero's main button); roomy from md up. The full
+              text stays — consent needs to be informed — only the spacing,
+              type size and eyebrow label shrink. */}
+          <div className="mx-auto max-w-3xl bg-background border border-border shadow-lg p-4 md:p-7 pointer-events-auto">
+            <p className="hidden md:block font-mono text-[11px] text-muted tracking-widest uppercase mb-3">
               Cookies
             </p>
-            <p className="text-sm text-secondary leading-relaxed mb-5">
+            <p className="text-xs md:text-sm text-secondary leading-snug md:leading-relaxed mb-3 md:mb-5">
               We use Google Analytics to understand how visitors use our site.
               With your permission we also use advertising cookies, which let us
               measure whether our ads bring in the right people. No personal
-              data is sold or shared.
+              data is sold or shared.{" "}
+              <Link
+                href="/privacy"
+                className="md:hidden underline underline-offset-2 hover:text-accent transition-colors duration-200"
+              >
+                Privacy policy
+              </Link>
             </p>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <Link
                 href="/privacy"
-                className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase"
+                className="hidden md:inline font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase"
               >
                 Read our Privacy Policy
               </Link>
-              <div className="flex items-center gap-5">
+              <div className="flex items-center justify-between md:justify-start gap-3 md:gap-5">
                 <button
                   type="button"
                   onClick={() => decide(false, false)}
-                  className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+                  className="px-2 py-2.5 md:px-0 md:py-2 text-xs md:text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
                 >
                   Reject
                 </button>
                 <button
                   type="button"
                   onClick={() => decide(true, false)}
-                  className="text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
+                  className="px-2 py-2.5 md:px-0 md:py-2 text-xs md:text-sm text-secondary hover:text-primary transition-colors duration-200 underline underline-offset-4"
                 >
                   Analytics only
                 </button>
                 <button
                   type="button"
                   onClick={() => decide(true, true)}
-                  className="group relative inline-flex items-center px-6 py-2.5 bg-primary text-background text-sm font-medium overflow-hidden"
+                  className="group relative inline-flex items-center px-5 md:px-6 py-2.5 bg-primary text-background text-xs md:text-sm font-medium overflow-hidden"
                 >
-                  <m.span
-                    className="absolute inset-0 bg-accent"
-                    initial={{ y: "100%" }}
-                    whileHover={{ y: 0 }}
-                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  />
+                  <span className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-[350ms] ease-[cubic-bezier(0.22,1,0.36,1)]" />
                   <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                     Accept all
                   </span>

@@ -106,26 +106,20 @@ body {
   }
 }
 
-/* Ambient background blobs — GPU-composited, runs on the compositor thread */
-@keyframes zoyare-blob-1 {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  33%      { transform: translate3d(70px, -50px, 0); }
-  66%      { transform: translate3d(-30px, 30px, 0); }
-}
-@keyframes zoyare-blob-2 {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  33%      { transform: translate3d(-50px, 40px, 0); }
-  66%      { transform: translate3d(20px, -20px, 0); }
-}
-.zoyare-blob-1 {
-  will-change: transform;
-  transform: translateZ(0);
-  animation: zoyare-blob-1 55s ease-in-out infinite;
-}
+/* KEEP THE PAGE IDLE. Any CSS animation that runs forever keeps the browser
+   producing a frame 60 times a second — measured: an untouched homepage drew
+   361 frames in 6 s, and drops to ~1 with no endless animations. That load sits
+   in the GPU process, which most browsers share between all tabs, so a tab
+   that never rests makes the whole browser feel sluggish (and drains the
+   battery). Ambient motion must therefore be finite, hover-triggered or
+   removed. Infinite animations that remain on purpose: the marquee (only while
+   it is on screen) and the hero caret (a 1 Hz step). */
+
+/* Ambient background blobs — static. They used to drift for 55–65 s per loop,
+   which is imperceptible but kept the compositor running forever. */
+.zoyare-blob-1,
 .zoyare-blob-2 {
-  will-change: transform;
   transform: translateZ(0);
-  animation: zoyare-blob-2 65s ease-in-out infinite;
 }
 
 /* Phones and tablets: the background stays as a static, flat tint. A
@@ -143,7 +137,7 @@ body {
   }
 }
 
-/* Infinite micro-animations — pure CSS so they cost zero main-thread work.
+/* Micro-animations — pure CSS so they cost zero main-thread work.
    All of these are neutralized globally by the prefers-reduced-motion block. */
 @keyframes zoyare-caret {
   50% { opacity: 0; }
@@ -156,9 +150,18 @@ body {
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(3px); }
 }
+/* The scroll cue nudges five times, then rests */
 .scroll-bob {
   display: inline-block;
-  animation: zoyare-bob 2.2s ease-in-out infinite;
+  animation: zoyare-bob 2.2s ease-in-out 5;
+}
+
+/* Status dot: pulses a few times, then rests (Tailwind's animate-pulse never stops) */
+@keyframes zoyare-pulse-dot {
+  50% { opacity: 0.5; }
+}
+.pulse-dot {
+  animation: zoyare-pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) 4;
 }
 
 @keyframes zoyare-marquee {
@@ -176,26 +179,6 @@ body {
   animation-play-state: paused;
 }
 
-@keyframes zoyare-float-glow {
-  0%, 100% { transform: scale(1);    opacity: 0.85; }
-  50%      { transform: scale(1.08); opacity: 1; }
-}
-.float-glow {
-  animation: zoyare-float-glow 7s ease-in-out infinite;
-}
-
-@keyframes zoyare-float-drift {
-  0%   { transform: translate3d(0, 0, 0)       scale(1); }
-  25%  { transform: translate3d(8px, -14px, 0) scale(1.025); }
-  50%  { transform: translate3d(0, -22px, 0)   scale(1.035); }
-  75%  { transform: translate3d(-8px, -14px, 0) scale(1.025); }
-  100% { transform: translate3d(0, 0, 0)       scale(1); }
-}
-.float-drift {
-  animation: zoyare-float-drift 11s ease-in-out infinite;
-  will-change: transform;
-}
-
 @keyframes zoyare-fade-up {
   from { opacity: 0; transform: translateY(24px) scale(0.94); }
   to   { opacity: 1; transform: translateY(0)    scale(1); }
@@ -208,9 +191,17 @@ body {
 @keyframes schematic-dash {
   to { stroke-dashoffset: -20; }
 }
+/* Animating stroke-dashoffset repaints the SVG on the MAIN thread every frame
+   (the portfolio page did ~540 paints/s with all schematics running). The dashes
+   therefore only flow while the card/diagram is hovered; otherwise they rest. */
 .schematic-flow {
   stroke-dasharray: 4 6;
   animation: schematic-dash 1.4s linear infinite;
+  animation-play-state: paused;
+}
+.group:hover .schematic-flow,
+svg:hover .schematic-flow {
+  animation-play-state: running;
 }
 
 /* Outlined drafting numerals for process steps */

@@ -1,7 +1,8 @@
 /**
  * Hand-drawn architecture schematics per project — pure SVG, server-rendered,
  * zero client JS. Styled like engineering blueprints in the brand palette.
- * Flow lines animate via the .schematic-flow class in globals.css
+ * Flow lines animate via the .schematic-flow class in globals.css, but only while
+ * hovered (otherwise they repaint on the main thread forever)
  * (CSS-only, respects prefers-reduced-motion globally).
  */
 

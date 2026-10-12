@@ -117,7 +117,7 @@ export function CTASection() {
       <CornerTicks />
       <FadeIn>
         <div className="flex items-center gap-2.5 mb-10">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-emerald-400 pulse-dot" />
           <p className="font-mono text-xs text-muted tracking-widest uppercase">
             Available
           </p>

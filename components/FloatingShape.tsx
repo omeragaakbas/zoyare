@@ -2,8 +2,9 @@ import Logo from "./Logo";
 
 /**
  * Hero accent: oversized Zoyare cube as a faint watermark.
- * Organic circular drift + scale breath — pure CSS keyframes (globals.css),
- * so it costs zero main-thread work. Hidden on mobile.
+ * A gentle entrance, then it rests: the endless drift/breathing it used to have
+ * kept the browser rendering 60 frames a second (see "KEEP THE PAGE IDLE" in
+ * globals.css). Hidden below lg.
  * `prefers-reduced-motion` is neutralized by the global reduced-motion block.
  */
 export default function FloatingShape() {
@@ -14,7 +15,7 @@ export default function FloatingShape() {
     >
       {/* Soft warm glow behind the mark */}
       <div
-        className="float-glow absolute -inset-32 rounded-full"
+        className="absolute -inset-32 rounded-full"
         style={{
           background:
             "radial-gradient(circle, rgba(241,95,14,0.20) 0%, transparent 60%)",
@@ -22,15 +23,13 @@ export default function FloatingShape() {
         }}
       />
 
-      {/* Cube — gentle entrance, then organic drift + scale breath */}
+      {/* Cube — gentle entrance, then it stays put */}
       <div className="float-entrance relative">
-        <div className="float-drift">
-          <Logo
-            variant="mark"
-            height={380}
-            className="opacity-[0.20] xl:opacity-[0.24]"
-          />
-        </div>
+        <Logo
+          variant="mark"
+          height={380}
+          className="opacity-[0.20] xl:opacity-[0.24]"
+        />
       </div>
     </div>
   );
