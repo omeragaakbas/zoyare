@@ -1,0 +1,28 @@
+Every software project has a part nobody budgets for properly.
+
+Not the build. Not the integrations. The data migration.
+
+I see it repeatedly: a company replaces an old system, the build goes well, and then migration day arrives. Turns out 30% of records have missing required fields. Phone numbers are stored in four different formats. "Klantgroep: overig" means three different things depending on who entered it.
+
+That surprise adds weeks. Sometimes a lot of weeks.
+
+Here's what a migration actually involves:
+— A data audit before a single script is written (always takes longer than expected)
+— Data mapping: every field in the old system matched to the new one, mismatches decided
+— Data cleaning: the part that can't be automated and can't be rushed
+— A test migration against a copy of production data before you touch anything live
+— A go-live window — usually a weekend night — with a rollback plan if it goes wrong
+— Three months of the old system staying accessible in read-only, because you will need to look something up
+
+Cost ranges:
+Simple (clean data, <100K records): €2,000–€6,000
+Medium (some cleaning, moderate mapping): €6,000–€20,000
+Complex (poor quality, legacy formats, millions of records): €20,000–€60,000+
+
+The cleaning is where estimates blow up. You can't know what it costs until you've audited the data.
+
+If you're planning a system replacement, the migration conversation belongs at the start — not the end.
+
+https://zoyare.com/blog/data-migration-switching-systems
+
+#softwaredevelopment #digitaltransformatie #customsoftware
