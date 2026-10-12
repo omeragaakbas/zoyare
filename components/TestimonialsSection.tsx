@@ -3,11 +3,11 @@ import FadeIn from "@/components/animations/FadeIn";
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative px-6 md:px-12 py-24 border-t border-border">
+    <section className="cv-auto relative px-6 md:px-12 py-24 border-t border-border">
       <FadeIn className="mb-14">
-        <p className="font-mono text-xs text-muted tracking-widest uppercase">
+        <h2 className="font-mono text-xs text-muted tracking-widest uppercase">
           What clients say
-        </p>
+        </h2>
       </FadeIn>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">

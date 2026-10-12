@@ -34,7 +34,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 border-b border-border bg-background/80 backdrop-blur-md">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 h-16 border-b border-border bg-background/95 md:bg-background/80 md:backdrop-blur-md">
         <Link
           href="/"
           className="text-primary hover:text-accent transition-colors duration-200"

@@ -11,11 +11,17 @@ const CommandPalette = dynamic(() => import("./CommandPalette"), { ssr: false })
 /**
  * Client-only extras. The chat widget and command palette chunks are deferred
  * until the browser is idle so they never compete with hydration or LCP.
+ *
+ * The custom cursor and the ⌘K palette are mouse/keyboard features (the palette
+ * has no touch trigger), so they are not even downloaded on touch devices.
  */
 export default function ClientShell({ palette }: { palette: PaletteEntry[] }) {
   const [ready, setReady] = useState(false);
+  const [pointerDevice, setPointerDevice] = useState(false);
 
   useEffect(() => {
+    setPointerDevice(window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+
     const schedule =
       "requestIdleCallback" in window
         ? (cb: () => void) => window.requestIdleCallback(cb, { timeout: 3000 })
@@ -25,11 +31,11 @@ export default function ClientShell({ palette }: { palette: PaletteEntry[] }) {
 
   return (
     <>
-      <Cursor />
+      {pointerDevice && <Cursor />}
       {ready && (
         <>
           <ChatWidget />
-          <CommandPalette entries={palette} />
+          {pointerDevice && <CommandPalette entries={palette} />}
         </>
       )}
     </>

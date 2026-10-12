@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView, animate } from "framer-motion";
 
 interface CounterProps {
   to: number;
@@ -15,6 +14,11 @@ interface CounterProps {
 /**
  * Number counter that animates from 0 → `to` when scrolled into view.
  * `pad` left-pads with zeros (e.g. pad=2 gives "04" instead of "4").
+ *
+ * Plain IntersectionObserver + requestAnimationFrame: this used to pull in
+ * framer-motion's animation engine (~30 kB of JS) for a four-step counter.
+ * State is only set when the displayed integer changes, and users with
+ * reduced motion get the final value immediately.
  */
 export default function Counter({
   to,
@@ -25,18 +29,42 @@ export default function Counter({
   pad = 0,
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true });
   const [value, setValue] = useState(0);
 
   useEffect(() => {
-    if (!inView) return;
-    const controls = animate(0, to, {
-      duration,
-      ease: [0.22, 1, 0.36, 1],
-      onUpdate: (v) => setValue(Math.floor(v)),
+    const el = ref.current;
+    if (!el) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setValue(to);
+      return;
+    }
+
+    let raf = 0;
+    const run = () => {
+      const start = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min(1, (now - start) / (duration * 1000));
+        // ease-out quart, close to the previous cubic-bezier(0.22, 1, 0.36, 1)
+        setValue(Math.floor(to * (1 - Math.pow(1 - p, 4))));
+        if (p < 1) raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        io.disconnect();
+        run();
+      }
     });
-    return () => controls.stop();
-  }, [inView, to, duration]);
+    io.observe(el);
+
+    return () => {
+      io.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, [to, duration]);
 
   const display = pad > 0 ? String(value).padStart(pad, "0") : String(value);
 

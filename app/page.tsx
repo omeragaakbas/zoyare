@@ -14,20 +14,20 @@ export default function Home() {
     <>
       <HeroSection />
 
-      <section className="relative px-6 md:px-12 py-24 border-t border-border">
+      <section className="cv-auto relative px-6 md:px-12 py-24 border-t border-border">
         <FadeIn className="mb-14">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase">
+          <h2 className="font-mono text-xs text-muted tracking-widest uppercase">
             {d.home.whatIdo}
-          </p>
+          </h2>
         </FadeIn>
         <ServicesList services={d.services.items} />
       </section>
 
-      <section className="relative px-6 md:px-12 py-24 border-t border-border">
+      <section className="cv-auto relative px-6 md:px-12 py-24 border-t border-border">
         <FadeIn className="flex justify-between items-end mb-14">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase">
+          <h2 className="font-mono text-xs text-muted tracking-widest uppercase">
             How it works
-          </p>
+          </h2>
           <Link
             href="/estimate"
             className="text-sm text-secondary hover:text-primary transition-colors duration-200"
@@ -58,11 +58,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative px-6 md:px-12 py-24 border-t border-border">
+      <section className="cv-auto relative px-6 md:px-12 py-24 border-t border-border">
         <FadeIn className="flex justify-between items-end mb-14">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase">
+          <h2 className="font-mono text-xs text-muted tracking-widest uppercase">
             {d.home.selectedWork}
-          </p>
+          </h2>
           <Link
             href="/portfolio"
             className="text-sm text-secondary hover:text-primary transition-colors duration-200"
@@ -75,11 +75,11 @@ export default function Home() {
 
       <TestimonialsSection />
 
-      <section className="relative py-20 border-t border-border">
+      <section className="cv-auto relative py-20 border-t border-border">
         <FadeIn className="mb-10 px-6 md:px-12">
-          <p className="font-mono text-xs text-muted tracking-widest uppercase">
+          <h2 className="font-mono text-xs text-muted tracking-widest uppercase">
             {d.home.builtFor}
-          </p>
+          </h2>
         </FadeIn>
 
         <Marquee duration={40}>

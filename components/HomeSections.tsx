@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { m } from "framer-motion";
 import type { Project } from "@/lib/content";
 import FadeIn from "@/components/animations/FadeIn";
 import MagneticButton from "@/components/MagneticButton";
@@ -16,17 +13,8 @@ export function ServicesList({
       {services.map((service, i) => (
         <FadeIn key={service.title} delay={i * 0.07}>
           <Link href={service.href}>
-            <m.div
-              className="group grid grid-cols-12 items-start gap-4 md:gap-6 py-8 border-b border-border cursor-pointer relative"
-              whileHover={{ x: 4 }}
-              transition={{ duration: 0.25 }}
-            >
-              <m.span
-                className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top opacity-0 group-hover:opacity-100"
-                initial={{ scaleY: 0 }}
-                whileHover={{ scaleY: 1 }}
-                transition={{ duration: 0.3 }}
-              />
+            <div className="group grid grid-cols-12 items-start gap-4 md:gap-6 py-8 border-b border-border cursor-pointer relative transition-transform duration-[250ms] [@media(hover:hover)]:hover:translate-x-1">
+              <span className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top scale-y-0 opacity-0 group-hover:scale-y-100 group-hover:opacity-100 transition-[transform,opacity] duration-300" />
 
               <div className="col-span-2 md:col-span-1 pt-0.5">
                 <span className="font-mono text-sm text-border group-hover:text-accent transition-colors duration-300">
@@ -55,7 +43,7 @@ export function ServicesList({
                   →
                 </span>
               </div>
-            </m.div>
+            </div>
           </Link>
         </FadeIn>
       ))}
@@ -68,29 +56,25 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
     <div className="flex flex-col divide-y divide-border">
       {projects.map((project, i) => (
         <FadeIn key={project.id} delay={i * 0.06} direction="left">
-          <m.div
-            className="group grid grid-cols-12 gap-4 md:gap-6 py-7 cursor-default relative"
-            whileHover={{ x: 4 }}
-            transition={{ duration: 0.22 }}
-          >
-            <m.span
-              className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top"
-              initial={{ scaleY: 0 }}
-              whileHover={{ scaleY: 1 }}
-              transition={{ duration: 0.25 }}
-            />
+          <div className="group grid grid-cols-12 gap-4 md:gap-6 py-7 cursor-default relative transition-transform duration-[220ms] [@media(hover:hover)]:hover:translate-x-1">
+            <span className="absolute left-0 top-0 bottom-0 w-px bg-accent origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-[250ms]" />
 
             <div className="col-span-1 flex items-start pt-1">
               <span className="font-mono text-xs text-muted">
                 {String(i + 1).padStart(2, "0")}
               </span>
             </div>
-            <div className="col-span-3 flex items-start pt-1">
+            {/* Category: its own column from md up; on phones it sits above the title
+                (a 3-of-12 column is ~70px there and the label overflowed into the title). */}
+            <div className="hidden md:flex md:col-span-3 items-start pt-1">
               <span className="font-mono text-xs text-muted tracking-widest uppercase">
                 {project.category}
               </span>
             </div>
-            <div className="col-span-5 md:col-span-5">
+            <div className="col-span-11 md:col-span-5">
+              <span className="md:hidden block font-mono text-[10px] text-muted tracking-widest uppercase mb-1">
+                {project.category}
+              </span>
               <h3 className="text-sm md:text-base font-medium text-primary mb-2 group-hover:text-accent transition-colors duration-200">
                 {project.title}
               </h3>
@@ -98,7 +82,7 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
                 {project.short}
               </p>
             </div>
-            <div className="col-span-3 flex flex-wrap gap-2 justify-end items-start">
+            <div className="col-start-2 col-span-11 md:col-start-auto md:col-span-3 flex flex-wrap gap-2 md:justify-end items-start">
               {project.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
@@ -108,7 +92,7 @@ export function ProjectsList({ projects }: { projects: Project[] }) {
                 </span>
               ))}
             </div>
-          </m.div>
+          </div>
         </FadeIn>
       ))}
     </div>
@@ -129,7 +113,7 @@ function CornerTicks() {
 
 export function CTASection() {
   return (
-    <section className="relative px-6 md:px-12 py-32 border-t border-border">
+    <section className="cv-auto relative px-6 md:px-12 py-32 border-t border-border">
       <CornerTicks />
       <FadeIn>
         <div className="flex items-center gap-2.5 mb-10">
@@ -153,12 +137,7 @@ export function CTASection() {
               data-magnetic
               className="group relative inline-flex items-center gap-3 px-7 py-3.5 border border-primary text-primary text-sm font-medium overflow-hidden"
             >
-              <m.span
-                className="absolute inset-0 bg-accent"
-                initial={{ y: "100%" }}
-                whileHover={{ y: 0 }}
-                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              />
+              <span className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-[350ms] ease-[cubic-bezier(0.22,1,0.36,1)]" />
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                 Get in touch
               </span>

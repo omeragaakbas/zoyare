@@ -12,7 +12,9 @@ interface MarqueeProps {
  * Infinite horizontal marquee. Children are rendered twice for a seamless
  * loop. Pure CSS animation (see globals.css) — zero client JS, runs on the
  * compositor thread and pauses on hover. `prefers-reduced-motion` is
- * neutralized by the global reduced-motion block.
+ * neutralized by the global reduced-motion block. The edge fade (`.marquee-fade`)
+ * is a CSS mask that only applies on desktop: on phones a mask over an
+ * animating child costs an offscreen redraw every frame.
  */
 export default function Marquee({
   children,
@@ -21,19 +23,9 @@ export default function Marquee({
   reverse = false,
   fade = true,
 }: MarqueeProps) {
-  const maskStyle = fade
-    ? {
-        maskImage:
-          "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
-      }
-    : undefined;
-
   return (
     <div
-      className={`group relative overflow-hidden ${className}`}
-      style={maskStyle}
+      className={`group relative overflow-hidden${fade ? " marquee-fade" : ""} ${className}`}
     >
       <div
         className="marquee-track flex whitespace-nowrap"

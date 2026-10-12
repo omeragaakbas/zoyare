@@ -18,7 +18,8 @@ const config: Config = {
         surface:    "#EFECE6",
         elevated:   "#E7E3DB",
         border:     "#D9D5CC",
-        muted:      "#8A8680",
+        // Darkened from #8A8680 (3.35:1) to reach WCAG AA 4.5:1 on the cream background.
+        muted:      "#6B6762",
         secondary:  "#5C5854",
         primary:    "#1A1916",
         accent:     "#F15F0E",

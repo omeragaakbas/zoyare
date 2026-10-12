@@ -1,7 +1,3 @@
-"use client";
-
-import { m, useReducedMotion } from "framer-motion";
-
 interface SplitTextProps {
   children: string;
   className?: string;
@@ -11,8 +7,14 @@ interface SplitTextProps {
 }
 
 /**
- * Character-level reveal: each letter slides up + fades + un-blurs.
+ * Character-level reveal: each letter slides up and fades in.
  * Whitespace is preserved by splitting on words first, then chars.
+ *
+ * Server component, pure CSS (`.split-char` in globals.css): no hydration, and
+ * only transform + opacity are animated so it stays on the compositor. The
+ * previous version also animated a blur filter per letter, which repaints
+ * every frame and was a major cost on phones. `prefers-reduced-motion` is
+ * handled globally in globals.css.
  */
 export default function SplitText({
   children,
@@ -20,13 +22,7 @@ export default function SplitText({
   delay = 0,
   stagger = 0.03,
 }: SplitTextProps) {
-  const reduced = useReducedMotion();
   const words = children.split(" ");
-
-  if (reduced) {
-    return <span className={className}>{children}</span>;
-  }
-
   let charIndex = 0;
 
   return (
@@ -40,19 +36,13 @@ export default function SplitText({
           {word.split("").map((char, ci) => {
             const i = charIndex++;
             return (
-              <m.span
+              <span
                 key={`c-${ci}`}
-                className="inline-block"
-                initial={{ y: 32, opacity: 0, filter: "blur(8px)" }}
-                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                transition={{
-                  duration: 0.55,
-                  delay: delay + i * stagger,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
+                className="split-char"
+                style={{ ["--delay" as string]: `${(delay + i * stagger).toFixed(3)}s` }}
               >
                 {char}
-              </m.span>
+              </span>
             );
           })}
           {wi < words.length - 1 && (

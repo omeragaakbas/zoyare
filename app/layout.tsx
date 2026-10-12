@@ -234,14 +234,24 @@ const paletteEntries = [
   })),
 ];
 
+// Progressive enhancement for the scroll reveals (see .reveal / .stagger in
+// globals.css). `js` is added before first paint so reveal targets start hidden
+// only when JavaScript is running; the observer below is a tiny inline script
+// that does NOT wait for React hydration, so content never stays hidden because
+// a JS bundle is slow to arrive. One IntersectionObserver serves the whole site;
+// the MutationObserver picks up content inserted by client-side navigation.
+const JS_FLAG = "document.documentElement.classList.add('js')";
+const REVEAL_OBSERVER = `(function(){var d=document,de=d.documentElement;if(!('IntersectionObserver' in window)){de.classList.remove('js');return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -60px 0px'});var sel='.reveal:not(.is-in),.stagger:not(.is-in)';function scan(r){r.querySelectorAll&&r.querySelectorAll(sel).forEach(function(n){io.observe(n)})}function add(n){if(n.nodeType!==1)return;if(n.matches&&n.matches(sel))io.observe(n);scan(n)}scan(d);new MutationObserver(function(ms){ms.forEach(function(m){m.addedNodes.forEach(add)})}).observe(d.body,{childList:true,subtree:true})})();`;
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${spaceMono.variable} ${instrumentSerif.variable}`} style={{ colorScheme: "light" }}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${spaceMono.variable} ${instrumentSerif.variable}`} style={{ colorScheme: "light" }} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: JS_FLAG }} />
         <meta name="theme-color" content="#F8F6F2" />
         <link
           rel="alternate"
@@ -273,6 +283,7 @@ export default function RootLayout({
           {GA_ID && <CookieConsent />}
         </MotionProvider>
         <Analytics />
+        <script dangerouslySetInnerHTML={{ __html: REVEAL_OBSERVER }} />
       </body>
     </html>
   );

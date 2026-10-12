@@ -128,6 +128,21 @@ body {
   animation: zoyare-blob-2 65s ease-in-out infinite;
 }
 
+/* Phones and tablets: the background stays as a static, flat tint. A
+   permanently animating, blurred, blend-moded full-screen layer forces the GPU
+   to recomposite every frame — the main source of scroll jank on mobile. */
+@media (max-width: 767px), (hover: none) {
+  .zoyare-blob-1,
+  .zoyare-blob-2 {
+    animation: none;
+    will-change: auto;
+    filter: none !important;
+  }
+  .zoyare-grain {
+    display: none;
+  }
+}
+
 /* Infinite micro-animations — pure CSS so they cost zero main-thread work.
    All of these are neutralized globally by the prefers-reduced-motion block. */
 @keyframes zoyare-caret {
@@ -204,14 +219,130 @@ body {
   -webkit-text-stroke: 1px #D9D5CC;
 }
 
+/* ------------------------------------------------------------------ *
+ * Entrance + reveal animations — pure CSS.
+ *
+ * These used to be framer-motion components that rendered opacity:0 into the
+ * HTML, so on a phone the page stayed invisible until the JS bundle had been
+ * downloaded, parsed and hydrated. As CSS they play from the first paint, run
+ * on the compositor (transform + opacity only — never filter/width) and need
+ * no hydration. `backwards` fill-mode is deliberate: it applies the start
+ * state during the delay but leaves NO transform behind afterwards, because a
+ * lingering transform would turn the element into the containing block for
+ * every position:fixed descendant.
+ * ------------------------------------------------------------------ */
+
+/* Route change / first load: the whole page eases in */
+@keyframes zoyare-page-in {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+}
+.page-enter {
+  animation: zoyare-page-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* Hero: generic rise-in. Tune per element with --rise / --dur / --delay. */
+@keyframes zoyare-rise {
+  from { opacity: 0; transform: translate3d(0, var(--rise, 16px), 0); }
+}
+.rise {
+  animation: zoyare-rise var(--dur, 0.6s) cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) backwards;
+}
+
+/* Hero headline: letters slide up and fade in, staggered. No blur — animating
+   `filter` cannot run on the compositor and repaints every frame. */
+@keyframes zoyare-split-in {
+  from { opacity: 0; transform: translate3d(0, 32px, 0); }
+}
+.split-char {
+  display: inline-block;
+  animation: zoyare-split-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) backwards;
+}
+
+/* Hairline that draws itself (scaleX instead of animating width) */
+@keyframes zoyare-grow-x {
+  from { transform: scaleX(0); }
+}
+.grow-x {
+  transform-origin: left center;
+  animation: zoyare-grow-x 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--delay, 0s) backwards;
+}
+
+/* Header logo icon fades in */
+@keyframes zoyare-fade-in {
+  from { opacity: 0; }
+}
+.logo-fade {
+  animation: zoyare-fade-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* Scroll reveal. Content is only hidden when the `js` class is on <html>
+   (set by an inline script in <head>), so without JavaScript — or if the
+   observer script never runs — everything simply stays visible. The shared
+   observer in layout.tsx adds `.is-in` when an element scrolls into view. */
+.js .reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s);
+}
+.js .reveal-left { transform: translate3d(-24px, 0, 0); }
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Staggered children: the container is observed, items cascade in. */
+.js .stagger > .stagger-item {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--i, 0) * 80ms),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--i, 0) * 80ms);
+}
+.js .stagger.is-in > .stagger-item {
+  opacity: 1;
+  transform: none;
+}
+.stagger > .stagger-item:nth-child(2)  { --i: 1; }
+.stagger > .stagger-item:nth-child(3)  { --i: 2; }
+.stagger > .stagger-item:nth-child(4)  { --i: 3; }
+.stagger > .stagger-item:nth-child(5)  { --i: 4; }
+.stagger > .stagger-item:nth-child(6)  { --i: 5; }
+.stagger > .stagger-item:nth-child(7)  { --i: 6; }
+.stagger > .stagger-item:nth-child(8)  { --i: 7; }
+.stagger > .stagger-item:nth-child(n+9) { --i: 8; }
+
+/* Sections below the fold skip layout, style and paint until they scroll near
+   the viewport. The first layout of the homepage used to cover every element
+   on the page (~400 ms on a throttled phone) and was redone each time a web
+   font arrived; this keeps both to the visible part. `auto` in the intrinsic
+   size makes the browser remember the real height once a section was rendered,
+   so the scrollbar and anchors stay stable. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* Marquee edge fade. A mask on an element whose child animates forces an
+   offscreen render surface to be redrawn every frame, so it is desktop-only. */
+@media (min-width: 768px) and (hover: hover) {
+  .marquee-fade {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+}
+
 /* Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
     scroll-behavior: auto !important;
   }
   html { scroll-behavior: auto; }

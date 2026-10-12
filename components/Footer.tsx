@@ -9,7 +9,7 @@ type Props = { year: number };
 export default function Footer({ year }: Props) {
 
   return (
-    <footer className="border-t border-border px-6 md:px-12 py-16">
+    <footer className="cv-auto border-t border-border px-6 md:px-12 py-16">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div>
           <Logo variant="mark" height={20} className="text-primary opacity-40 mb-4" />

@@ -5,6 +5,11 @@
  *  - SVG film grain via een 200×200 tile pattern
  *
  * `prefers-reduced-motion` wordt globaal afgevangen in globals.css.
+ *
+ * Op telefoons/tablets (max-width: 767px of hover: none) staat de achtergrond
+ * stil, zonder blur en zonder ruislaag — zie globals.css. Een permanent
+ * bewegende, geblurde laag over het hele scherm is de grootste bron van
+ * scroll-haperingen op mobiel.
  */
 export default function Background() {
   return (
@@ -42,7 +47,7 @@ export default function Background() {
 
       {/* Film grain overlay — small tiled pattern (cheap to paint) */}
       <svg
-        className="absolute inset-0 w-full h-full opacity-[0.07] mix-blend-multiply"
+        className="zoyare-grain absolute inset-0 w-full h-full opacity-[0.07] mix-blend-multiply"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>

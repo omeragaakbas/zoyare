@@ -1,15 +1,8 @@
-"use client";
-
-import { m } from "framer-motion";
-
+/**
+ * Re-mounts on every navigation, so the page eases in each time. Pure CSS
+ * (`.page-enter` in globals.css): it is part of the server HTML and plays from
+ * the first paint instead of waiting for the JS bundle to hydrate.
+ */
 export default function Template({ children }: { children: React.ReactNode }) {
-  return (
-    <m.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {children}
-    </m.div>
-  );
+  return <div className="page-enter">{children}</div>;
 }

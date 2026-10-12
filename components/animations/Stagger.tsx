@@ -1,48 +1,17 @@
-"use client";
-
-import { m, useInView } from "framer-motion";
-import { useRef } from "react";
-
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const } },
-};
-
 interface StaggerProps {
   children: React.ReactNode;
   className?: string;
 }
 
+/**
+ * Staggered reveal. The container is observed (shared IntersectionObserver in
+ * layout.tsx adds `.is-in`); each `StaggerItem` cascades in via the nth-child
+ * delays in globals.css. Server components, no client JS.
+ */
 export function StaggerContainer({ children, className = "" }: StaggerProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-
-  return (
-    <m.div
-      ref={ref}
-      className={className}
-      variants={container}
-      initial="hidden"
-      animate={isInView ? "show" : "hidden"}
-    >
-      {children}
-    </m.div>
-  );
+  return <div className={`stagger${className ? ` ${className}` : ""}`}>{children}</div>;
 }
 
 export function StaggerItem({ children, className = "" }: StaggerProps) {
-  return (
-    <m.div className={className} variants={item}>
-      {children}
-    </m.div>
-  );
+  return <div className={`stagger-item${className ? ` ${className}` : ""}`}>{children}</div>;
 }

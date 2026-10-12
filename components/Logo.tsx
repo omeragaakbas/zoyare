@@ -1,7 +1,3 @@
-"use client";
-
-import { m } from "framer-motion";
-
 type LogoVariant = "full" | "mark";
 
 interface LogoProps {
@@ -56,21 +52,17 @@ const wordmarkPaths = [
   "M 783.38 457.35 c -0.74 -0.86 -4.55 -6.03 -8.62 -11.32 -29.91 -38.89 -36.55 -47.75 -37.17 -49.23 -0.49 -1.35 2.22 -1.72 14.28 -1.72 l 14.89 0 16.62 22.15 c 9.11 12.18 16.62 22.40 16.62 22.77 0 1.11 -13.91 19.08 -14.77 19.08 -0.37 0 -1.23 -0.74 -1.85 -1.72 z",
 ];
 
-const fadeIn = {
-  hidden: { opacity: 0 },
-  show:   { opacity: 1, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const } },
-};
-
+// The icon fades in via CSS (`.logo-fade`, globals.css) instead of JS animation:
+// the old version rendered opacity="0" into the server HTML, so the header logo
+// stayed invisible until the JS bundle had hydrated. This is now a plain
+// server-renderable component.
 function IconGroup({ animated }: { animated: boolean }) {
-  if (animated) {
-    return (
-      <m.g fill="#f15f0e" transform={ICON_TRANSFORM} variants={fadeIn} initial="hidden" animate="show">
-        {iconPaths.map((d, i) => <path key={i} d={d} />)}
-      </m.g>
-    );
-  }
   return (
-    <g fill="#f15f0e" transform={ICON_TRANSFORM}>
+    <g
+      fill="#f15f0e"
+      transform={ICON_TRANSFORM}
+      className={animated ? "logo-fade" : undefined}
+    >
       {iconPaths.map((d, i) => <path key={i} d={d} />)}
     </g>
   );
