@@ -35,13 +35,51 @@ body {
 ::-webkit-scrollbar-track { background: #F8F6F2; }
 ::-webkit-scrollbar-thumb { background: #D9D5CC; }
 
-/* Display font helper for hero accents */
+/* Taste variant: one family (Reddit Sans). Headings carry size and tight
+   tracking at weight 500, never bold; the accent word keeps the heading's face. */
+:root { --font-display: var(--font-space-grotesk); }
+h1, h2 { font-weight: 500 !important; letter-spacing: -0.03em !important; }
+h3 { font-weight: 500 !important; }
 .font-display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: -0.02em;
+  font-family: var(--font-space-grotesk);
+  font-weight: 500;
+  font-style: normal !important;
+  letter-spacing: inherit;
 }
+h1 .font-display, h2 .font-display { color: inherit; }
+.font-mono { letter-spacing: 0; }
+.font-mono.uppercase { text-transform: none; letter-spacing: 0 !important; font-size: 0.8125rem; }
+
+/* Taste variant, part 2: the pages that stay in Next (portfolio, blog, contact,
+   estimator, legal) take the kit's look: the page edge at 80px like the nav,
+   soft corners, the one filled orange button, a flat ground. */
+@media (min-width: 768px) {
+  main .md\:px-12 { padding-left: 5rem; padding-right: 5rem; }
+}
+main :is(a, button).bg-primary,
+[role="dialog"] button.bg-primary {
+  background-color: #F15F0E;
+  color: #111111;
+  border-radius: 8px;
+  transition: transform 150ms;
+}
+main :is(a, button).bg-primary:hover,
+[role="dialog"] button.bg-primary:hover { transform: translateY(-1px); background-color: #F15F0E; }
+main :is(a, button).bg-primary:active { transform: none; }
+main :is(a, button).bg-primary > span.absolute { display: none; }
+main :is(a, button).bg-primary .group-hover\:text-white { color: #111111; }
+main button.border,
+main a.border,
+main article.border,
+main input.border,
+main textarea.border,
+main span.border,
+main li.border,
+[role="dialog"] > .border,
+.fixed.shadow-2xl,
+.fixed.shadow-lg { border-radius: 8px; }
+main .grid.gap-px { border-radius: 12px; overflow: hidden; }
+.zoyare-blob-1, .zoyare-blob-2 { display: none; }
 
 /* Blog article typography */
 .prose-zoyare h2 {

@@ -1,0 +1,12 @@
+[
+  {
+    "check": "company-number",
+    "target": "KvK 94498555",
+    "reason": "Zoyare is a real registered Dutch company and Dutch law requires the KvK number on the site; the client made it a fixed rule."
+  },
+  {
+    "check": "cut-text",
+    "target": "div.dg-nodes > div.dg-node.dg-node--tile:nth-of-type(1) > span.dg-cap > span.dg-cap__l",
+    "reason": "The kit's own lanes diagram in the kit's own hero frame at 390px; labels were already cut to one word and the kit sizes the tiles, page CSS may not restyle a diagram."
+  }
+]

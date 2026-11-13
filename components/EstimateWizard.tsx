@@ -1,16 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { m, AnimatePresence } from "framer-motion";
 import { contact } from "@/lib/content";
 import { track } from "@/lib/track";
 
-type ServiceKey = "custom" | "api" | "mobile" | "automation";
+type ServiceKey = "agents" | "support" | "creative" | "growth" | "custom" | "api" | "mobile" | "automation";
 
 type Tier = { label: string; detail: string; range: string; time: string };
 
 const SERVICES: { key: ServiceKey; title: string; detail: string }[] = [
+  {
+    key: "agents",
+    title: "AI agents",
+    detail: "Agents that handle orders, leads, documents and reports. People approve anything about money.",
+  },
+  {
+    key: "support",
+    title: "Customer support agent",
+    detail: "Answers from your own order and product data, and hands hard cases to a person.",
+  },
+  {
+    key: "creative",
+    title: "Ad and video production",
+    detail: "One brief becomes static ads, video cuts and captions, each approved before it goes out.",
+  },
+  {
+    key: "growth",
+    title: "Growth reporting",
+    detail: "Orders, payments, ad spend and support data in one place, with one weekly report.",
+  },
   {
     key: "custom",
     title: "Custom software",
@@ -35,6 +55,27 @@ const SERVICES: { key: ServiceKey; title: string; detail: string }[] = [
 
 // Ranges match the published tiers on the service pages — keep them in sync.
 const TIERS: Record<ServiceKey, Tier[]> = {
+  // AI services: build ranges follow the automation tiers (to be confirmed); running costs are quoted separately.
+  agents: [
+    { label: "Pilot agent", detail: "One workflow, people approve each step", range: "€5k – €20k", time: "2–6 weeks" },
+    { label: "Several agents", detail: "Multiple workflows and systems", range: "€20k – €75k", time: "2–4 months" },
+    { label: "Organization-wide", detail: "Many teams, many processes", range: "€75k+", time: "4–12 months" },
+  ],
+  support: [
+    { label: "Pilot on one queue", detail: "One channel, one kind of question", range: "€5k – €20k", time: "2–6 weeks" },
+    { label: "Full support desk", detail: "Several queues, sources and handovers", range: "€20k – €75k", time: "2–4 months" },
+    { label: "Multi-brand or multi-country", detail: "Many teams, languages and systems", range: "€75k+", time: "4–12 months" },
+  ],
+  creative: [
+    { label: "One campaign workflow", detail: "Static ads and captions from one brief", range: "€5k – €20k", time: "2–6 weeks" },
+    { label: "Ads and video", detail: "Several formats, approvals and exports", range: "€20k – €75k", time: "2–4 months" },
+    { label: "Always-on production", detail: "Many brands, markets and channels", range: "€75k+", time: "4–12 months" },
+  ],
+  growth: [
+    { label: "Two sources, one report", detail: "A weekly report from your own data", range: "€5k – €20k", time: "2–6 weeks" },
+    { label: "Full reporting", detail: "Several sources, alerts and a dashboard", range: "€20k – €75k", time: "2–4 months" },
+    { label: "Company-wide data", detail: "Many teams, sources and views", range: "€75k+", time: "4–12 months" },
+  ],
   custom: [
     { label: "Small tool", detail: "One focused workflow or automation", range: "€5k – €20k", time: "2–6 weeks" },
     { label: "Mid-sized system", detail: "Multiple workflows, users and roles", range: "€20k – €75k", time: "2–4 months" },
@@ -118,6 +159,12 @@ export default function EstimateWizard() {
   const [service, setService] = useState<ServiceKey | null>(null);
   const [tier, setTier] = useState<Tier | null>(null);
   const [timeline, setTimeline] = useState<(typeof TIMELINES)[number] | null>(null);
+
+  // A service page links here with ?service=<key>; start on its scale step.
+  useEffect(() => {
+    const key = new URLSearchParams(window.location.search).get("service");
+    if (key && SERVICES.some((s) => s.key === key)) setService(key as ServiceKey);
+  }, []);
 
   const step = service === null ? 0 : tier === null ? 1 : timeline === null ? 2 : 3;
 

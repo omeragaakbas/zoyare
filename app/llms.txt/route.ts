@@ -16,13 +16,17 @@ export function GET() {
 
   const body = `# Zoyare
 
-> Zoyare is a software engineering studio (founded 2024, based in the Netherlands, working worldwide) that builds custom software, API integrations, mobile applications and process automation for businesses that need more than off-the-shelf solutions. Clients work directly with the engineer — no layers of project managers. Fixed quotes after a free intake call.
+> Zoyare is a software engineering studio (founded 2024, based in the Netherlands, working worldwide) that builds and runs AI agents, automations and custom software (integrations, mobile applications, process automation) for companies of 50 to 500 people. Clients work directly with the engineer — no layers of project managers. Fixed quotes after a free intake call.
 
 Contact: hello@zoyare.com — or book a call at https://cal.eu/zoyare
 Typical response time: within 24 hours.
 
 ## Services
 
+- [AI agents](${BASE_URL}/services/ai-agents): Agents that handle orders, leads, documents and reports; people approve anything about money.
+- [AI customer support](${BASE_URL}/services/ai-customer-support): A support agent that answers from your own data and hands hard cases to a person.
+- [Ad and video production](${BASE_URL}/services/creative-production): One brief becomes static ads, video cuts and captions, approved before they go out.
+- [Growth reporting](${BASE_URL}/services/growth-reporting): Orders, payments, ad spend and support data in one weekly report and dashboard.
 - [Custom Software Development](${BASE_URL}/services/custom-software): From requirement to deployment. Small tools from €5k, mid-sized systems €20k–€75k, enterprise platforms €75k+.
 - [API & System Integrations](${BASE_URL}/services/api-integrations): REST APIs, platform connectors, data pipelines. Simple connections from €2.5k.
 - [Mobile Applications](${BASE_URL}/services/mobile-applications): iOS and Android via React Native. MVPs from €15k.

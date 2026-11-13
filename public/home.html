@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="soft" data-ground="sand" data-buttons="solid" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zoyare: AI agents and custom software for Dutch companies</title>
+<meta name="description" content="A Dutch engineering studio that builds and runs AI agents, automations and back-end systems for companies of 50 to 500 people, on a fixed quote.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zoyare: AI agents and custom software for Dutch companies">
+<meta property="og:description" content="AI agents, automations and back-end systems, built and run on a fixed quote.">
+<meta property="og:image" content="/opengraph-image">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f8f6f2">
+<link rel="canonical" href="https://zoyare.com/">
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preload" href="/fonts/RedditSans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/p/kit.css">
+<link rel="stylesheet" href="/assets/motion/motion.css">
+<link rel="modulepreload" href="/assets/system.js"><link rel="modulepreload" href="/assets/motion/motion.js"><style>
+:root {
+  --p-bg: #f8f6f2; --p-surface: #ebe9e5; --p-ink: #1a1916; --p-muted: #656460;
+  --p-accent: #f15f0e; --p-accent-ink: #111111; --p-action: #f15f0e; --p-action-ink: #111111;
+  --p-inv-bg: #1a1916; --p-inv-surface: #272622; --p-inv-ink: #f8f6f2; --p-inv-muted: #9b9996;
+  --p-inv-accent: #f15f0e; --p-inv-accent-ink: #111111; --p-inv-action: #f15f0e; --p-inv-action-ink: #111111;
+  --font-display: "Reddit Sans", system-ui, sans-serif;
+  --font-text: "Reddit Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.04em;
+}
+</style>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<style>
+  /* page CSS: inside visuals only */
+  #services .panel { --p-h: 352px; }
+  #builds .panel { --p-h: 540px; }
+  #process .panel { --p-h: 320px; }
+  #builds .panel { max-width: 100%; overflow: hidden; }
+  #questions .panel { --p-h: 300px; margin-top: var(--s-6); }
+  @media (min-width: 640px) { .faq > .phone-only { display: none; } }
+  @media (max-width: 1023px) { #questions .panel { --p-h: 220px; } }
+  @media (max-width: 1023px) { #builds .panel, #process .panel { --p-h: 300px; } }
+  @media (max-width: 639px) { #services .panel { --p-h: 180px; } #questions { --hm: 2; } #questions .panel { --p-h: 290px; } }
+  .nav__logo img { height: 20px; width: auto; max-width: 132px; display: block; }
+  .app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
+  .app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+  .app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
+  .app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+  .app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
+  @media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+  @media (max-width: 1023px) {
+    .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+    .app > .app__pane--list { max-height: 252px; }
+    .app > .app__pane--list::after { display: none; }
+    .app .ui-win__side { display: none; }
+    .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
+    .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
+  }
+  @media (max-width: 639px) {
+    .app.ui { grid-template-rows: minmax(0, 1fr); }
+    .app > .app__pane--list { display: none; }
+    .app > .app__pane + .app__pane { border-top: 0; }
+  }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://zoyare.com/#organization","name":"Zoyare","url":"https://zoyare.com","logo":{"@type":"ImageObject","url":"https://zoyare.com/apple-icon","width":180,"height":180},"email":"hello@zoyare.com","description":"Dutch engineering studio that builds and runs AI agents, automations and custom software. Based in the Netherlands, working with businesses across the Benelux and worldwide.","foundingDate":"2024","legalName":"Zoyare","identifier":{"@type":"PropertyValue","name":"KvK","value":"94498555"},"address":{"@type":"PostalAddress","addressCountry":"NL"},"knowsLanguage":["nl-NL","en-GB"],"contactPoint":{"@type":"ContactPoint","email":"hello@zoyare.com","url":"https://cal.eu/zoyare","contactType":"customer service","availableLanguage":["English","Dutch"]},"sameAs":["https://www.linkedin.com/company/zoyare/","https://www.instagram.com/zoyarehq/"],"knowsAbout":["AI Agents","Business Process Automation","Custom Software Development","API Integration","Mobile App Development"]},{"@type":"WebSite","@id":"https://zoyare.com/#website","url":"https://zoyare.com","name":"Zoyare","publisher":{"@id":"https://zoyare.com/#organization"},"inLanguage":"en"}]}</script>
+<link rel="alternate" type="application/rss+xml" title="Zoyare Blog" href="/feed.xml">
+</head>
+<body>
+<!-- type: software
+     deal: hero split, nav nav-centre, close close-type, footer footer-dark, rhythm dark-band (dealt: space; changed
+     because the brief asks for dark blocks with system visuals), buttons solid, mark: the client's own logo,
+     palette: the client's own colours through start.mjs brand, type reddit
+     moments: counter-rolls as the last row of #process (iris-opens was dealt too and is not used) -->
+
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="#top"><img src="logo-light.svg" alt="Zoyare"></a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="/services">Services</a></div>
+      <div class="nav__item"><a class="nav__link" href="#process">Process</a></div>
+      <div class="nav__item"><a class="nav__link" href="#builds">Builds</a></div>
+      <div class="nav__item"><a class="nav__link" href="#questions">Questions</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="/estimate">Get a price indication</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="hero-text grid hero-split">
+        <div class="hero-copy span-6">
+          <h1 id="hero-h">AI agents and software for Dutch companies</h1>
+          <p class="t-lead">Zoyare builds the agents, automations and back-end systems that take repeat work off your team, and runs them if you want. You get a fixed quote within 48 hours.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="/estimate">Get a price indication<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+            <a class="btn btn--secondary" href="#services">See the services</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>Intake call</dt><dd>30 minutes, free</dd></div>
+            <div><dt>Quote</dt><dd>Fixed, in 48 hours</dd></div>
+            <div><dt>Code</dt><dd>Yours at handover</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual frame frame--lit span-6 start-7" data-ui-cycles="3" role="img" aria-label="Mail from a support inbox goes to an agent, which drafts a reply, updates the order and adds a lead in parallel.">
+          <div class="dg" data-diagram><script type="application/json">{"layout":"lanes","alt":"Mail from a support inbox goes to an agent, which drafts a reply, updates the order and adds a lead in parallel.","input":{"label":"Inbox","icon":"gmail"},"core":{"label":"Agent","icon":"ui:bot"},"lanes":[{"label":"Reply","icon":"ui:pen-line","done":true,"sub":"Drafted"},{"label":"Order","icon":"shopify","done":true,"sub":"Updated"},{"label":"Lead","icon":"hubspot","done":true,"sub":"Added"}]}</script></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="inbox" aria-labelledby="inbox-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <h2 class="span-5" id="inbox-h">One inbox where agents answer and people approve</h2>
+        <p class="span-6 start-7">A customer asks, the agent looks up the order and writes the reply. Anything about money or an exception waits for a person. This window is an example workspace. <a class="link" href="/services/ai-customer-support">Read how the support agent works</a></p>
+      </div>
+      <div class="ui app fill" role="img" aria-label="An example support workspace: a list of customer conversations beside one open conversation that an agent answered." data-ui-pause-host>
+        <div class="app__pane app__pane--list">
+          <div class="ui ui-panel ui-win" data-ui="window" data-open="Open" data-work="Working" data-done="Replied">
+            <div class="ui-win__bar">
+              <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="ui-win__crumb">Example workspace <i>/</i> <b>Open</b></span>
+              <span class="ui-spacer"></span>
+              <span class="ui-win__search" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><span class="ui-win__ph">Search</span><span class="ui-kbd">/</span></span>
+            </div>
+            <div class="ui-win__body">
+              <nav class="ui-win__side" aria-hidden="true">
+                <span class="ui-win__nav is-on"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M2.5 9h3l1 1.5h3l1-1.5h3"/><path d="M2.5 9 4 3.5h8L13.5 9v3.5h-11z"/></svg>Open<em>19</em></span>
+                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="8" cy="6" r="2.5"/><path d="M3.5 13.5c.6-2.3 2.4-3.5 4.5-3.5s3.9 1.2 4.5 3.5"/></svg>Approve<em>4</em></span>
+                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><circle cx="8" cy="8" r="5.5"/><path d="M8 5v3l2 1.5"/></svg>Waiting<em>2</em></span>
+                <span class="ui-win__nav"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg>Solved</span>
+                <span class="ui-win__label">Queues</span>
+                <span class="ui-win__nav"><span class="ui-win__hash">#</span>Orders</span>
+                <span class="ui-win__nav"><span class="ui-win__hash">#</span>Invoices</span>
+              </nav>
+              <div class="ui-win__main">
+                <div class="ui-win__cols" aria-hidden="true"><span>Customer</span><span>Subject</span><span>Status</span><span>Age</span></div>
+                <ul class="ui-win__rows">
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">SV</span><span class="ui-win__who">Sanne de Vries</span><span class="ui-win__sub">Where is order 2291?</span><span class="ui-win__st" data-st>Open</span><span class="ui-win__age">1m</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">DB</span><span class="ui-win__who">Daan Bakker</span><span class="ui-win__sub">Change delivery day</span><span class="ui-win__st" data-st>Open</span><span class="ui-win__age">4m</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">FJ</span><span class="ui-win__who">Fleur Jansen</span><span class="ui-win__sub">Copy of invoice 1184</span><span class="ui-win__st" data-st>Open</span><span class="ui-win__age">9m</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">RM</span><span class="ui-win__who">Ruben Meijer</span><span class="ui-win__sub">Refund over 500 euro</span><span class="ui-win__st is-you" data-st>Needs you</span><span class="ui-win__age">14m</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">IV</span><span class="ui-win__who">Iris Visser</span><span class="ui-win__sub">Add a user to the portal</span><span class="ui-win__st is-done" data-st>Solved</span><span class="ui-win__age">21m</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="3">TS</span><span class="ui-win__who">Thijs Smit</span><span class="ui-win__sub">Stock of item 40-112</span><span class="ui-win__st is-done" data-st>Solved</span><span class="ui-win__age">26m</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="1">NK</span><span class="ui-win__who">Noor Kok</span><span class="ui-win__sub">Quote for 200 units</span><span class="ui-win__st is-you" data-st>Needs you</span><span class="ui-win__age">33m</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="4">LP</span><span class="ui-win__who">Lars Peters</span><span class="ui-win__sub">Wrong pallet delivered</span><span class="ui-win__st" data-st>Open</span><span class="ui-win__age">41m</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="2">EH</span><span class="ui-win__who">Eva Hendriks</span><span class="ui-win__sub">New billing address</span><span class="ui-win__st is-done" data-st>Solved</span><span class="ui-win__age">48m</span></li>
+                  <li class="ui-win__row" data-row><span class="ui-avatar" data-tone="5">MB</span><span class="ui-win__who">Milan Bos</span><span class="ui-win__sub">Track and trace link</span><span class="ui-win__st is-done" data-st>Solved</span><span class="ui-win__age">55m</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app__pane app__pane--open" data-ui-cycles="3">
+          <div class="ui ui-panel ui-chat" data-ui="chat">
+            <div class="ui-head">
+              <span class="ui-agent" aria-hidden="true"></span>
+              <div class="ui-title">Support agent</div>
+              <span class="ui-chat__online">Online</span>
+              <span class="ui-spacer"></span>
+            </div>
+            <div class="ui-chat__body">
+              <div class="ui-chat__day">Today, 9:41</div>
+              <div class="ui-msg ui-msg--me" data-chat-q><span class="ui-msg__text">Where is order 2291? It should have arrived on Tuesday.</span></div>
+              <div class="ui-msg ui-msg--bot" data-chat-a>
+                <span class="ui-agent ui-msg__av" aria-hidden="true"></span>
+                <span class="ui-msg__col">
+                  <span class="ui-chat__typing" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="ui-chat__answer">It left the warehouse on Monday and is at the depot in Utrecht. The carrier delivers it <b>tomorrow before 12:00</b>.</span>
+                  <span class="ui-chat__srcs"><span class="ui-chat__src"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg>Order 2291</span><span class="ui-chat__src"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg>Carrier status</span></span>
+                </span>
+              </div>
+              <div class="ui-msg ui-msg--me"><span class="ui-msg__text">Can you send the tracking link to my colleague too?</span></div>
+              <div class="ui-msg ui-msg--bot">
+                <span class="ui-agent ui-msg__av" aria-hidden="true"></span>
+                <span class="ui-msg__col"><span class="ui-chat__answer">Done. I sent it to the second contact on your account.</span></span>
+              </div>
+              <div class="ui-msg ui-msg--me"><span class="ui-msg__text">Thanks. One more thing: can we move next week's delivery to Thursday?</span></div>
+              <div class="ui-msg ui-msg--bot">
+                <span class="ui-agent ui-msg__av" aria-hidden="true"></span>
+                <span class="ui-msg__col"><span class="ui-chat__answer">Thursday is free for your route. I changed the delivery day and confirmed it by email.</span></span>
+              </div>
+            </div>
+            <div class="ui-chat__input"><span class="ui-chat__ph">Write a message</span><span class="ui-chat__send" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13V3.5M3.8 7.5 8 3.3l4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section g2" id="services" aria-labelledby="services-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head">
+          <h2 id="services-h">Four jobs Zoyare takes over. <span class="muted">Start with one, add the next when it earns its place.</span></h2>
+        </div>
+        <div class="grid">
+          <article class="card card--row card--open span-6">
+            <h3><a href="/services/ai-agents">Agents for repeat work</a></h3>
+            <p>Order updates, lead routing and weekly reports run without anyone copying data between systems.</p>
+            <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:40px;--ay-sm:16px">
+<div class="ui ui-panel ui-checks" data-ui="checklist">
+  <div class="ui-checks__head"><div class="ui-title">Order 2291</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>3 of 5</div></div>
+  <div class="ui-checks__bar"><i data-checks-bar style="--k:0.6"></i></div>
+  <ul class="ui-checks__list">
+    <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Match the payment</span></li>
+    <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Reserve 12 units of stock</span></li>
+    <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Print the shipping label</span></li>
+    <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Tell the customer the day</span></li>
+    <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Send the invoice</span></li>
+  </ul>
+</div>
+            </div></div>
+            </div>
+          </article>
+          <article class="card card--row card--open span-6">
+            <h3><a href="/services/ai-customer-support">Customer support agent</a></h3>
+            <p>An agent replies from your own order and product data and hands the hard cases to a person.</p>
+            <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:400px;--ax:max(24px, 50% - 200px);--ay:48px;--ay-sm:16px">
+                <div class="ui ui-notify" data-ui="notify">
+                  <ul class="ui-notify__list" data-notify-list>
+                    <li class="ui-note"><span class="ui-agent ui-note__av" aria-hidden="true"></span><span class="ui-note__text"><span class="ui-note__title">Agent handed you a conversation<time>now</time></span><span class="ui-note__body">Ruben Meijer asks for a refund over 500 euro</span></span><span class="ui-btn ui-btn--sm ui-note__btn">Open</span></li>
+                    <li class="ui-note"><span class="ui-avatar ui-note__av" data-tone="5">IV</span><span class="ui-note__text"><span class="ui-note__title">Iris Visser took over<time>4m</time></span><span class="ui-note__body">Order 2267, wrong pallet delivered</span></span></li>
+                    <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">Conversations solved this hour<time>12m</time></span><span class="ui-note__body">Order and invoice questions, none reopened</span></span></li>
+                  </ul>
+                </div>
+              </div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card card--row card--open span-6">
+          <h3><a href="/services/creative-production">Ad and video production</a></h3>
+          <p>One brief becomes on-brand static ads, cut-downs and captions, each checked before it goes out.</p>
+          <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:400px;--ax:max(24px, 50% - 200px);--ay:40px;--ay-sm:16px">
+                <div class="ui ui-panel ui-chat" data-ui="chat">
+                  <div class="ui-head"><span class="ui-agent" aria-hidden="true"></span><div class="ui-title">Creative agent</div><span class="ui-chat__online">Online</span><span class="ui-spacer"></span></div>
+                  <div class="ui-chat__body">
+                    <div class="ui-msg ui-msg--me" data-chat-q><span class="ui-msg__text">Make the spring sale ads from this brief.</span></div>
+                    <div class="ui-msg ui-msg--bot" data-chat-a>
+                      <span class="ui-agent ui-msg__av" aria-hidden="true"></span>
+                      <span class="ui-msg__col">
+                        <span class="ui-chat__typing" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <span class="ui-chat__answer">Ready: <b>12 statics in two sizes</b> and six story cuts with captions. They wait for your approval.</span>
+                        <span class="ui-chat__srcs"><span class="ui-chat__src"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg>Brand guide</span></span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="ui-chat__input"><span class="ui-chat__ph">Write a message</span><span class="ui-chat__send" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13V3.5M3.8 7.5 8 3.3l4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                </div>
+            </div></div>
+            </div>
+        </article>
+        <article class="card card--row card--open span-6">
+          <h3><a href="/services/growth-reporting">Growth reports from your data</a></h3>
+          <p>Orders, payments, ad spend and support data land in one place, with one report your team reads.</p>
+          <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:420px;--ax:max(24px, 50% - 210px);--ay:40px;--ay-sm:16px">
+<div class="ui ui-panel ui-stat" data-ui="stat" data-from="374" data-to="412" data-suffix="">
+  <div class="ui-stat__head">
+    <div class="ui-stat__top"><span class="ui-stat__label">Orders this week</span><span class="ui-stat__range">Last 14 days<svg class="ui-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 6.5 3.5 3.5 3.5-3.5"/></svg></span></div>
+    <div class="ui-stat__line"><span class="ui-stat__num" data-stat-num>412</span><span class="ui-chip ui-chip--plain ui-stat__delta"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 9.5v-7M3 5.5l3-3 3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>38</span><span class="ui-stat__sub">vs. the week before</span></div>
+  </div>
+  <div class="ui-stat__chart">
+    <svg class="ui-stat__svg" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path class="ui-stat__grid" d="M0 30.5H400M0 60.5H400M0 90.5H400"/><path class="ui-stat__cover" fill-rule="evenodd" d=""/><g class="ui-stat__bars"><rect rx="3" x="0.00" y="49.04" width="21.14" height="70.96"/><rect rx="3" x="29.14" y="40.86" width="21.14" height="79.14"/><rect rx="3" x="58.29" y="44.95" width="21.14" height="75.05"/><rect rx="3" x="87.43" y="36.76" width="21.14" height="83.24"/><rect rx="3" x="116.57" y="42.22" width="21.14" height="77.78"/><rect rx="3" x="145.72" y="34.04" width="21.14" height="85.96"/><rect rx="3" x="174.86" y="38.13" width="21.14" height="81.87"/><rect rx="3" x="204.00" y="29.94" width="21.14" height="90.06"/><rect rx="3" x="233.14" y="35.40" width="21.14" height="84.60"/><rect rx="3" x="262.29" y="25.85" width="21.14" height="94.15"/><rect rx="3" x="291.43" y="31.31" width="21.14" height="88.69"/><rect rx="3" x="320.57" y="23.12" width="21.14" height="96.88"/><rect rx="3" x="349.72" y="27.21" width="21.14" height="92.79"/><rect rx="3" x="378.86" y="16.30" width="21.14" height="103.70"/></g></svg>
+    <div class="ui-stat__axis" aria-hidden="true"><span>Two weeks ago</span><span>Last week</span><span>Today</span></div>
+  </div>
+</div>
+            </div></div>
+            </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="section" id="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="process-h">Four steps to a running system. <span class="muted">The price is fixed after the second.</span></h2>
+      </div>
+      <div class="grid grid--top">
+        <ol class="rows span-5">
+          <li><span class="rows__name">Intake call</span><p>Thirty minutes on the problem, free and without a pitch.</p></li>
+          <li><span class="rows__name">Fixed quote</span><p>Scope, timeline and price within 48 hours.</p></li>
+          <li><span class="rows__name">First workflow live</span><p>Short sprints. Risky actions wait for a person to approve them.</p></li>
+          <li><span class="rows__name">Handover or run</span><p>You take the code and runbooks, or Zoyare keeps it running.</p></li>
+        </ol>
+        <div class="panel span-6 start-7" role="img" aria-label="A list of what the agent may do by itself and what waits for a person.">
+          <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:380px;--ax:max(24px, 50% - 190px);--ay:48px;--ay-sm:16px">
+<div class="ui ui-panel ui-toggles" data-ui="toggles">
+  <div class="ui-head"><svg class="ui-icon ui-toggles__ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8 13 4v3.6c0 3-2.1 5.4-5 6.6-2.9-1.2-5-3.6-5-6.6V4z"/><path d="m5.8 8 1.6 1.6 3-3.2"/></svg><div class="ui-title">What the agent may do</div><span class="ui-spacer"></span><div class="ui-meta" data-tg-count>3 of 5 on</div></div>
+  <ul class="ui-toggles__list">
+    <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">Answer order questions</span><span class="ui-tg__sub">From your own order data</span></span><button class="ui-switch is-on" type="button" role="switch" aria-checked="true" aria-label="Answer order questions"><i></i></button></li>
+    <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">Change a delivery day</span><span class="ui-tg__sub">Before the order ships</span></span><button class="ui-switch is-on" type="button" role="switch" aria-checked="true" aria-label="Change a delivery day"><i></i></button></li>
+    <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">Refund a customer</span><span class="ui-tg__sub">Always asks a person first</span></span><button class="ui-switch" type="button" role="switch" aria-checked="false" aria-label="Refund a customer"><i></i></button></li>
+    <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">Send invoice copies</span><span class="ui-tg__sub">To contacts on the account</span></span><button class="ui-switch is-on" type="button" role="switch" aria-checked="true" aria-label="Send invoice copies"><i></i></button></li>
+    <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">Change a price</span><span class="ui-tg__sub">Never without approval</span></span><button class="ui-switch" type="button" role="switch" aria-checked="false" aria-label="Change a price"><i></i></button></li>
+  </ul>
+</div>
+            </div></div>
+        </div>
+      </div>
+      <div class="grid" data-moment="counter-rolls" style="margin-top: var(--s-7)">
+        <div class="span-3"><p class="t-stat">30</p><p class="t-small muted">minutes for the free intake call</p></div>
+        <div class="span-3"><p class="t-stat">48</p><p class="t-small muted">hours until the fixed quote</p></div>
+        <div class="span-3"><p class="t-stat">8</p><p class="t-small muted">case studies in the portfolio</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-inverse" id="builds" aria-labelledby="builds-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-5 stack-6">
+          <div class="section-head">
+            <h2 id="builds-h">Back-end systems and integrations you own</h2>
+            <p>When a ready-made tool does not fit, Zoyare builds the system in your environment. You keep the code and the runbooks.</p>
+          </div>
+          <ul class="rows">
+            <li><a class="rows__name link" href="/services/custom-software">Custom software</a><p>Portals, internal tools and dashboards.</p></li>
+            <li><a class="rows__name link" href="/services/api-integrations">APIs and integrations</a><p>Systems that do not talk, connected.</p></li>
+            <li><a class="rows__name link" href="/services/mobile-applications">Mobile applications</a><p>iOS and Android apps people keep using.</p></li>
+            <li><a class="rows__name link" href="/services/process-automation">Process automation</a><p>Manual weekly work, automated.</p></li>
+          </ul>
+        </div>
+        <div class="panel span-6 start-7" role="img" aria-label="One API reads and writes a database, a cache, a queue, payments and monitoring.">
+          <div class="dg" data-diagram="hub-stack" data-dg-still></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="questions" aria-labelledby="questions-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-5 section-head">
+          <h2 id="questions-h">Questions</h2>
+          <p>What buyers ask before the intake call.</p>
+          <p><a class="link" href="/faq">Read all questions</a></p>
+          <div class="panel" role="img" aria-label="A list of connected apps: mail, shop, help pages and tickets."><div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:380px;--ax:max(24px, 50% - 190px);--ay:32px;--ay-sm:16px">
+<div class="ui ui-panel ui-apps" data-ui="integrations">
+  <div class="ui-head"><div class="ui-title">Connected apps</div><span class="ui-spacer"></span><div class="ui-meta" data-apps-count>3 connected</div></div>
+  <ul class="ui-apps__list">
+    <li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img src="assets/ui/icons/gmail.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">Gmail</span><span class="ui-app__sub">Answers the support inbox</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">Connected</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Connect</span></button></span></li>
+    <li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img src="assets/ui/icons/shopify.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">Shopify</span><span class="ui-app__sub">Looks up orders and stock</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">Connected</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Connect</span></button></span></li>
+    <li class="ui-app" data-apps-target><span class="ui-logo ui-logo--sm"><img src="assets/ui/icons/notion.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">Notion</span><span class="ui-app__sub">Learns from your help pages</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">Connected</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Connect</span></button></span></li>
+    <li class="ui-app is-on"><span class="ui-logo ui-logo--sm"><img src="assets/ui/icons/zendesk.svg" alt=""></span><span class="ui-app__text"><span class="ui-app__name">Zendesk</span><span class="ui-app__sub">Reads and answers tickets</span></span><span class="ui-app__state"><span class="ui-chip ui-app__on">Connected</span><button class="ui-btn ui-btn--ghost ui-btn--sm ui-app__connect" type="button"><span class="ui-spin ui-app__spin" aria-hidden="true"></span><span>Connect</span></button></span></li>
+  </ul>
+</div>
+            </div></div></div>
+        </div>
+        <div class="faq span-6 start-7">
+          <div class="faq__item" id="prices"><h3>What does custom software cost?</h3><p>A small automation costs &euro;5K to &euro;20K, a mid-sized system &euro;20K to &euro;75K and a platform from &euro;75K. Running it afterwards is priced in the quote.</p></div>
+          <div class="faq__item"><h3>Who owns the code and the workflows?</h3><p>You do. At handover you get the code, the documentation and the runbooks, and any developer can continue with them.</p></div>
+          <div class="faq__item"><h3>Who runs the agents after launch?</h3><p>Your choice. Zoyare can run and monitor it for you, or hand it to your own team with a runbook.</p></div>
+          <div class="faq__item"><h3>What can an agent decide by itself?</h3><p>Only what you approve up front. Refunds, prices and exceptions wait for a person, and every action is logged.</p></div>
+          <div class="faq__item phone-only"><h3>Can agents connect to the tools we use?</h3><p>Yes, when the tool has an API or an export. The quote lists every connection, so you know what is in scope.</p></div>
+          <div class="faq__item phone-only"><h3>How fast can the first agent go live?</h3><p>A small automation is live in 2 to 6 weeks after the quote is signed. The timeline is fixed in the quote.</p></div>
+          <div class="faq__item"><h3>Where is our data stored?</h3><p>On EU hosting, under a Dutch contract. Access is agreed per source before anything is connected.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Know the cost before the first call</h2>
+        <p class="t-small muted">Three questions, an honest range, and a fixed quote within 48 hours of the intake.</p>
+      </div>
+      <a class="btn btn--primary btn--xl btn--wide" href="/estimate">Get a price indication<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top"><img src="logo.svg" alt="Zoyare"></a>
+          <p class="footer__lede">Dutch engineering studio for AI agents, automations and custom software.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>Services</h3><ul><li><a href="/services/ai-agents">AI agents</a></li><li><a href="/services/ai-customer-support">Customer support</a></li><li><a href="/services/creative-production">Ads and video</a></li><li><a href="/services/growth-reporting">Growth reports</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Builds</h3><ul><li><a href="/services/custom-software">Custom software</a></li><li><a href="/services/api-integrations">Integrations</a></li><li><a href="/services/mobile-applications">Mobile apps</a></li><li><a href="/services/process-automation">Automation</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Company</h3><ul><li><a href="/about">About</a></li><li><a href="/portfolio">Portfolio</a></li><li><a href="/blog">Blog</a></li><li><a href="/software-development-netherlands">Netherlands</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Contact</h3><ul><li><a href="/contact">Contact</a></li><li><a href="/estimate">Estimator</a></li><li><a href="/faq">Questions</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Zoyare &nbsp; <a href="/privacy">Privacy</a> &nbsp; <a href="/terms">Terms</a></span>
+        <span>KvK 94498555</span>
+        <div class="socials"></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/system.js"></script>
+<script defer src="/site-config.js"></script>
+<script defer src="/site-shell.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script type="module" src="assets/diagrams/mount.js"></script>
+</body>
+</html>

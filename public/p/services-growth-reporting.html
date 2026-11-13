@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en" data-type="software" data-radius="soft" data-ground="sand" data-buttons="solid" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Growth reports and dashboards from your own data | Zoyare</title>
+<meta name="description" content="Orders, payments, ad spend and support data in one place, with one weekly report and a dashboard your team reads. Built by Zoyare for Dutch companies.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Growth reports and dashboards from your own data | Zoyare">
+<meta property="og:description" content="Orders, payments, ad spend and support data in one place, with one weekly report and a dashboard your team reads. Built by Zoyare for Dutch companies.">
+<meta property="og:image" content="/opengraph-image">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#f8f6f2">
+<link rel="canonical" href="https://zoyare.com/services/growth-reporting">
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preload" href="/fonts/RedditSans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/p/kit.css">
+<link rel="stylesheet" href="/assets/motion/motion.css">
+<link rel="modulepreload" href="/assets/system.js"><link rel="modulepreload" href="/assets/motion/motion.js">
+<style>
+:root {
+  --p-bg: #f8f6f2; --p-surface: #ebe9e5; --p-ink: #1a1916; --p-muted: #656460;
+  --p-accent: #f15f0e; --p-accent-ink: #111111; --p-action: #f15f0e; --p-action-ink: #111111;
+  --p-inv-bg: #1a1916; --p-inv-surface: #272622; --p-inv-ink: #f8f6f2; --p-inv-muted: #9b9996;
+  --p-inv-accent: #f15f0e; --p-inv-accent-ink: #111111; --p-inv-action: #f15f0e; --p-inv-action-ink: #111111;
+  --font-display: "Reddit Sans", system-ui, sans-serif;
+  --font-text: "Reddit Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 500;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.04em;
+}
+</style>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="/assets/backgrounds/backgrounds.js"></script>
+<style>
+  /* page CSS: inside visuals only */
+  main .section .panel { --p-h: 440px; }
+  main .section:has([data-moment]) .panel { --p-h: 320px; }
+  main .section.ground-inverse .panel { --p-h: 540px; max-width: 100%; overflow: hidden; }
+  main .section .section-head .panel, main .section .span-5 > .panel { --p-h: 300px; margin-top: var(--s-6); }
+  @media (max-width: 1023px) { main .section .panel, main .section.ground-inverse .panel { --p-h: 300px; } main .section .span-5 > .panel { --p-h: 220px; } }
+  @media (min-width: 640px) { .faq > .phone-only { display: none; } }
+  @media (max-width: 639px) { main .section .span-5 > .panel { --p-h: 290px; } }
+  .nav__logo img { height: 20px; width: auto; max-width: 132px; display: block; }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://zoyare.com/#organization","name":"Zoyare","url":"https://zoyare.com","logo":{"@type":"ImageObject","url":"https://zoyare.com/apple-icon","width":180,"height":180},"email":"hello@zoyare.com","description":"Dutch engineering studio that builds and runs AI agents, automations and custom software. Based in the Netherlands, working with businesses across the Benelux and worldwide.","foundingDate":"2024","legalName":"Zoyare","identifier":{"@type":"PropertyValue","name":"KvK","value":"94498555"},"address":{"@type":"PostalAddress","addressCountry":"NL"},"knowsLanguage":["nl-NL","en-GB"],"contactPoint":{"@type":"ContactPoint","email":"hello@zoyare.com","url":"https://cal.eu/zoyare","contactType":"customer service","availableLanguage":["English","Dutch"]},"sameAs":["https://www.linkedin.com/company/zoyare/","https://www.instagram.com/zoyarehq/"],"knowsAbout":["AI Agents","Business Process Automation","Custom Software Development","API Integration","Mobile App Development"]},{"@type":"WebSite","@id":"https://zoyare.com/#website","url":"https://zoyare.com","name":"Zoyare","publisher":{"@id":"https://zoyare.com/#organization"},"inLanguage":"en"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do we need a data team for this?","acceptedAnswer":{"@type":"Answer","text":"No. Zoyare builds and runs the pipeline, and the report arrives as a message your team can read."}},{"@type":"Question","name":"Can we keep our current dashboard tool?","acceptedAnswer":{"@type":"Answer","text":"Yes. The data lands in a database any dashboard tool can read."}},{"@type":"Question","name":"Can agents connect to the tools we use?","acceptedAnswer":{"@type":"Answer","text":"Yes, when the tool has an API or an export. The quote lists every connection, so you know what is in scope."}},{"@type":"Question","name":"Who owns the code and the workflows?","acceptedAnswer":{"@type":"Answer","text":"You do. At handover you get the code, the documentation and the runbooks, and any developer can continue with them."}},{"@type":"Question","name":"How fast can the first agent go live?","acceptedAnswer":{"@type":"Answer","text":"A small automation is live in 2 to 6 weeks after the quote is signed. The timeline is fixed in the quote."}},{"@type":"Question","name":"Where is our data stored?","acceptedAnswer":{"@type":"Answer","text":"On EU hosting, under a Dutch contract. Access is agreed per source before anything is connected."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Growth reporting","description":"Orders, payments, ad spend and support data in one place, with one weekly report and a dashboard your team reads. Built by Zoyare for Dutch companies.","serviceType":"Growth reporting","url":"https://zoyare.com/services/growth-reporting","areaServed":{"@type":"Country","name":"Netherlands"},"provider":{"@type":"Organization","@id":"https://zoyare.com/#organization","name":"Zoyare","url":"https://zoyare.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://zoyare.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://zoyare.com/services"},{"@type":"ListItem","position":3,"name":"Growth reports","item":"https://zoyare.com/services/growth-reporting"}]}</script>
+</head>
+<body>
+<!-- type: software. Built by scripts/taste/build.cjs with the homepage's deal:
+     hero split, nav nav-centre, close close-type, footer footer-dark, buttons solid, type reddit,
+     moment counter-rolls. Edit the data in scripts/taste, not this file. -->
+
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="/"><img src="/logo-light.svg" alt="Zoyare"></a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="/services" aria-current="page">Services</a></div>
+      <div class="nav__item"><a class="nav__link" href="/portfolio">Portfolio</a></div>
+      <div class="nav__item"><a class="nav__link" href="/about">About</a></div>
+      <div class="nav__item"><a class="nav__link" href="/blog">Blog</a></div>
+      <div class="nav__item"><a class="nav__link" href="/contact">Contact</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="/estimate">Get a price indication</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="hero-text grid hero-split">
+        <div class="hero-copy span-6">
+          <h1 id="hero-h">Growth reports and dashboards from your own data</h1>
+          <p class="t-lead">Zoyare connects your shop, payments, ad accounts and support tool, and sends one report your team reads. The figures are yours, in your own database.</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="/estimate">Get a price indication<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+            <a class="btn btn--secondary" href="/services">See all services</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>Intake call</dt><dd>30 minutes, free</dd></div>
+            <div><dt>Quote</dt><dd>Fixed, in 48 hours</dd></div>
+            <div><dt>Code</dt><dd>Yours at handover</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual frame frame--lit span-6 start-7" data-ui-cycles="3" role="img" aria-label="One report reads orders, payments, ad spend, support, customers and stock.">
+          <div class="dg" data-diagram><script type="application/json">{"layout":"hub","alt":"One report reads orders, payments, ad spend, support, customers and stock.","center":{"label":"Report","icon":"ui:chart-column"},"spokes":[{"label":"Orders","icon":"ui:package"},{"label":"Payments","icon":"ui:credit-card"},{"label":"Ad spend","icon":"ui:banknote"},{"label":"Support","icon":"ui:message-square"},{"label":"Customers","icon":"ui:users"},{"label":"Stock","icon":"ui:database"}]}</script></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="scope" aria-labelledby="scope-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="scope-h">Five things you get. <span class="muted">One set of figures everyone trusts.</span></h2>
+      </div>
+      <div class="grid grid--top">
+        <div class="span-5 stack-6">
+          <ul class="rows">
+            <li><span class="rows__name">One database</span><p>Every source lands in one place, on EU hosting.</p></li>
+            <li><span class="rows__name">Weekly report</span><p>The same figures each Monday, written in plain words.</p></li>
+            <li><span class="rows__name">Spend against revenue</span><p>Ad spend beside the orders it brought in.</p></li>
+            <li><span class="rows__name">Alerts</span><p>A message when a figure leaves the range you set.</p></li>
+            <li><span class="rows__name">Dashboard</span><p>A live view for the team, with no licence per user.</p></li>
+          </ul>
+          
+        </div>
+        <div class="panel span-6 start-7" role="img" aria-label="An example chart of orders over the last fourteen days.">
+          <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:420px;--ax:max(24px, 50% - 210px);--ay:40px;--ay-sm:16px">
+<div class="ui ui-panel ui-stat" data-ui="stat" data-from="374" data-to="412" data-suffix="">
+  <div class="ui-stat__head">
+    <div class="ui-stat__top"><span class="ui-stat__label">Orders this week, example</span><span class="ui-stat__range">Last 14 days<svg class="ui-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m4.5 6.5 3.5 3.5 3.5-3.5"/></svg></span></div>
+    <div class="ui-stat__line"><span class="ui-stat__num" data-stat-num>412</span><span class="ui-chip ui-chip--plain ui-stat__delta"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 9.5v-7M3 5.5l3-3 3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>38</span><span class="ui-stat__sub">vs. the week before</span></div>
+  </div>
+  <div class="ui-stat__chart">
+    <svg class="ui-stat__svg" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path class="ui-stat__grid" d="M0 30.5H400M0 60.5H400M0 90.5H400"/><path class="ui-stat__cover" fill-rule="evenodd" d=""/><g class="ui-stat__bars"><rect rx="3" x="0.00" y="49.04" width="21.14" height="70.96"/><rect rx="3" x="29.14" y="40.86" width="21.14" height="79.14"/><rect rx="3" x="58.29" y="44.95" width="21.14" height="75.05"/><rect rx="3" x="87.43" y="36.76" width="21.14" height="83.24"/><rect rx="3" x="116.57" y="42.22" width="21.14" height="77.78"/><rect rx="3" x="145.72" y="34.04" width="21.14" height="85.96"/><rect rx="3" x="174.86" y="38.13" width="21.14" height="81.87"/><rect rx="3" x="204.00" y="29.94" width="21.14" height="90.06"/><rect rx="3" x="233.14" y="35.40" width="21.14" height="84.60"/><rect rx="3" x="262.29" y="25.85" width="21.14" height="94.15"/><rect rx="3" x="291.43" y="31.31" width="21.14" height="88.69"/><rect rx="3" x="320.57" y="23.12" width="21.14" height="96.88"/><rect rx="3" x="349.72" y="27.21" width="21.14" height="92.79"/><rect rx="3" x="378.86" y="16.30" width="21.14" height="103.70"/></g></svg>
+    <div class="ui-stat__axis" aria-hidden="true"><span>Two weeks ago</span><span>Last week</span><span>Today</span></div>
+  </div>
+</div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sources" aria-labelledby="sources-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="sources-h">Sources the report reads. <span class="muted">Each one is agreed before it is connected.</span></h2>
+      </div>
+      <div class="grid grid--top">
+        <div class="span-5 stack-6">
+          <ul class="rows">
+            <li><span class="rows__name">Shop and orders</span><p>Orders, returns and stock from your shop or ERP.</p></li>
+            <li><span class="rows__name">Payments</span><p>Paid, open and refunded amounts from your payment provider.</p></li>
+            <li><span class="rows__name">Ad accounts</span><p>Spend and results per campaign.</p></li>
+            <li><span class="rows__name">Support</span><p>Volume, topics and time to answer.</p></li>
+          </ul>
+          
+        </div>
+        <div class="panel span-6 start-7" role="img" aria-label="An example search across reports for the phrase revenue march.">
+          <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:400px;--ax:max(24px, 50% - 200px);--ay:40px;--ay-sm:16px">
+<div class="ui ui-panel ui-search" data-ui="search">
+  <div class="ui-search__field">
+    <svg class="ui-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>
+    <span class="ui-search__q"><span data-search-q>revenue march</span><i class="ui-search__caret"></i></span>
+    <kbd class="ui-search__kbd">Ctrl K</kbd>
+  </div>
+  <div class="ui-search__group">Reports</div>
+  <ul class="ui-search__list" data-search-list>
+    <li class="ui-search__row is-sel"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg></span><span class="ui-search__t"><b>Revenue</b> per channel, <b>March</b></span><span class="ui-search__m">Report</span></li>
+    <li class="ui-search__row"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg></span><span class="ui-search__t">Ad spend against <b>revenue</b></span><span class="ui-search__m">Sheet</span></li>
+    <li class="ui-search__row"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg></span><span class="ui-search__t"><b>March</b> returns by product</span><span class="ui-search__m">Report</span></li>
+  </ul>
+  <div class="ui-search__foot"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> to move</span><span><kbd>Enter</kbd> to open</span></div>
+</div>
+</div></div>
+        </div>
+      </div>
+      <div class="grid" data-moment="counter-rolls" style="margin-top: var(--s-7)">
+        <div class="span-3"><p class="t-stat">30</p><p class="t-small muted">minutes for the free intake call</p></div>
+        <div class="span-3"><p class="t-stat">48</p><p class="t-small muted">hours until the fixed quote</p></div>
+        <div class="span-3"><p class="t-stat">1</p><p class="t-small muted">set of figures for every team</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-inverse" id="pilot" aria-labelledby="pilot-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-5 stack-6">
+          <div class="section-head">
+            <h2 id="pilot-h">Reporting starts with two sources and one report</h2>
+            <p>There is no reporting case study on this site yet. A first project connects two sources, with a fixed price and a clear stop.</p>
+          </div>
+          <ol class="rows">
+            <li><span class="rows__name">Pick the questions</span><p>The five figures your team argues about most.</p></li>
+            <li><span class="rows__name">Connect two sources</span><p>Read-only access, agreed per source.</p></li>
+            <li><span class="rows__name">Check the figures</span><p>The report is compared with your own books for a month.</p></li>
+            <li><span class="rows__name">Add the next source</span><p>Each new source is a small, quoted step.</p></li>
+          </ol>
+          
+          
+        </div>
+        <div class="panel span-6 start-7" role="img" aria-label="An example checklist of a reporting pilot with two of four steps done.">
+          <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:40px;--ay-sm:16px">
+<div class="ui ui-panel ui-checks" data-ui="checklist">
+  <div class="ui-checks__head"><div class="ui-title">Example reporting pilot</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>2 of 4</div></div>
+  <div class="ui-checks__bar"><i data-checks-bar style="--k:0.50"></i></div>
+  <ul class="ui-checks__list">
+    <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Pick the five figures</span></li>
+    <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Connect two sources</span></li>
+    <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Compare with the books</span></li>
+    <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Send the first report</span></li>
+  </ul>
+</div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="questions" aria-labelledby="questions-h">
+    <div class="wrap">
+      <div class="grid grid--top">
+        <div class="span-5 section-head">
+          <h2 id="questions-h">Questions</h2>
+          <p>What buyers ask before the intake call.</p>
+          <p><a class="link" href="/faq">Read all questions</a></p>
+          <div class="panel" role="img" aria-label="An example checklist to prepare the intake call, one of three steps done."><div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:40px;--ay-sm:16px">
+<div class="ui ui-panel ui-checks" data-ui="checklist">
+  <div class="ui-checks__head"><div class="ui-title">Before the intake call</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>1 of 3</div></div>
+  <div class="ui-checks__bar"><i data-checks-bar style="--k:0.33"></i></div>
+  <ul class="ui-checks__list">
+    <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Name the workflow</span></li>
+    <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">List the systems it touches</span></li>
+    <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">Pick who approves</span></li>
+  </ul>
+</div>
+</div></div></div>
+        </div>
+        <div class="faq span-6 start-7">
+          <div class="faq__item"><h3>Do we need a data team for this?</h3><p>No. Zoyare builds and runs the pipeline, and the report arrives as a message your team can read.</p></div>
+          <div class="faq__item"><h3>Can we keep our current dashboard tool?</h3><p>Yes. The data lands in a database any dashboard tool can read.</p></div>
+          <div class="faq__item"><h3>Can agents connect to the tools we use?</h3><p>Yes, when the tool has an API or an export. The quote lists every connection, so you know what is in scope.</p></div>
+          <div class="faq__item"><h3>Who owns the code and the workflows?</h3><p>You do. At handover you get the code, the documentation and the runbooks, and any developer can continue with them.</p></div>
+          <div class="faq__item"><h3>How fast can the first agent go live?</h3><p>A small automation is live in 2 to 6 weeks after the quote is signed. The timeline is fixed in the quote.</p></div>
+          <div class="faq__item phone-only"><h3>Where is our data stored?</h3><p>On EU hosting, under a Dutch contract. Access is agreed per source before anything is connected.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Know the cost before the first call</h2>
+        <p class="t-small muted">Three questions, an honest range, and a fixed quote within 48 hours of the intake.</p>
+      </div>
+      <a class="btn btn--primary btn--xl btn--wide" href="/estimate">Get a price indication<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="/"><img src="/logo.svg" alt="Zoyare"></a>
+          <p class="footer__lede">Dutch engineering studio for AI agents, automations and custom software.</p>
+        </div>
+        <div class="span-2 footer__col"><h3>AI services</h3><ul><li><a href="/services/ai-agents">AI agents</a></li><li><a href="/services/ai-customer-support">Customer support</a></li><li><a href="/services/creative-production">Ads and video</a></li><li><a href="/services/growth-reporting">Growth reports</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Builds</h3><ul><li><a href="/services/custom-software">Custom software</a></li><li><a href="/services/api-integrations">Integrations</a></li><li><a href="/services/mobile-applications">Mobile apps</a></li><li><a href="/services/process-automation">Automation</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Company</h3><ul><li><a href="/about">About</a></li><li><a href="/portfolio">Portfolio</a></li><li><a href="/blog">Blog</a></li><li><a href="/software-development-netherlands">Netherlands</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>Contact</h3><ul><li><a href="/contact">Contact</a></li><li><a href="/estimate">Estimator</a></li><li><a href="/faq">Questions</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Zoyare &nbsp; <a href="/privacy">Privacy</a> &nbsp; <a href="/terms">Terms</a></span>
+        <span>KvK 94498555</span>
+        <div class="socials"></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="/assets/system.js"></script>
+<script defer src="/site-config.js"></script>
+<script defer src="/site-shell.js"></script>
+<script type="module" src="/assets/motion/motion.js"></script>
+<script type="module" src="/assets/layout/layout.js"></script>
+<script type="module" src="/assets/diagrams/mount.js"></script>
+</body>
+</html>

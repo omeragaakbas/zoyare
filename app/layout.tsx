@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Space_Mono, Instrument_Serif } from "next/font/google";
+import { Reddit_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -14,25 +14,16 @@ import { getAllPosts } from "@/lib/blog";
 import { projects } from "@/lib/content";
 import { dict } from "@/lib/dictionary";
 
-const spaceGrotesk = Space_Grotesk({
+const sans = Reddit_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
   variable: "--font-space-grotesk",
   display: "swap",
 });
 
-const spaceMono = Space_Mono({
+const mono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500"],
   variable: "--font-space-mono",
-  display: "swap",
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-display",
   display: "swap",
 });
 
@@ -45,12 +36,14 @@ const CURRENT_YEAR = new Date().getFullYear();
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Zoyare — Custom Software Development in the Netherlands",
+    default: "Zoyare — AI agents and custom software in the Netherlands",
     template: "%s — Zoyare",
   },
   description:
-    "Dutch software engineering studio. Custom software, API integrations, mobile apps and process automation for businesses in the Netherlands and Benelux. Fixed quote after a free intake call.",
+    "Dutch engineering studio that builds and runs AI agents, automations and custom software for businesses in the Netherlands and Benelux. Fixed quote after a free intake call.",
   keywords: [
+    "ai agents netherlands",
+    "ai automation for business",
     "custom software development netherlands",
     "software development company netherlands",
     "software ontwikkeling op maat",
@@ -85,15 +78,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: BASE_URL,
     siteName: "Zoyare",
-    title: "Zoyare — Custom Software Development in the Netherlands",
+    title: "Zoyare — AI agents and custom software in the Netherlands",
     description:
-      "Dutch software engineering studio. Custom software, API integrations and mobile apps for businesses in the Netherlands and Benelux.",
+      "Dutch engineering studio for AI agents, automations and custom software, for businesses in the Netherlands and Benelux.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zoyare — Custom Software Development in the Netherlands",
+    title: "Zoyare — AI agents and custom software in the Netherlands",
     description:
-      "Dutch software engineering studio. Custom software, API integrations and mobile apps for businesses in the Netherlands and Benelux.",
+      "Dutch engineering studio for AI agents, automations and custom software, for businesses in the Netherlands and Benelux.",
     creator: "@zoyare",
   },
   alternates: {
@@ -118,7 +111,7 @@ const jsonLd = {
       },
       email: "hello@zoyare.com",
       description:
-        "Dutch software engineering studio for custom software, API integrations, mobile applications and process automation. Based in the Netherlands, working with businesses across the Benelux and worldwide.",
+        "Dutch engineering studio that builds and runs AI agents, automations and custom software. Based in the Netherlands, working with businesses across the Benelux and worldwide.",
       foundingDate: "2024",
       // Chamber of Commerce registration — a verifiable entity signal for a studio that
       // deliberately stays anonymous at the person level.
@@ -145,6 +138,7 @@ const jsonLd = {
         "https://www.instagram.com/zoyarehq/",
       ],
       knowsAbout: [
+        "AI Agents",
         "Custom Software Development",
         "API Integration",
         "Mobile App Development",
@@ -180,7 +174,7 @@ const jsonLd = {
       name: "Zoyare",
       url: BASE_URL,
       description:
-        "Custom software, API integrations and mobile applications for businesses in the Netherlands and Benelux.",
+        "AI agents, automations, custom software, integrations and mobile applications for businesses in the Netherlands and Benelux.",
       email: "hello@zoyare.com",
       priceRange: "€€€",
       currenciesAccepted: "EUR",
@@ -197,6 +191,10 @@ const jsonLd = {
         "@type": "OfferCatalog",
         name: "Software Engineering Services",
         itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Agents" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Customer Support" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Ad and Video Production" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Growth Reporting" } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Software Development" } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "API & System Integrations" } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile App Development" } },
@@ -249,7 +247,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${spaceMono.variable} ${instrumentSerif.variable}`} style={{ colorScheme: "light" }} suppressHydrationWarning>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`} style={{ colorScheme: "light" }} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: JS_FLAG }} />
         <meta name="theme-color" content="#F8F6F2" />

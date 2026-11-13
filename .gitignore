@@ -21,3 +21,8 @@ npm-debug.log*
 
 # Generated social assets — regenerate with `npm run social`
 /social-assets/
+
+# Taste-skill checker output and browser profiles
+/.taste-skill/*
+!/.taste-skill/waivers.json
+/public/**/.taste-skill/

@@ -19,7 +19,7 @@ export const dict = {
     privacy: "Privacy",
     terms: "Terms",
     tagline:
-      "Dutch software engineering studio. Custom software, API integrations and mobile apps for businesses in the Netherlands and Benelux.",
+      "Dutch engineering studio for AI agents, automations and custom software, for businesses in the Netherlands and Benelux.",
     aboutLinks: {
       about: "About",
       netherlands: "For Dutch businesses",
@@ -49,6 +49,30 @@ export const dict = {
   },
   services: {
     items: [
+      {
+        slug: "ai-agents",
+        title: "AI agents",
+        description: "Agents that handle orders, leads, documents and reports.",
+        href: "/services/ai-agents",
+      },
+      {
+        slug: "ai-customer-support",
+        title: "Customer support agent",
+        description: "Answers from your own data, hard cases to a person.",
+        href: "/services/ai-customer-support",
+      },
+      {
+        slug: "creative-production",
+        title: "Ads and video",
+        description: "One brief becomes static ads, cuts and captions.",
+        href: "/services/creative-production",
+      },
+      {
+        slug: "growth-reporting",
+        title: "Growth reports",
+        description: "Every source in one place, one report your team reads.",
+        href: "/services/growth-reporting",
+      },
       {
         slug: "custom-software",
         title: "Custom Software",

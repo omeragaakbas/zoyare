@@ -35,6 +35,27 @@ const nextConfig = {
       { source: "/nl/:path*", destination: "/:path*", permanent: true },
     ];
   },
+  // Taste-skill test: the homepage is the static kit page in public/home.html.
+  async rewrites() {
+    // Inner pages are built by scripts/taste/build.cjs into public/p.
+    return {
+      beforeFiles: [
+        { source: "/", destination: "/home.html" },
+        { source: "/services", destination: "/p/services.html" },
+        { source: "/about", destination: "/p/about.html" },
+        { source: "/faq", destination: "/p/faq.html" },
+        { source: "/software-development-netherlands", destination: "/p/netherlands.html" },
+        { source: "/services/ai-agents", destination: "/p/services-ai-agents.html" },
+        { source: "/services/ai-customer-support", destination: "/p/services-ai-customer-support.html" },
+        { source: "/services/creative-production", destination: "/p/services-creative-production.html" },
+        { source: "/services/growth-reporting", destination: "/p/services-growth-reporting.html" },
+        { source: "/services/process-automation", destination: "/p/services-process-automation.html" },
+        { source: "/services/custom-software", destination: "/p/services-custom-software.html" },
+        { source: "/services/api-integrations", destination: "/p/services-api-integrations.html" },
+        { source: "/services/mobile-applications", destination: "/p/services-mobile-applications.html" },
+      ],
+    };
+  },
   async headers() {
     return [
       {

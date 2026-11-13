@@ -9,29 +9,29 @@ type Props = { year: number };
 export default function Footer({ year }: Props) {
 
   return (
-    <footer className="cv-auto border-t border-border px-6 md:px-12 py-16">
+    <footer className="cv-auto bg-primary text-background px-6 md:px-20 pt-20 pb-12">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div>
-          <Logo variant="mark" height={20} className="text-primary opacity-40 mb-4" />
-          <p className="text-sm text-secondary leading-relaxed mb-4">
+          <Logo variant="mark" height={20} className="text-background mb-5" />
+          <p className="text-base text-background/85 leading-relaxed mb-5">
             {d.footer.tagline}
           </p>
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span className="font-mono text-xs text-muted tracking-widest uppercase">
+            <span className="text-sm text-background/85">
               {d.footer.available}
             </span>
           </div>
           <div className="mt-2.5">
             <LocalTime />
           </div>
-          <p className="hidden md:block font-mono text-[10px] text-muted tracking-widest uppercase mt-2.5">
+          <p className="hidden md:block text-[13px] text-background/60 mt-2.5">
             Ctrl + K — quick nav
           </p>
         </div>
 
         <div>
-          <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">
+          <p className="text-sm font-medium text-background/60 mb-4">
             {d.footer.servicesLabel}
           </p>
           <div className="flex flex-col gap-2.5">
@@ -39,7 +39,7 @@ export default function Footer({ year }: Props) {
               <Link
                 key={s.slug}
                 href={s.href}
-                className="text-sm text-secondary hover:text-accent transition-colors duration-200"
+                className="text-base text-background/85 hover:text-accent transition-colors duration-200"
               >
                 {s.title}
               </Link>
@@ -48,45 +48,45 @@ export default function Footer({ year }: Props) {
         </div>
 
         <div>
-          <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">
+          <p className="text-sm font-medium text-background/60 mb-4">
             {d.footer.companyLabel}
           </p>
           <div className="flex flex-col gap-2.5">
-            <Link href="/about" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.about}</Link>
-            <Link href="/software-development-netherlands" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.netherlands}</Link>
-            <Link href="/estimate" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Get an estimate</Link>
-            <Link href="/portfolio" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.portfolio}</Link>
-            <Link href="/blog" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.blog}</Link>
-            <Link href="/faq" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.faq}</Link>
-            <Link href="/contact" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.contact}</Link>
+            <Link href="/about" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.about}</Link>
+            <Link href="/software-development-netherlands" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.netherlands}</Link>
+            <Link href="/estimate" className="text-base text-background/85 hover:text-accent transition-colors duration-200">Get an estimate</Link>
+            <Link href="/portfolio" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.portfolio}</Link>
+            <Link href="/blog" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.blog}</Link>
+            <Link href="/faq" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.faq}</Link>
+            <Link href="/contact" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.contact}</Link>
           </div>
         </div>
 
         <div>
-          <p className="font-mono text-xs text-muted tracking-widest uppercase mb-4">
+          <p className="text-sm font-medium text-background/60 mb-4">
             {d.footer.contactLabel}
           </p>
           <div className="flex flex-col gap-2.5">
-            <a href="mailto:hello@zoyare.com" className="text-sm text-secondary hover:text-accent transition-colors duration-200">hello@zoyare.com</a>
-            <a href="https://cal.eu/zoyare" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">{d.footer.scheduleCall}</a>
-            <a href="https://www.linkedin.com/company/zoyare/" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">LinkedIn</a>
-            <a href="https://www.instagram.com/zoyarehq/" target="_blank" rel="noopener noreferrer" className="text-sm text-secondary hover:text-accent transition-colors duration-200">Instagram</a>
+            <a href="mailto:hello@zoyare.com" className="text-base text-background/85 hover:text-accent transition-colors duration-200">hello@zoyare.com</a>
+            <a href="https://cal.eu/zoyare" target="_blank" rel="noopener noreferrer" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.scheduleCall}</a>
+            <a href="https://www.linkedin.com/company/zoyare/" target="_blank" rel="noopener noreferrer" className="text-base text-background/85 hover:text-accent transition-colors duration-200">LinkedIn</a>
+            <a href="https://www.instagram.com/zoyarehq/" target="_blank" rel="noopener noreferrer" className="text-base text-background/85 hover:text-accent transition-colors duration-200">Instagram</a>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="flex items-center gap-6">
-          <span className="font-mono text-xs text-muted tracking-widest uppercase">
+          <span className="text-sm text-background/70">
             Zoyare &copy; {year}
           </span>
-          <span className="font-mono text-xs text-muted">KvK: 94498555</span>
+          <span className="text-sm text-background/70">KvK: 94498555</span>
         </div>
         <div className="flex items-center gap-6">
-          <Link href="/privacy" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">
+          <Link href="/privacy" className="text-sm text-background/70 hover:text-accent transition-colors duration-200">
             {d.footer.privacy}
           </Link>
-          <Link href="/terms" className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase">
+          <Link href="/terms" className="text-sm text-background/70 hover:text-accent transition-colors duration-200">
             {d.footer.terms}
           </Link>
           {process.env.NEXT_PUBLIC_GA_ID && <CookiePreferencesButton />}
@@ -100,7 +100,7 @@ export default function Footer({ year }: Props) {
       >
         <Logo
           variant="full"
-          className="w-full h-auto text-primary opacity-[0.05]"
+          className="w-full h-auto text-background opacity-[0.07]"
         />
       </div>
     </footer>
