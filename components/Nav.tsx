@@ -12,8 +12,8 @@ import { track } from "@/lib/track";
 const links = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: dict.nav.portfolio },
-  { href: "/blog", label: dict.nav.blog },
   { href: "/about", label: dict.nav.about },
+  { href: "/blog", label: dict.nav.blog },
   { href: "/contact", label: dict.nav.contact },
 ];
 

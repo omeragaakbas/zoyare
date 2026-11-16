@@ -3,7 +3,6 @@ import { Reddit_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import ScrollProgress from "@/components/ScrollProgress";
-import Background from "@/components/Background";
 import CookieConsent from "@/components/CookieConsent";
 import AnalyticsLoader from "@/components/AnalyticsLoader";
 import ClientShell from "@/components/ClientShell";
@@ -270,7 +269,6 @@ export default function RootLayout({
           Skip to content
         </a>
         {GA_ID && <AnalyticsLoader gaId={GA_ID} />}
-        <Background />
         <MotionProvider>
           <ScrollProgress />
           <Nav />

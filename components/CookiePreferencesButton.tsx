@@ -7,7 +7,7 @@ export default function CookiePreferencesButton() {
     <button
       type="button"
       onClick={() => window.dispatchEvent(new Event(CONSENT_REOPEN_EVENT))}
-      className="font-mono text-xs text-muted hover:text-accent transition-colors duration-200 tracking-widest uppercase"
+      className="text-sm text-[#9b9996] hover:text-background"
     >
       Cookie preferences
     </button>

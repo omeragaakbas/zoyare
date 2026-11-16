@@ -1,107 +1,96 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import CookiePreferencesButton from "@/components/CookiePreferencesButton";
-import LocalTime from "@/components/LocalTime";
-import { dict as d } from "@/lib/dictionary";
+import ClosingCta from "@/components/ClosingCta";
 
 type Props = { year: number };
 
+// Same columns, order and words as the footer of the static pages
+// (scripts/taste/lib.cjs). Change both when a link changes.
+const columns: { title: string; links: [string, string][] }[] = [
+  {
+    title: "AI services",
+    links: [
+      ["AI agents", "/services/ai-agents"],
+      ["Customer support", "/services/ai-customer-support"],
+      ["Ads and video", "/services/creative-production"],
+      ["Growth reports", "/services/growth-reporting"],
+    ],
+  },
+  {
+    title: "Builds",
+    links: [
+      ["Custom software", "/services/custom-software"],
+      ["Integrations", "/services/api-integrations"],
+      ["Mobile apps", "/services/mobile-applications"],
+      ["Automation", "/services/process-automation"],
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      ["About", "/about"],
+      ["Portfolio", "/portfolio"],
+      ["Blog", "/blog"],
+      ["Netherlands", "/software-development-netherlands"],
+    ],
+  },
+  {
+    title: "Contact",
+    links: [
+      ["Contact", "/contact"],
+      ["Estimator", "/estimate"],
+      ["Questions", "/faq"],
+    ],
+  },
+];
+
+const linkClass =
+  "text-[15px] text-background/85 underline-offset-4 decoration-1 hover:text-background hover:underline";
+
 export default function Footer({ year }: Props) {
-
   return (
-    <footer className="cv-auto bg-primary text-background px-6 md:px-20 pt-20 pb-12">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-        <div>
-          <Logo variant="mark" height={20} className="text-background mb-5" />
-          <p className="text-base text-background/85 leading-relaxed mb-5">
-            {d.footer.tagline}
-          </p>
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span className="text-sm text-background/85">
-              {d.footer.available}
-            </span>
-          </div>
-          <div className="mt-2.5">
-            <LocalTime />
-          </div>
-          <p className="hidden md:block text-[13px] text-background/60 mt-2.5">
-            Ctrl + K — quick nav
+    <footer className="cv-auto bg-primary text-background px-6 md:px-20 pt-16 md:pt-24 pb-8">
+      <ClosingCta />
+
+      <div className="grid grid-cols-2 md:grid-cols-12 gap-x-6 gap-y-10">
+        <div className="col-span-2 md:col-span-4 flex flex-col gap-4">
+          <Link href="/" aria-label="Zoyare home" className="text-background w-fit">
+            <Logo variant="full" height={20} />
+          </Link>
+          <p className="text-xl md:text-2xl font-medium tracking-[-0.03em] leading-tight max-w-[22ch]">
+            Dutch engineering studio for AI agents, automations and custom software.
           </p>
         </div>
 
-        <div>
-          <p className="text-sm font-medium text-background/60 mb-4">
-            {d.footer.servicesLabel}
-          </p>
-          <div className="flex flex-col gap-2.5">
-            {d.services.items.map((s) => (
-              <Link
-                key={s.slug}
-                href={s.href}
-                className="text-base text-background/85 hover:text-accent transition-colors duration-200"
-              >
-                {s.title}
-              </Link>
-            ))}
+        {columns.map((col) => (
+          <div key={col.title} className="md:col-span-2">
+            <h3 className="text-sm font-normal text-[#9b9996] mb-4">{col.title}</h3>
+            <ul className="flex flex-col gap-2.5">
+              {col.links.map(([label, href]) => (
+                <li key={href}>
+                  <Link href={href} className={linkClass}>
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-
-        <div>
-          <p className="text-sm font-medium text-background/60 mb-4">
-            {d.footer.companyLabel}
-          </p>
-          <div className="flex flex-col gap-2.5">
-            <Link href="/about" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.about}</Link>
-            <Link href="/software-development-netherlands" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.netherlands}</Link>
-            <Link href="/estimate" className="text-base text-background/85 hover:text-accent transition-colors duration-200">Get an estimate</Link>
-            <Link href="/portfolio" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.portfolio}</Link>
-            <Link href="/blog" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.blog}</Link>
-            <Link href="/faq" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.faq}</Link>
-            <Link href="/contact" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.aboutLinks.contact}</Link>
-          </div>
-        </div>
-
-        <div>
-          <p className="text-sm font-medium text-background/60 mb-4">
-            {d.footer.contactLabel}
-          </p>
-          <div className="flex flex-col gap-2.5">
-            <a href="mailto:hello@zoyare.com" className="text-base text-background/85 hover:text-accent transition-colors duration-200">hello@zoyare.com</a>
-            <a href="https://cal.eu/zoyare" target="_blank" rel="noopener noreferrer" className="text-base text-background/85 hover:text-accent transition-colors duration-200">{d.footer.scheduleCall}</a>
-            <a href="https://www.linkedin.com/company/zoyare/" target="_blank" rel="noopener noreferrer" className="text-base text-background/85 hover:text-accent transition-colors duration-200">LinkedIn</a>
-            <a href="https://www.instagram.com/zoyarehq/" target="_blank" rel="noopener noreferrer" className="text-base text-background/85 hover:text-accent transition-colors duration-200">Instagram</a>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <div className="border-t border-background/20 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-        <div className="flex items-center gap-6">
-          <span className="text-sm text-background/70">
-            Zoyare &copy; {year}
-          </span>
-          <span className="text-sm text-background/70">KvK: 94498555</span>
-        </div>
-        <div className="flex items-center gap-6">
-          <Link href="/privacy" className="text-sm text-background/70 hover:text-accent transition-colors duration-200">
-            {d.footer.privacy}
+      <div className="mt-12 flex flex-wrap items-center justify-between gap-x-8 gap-y-4 text-sm text-[#9b9996]">
+        <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <span>&copy; {year} Zoyare</span>
+          <Link href="/privacy" className="hover:text-background">
+            Privacy
           </Link>
-          <Link href="/terms" className="text-sm text-background/70 hover:text-accent transition-colors duration-200">
-            {d.footer.terms}
+          <Link href="/terms" className="hover:text-background">
+            Terms
           </Link>
           {process.env.NEXT_PUBLIC_GA_ID && <CookiePreferencesButton />}
-        </div>
-      </div>
-
-      {/* Oversized wordmark watermark — quiet brand statement to close the page */}
-      <div
-        aria-hidden="true"
-        className="mt-16 select-none pointer-events-none overflow-hidden"
-      >
-        <Logo
-          variant="full"
-          className="w-full h-auto text-background opacity-[0.07]"
-        />
+        </span>
+        <span>KvK 94498555</span>
       </div>
     </footer>
   );
