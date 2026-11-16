@@ -1,0 +1,24 @@
+Most custom software contracts I see have at least one of these gaps:
+
+— IP only transfers at final delivery (not each milestone)
+— Source code lives in the developer's repository, not yours
+— No warranty clause, or one so vague it's unenforceable
+— No process for handling scope changes in writing
+
+You're about to sign a €40,000+ contract. Here's what to verify before you do.
+
+The five questions I'd ask every developer before signing:
+
+1. When exactly does IP transfer to us?
+2. Is our code in our own repository from day one?
+3. What does the warranty cover, and for how long?
+4. How are scope changes documented and priced?
+5. What do we receive if the project ends before completion?
+
+Resistance to any of these is worth pausing on.
+
+New post on the full checklist — including payment milestone structure, termination clauses, and why Dutch jurisdiction matters:
+
+https://zoyare.com/blog/software-development-contract-checklist
+
+#CustomSoftware #SoftwareDevelopment #Zakelijk
