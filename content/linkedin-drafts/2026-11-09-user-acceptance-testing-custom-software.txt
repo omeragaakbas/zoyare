@@ -1,0 +1,23 @@
+Your developer says "it's ready for UAT." You poke around for an hour, don't find anything obvious, and reply "looks good."
+
+Two weeks after go-live, a customer can't complete their order. Your ops team can't run the report they need. An edge case nobody tested is now a production incident.
+
+UAT is not a formality. It's the client's job — not the developer's.
+
+A developer tests whether the code works. UAT tests whether the solution works for your business. Only you know what that means: which edge cases exist in your data, which workflows matter, which permissions need to be right.
+
+What actually goes wrong:
+→ Testing with clean demo data instead of real business data
+→ Free exploration instead of written test scripts
+→ Confusing "this works as specified" with "this is what we actually need"
+→ Skipping permission checks (can user A see user B's data?)
+
+The fix isn't technical expertise. It's preparation: test scripts derived from your requirements, real data, documented findings and a clear sign-off checklist.
+
+Finding bugs in UAT costs a fraction of finding them in production.
+
+New post covers the full UAT process — practical checklist included — for non-technical owners commissioning custom software.
+
+#CustomSoftware #SoftwareDevelopment #UAT
+
+https://zoyare.com/blog/user-acceptance-testing-custom-software

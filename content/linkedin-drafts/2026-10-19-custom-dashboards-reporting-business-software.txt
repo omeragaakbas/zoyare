@@ -1,0 +1,29 @@
+Every company I talk to has the same problem: the data is there, but getting a clear view of it is a weekly ordeal.
+
+Someone compiles a report in Excel. Half the figures are outdated by Tuesday. Management makes decisions on numbers that are already wrong.
+
+The reflex is to add "a dashboard." But which kind?
+
+Here's the distinction nobody explains clearly:
+
+→ Analytical BI (Power BI, Tableau, Metabase) is for exploration. Slicing revenue, building ad-hoc reports, drilling down. These tools are excellent — and for most analysis use cases, building custom is a waste of money.
+
+→ Operational dashboards are different. The warehouse screen showing today's pick queue. The support team's live ticket count. Data embedded in the workflow, updated in seconds, no separate login. For this, a custom build almost always wins.
+
+The expensive mistake: using an analytical tool for operational needs (slow, wrong UX), or building custom when a BI tool would work in a week.
+
+The hidden cost nobody budgets for: data preparation. In most projects, 40–60% of the time goes into getting the data into a consistent, queryable state — not building the charts themselves.
+
+Before you start any reporting project, answer these five questions:
+1. Who are the users, and what decisions do they make?
+2. Where does the data live, and is it consistent?
+3. How fresh does it need to be?
+4. Can this data go to an external service? (GDPR matters here)
+5. Does it need to be embedded in your software, or can it be a separate tool?
+
+Get those five answers right and the build-vs-buy decision usually becomes obvious.
+
+Full breakdown — including cost ranges and when to combine both approaches — on the blog:
+https://zoyare.com/blog/custom-dashboards-reporting-business-software
+
+#softwaredevelopment #businessintelligence #customsoftware

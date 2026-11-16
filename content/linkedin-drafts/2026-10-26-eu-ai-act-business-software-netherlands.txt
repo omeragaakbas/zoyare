@@ -1,0 +1,26 @@
+August 2026 was the deadline most Dutch businesses missed.
+
+That was when the EU AI Act's high-risk AI requirements came into full effect. If your software uses AI for HR decisions, credit scoring, or any other high-stakes use case — those rules now apply to you.
+
+The good news: most business software with AI features is NOT high-risk.
+
+Document extraction, support ticket routing, invoice processing, automated reporting — these typically fall into the "limited risk" category. The main obligation there is transparency: tell users when they're interacting with AI. That's it.
+
+Where Dutch companies get caught:
+→ HR tools that use AI to rank or score candidates
+→ Systems that use AI for credit or financial risk assessments
+→ Any use of a third-party AI API without an enterprise data processing agreement
+
+That last one is the most common gap I see. Using the OpenAI or Claude API on standard consumer terms is not GDPR-compliant if you're sending personal data through it. You need the enterprise agreement.
+
+Four questions worth answering this week:
+1. What risk tier is our AI use case?
+2. Do we have enterprise API terms with our AI provider?
+3. Can a human override AI outputs without calling a developer?
+4. Do we have logging that lets us audit AI decisions?
+
+If you're building or commissioning software with AI components and want a straight answer on where you stand — I'm happy to take a look.
+
+https://zoyare.com/blog/eu-ai-act-business-software-netherlands
+
+#EUAIAct #AICompliance #MaatwerksoftwareNL

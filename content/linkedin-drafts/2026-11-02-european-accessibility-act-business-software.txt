@@ -1,0 +1,22 @@
+The European Accessibility Act took effect in June 2025.
+
+Most Dutch business owners assume it only applies to government websites. It doesn't.
+
+If you run a customer-facing website or app in e-commerce, financial services, or transport — you have a legal obligation to meet WCAG 2.1 AA. New services must already comply. Existing services have until June 28, 2030.
+
+What I keep seeing: businesses that commission new software without mentioning accessibility in the brief. The developer builds to the brief. No one checks contrast ratios or keyboard navigation. The product launches.
+
+Retrofitting accessibility after the fact costs 30–50% of the original front-end work. Building it in from the start: 5–15% extra.
+
+A few things worth knowing before you commission or audit a system:
+
+→ Businesses with < 10 staff and < €2M turnover are exempt (microenterprise carve-out)
+→ Internal tools are generally outside the EAA's scope
+→ Automated audits catch ~40% of issues — manual testing catches the rest
+→ A "does this work with only a keyboard" test is a 10-minute check you can do yourself today
+
+I wrote up what the regulation actually requires, who it applies to, and exactly what to put in a software brief to stay ahead of it.
+
+https://zoyare.com/blog/european-accessibility-act-business-software
+
+#accessibility #EAA #software
